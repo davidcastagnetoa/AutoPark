@@ -1,4 +1,4 @@
-import inquirer
+# import inquirer
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -23,13 +23,13 @@ firefox_capabilities = firefox_options.to_capabilities()
 chrome_options = webdriver.ChromeOptions()
 chrome_capabilities = chrome_options.to_capabilities()
 
-questions = [
-    inquirer.List(
-        "navegator",
-        message="Elije un navegador",
-        choices=["Chrome", "Firefox", "Cancelar"],
-    ),
-]
+# questions = [
+#     inquirer.List(
+#         "navegator",
+#         message="Elije un navegador",
+#         choices=["Chrome", "Firefox", "Cancelar"],
+#     ),
+# ]
 ascii_art = """
                                                           ..
                                ,,,                         MM .M
@@ -62,19 +62,22 @@ MMMMMMMMMMM:MM     'M'.M'MMMMMMMMMMMMMM'.MC'M'     .MM
                                  'JJJJJJJJ'
 """
 print(ascii_art)
-print("\nCONSULTA DE TOKEN")
-answers = inquirer.prompt(questions)
-navegador = answers["navegator"]
+print("\n__CONSULTA DE TOKEN__")
+# answers = inquirer.prompt(questions)
+# navegador = answers["navegator"]
 
-if navegador == "Chrome":
-    print("Iniciando navegador Chrome")
-    driver = webdriver.Chrome(options=chrome_options)
-elif navegador == "Firefox":
-    print("Iniciando navegador Firefox")
-    driver = webdriver.Firefox(options=firefox_options)
-else:
-    print("Operación cancelada por el usuario.")
-    exit()
+# if navegador == "Chrome":
+#     print("Iniciando navegador Chrome")
+#     driver = webdriver.Chrome(options=chrome_options)
+# elif navegador == "Firefox":
+#     print("Iniciando navegador Firefox")
+#     driver = webdriver.Firefox(options=firefox_options)
+# else:
+#     print("Operación cancelada por el usuario.")
+#     exit()
+
+# usar Chrome por defecto, sin interaccion del usuario
+driver = webdriver.Chrome(options=chrome_options)
 
 # Abre la página web
 link = "https://apphybo.raona.com"

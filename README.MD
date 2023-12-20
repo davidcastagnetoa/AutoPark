@@ -112,6 +112,11 @@ In these links, you will find manuals and examples for configuring the Telegram 
 3. Follow the step, include geckodriver.exe, chromedriver.exe and .env file on the root
 4. open the output folder and execute getTokensParking.exe
 
+5. If you want to create a .exe file run the next command.
+   ```bash
+   python setup.py bdist_msi
+   ```
+
 ## Code Explanation
 
 - The script uses Selenium to open up the browser and navigate to the specified URL.

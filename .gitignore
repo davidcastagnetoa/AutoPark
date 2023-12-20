@@ -9,3 +9,5 @@ venv/
 res/
 chromedriver.exe      
 geckodriver.exe 
+build/
+dist/
