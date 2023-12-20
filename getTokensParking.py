@@ -30,8 +30,39 @@ questions = [
         choices=["Chrome", "Firefox", "Cancelar"],
     ),
 ]
-
-
+ascii_art = """
+                                                          ..
+                               ,,,                         MM .M
+                           ,!MMMMMMM!,                     MM MM  ,.
+   ., .M                .MMMMMMMMMMMMMMMM.,          'MM.  MM MM .M'
+ . M: M;  M          .MMMMMMMMMMMMMMMMMMMMMM,          'MM,:M M'!M'
+;M MM M: .M        .MMMMMMMMMMMMMMMMMMMMMMMMMM,         'MM'...'M
+ M;MM;M :MM      .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.       .MMMMMMMM
+ 'M;M'M MM      MMMMMM  MMMMMMMMMMMMMMMMM  MMMMMM.    ,,M.M.'MMM'
+  MM'MMMM      MMMMMM @@ MMMMMMMMMMMMMMM @@ MMMMMMM.'M''MMMM;MM'
+ MM., ,MM     MMMMMMMM  MMMMMMMMMMMMMMMMM  MMMMMMMMM      '.MMM
+ 'MM;MMMMMMMM.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.      'MMM
+  ''.'MMM'  .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM       MMMM
+   MMC      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.      'MMMM
+  .MM      :MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM''MMM       MMMMM
+  MMM      :M  'MMMMMMMMMMMMM.MMMMM.MMMMMMMMMM'.MM  MM:M.    'MMMMM
+ .MMM   ...:M: :M.'MMMMMMMMMMMMMMMMMMMMMMMMM'.M''   MM:MMMMMMMMMMMM'
+AMMM..MMMMM:M.    :M.'MMMMMMMMMMMMMMMMMMMM'.MM'     MM''''''''''''
+MMMMMMMMMMM:MM     'M'.M'MMMMMMMMMMMMMM'.MC'M'     .MM
+ '''''''''':MM.       'MM!M.'M-M-M-M'M.'MM'        MMM
+            MMM.            'MMMM!MMMM'            .MM
+             MMM.             '''   ''            .MM'
+              MMM.                               MMM'
+               MMMM            ,.J.JJJJ.       .MMM'
+                MMMM.       'JJJJJJJ'JJJM   CMMMMM
+                  MMMMM.    'JJJJJJJJ'JJJ .MMMMM'
+                    MMMMMMMM.'  'JJJJJ'JJMMMMM'
+                      'MMMMMMMMM'JJJJJ JJJJJ'
+                         ''MMMMMMJJJJJJJJJJ'
+                                 'JJJJJJJJ'
+"""
+print(ascii_art)
+print("\nCONSULTA DE TOKEN")
 answers = inquirer.prompt(questions)
 navegador = answers["navegator"]
 
@@ -170,13 +201,15 @@ def getToken():
         credential_type_access = access_dict.get(
             "credentialType", "Clave 'credentialType' no encontrada"
         )
-        secret_access = access_dict.get("secret", "Clave 'secret' no encontrada")
+        secret_access = access_dict.get(
+            "secret", "Clave 'secret' no encontrada")
 
         # Extraer los valores de "credentialType" y "secret" para el token de actualización
         credential_type_refresh = refresh_dict.get(
             "credentialType", "Clave 'credentialType' no encontrada"
         )
-        secret_refresh = refresh_dict.get("secret", "Clave 'secret' no encontrada")
+        secret_refresh = refresh_dict.get(
+            "secret", "Clave 'secret' no encontrada")
 
         # print(f"{credential_type_access}, Secret: {secret_access}\n")
         # print(f"{credential_type_refresh}, Secret: {secret_refresh}\n")

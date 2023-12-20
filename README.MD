@@ -63,6 +63,8 @@ This Python script uses Selenium to open a web browser, log in to a web applicat
    ```env
    USERNAME_HIBO="your_username"
    PASSWORD_HIBO="your_password"
+   TELEGRAM_TOKEN="your_telegram_bot_token"
+   CHAT_ID="your_telegram_chat_id"
    ```
 
 2. Import the environment variables into your script:
@@ -72,12 +74,27 @@ This Python script uses Selenium to open a web browser, log in to a web applicat
    load_dotenv()
    ```
 
+## Setting Up Telegram
+
+1. Create one by talking to @BotFather on Telegram.
+2. Obtain the bot's token, which BotFather will provide upon the creation of the bot.
+3. Start a conversation on your created bot's link
+   ```env
+   https://t.me/<Your Bot's Name>
+   ```
+4. To obtain your chat_id if you don't know it, search in your APP for a user named @userinfobot and type `/start`, then send a message to this bot. The ID will be displayed.
+
+In these links, you will find manuals and examples for configuring the Telegram API:
+
+- [orangepiweb.es](https://orangepiweb.es/telegram.php)
+- [cosicasdeinformatica.com](http://cosicasdeinformatica.blogspot.com/2015/10/enviar-mensajes-de-telegram-desde-una.html)
+
 ## Usage
 
 1. Run the script:
 
    ```bash
-   python getTokenParking.py
+   python main.py
    ```
 
 2. The script will open the browser, perform the login, and fetch the requested data from the `localStorage`.

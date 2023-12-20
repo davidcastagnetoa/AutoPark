@@ -32,8 +32,8 @@ else:
     cl("No se encontró la configuración JSON.")
 
 
-# La fecha es 7 días después de hoy
-date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+# La fecha es 5 días después de hoy
+date = (datetime.now() + timedelta(days=5)).strftime("%Y-%m-%d")
 cl(f"Fecha a solicitar plaza: {date}")
 
 
@@ -43,7 +43,10 @@ def get_parking_place(secret):
     url = URL + "/BookingsByContext"
 
     # Construyendo los datos para la petición
-    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {secret}"}
+    headers = {
+        "Authorization": "Bearer " + secret,
+        "Content-Type": "application/json; charset=utf-8",
+    }
 
     # Datos a enviar en el payload
     payload = {
@@ -70,11 +73,14 @@ def get_parking_place(secret):
         "isCarSharing": False,
     }
 
+    reservationId = None
+
     if secret:
         # Realizar la petición POST
         try:
             cl("Reservando plaza...")
-            response = requests.post(url, headers=headers, data=json.dumps(payload))
+            response = requests.post(
+                url, headers=headers, data=json.dumps(payload))
 
             # Verificar el estado de la respuesta
             response.raise_for_status()
@@ -88,38 +94,36 @@ def get_parking_place(secret):
 
             # Asignar los valores a las variables correspondientes
             if len(values) >= 3:
-                requestId = values[0].strip('"')
-                zoneId = values[1].strip('"')
                 reservationId = values[2].strip('"')
 
                 # Imprimir o usar las variables según sea necesario
                 cl("Extrayendo variables id de la plaza reservada...")
-                cl(f"Request ID: {requestId}")
-                cl(f"Zone ID: {zoneId}")
                 cl(f"Reservation ID: {reservationId}")
-
-                return requestId, zoneId, reservationId
+                return reservationId
 
             else:
                 cl(
                     "Error al reservar la plaza, La respuesta no contiene los 3 valores."
                 )
-
         except requests.exceptions.HTTPError as http_err:
-            cl(f"Error HTTP: {http_err}, Detalles: {response.text}")
+            if response.status_code == 400 and '409-11' in response.text:
+                cl("No es posible reservar entre las 0:00 y 8:00 horas.")
+                return -1
+            else:
+                cl(f"Error HTTP: {http_err}, Detalles: {response.text}")
+                return None
         except requests.exceptions.ConnectionError as conn_err:
-            cl(f"Error de conexión: {conn_err}")
+            cl(f"Error de conexión: {conn_err}, Detalles: {response.text}")
         except requests.exceptions.Timeout as timeout_err:
-            cl(f"Error de timeout: {timeout_err}")
+            cl(f"Error de timeout: {timeout_err}, Detalles: {response.text}")
         except requests.exceptions.RequestException as req_err:
-            cl(f"Error general en la petición: {req_err}")
+            cl(f"Error general en la petición: {req_err}, Detalles: {response.text}")
 
     else:
         cl("Se requiere el token para realizar la solicitud")
-        return None, None, None
+        return None
 
 
-# Obtener los datos de la plaza reservada
 def load_data_place(reservation_id, secret):
     # Construyendo los datos para la petición
     headers = {
@@ -152,48 +156,38 @@ def load_data_place(reservation_id, secret):
     }
 
     # URL del endpoint
-    url_info = (
-        URL
-        + "/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C"
-        + ZONE
-        + "%7C"
-        + reservation_id
-    )
+    url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7Ca91ee11f-a0c5-4a91-a2c5-f6d0642f1dff%7C" + reservation_id
 
-    if secret:
-        # Realizando la petición
-        try:
-            cl("Obteniendo los datos de la plaza reservada...")
-            print(url_info)
-            response_data = requests.post(url_info, headers=headers, json=body)
-            response_data.raise_for_status()
-            data_result = response_data.json()
-            cl("Petición exitosa.")
-            cl(f"Estado de la respuesta: {response_data.status_code}")
-            cl("Datos Extraidos en formato Json")
-            print(f"Los datos obtenidos de la plaza son: {data_result}")
+    # Realizando la petición
+    try:
+        response = requests.post(url, headers=headers, json=body)
+        response.raise_for_status()
+        reserved_zone = response.json()
+        print(f'Estado de la respuesta: {response.status_code}')
+        print('Petición exitosa.')
+        # print(reserved_zone)
+        # Crear el directorio 'res' si no existe
+        if not os.path.exists("res"):
+            os.makedirs("res")
 
-            # Crear el directorio 'res' si no existe
-            if not os.path.exists("res"):
-                os.makedirs("res")
+        print("Datos Extraidos en formato Json")
 
-            filename = "data_place.json"
-            folder = "res"
+        filename = "reserved_zone.json"
+        folder = "res"
+        # Guardar la fecha en un archivo JSON dentro de la carpeta 'res'
+        with open(os.path.join(folder, filename), "w") as json_file:
+            json.dump(reserved_zone, json_file, ensure_ascii=False, indent=4)
+            print(
+                f"Datos guardados dentro de la carpeta {folder} , revisa el archivo {filename}"
+            )
 
-            # Guardar los datos de la plaza reservada en un archivo JSON dentro de la carpeta 'res'
-            with open(os.path.join(folder, filename), "w") as json_file:
-                json.dump(data_result, json_file, ensure_ascii=False, indent=4)
-                print(
-                    f"Datos de plaza reservada dentro de la carpeta {folder} , revisa el archivo {filename}"
-                )
-
-        except requests.HTTPError as e:
-            cl(f"Error HTTP: {e}")
-        except Exception as e:
-            cl(f"Error: {e}")
-
-    else:
-        cl("Se requiere el token para realizar la solicitud")
+        return reserved_zone
+    except requests.HTTPError as e:
+        cl(f"Error HTTP: {e}, Detalles: {response.text}")
+        return None
+    except Exception as e:
+        cl(f"Error HTTP: {e}, Detalles: {response.text}")
+        return None
 
 
 # Eliminar la plaza reservada
