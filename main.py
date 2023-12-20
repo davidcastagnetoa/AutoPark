@@ -45,5 +45,5 @@ if __name__ == "__main__":
         message = "<b>Plaza: </b>" + plaza + "\n" + "<b>Zona: </b>" + zona + "\n" + "<b>Turno: </b>" + \
             turno + "\n" + "<b>Matrícula: </b>" + matricula + "\n" "<b>Fecha: </b>" + fecha
 
-        print("\n ENVIANDO MENSAJE POR TELEGRAM")
+        print("\nENVIANDO MENSAJE POR TELEGRAM")
         send_message(TOKEN, CHAT_ID, message)

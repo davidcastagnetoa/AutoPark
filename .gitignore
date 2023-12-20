@@ -7,3 +7,5 @@ tokenAcceso.txt
 tokenActualizacion.txt
 venv/
 res/
+chromedriver.exe      
+geckodriver.exe 
