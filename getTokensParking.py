@@ -6,22 +6,34 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
+from selenium.webdriver.chrome.options import Options
+
 import json
 from dotenv import load_dotenv
 import os
+import sys
 
 
 # Cargando credenciales de acceso
 load_dotenv()
 USERNAME_HYBO = os.getenv("USERNAME_HYBO")
 PASSWORD_HYBO = os.getenv("PASSWORD_HYBO")
+LINK = os.getenv("LINK")
+
 
 # Configura las opciones para Firefox
 firefox_options = webdriver.FirefoxOptions()
 firefox_capabilities = firefox_options.to_capabilities()
+
 # Configura las opciones para Chrome
-chrome_options = webdriver.ChromeOptions()
+# chrome_options = webdriver.ChromeOptions()
+chrome_options = Options()
 chrome_capabilities = chrome_options.to_capabilities()
+
+# Headless mode
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 
 # questions = [
 #     inquirer.List(
@@ -31,38 +43,32 @@ chrome_capabilities = chrome_options.to_capabilities()
 #     ),
 # ]
 ascii_art = """
-                                                          ..
-                               ,,,                         MM .M
-                           ,!MMMMMMM!,                     MM MM  ,.
-   ., .M                .MMMMMMMMMMMMMMMM.,          'MM.  MM MM .M'
- . M: M;  M          .MMMMMMMMMMMMMMMMMMMMMM,          'MM,:M M'!M'
-;M MM M: .M        .MMMMMMMMMMMMMMMMMMMMMMMMMM,         'MM'...'M
- M;MM;M :MM      .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.       .MMMMMMMM
- 'M;M'M MM      MMMMMM  MMMMMMMMMMMMMMMMM  MMMMMM.    ,,M.M.'MMM'
-  MM'MMMM      MMMMMM @@ MMMMMMMMMMMMMMM @@ MMMMMMM.'M''MMMM;MM'
- MM., ,MM     MMMMMMMM  MMMMMMMMMMMMMMMMM  MMMMMMMMM      '.MMM
- 'MM;MMMMMMMM.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.      'MMM
-  ''.'MMM'  .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM       MMMM
-   MMC      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.      'MMMM
-  .MM      :MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM''MMM       MMMMM
-  MMM      :M  'MMMMMMMMMMMMM.MMMMM.MMMMMMMMMM'.MM  MM:M.    'MMMMM
- .MMM   ...:M: :M.'MMMMMMMMMMMMMMMMMMMMMMMMM'.M''   MM:MMMMMMMMMMMM'
-AMMM..MMMMM:M.    :M.'MMMMMMMMMMMMMMMMMMMM'.MM'     MM''''''''''''
-MMMMMMMMMMM:MM     'M'.M'MMMMMMMMMMMMMM'.MC'M'     .MM
- '''''''''':MM.       'MM!M.'M-M-M-M'M.'MM'        MMM
-            MMM.            'MMMM!MMMM'            .MM
-             MMM.             '''   ''            .MM'
-              MMM.                               MMM'
-               MMMM            ,.J.JJJJ.       .MMM'
-                MMMM.       'JJJJJJJ'JJJM   CMMMMM
-                  MMMMM.    'JJJJJJJJ'JJJ .MMMMM'
-                    MMMMMMMM.'  'JJJJJ'JJMMMMM'
-                      'MMMMMMMMM'JJJJJ JJJJJ'
-                         ''MMMMMMJJJJJJJJJJ'
-                                 'JJJJJJJJ'
+         , ,\ ,'\,'\ ,'\ ,\ ,
+   ,  ;\/ \' `'     `   '  /|
+   |\/                      |
+   :                        |
+   :                        |
+    |                       |
+    |                       |
+    :               -.     _|
+     :                \     `.
+     |         ________:______\.
+     :       ,'o       / o    ;
+     :       \       ,'-----./
+      \_      `--.--'        )
+     ,` `.              ,---'|
+     : `                     |
+      `,-'                   |
+      /      ,---.          ,'
+   ,-'            `-,------'   Developed By 
+  '   `.        ,--'           AbathurCris!
+'      `-.____/
+/           \.
+
 """
 print(ascii_art)
 print("\n__CONSULTA DE TOKEN__")
+
 # answers = inquirer.prompt(questions)
 # navegador = answers["navegator"]
 
@@ -73,14 +79,14 @@ print("\n__CONSULTA DE TOKEN__")
 #     print("Iniciando navegador Firefox")
 #     driver = webdriver.Firefox(options=firefox_options)
 # else:
-#     print("Operación cancelada por el usuario.")
+#     print("Operacion cancelada por el usuario.")
 #     exit()
 
 # usar Chrome por defecto, sin interaccion del usuario
 driver = webdriver.Chrome(options=chrome_options)
 
 # Abre la página web
-link = "https://apphybo.raona.com"
+link = LINK
 driver.get(link)
 
 
@@ -93,8 +99,8 @@ def getToken():
             EC.presence_of_element_located((By.ID, "next"))
         )
     except NoSuchElementException:
-        print("Botón de inicio de sesión no encontrado.")
-        print("Fallo de inicio de sesión ...")
+        print("Boton de inicio de sesion no encontrado.")
+        print("Fallo de inicio de sesion ...")
         driver.quit()  # Cerrar el navegador si el elemento no se encuentra
         exit()
 
@@ -103,6 +109,9 @@ def getToken():
         # Busca el campo del nombre de usuario y envía los datos
         username_field = driver.find_element(By.ID, "signInName")
         username_field.clear()
+        if USERNAME_HYBO is None:
+            print("Error: USERNAME_HYBO no está definido.")
+            sys.exit(1)
         username_field.send_keys(USERNAME_HYBO)
     except NoSuchElementException:
         print("Campo del nombre de usuario no encontrado.")
@@ -112,20 +121,23 @@ def getToken():
         # Busca el campo de la contraseña y envía los datos
         password_field = driver.find_element(By.ID, "password")
         password_field.clear()
+        if PASSWORD_HYBO is None:
+            print("Error: USERNAME_HYBO no está definido.")
+            sys.exit(1)
         password_field.send_keys(PASSWORD_HYBO)
     except NoSuchElementException:
         print("Campo de la contraseña no encontrado.")
 
     try:
-        # Busca el botón de inicio de sesión y haz clic en él
+        # Busca el boton de inicio de sesion y haz clic en él
         login_button = driver.find_element(By.ID, "next")
         login_button.click()
-        print("Iniciando sesión ...")
+        print("Iniciando sesion ...")
     except NoSuchElementException:
-        print("Botón de inicio de sesión no encontrado.")
-        print("fallo de inicio de sesión ...")
+        print("Boton de inicio de sesion no encontrado.")
+        print("fallo de inicio de sesion ...")
 
-    # Función para verificar si las claves están en localStorage
+    # Funcion para verificar si las claves están en localStorage
 
     def check_keys_in_localstorage(driver, keys):
         script = f"""

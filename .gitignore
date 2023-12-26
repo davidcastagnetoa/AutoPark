@@ -11,3 +11,5 @@ chromedriver.exe
 geckodriver.exe 
 build/
 dist/
+auto_park.sh
+schedule.txt

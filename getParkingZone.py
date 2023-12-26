@@ -5,7 +5,9 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
 
-# Función auxiliar para log con fecha
+# Funcion auxiliar para log con fecha
+
+
 def cl(msg):
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {msg}")
 
@@ -19,7 +21,7 @@ URL = os.getenv("URL")
 json_data = os.getenv("JSON_DATA")
 if json_data:
     config = json.loads(json_data)
-    ZONE = config["zone"]
+    ZONE = config["zone_priegola_2"]
     PLATE = config["plate"]
     USERID = config["userId"]
     OFFICEID = config["officeId"]
@@ -29,11 +31,14 @@ if json_data:
     TURN = config["turn"]
     # Acceder a otros valores en 'config' según sea necesario
 else:
-    cl("No se encontró la configuración JSON.")
+    cl("No se encontro la configuracion JSON.")
 
 
 # La fecha es 5 días después de hoy
-date = (datetime.now() + timedelta(days=5)).strftime("%Y-%m-%d")
+# date = (datetime.now() + timedelta(days=5)).strftime("%Y-%m-%d")
+
+# La fecha actual
+date = datetime.now().strftime("%Y-%m-%d")
 cl(f"Fecha a solicitar plaza: {date}")
 
 
@@ -42,7 +47,7 @@ def get_parking_place(secret):
     # URL del endpoint
     url = URL + "/BookingsByContext"
 
-    # Construyendo los datos para la petición
+    # Construyendo los datos para la peticion
     headers = {
         "Authorization": "Bearer " + secret,
         "Content-Type": "application/json; charset=utf-8",
@@ -76,7 +81,7 @@ def get_parking_place(secret):
     reservationId = None
 
     if secret:
-        # Realizar la petición POST
+        # Realizar la peticion POST
         try:
             cl("Reservando plaza...")
             response = requests.post(
@@ -107,17 +112,23 @@ def get_parking_place(secret):
                 )
         except requests.exceptions.HTTPError as http_err:
             if response.status_code == 400 and '409-11' in response.text:
-                cl("No es posible reservar entre las 0:00 y 8:00 horas.")
+                cl(f"No es posible reservar entre las 0:00 y 8:00 horas, Detalles: {response.text}")
                 return -1
+            elif response.status_code == 400 and 'It is not possible to select the weekend.' in response.text:
+                cl(f"Error HTTP: 400 - No es posible seleccionar el fin de semana, Detalles: {response.text}")
+                return -2
+            elif response.status_code == 409 and '409-12' in response.text:
+                cl(f"Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {response.text}")
+                return -3
             else:
                 cl(f"Error HTTP: {http_err}, Detalles: {response.text}")
                 return None
         except requests.exceptions.ConnectionError as conn_err:
-            cl(f"Error de conexión: {conn_err}, Detalles: {response.text}")
+            cl(f"Error de conexion: {conn_err}, Detalles: {response.text}")
         except requests.exceptions.Timeout as timeout_err:
             cl(f"Error de timeout: {timeout_err}, Detalles: {response.text}")
         except requests.exceptions.RequestException as req_err:
-            cl(f"Error general en la petición: {req_err}, Detalles: {response.text}")
+            cl(f"Error general en la peticion: {req_err}, Detalles: {response.text}")
 
     else:
         cl("Se requiere el token para realizar la solicitud")
@@ -125,7 +136,7 @@ def get_parking_place(secret):
 
 
 def load_data_place(reservation_id, secret):
-    # Construyendo los datos para la petición
+    # Construyendo los datos para la peticion
     headers = {
         "Authorization": "Bearer " + secret,
         "Content-Type": "application/json; charset=utf-8",
@@ -158,13 +169,13 @@ def load_data_place(reservation_id, secret):
     # URL del endpoint
     url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7Ca91ee11f-a0c5-4a91-a2c5-f6d0642f1dff%7C" + reservation_id
 
-    # Realizando la petición
+    # Realizando la peticion
     try:
         response = requests.post(url, headers=headers, json=body)
         response.raise_for_status()
         reserved_zone = response.json()
         print(f'Estado de la respuesta: {response.status_code}')
-        print('Petición exitosa.')
+        print('Peticion exitosa.')
         # print(reserved_zone)
         # Crear el directorio 'res' si no existe
         if not os.path.exists("res"):
@@ -214,12 +225,12 @@ def delete_parking_place(secret, reservation_id):
 
             if response.text:  # Verifica si hay contenido en la respuesta
                 data = response.json()
-                cl("Petición exitosa.")
+                cl("Peticion exitosa.")
                 cl(f"Estado de la respuesta: {response.status_code}")
                 cl(data)
                 cl("Plaza eliminada correctamente")
             else:
-                cl("Petición exitosa, pero no hay contenido en la respuesta.")
+                cl("Peticion exitosa, pero no hay contenido en la respuesta.")
 
         except requests.HTTPError as e:
             cl(f"Error HTTP: {e}")

@@ -6,7 +6,8 @@ from cx_Freeze import setup, Executable, sys
 additional_files = [
     ("static/icon.ico", "static/icon.ico"),
     (".env", ".env"),
-]  # ruta original del archivo y ruta en la distribución final
+    ("chromedriver", "chromedriver"),
+]  # ruta original del archivo y ruta en la distribucion final
 
 build_options = {
     "packages": [
@@ -53,5 +54,5 @@ setup(
     },
     executables=[
         Executable(script="main.py", base=base, icon="static/icon.ico")
-    ],  # Punto de entrada de tu aplicación
+    ],  # Punto de entrada de tu aplicacion
 )

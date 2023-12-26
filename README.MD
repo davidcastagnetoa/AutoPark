@@ -1,12 +1,12 @@
-# Selenium Script for Web Authentication and localStorage Access
+# AutoPark: Automated Weekday Parking Space Reservation System Using Python and Selenium
 
-This Python script uses Selenium to open a web browser, log in to a web application, and fetch certain data from the `localStorage`.
+Python program to automate booking parking spaces in a web application for a parking garage on weekdays. This Python script uses Selenium to open the browser, log into the web application, and retrieve the necessary tokens from the `localstore`. Once the token is obtained, it will be used to send requests to the server and reserve a parking space in the private garage. Once reserved, it will send the details of the booked space via Telegram.
 
 ## Requirements
 
 - Python 3.x
 - Selenium WebDriver
-- A WebDriver-compatible browser (Firefox, Chrome, etc.)
+- A WebDriver-compatible browser (Firefox, Chrome.)
 
 ## Installation
 
@@ -34,13 +34,13 @@ This Python script uses Selenium to open a web browser, log in to a web applicat
 4. Install libraries using pip:
 
    ```bash
-   pip install datetime inquirer numpy python-dotenv requests selenium
+   pip install -r requirements.txt
    ```
 
    or if you are using Python 3, you may have to use pip3
 
    ```bash
-   pip3 install datetime inquirer numpy python-dotenv requests selenium
+   pip3 install -r requirements.txt
    ```
 
 5. **Download WebDriver**  
@@ -65,6 +65,8 @@ This Python script uses Selenium to open a web browser, log in to a web applicat
    PASSWORD_HIBO="your_password"
    TELEGRAM_TOKEN="your_telegram_bot_token"
    CHAT_ID="your_telegram_chat_id"
+   LINK="web_link"
+   URL="api_link"
    ```
 
 2. Import the environment variables into your script:
@@ -101,20 +103,24 @@ In these links, you will find manuals and examples for configuring the Telegram 
 
 ## Compile
 
-1. Install auto-py-to-exe
+1. Install cx-Freeze
    ```bash
-   pip install auto-py-to-exe
+   pip install cx-Freeze
    ```
-2. Run
-   ```bash
-   auto-py-to-exe
-   ```
-3. Follow the step, include geckodriver.exe, chromedriver.exe and .env file on the root
-4. open the output folder and execute getTokensParking.exe
+2. The script `setup.py` include geckodriver.exe, chromedriver.exe and .env file on the root
 
-5. If you want to create a .exe file run the next command.
+3. To create a executable file run the next command.
+
+   - On Windows System:
+
    ```bash
    python setup.py bdist_msi
+   ```
+
+   - On Linux System:
+
+   ```bash
+   python setup.py build
    ```
 
 ## Code Explanation
@@ -123,6 +129,8 @@ In these links, you will find manuals and examples for configuring the Telegram 
 - It fills in form fields using identifiers from the HTML elements.
 - It runs a JavaScript script to pull data from `localStorage`.
 - Extracts and displays specific keys from the JSON object stored in `localStorage`.
+- Use this data to obtain the token and make a request to the server
+- After receiving the response, make another web request to send a message via Telegram.
 
 ## Important Notes
 

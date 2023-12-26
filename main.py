@@ -1,3 +1,4 @@
+import sys
 from getTokensParking import getToken
 from getParkingZone import get_parking_place, load_data_place
 from getReservedZoneData import extract_information
@@ -5,6 +6,7 @@ from sendTelegramMessage import send_message
 import time
 from dotenv import load_dotenv
 import os
+
 
 # Cargando credenciales de acceso
 load_dotenv()
@@ -18,15 +20,25 @@ if __name__ == "__main__":
         reservationId = get_parking_place(secret_access)
 
         if reservationId == -1:
-            msg = "No es posible reservar entre las 0:00 y 8:00 horas."
+            msg = "No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duermete ya!"
             send_message(TOKEN, CHAT_ID, msg)
-            # exit()
+            sys.exit(1)
+
+        if reservationId == -2:
+            msg = "No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo?"
+            send_message(TOKEN, CHAT_ID, msg)
+            sys.exit(1)
+
+        if reservationId == -3:
+            msg = "<b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
+            send_message(TOKEN, CHAT_ID, msg)
+            sys.exit(1)
 
         if reservationId is None:
-            msg = "Error de Servidor, revisa los detalles"
+            msg = "Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu codigo"
             print(msg)
             send_message(TOKEN, CHAT_ID, msg)
-            # exit()
+            sys.exit(1)
 
         print("The reservationId is:", reservationId)
         time.sleep(2)
@@ -34,10 +46,10 @@ if __name__ == "__main__":
         json_data = load_data_place(reservationId, secret_access)
 
         if json_data is None:
-            msg = "<b>Error al extraer datos de la reserva, verifica el <b>dia</b> de la reserva</b>"
+            msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>dia</b> de la reserva"
             print("Error al extraer datos de la reserva, verifica el dia de la reserva")
             send_message(TOKEN, CHAT_ID, msg)
-            # exit()
+            sys.exit(1)
 
         print("\n__DATOS DE PLAZA RESERVADA__")
         plaza, zona, turno, matricula, fecha = extract_information(
@@ -52,3 +64,7 @@ if __name__ == "__main__":
 
         print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
         send_message(TOKEN, CHAT_ID, message)
+    else:
+        msg = "No se ha obtenido el <b>token</b> correctamente."
+        send_message(TOKEN, CHAT_ID, msg)
+        sys.exit(1)

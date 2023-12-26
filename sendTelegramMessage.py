@@ -23,15 +23,15 @@ def send_message(token, chat_id, message):
         print(f"Mensaje enviado!")
         return response.json()
     except requests.exceptions.ConnectionError as e:
-        # Capturar la excepción de manera más general y luego verificar el tipo de error
+        # Capturar la excepcion de manera más general y luego verificar el tipo de error
         if e.args and isinstance(e.args[0], requests.packages.urllib3.exceptions.ProtocolError):
             inner_exception = e.args[0].__context__
             if isinstance(inner_exception, ConnectionResetError) and inner_exception.errno == errno.WSAECONNRESET:
-                print("Peticion denegada por firewall")
+                print("Peticion denegada por algun firewall, Revisa tu firewall")
             else:
-                print(f"Error de conexión: {e}")
+                print(f"Error de conexion: {e}")
         else:
-            print(f"Error de conexión: {e}")
+            print(f"Error de conexion: {e}")
         return None
     except requests.HTTPError as e:
         print(f"Error HTTP: {e}, Detalles: {response.text}")

@@ -1,12 +1,13 @@
-import inquirer
+# import inquirer
 import requests
 import numpy as np
 from datetime import datetime
 import os
 import json
 
-
 # Obtener fecha de entrada
+
+
 def validate_date(answer, current):
     try:
         datetime.strptime(current, "%Y-%m-%d")
@@ -51,8 +52,10 @@ def getAvailabilityZones(secret_access):
         "endDate": endDate,
     }
     try:
-        response = requests.get(url, headers=headers, params=params)  # Peticion GET
-        response.raise_for_status()  # Comprobar si la respuesta tiene un código de estado exitoso
+        response = requests.get(url, headers=headers,
+                                params=params)  # Peticion GET
+        # Comprobar si la respuesta tiene un codigo de estado exitoso
+        response.raise_for_status()
         print(f"Estado de la respuesta: {response.status_code}")
         data = response.json()
 
@@ -75,7 +78,7 @@ def getAvailabilityZones(secret_access):
         print(f"Error HTTP: {http_err}")
         return
     except requests.ConnectionError as conn_err:
-        print(f"Error de conexión: {conn_err}")
+        print(f"Error de conexion: {conn_err}")
         return
     except requests.Timeout as timeout_err:
         print(f"Error de timeout: {timeout_err}")
