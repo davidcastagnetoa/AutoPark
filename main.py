@@ -1,3 +1,9 @@
+import os
+# # FOR TEST
+# Imprimir todas las variables de entorno
+# for key, value in os.environ.items():
+#     print(f"{key}: {value}")
+
 import sys
 from getTokensParking import getToken
 from getParkingZone import get_parking_place, load_data_place
@@ -5,7 +11,6 @@ from getReservedZoneData import extract_information
 from sendTelegramMessage import send_message
 import time
 from dotenv import load_dotenv
-import os
 
 
 # Cargando credenciales de acceso

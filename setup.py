@@ -6,7 +6,7 @@ from cx_Freeze import setup, Executable, sys
 additional_files = [
     ("static/icon.ico", "static/icon.ico"),
     (".env", ".env"),
-    ("chromedriver", "chromedriver"),
+    # ("chromedriver", "chromedriver"),
 ]  # ruta original del archivo y ruta en la distribucion final
 
 build_options = {
@@ -15,8 +15,12 @@ build_options = {
         "dotenv",
         "requests",
         "selenium",
-    ],  # Puedes añadir paquetes adicionales que no sean detectados automáticamente
-    "excludes": ["tkinter"],  # Puedes excluir paquetes que no desees incluir
+        "urllib3",
+        "idna",
+        "certifi",
+        # Añade otros paquetes según sea necesario
+    ],
+    "excludes": ["tkinter"],
     "include_files": additional_files,
 }
 

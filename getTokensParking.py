@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
 
 import json
 from dotenv import load_dotenv
@@ -22,7 +23,8 @@ LINK = os.getenv("LINK")
 
 
 # Configura las opciones para Firefox
-firefox_options = webdriver.FirefoxOptions()
+# firefox_options = webdriver.FirefoxOptions()
+firefox_options = Options()
 firefox_capabilities = firefox_options.to_capabilities()
 
 # Configura las opciones para Chrome
@@ -30,10 +32,15 @@ firefox_capabilities = firefox_options.to_capabilities()
 chrome_options = Options()
 chrome_capabilities = chrome_options.to_capabilities()
 
-# Headless mode
+# Headless mode Chrome
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
+
+# Headless mode Firefox
+firefox_options.add_argument("--headless")
+firefox_options.add_argument("--no-sandbox")
+firefox_options.add_argument("--disable-dev-shm-usage")
 
 # questions = [
 #     inquirer.List(
@@ -44,11 +51,10 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 # ]
 ascii_art = """
          , ,\ ,'\,'\ ,'\ ,\ ,
-   ,  ;\/ \' `'     `   '  /|
+   ,  ;\/ \/ \`'     `   '  /|
    |\/                      |
    :                        |
    :                        |
-    |                       |
     |                       |
     :               -.     _|
      :                \     `.
@@ -62,9 +68,8 @@ ascii_art = """
       /      ,---.          ,'
    ,-'            `-,------'   Developed By 
   '   `.        ,--'           AbathurCris!
-'      `-.____/
+ '     `-.____/
 /           \.
-
 """
 print(ascii_art)
 print("\n__CONSULTA DE TOKEN__")
@@ -82,8 +87,10 @@ print("\n__CONSULTA DE TOKEN__")
 #     print("Operacion cancelada por el usuario.")
 #     exit()
 
-# usar Chrome por defecto, sin interaccion del usuario
-driver = webdriver.Chrome(options=chrome_options)
+
+# Usar Chrome/Firefox por defecto, sin interaccion del usuario
+# driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Firefox(options=firefox_options)
 
 # Abre la página web
 link = LINK
