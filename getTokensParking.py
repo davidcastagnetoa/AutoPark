@@ -5,22 +5,19 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
-
 import json
 from dotenv import load_dotenv
 import os
 import sys
-
+from utils.logger import log, API
 
 # Cargando credenciales de acceso
 load_dotenv()
 USERNAME_HYBO = os.getenv("USERNAME_HYBO")
 PASSWORD_HYBO = os.getenv("PASSWORD_HYBO")
 LINK = os.getenv("LINK")
-
 
 # Configura las opciones para Firefox
 # firefox_options = webdriver.FirefoxOptions()
@@ -71,20 +68,20 @@ ascii_art = """
  '     `-.____/
 /           \.
 """
-print(ascii_art)
-print("\n__CONSULTA DE TOKEN__")
+API.write_log(ascii_art)
+API.write_log("\n__CONSULTA DE TOKEN__")
 
 # answers = inquirer.prompt(questions)
 # navegador = answers["navegator"]
 
 # if navegador == "Chrome":
-#     print("Iniciando navegador Chrome")
+#     API.write_log("Iniciando navegador Chrome")
 #     driver = webdriver.Chrome(options=chrome_options)
 # elif navegador == "Firefox":
-#     print("Iniciando navegador Firefox")
+#     API.write_log("Iniciando navegador Firefox")
 #     driver = webdriver.Firefox(options=firefox_options)
 # else:
-#     print("Operacion cancelada por el usuario.")
+#     API.write_log("Operacion cancelada por el usuario.")
 #     exit()
 
 
@@ -100,14 +97,14 @@ driver.get(link)
 def getToken():
     # Da tiempo para que la página se cargue
     # Espera hasta que el elemento con el ID "next" esté presente
-    print(f"Cargando página {link}")
+    API.write_log(f"Cargando página {link}")
     try:
         login_button = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "next"))
         )
     except NoSuchElementException:
-        print("Boton de inicio de sesion no encontrado.")
-        print("Fallo de inicio de sesion ...")
+        API.write_log("Boton de inicio de sesion no encontrado.")
+        API.write_log("Fallo de inicio de sesion ...")
         driver.quit()  # Cerrar el navegador si el elemento no se encuentra
         exit()
 
@@ -117,32 +114,32 @@ def getToken():
         username_field = driver.find_element(By.ID, "signInName")
         username_field.clear()
         if USERNAME_HYBO is None:
-            print("Error: USERNAME_HYBO no está definido.")
+            API.write_log("Error: USERNAME_HYBO no está definido.")
             sys.exit(1)
         username_field.send_keys(USERNAME_HYBO)
     except NoSuchElementException:
-        print("Campo del nombre de usuario no encontrado.")
+        API.write_log("Campo del nombre de usuario no encontrado.")
 
     try:
-        print("Cargando credenciales contraseña ...")
+        API.write_log("Cargando credenciales contraseña ...")
         # Busca el campo de la contraseña y envía los datos
         password_field = driver.find_element(By.ID, "password")
         password_field.clear()
         if PASSWORD_HYBO is None:
-            print("Error: USERNAME_HYBO no está definido.")
+            API.write_log("Error: USERNAME_HYBO no está definido.")
             sys.exit(1)
         password_field.send_keys(PASSWORD_HYBO)
     except NoSuchElementException:
-        print("Campo de la contraseña no encontrado.")
+        API.write_log("Campo de la contraseña no encontrado.")
 
     try:
         # Busca el boton de inicio de sesion y haz clic en él
         login_button = driver.find_element(By.ID, "next")
         login_button.click()
-        print("Iniciando sesion ...")
+        API.write_log("Iniciando sesion ...")
     except NoSuchElementException:
-        print("Boton de inicio de sesion no encontrado.")
-        print("fallo de inicio de sesion ...")
+        API.write_log("Boton de inicio de sesion no encontrado.")
+        API.write_log("fallo de inicio de sesion ...")
 
     # Funcion para verificar si las claves están en localStorage
 
@@ -161,13 +158,13 @@ def getToken():
 
     # Espera hasta que las claves estén en localStorage o se agote el tiempo (15 segundos aquí)
     try:
-        print("Extrayendo tokens ...")
+        API.write_log("Extrayendo tokens ...")
         WebDriverWait(driver, 15).until(
             lambda x: check_keys_in_localstorage(driver, keys_to_check)
         )
-        print("Datos encontrados en localStorage: ")
+        API.write_log("Datos encontrados en localStorage: ")
     except TimeoutException:
-        print(
+        API.write_log(
             "Las claves no se encontraron en localStorage dentro del tiempo especificado."
         )
         driver.quit()
@@ -204,7 +201,7 @@ def getToken():
     if "No se encontraron" in access_and_refresh_item_values[-1]:
         # Remueve y guarda el último elemento
         not_found_message = access_and_refresh_item_values.pop()
-        print(not_found_message)
+        API.write_log(not_found_message)
 
     # Ahora puedes asignar los valores restantes a variables
     if len(access_and_refresh_item_values) >= 2:
@@ -233,11 +230,11 @@ def getToken():
         secret_refresh = refresh_dict.get(
             "secret", "Clave 'secret' no encontrada")
 
-        # print(f"{credential_type_access}, Secret: {secret_access}\n")
-        # print(f"{credential_type_refresh}, Secret: {secret_refresh}\n")
+        # API.write_log(f"{credential_type_access}, Secret: {secret_access}\n")
+        # API.write_log(f"{credential_type_refresh}, Secret: {secret_refresh}\n")
 
         # Cierra el navegador
-        print("Cerrando Navegador")
+        API.write_log("Cerrando Navegador")
         driver.quit()
 
         # Guardar los tokens en archivos separados
@@ -245,29 +242,29 @@ def getToken():
             f.write(secret_access)
         with open("tokenActualizacion.txt", "w") as f:
             f.write(secret_refresh)
-        print("Tokens guardados en archivos separados")
+        API.write_log("Tokens guardados en archivos separados")
 
         if secret_access is not None:
             return secret_access
         else:
-            print("Clave 'secret' no encontrada")
+            API.write_log("Clave 'secret' no encontrada")
             return None
 
     except json.JSONDecodeError:
-        print("Error al decodificar la cadena JSON")
+        API.write_log("Error al decodificar la cadena JSON")
         # Cierra el navegador
-        print("Cerrando Navegador")
+        API.write_log("Cerrando Navegador")
         driver.quit()
         return None
     except TypeError:
-        print("Tipo de dato incorrecto, se esperaba un diccionario")
+        API.write_log("Tipo de dato incorrecto, se esperaba un diccionario")
         # Cierra el navegador
-        print("Cerrando Navegador")
+        API.write_log("Cerrando Navegador")
         driver.quit()
         return None
     except Exception as e:
-        print(f"Se produjo un error desconocido: {e}")
+        API.write_log(f"Se produjo un error desconocido: {e}")
         # Cierra el navegador
-        print("Cerrando Navegador")
+        API.write_log("Cerrando Navegador")
         driver.quit()
         return None

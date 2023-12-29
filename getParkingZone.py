@@ -3,13 +3,7 @@ import os
 import json
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
-
-
-# Funcion auxiliar para log con fecha
-
-
-def cl(msg):
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {msg}")
+from utils.logger import log, API
 
 
 # Cargando credenciales de acceso
@@ -31,15 +25,16 @@ if json_data:
     TURN = config["turn"]
     # Acceder a otros valores en 'config' según sea necesario
 else:
-    cl("No se encontro la configuracion JSON.")
+    API.write_log("No se encontro la configuracion JSON.")
 
 
-# La fecha es 5 días después de hoy
-# date = (datetime.now() + timedelta(days=5)).strftime("%Y-%m-%d")
+# # La fecha es 7 días después de hoy
+# date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
 
 # La fecha actual
 date = datetime.now().strftime("%Y-%m-%d")
-cl(f"Fecha a solicitar plaza: {date}")
+
+API.write_log(f"Fecha a solicitar plaza: {date}")
 
 
 # Reservar la plaza y Obtener su ID
@@ -83,13 +78,13 @@ def get_parking_place(secret):
     if secret:
         # Realizar la peticion POST
         try:
-            cl("Reservando plaza...")
+            API.write_log("Reservando plaza...")
             response = requests.post(
                 url, headers=headers, data=json.dumps(payload))
 
             # Verificar el estado de la respuesta
             response.raise_for_status()
-            cl("Plaza Reservada!!!")
+            API.write_log("Plaza Reservada!!!")
 
             # La respuesta es una cadena de texto con los valores separados por |
             response_text = (
@@ -102,36 +97,44 @@ def get_parking_place(secret):
                 reservationId = values[2].strip('"')
 
                 # Imprimir o usar las variables según sea necesario
-                cl("Extrayendo variables id de la plaza reservada...")
-                cl(f"Reservation ID: {reservationId}")
+                API.write_log(
+                    "Extrayendo variables id de la plaza reservada...")
+                API.write_log(f"Reservation ID: {reservationId}")
                 return reservationId
 
             else:
-                cl(
+                API.write_log(
                     "Error al reservar la plaza, La respuesta no contiene los 3 valores."
                 )
         except requests.exceptions.HTTPError as http_err:
             if response.status_code == 400 and '409-11' in response.text:
-                cl(f"No es posible reservar entre las 0:00 y 8:00 horas, Detalles: {response.text}")
+                API.write_log(
+                    f"No es posible reservar entre las 0:00 y 8:00 horas, Detalles: {response.text}")
                 return -1
             elif response.status_code == 400 and 'It is not possible to select the weekend.' in response.text:
-                cl(f"Error HTTP: 400 - No es posible seleccionar el fin de semana, Detalles: {response.text}")
+                API.write_log(
+                    f"Error HTTP: 400 - No es posible seleccionar el fin de semana, Detalles: {response.text}")
                 return -2
             elif response.status_code == 409 and '409-12' in response.text:
-                cl(f"Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {response.text}")
+                API.write_log(
+                    f"Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {response.text}")
                 return -3
             else:
-                cl(f"Error HTTP: {http_err}, Detalles: {response.text}")
+                API.write_log(
+                    f"Error HTTP: {http_err}, Detalles: {response.text}")
                 return None
         except requests.exceptions.ConnectionError as conn_err:
-            cl(f"Error de conexion: {conn_err}, Detalles: {response.text}")
+            API.write_log(
+                f"Error de conexion: {conn_err}, Detalles: {response.text}")
         except requests.exceptions.Timeout as timeout_err:
-            cl(f"Error de timeout: {timeout_err}, Detalles: {response.text}")
+            API.write_log(
+                f"Error de timeout: {timeout_err}, Detalles: {response.text}")
         except requests.exceptions.RequestException as req_err:
-            cl(f"Error general en la peticion: {req_err}, Detalles: {response.text}")
+            API.write_log(
+                f"Error general en la peticion: {req_err}, Detalles: {response.text}")
 
     else:
-        cl("Se requiere el token para realizar la solicitud")
+        API.write_log("Se requiere el token para realizar la solicitud")
         return None
 
 
@@ -174,30 +177,30 @@ def load_data_place(reservation_id, secret):
         response = requests.post(url, headers=headers, json=body)
         response.raise_for_status()
         reserved_zone = response.json()
-        print(f'Estado de la respuesta: {response.status_code}')
-        print('Peticion exitosa.')
-        # print(reserved_zone)
+        API.write_log(f'Estado de la respuesta: {response.status_code}')
+        API.write_log('Peticion exitosa.')
+        # cl(reserved_zone)
         # Crear el directorio 'res' si no existe
         if not os.path.exists("res"):
             os.makedirs("res")
 
-        print("Datos Extraidos en formato Json")
+        API.write_log("Datos Extraidos en formato Json")
 
         filename = "reserved_zone.json"
         folder = "res"
         # Guardar la fecha en un archivo JSON dentro de la carpeta 'res'
         with open(os.path.join(folder, filename), "w") as json_file:
             json.dump(reserved_zone, json_file, ensure_ascii=False, indent=4)
-            print(
+            API.write_log(
                 f"Datos guardados dentro de la carpeta {folder} , revisa el archivo {filename}"
             )
 
         return reserved_zone
     except requests.HTTPError as e:
-        cl(f"Error HTTP: {e}, Detalles: {response.text}")
+        API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")
         return None
     except Exception as e:
-        cl(f"Error HTTP: {e}, Detalles: {response.text}")
+        API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")
         return None
 
 
@@ -225,16 +228,18 @@ def delete_parking_place(secret, reservation_id):
 
             if response.text:  # Verifica si hay contenido en la respuesta
                 data = response.json()
-                cl("Peticion exitosa.")
-                cl(f"Estado de la respuesta: {response.status_code}")
-                cl(data)
-                cl("Plaza eliminada correctamente")
+                API.write_log("Peticion exitosa.")
+                API.write_log(
+                    f"Estado de la respuesta: {response.status_code}")
+                API.write_log(data)
+                API.write_log("Plaza eliminada correctamente")
             else:
-                cl("Peticion exitosa, pero no hay contenido en la respuesta.")
+                API.write_log(
+                    "Peticion exitosa, pero no hay contenido en la respuesta.")
 
         except requests.HTTPError as e:
-            cl(f"Error HTTP: {e}")
-            cl("Error al eliminar la plaza")
+            API.write_log(f"Error HTTP: {e}")
+            API.write_log("Error al eliminar la plaza")
         except Exception as e:
-            cl(f"Error: {e}")
-            cl("Error al eliminar la plaza")
+            API.write_log(f"Error: {e}")
+            API.write_log("Error al eliminar la plaza")

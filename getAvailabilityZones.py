@@ -4,8 +4,7 @@ import numpy as np
 from datetime import datetime
 import os
 import json
-
-# Obtener fecha de entrada
+from utils.logger import log, API
 
 
 def validate_date(answer, current):
@@ -33,10 +32,10 @@ def getAvailabilityZones(secret_access):
     # answers = inquirer.prompt(questions)
     # startDate = answers["date"]
     startDate = datetime.now().strftime("%Y-%m-%d")
-    print("the startDate value is :", startDate)
+    API.write_log(f"the startDate value is : {startDate}")
 
     endDate = sumar_dias_laborables(startDate, 5)
-    print("the endDate value is :", endDate)
+    API.write_log(f"the endDate value is : {endDate}")
 
     url = (
         "https://office-manager-api.azurewebsites.net/api/Parking/GetAvailabilityZones"
@@ -56,38 +55,38 @@ def getAvailabilityZones(secret_access):
                                 params=params)  # Peticion GET
         # Comprobar si la respuesta tiene un codigo de estado exitoso
         response.raise_for_status()
-        print(f"Estado de la respuesta: {response.status_code}")
+        API.write_log(f"Estado de la respuesta: {response.status_code}")
         data = response.json()
 
         # Crear el directorio 'res' si no existe
         if not os.path.exists("res"):
             os.makedirs("res")
 
-        print("Datos Extraidos en formato Json")
+        API.write_log("Datos Extraidos en formato Json")
 
         filename = "available_zones.json"
         folder = "res"
         # Guardar la fecha en un archivo JSON dentro de la carpeta 'res'
         with open(os.path.join(folder, filename), "w") as json_file:
             json.dump(data, json_file, ensure_ascii=False, indent=4)
-            print(
+            API.write_log(
                 f"Datos guardados dentro de la carpeta {folder} , revisa el archivo {filename}"
             )
 
     except requests.HTTPError as http_err:
-        print(f"Error HTTP: {http_err}")
+        API.write_log(f"Error HTTP: {http_err}")
         return
     except requests.ConnectionError as conn_err:
-        print(f"Error de conexion: {conn_err}")
+        API.write_log(f"Error de conexion: {conn_err}")
         return
     except requests.Timeout as timeout_err:
-        print(f"Error de timeout: {timeout_err}")
+        API.write_log(f"Error de timeout: {timeout_err}")
         return
     except requests.RequestException as req_err:
-        print(f"Error general: {req_err}")
+        API.write_log(f"Error general: {req_err}")
         return
     except TypeError:
-        print("Tipo de dato incorrecto, se esperaba un diccionario")
+        API.write_log("Tipo de dato incorrecto, se esperaba un diccionario")
         return
 
 
