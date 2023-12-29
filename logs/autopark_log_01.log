@@ -1,0 +1,38 @@
+
+         , ,\ ,'\,'\ ,'\ ,\ ,
+   ,  ;\/ \/ \`'     `   '  /|
+   |\/                      |
+   :                        |
+   :                        |
+    |                       |
+    :               -.     _|
+     :                \     `.
+     |         ________:______\.
+     :       ,'o       / o    ;
+     :       \       ,'-----./
+      \_      `--.--'        )
+     ,` `.              ,---'|
+     : `                     |
+      `,-'                   |
+      /      ,---.          ,'
+   ,-'            `-,------'   Developed By 
+  '   `.        ,--'           AbathurCris!
+ '     `-.____/
+/           \.
+
+
+__CONSULTA DE TOKEN__
+[2023-12-29 12:22:07] Fecha a solicitar plaza: 2023-12-29
+Cargando página https://app-officemanager.raona.com
+Cargando credenciales contraseña ...
+Iniciando sesion ...
+Extrayendo tokens ...
+Datos encontrados en localStorage: 
+Cerrando Navegador
+Tokens guardados en archivos separados
+
+__SOLICITANDO PLAZA__
+[2023-12-29 12:22:17] Reservando plaza...
+[2023-12-29 12:22:18] Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+Estado de la respuesta: 200
+Mensaje enviado!
