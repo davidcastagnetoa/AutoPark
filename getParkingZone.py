@@ -28,11 +28,11 @@ else:
     API.write_log("No se encontro la configuracion JSON.")
 
 
-# La fecha es 7 días después de hoy
-date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+# # La fecha es 7 días después de hoy
+# date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
 
-# # La fecha actual
-# date = datetime.now().strftime("%Y-%m-%d")
+# La fecha actual
+date = datetime.now().strftime("%Y-%m-%d")
 
 API.write_log(f"Fecha a solicitar plaza: {date}")
 

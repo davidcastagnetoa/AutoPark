@@ -1,8 +1,4 @@
 import os
-# # FOR TEST
-# Imprimir todas las variables de entorno
-# for key, value in os.environ.items():
-#     log(f"{key}: {value}")
 
 import sys
 from getTokensParking import getToken
@@ -27,16 +23,19 @@ if __name__ == "__main__":
 
         if reservationId == -1:
             msg = "No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duermete ya!"
+            API.write_log(msg)
             send_message(TOKEN, CHAT_ID, msg)
             sys.exit(1)
 
         if reservationId == -2:
             msg = "No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo?"
+            API.write_log(msg)
             send_message(TOKEN, CHAT_ID, msg)
             sys.exit(1)
 
         if reservationId == -3:
             msg = "<b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
+            API.write_log(msg)
             send_message(TOKEN, CHAT_ID, msg)
             sys.exit(1)
 
@@ -46,7 +45,7 @@ if __name__ == "__main__":
             send_message(TOKEN, CHAT_ID, msg)
             sys.exit(1)
 
-        API.write_log("The reservationId is:", reservationId)
+        API.write_log(f"The reservationId is: {reservationId}")
         time.sleep(2)
         API.write_log("\n__EXTRAYENDO DATOS DE LA PLAZA__")
         json_data = load_data_place(reservationId, secret_access)
