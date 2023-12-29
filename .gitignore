@@ -12,4 +12,5 @@ geckodriver.exe
 build/
 dist/
 auto_park.sh
+autorun.sh
 schedule.txt
