@@ -49,27 +49,42 @@ if __name__ == "__main__":
         time.sleep(2)
         API.write_log("\n__EXTRAYENDO DATOS DE LA PLAZA__")
         json_data = load_data_place(reservationId, secret_access)
+        API.write_log(json_data)
 
         if json_data is None:
             msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>dia</b> de la reserva"
-            API.write_log(
-                "Error al extraer datos de la reserva, verifica el dia de la reserva")
+            API.write_log("Error al extraer datos de la reserva, verifica el dia de la reserva")
             send_message(TOKEN, CHAT_ID, msg)
             sys.exit(1)
 
         API.write_log("\n__DATOS DE PLAZA RESERVADA__")
-        plaza, zona, turno, matricula, fecha = extract_information(
-            json_data)
-        API.write_log(f"Fecha: {fecha}")
-        API.write_log(f"Zona a aparcar: {zona}")
-        API.write_log(f"Numero de plaza: {plaza}")
-        API.write_log(f"Turno: {turno}")
-        API.write_log(f"Matricula del Vehiculo: {matricula}")
-        message = "<b>Plaza: </b>" + plaza + "\n" + "<b>Zona: </b>" + zona + "\n" + "<b>Turno: </b>" + \
-            turno + "\n" + "<b>Matrícula: </b>" + matricula + "\n" "<b>Fecha: </b>" + fecha
+        result = extract_information(json_data)
 
-        API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-        send_message(TOKEN, CHAT_ID, message)
+        if result is None:
+            msg = "Datos de entrada, json_data is None. No se pudo extraer la información. Verifica los datos de entrada."
+            API.write_log(msg)
+            send_message(TOKEN, CHAT_ID, msg)
+            sys.exit(1)
+        elif result == -1:
+            msg = "Datos de entrada, json_data, no es una lista."
+            API.write_log(msg)
+            send_message(TOKEN, CHAT_ID, msg)
+            sys.exit(1)
+        elif result == -2:
+            msg = "Datos de entrada, json_data, es una lista vacia."
+            API.write_log(msg)
+            send_message(TOKEN, CHAT_ID, msg)
+            sys.exit(1)
+        else:
+            plaza, zona, turno, matricula, fecha = result
+            API.write_log(f"Fecha: {fecha}")
+            API.write_log(f"Zona a aparcar: {zona}")
+            API.write_log(f"Numero de plaza: {plaza}")
+            API.write_log(f"Turno: {turno}")
+            API.write_log(f"Matricula del Vehiculo: {matricula}")
+            message = "<b>Plaza: </b>" + plaza + "\n" + "<b>Zona: </b>" + zona + "\n" + "<b>Turno: </b>" + turno + "\n" + "<b>Matrícula: </b>" + matricula + "\n" "<b>Fecha: </b>" + fecha
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            send_message(TOKEN, CHAT_ID, message)
     else:
         msg = "No se ha obtenido el <b>token</b> correctamente."
         send_message(TOKEN, CHAT_ID, msg)
