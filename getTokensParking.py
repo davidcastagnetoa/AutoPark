@@ -156,10 +156,10 @@ def getToken():
         "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",
     ]
 
-    # Espera hasta que las claves estén en localStorage o se agote el tiempo (15 segundos aquí)
+    # Espera hasta que las claves estén en localStorage o se agote el tiempo (20 segundos aquí)
     try:
         API.write_log("Extrayendo tokens ...")
-        WebDriverWait(driver, 15).until(
+        WebDriverWait(driver, 20).until(
             lambda x: check_keys_in_localstorage(driver, keys_to_check)
         )
         API.write_log("Datos encontrados en localStorage: ")
@@ -168,7 +168,7 @@ def getToken():
             "Las claves no se encontraron en localStorage dentro del tiempo especificado."
         )
         driver.quit()
-        exit()
+        sys.exit(-1)
 
     # Ejecuta el script para obtener el AccessToken y RefreshToken del localStorage
     access_and_refresh_item_values = driver.execute_script(
@@ -243,6 +243,7 @@ def getToken():
         with open("tokenActualizacion.txt", "w") as f:
             f.write(secret_refresh)
         API.write_log("Tokens guardados en archivos separados")
+        log("😈")
 
         if secret_access is not None:
             return secret_access

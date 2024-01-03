@@ -22,6 +22,7 @@ def send_message(token, chat_id, message):
         response.raise_for_status()
         API.write_log(f'Estado de la respuesta: {response.status_code}')
         API.write_log(f"Mensaje enviado!")
+        log("📧")
         return response.json()
     except requests.exceptions.ConnectionError as e:
         # Capturar la excepcion de manera más general y luego verificar el tipo de error
@@ -29,11 +30,11 @@ def send_message(token, chat_id, message):
             inner_exception = e.args[0].__context__
             if isinstance(inner_exception, ConnectionResetError) and inner_exception.errno == errno.WSAECONNRESET:
                 API.write_log(
-                    "Peticion denegada por algun firewall, Revisa tu firewall")
+                    "Peticion denegada por algún firewall, Revisa tu firewall")
             else:
-                API.write_log(f"Error de conexion: {e}")
+                API.write_log(f"Error de conexión: {e}")
         else:
-            API.write_log(f"Error de conexion: {e}")
+            API.write_log(f"Error de conexión: {e}")
         return None
     except requests.HTTPError as e:
         API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")

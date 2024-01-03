@@ -28,11 +28,11 @@ else:
     API.write_log("No se encontro la configuracion JSON.")
 
 
-# # La fecha es 7 días después de hoy
-# date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+# La fecha es 7 días después de hoy
+date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
 
-# La fecha actual
-date = datetime.now().strftime("%Y-%m-%d")
+# # La fecha actual
+# date = datetime.now().strftime("%Y-%m-%d")
 
 API.write_log(f"Fecha a solicitar plaza: {date}")
 
@@ -78,13 +78,19 @@ def get_parking_place(secret):
     if secret:
         # Realizar la peticion POST
         try:
-            API.write_log("Reservando plaza...")
+            API.write_log("Obteniendo Pase de reserva...")
             response = requests.post(
                 url, headers=headers, data=json.dumps(payload))
 
             # Verificar el estado de la respuesta
             response.raise_for_status()
-            API.write_log("Plaza Reservada!!!")
+
+            API.write_log(
+                f"Estado de respuesta para obtener pase de reserva : {response.status_code}")
+            # API.write_log(
+            #     f"Texto de respuesta para obtener pase de reserva : {response.text}")
+
+            API.write_log("Pase de reserva adquirido!!!")
 
             # La respuesta es una cadena de texto con los valores separados por |
             response_text = (
@@ -94,12 +100,18 @@ def get_parking_place(secret):
 
             # Asignar los valores a las variables correspondientes
             if len(values) >= 3:
+                tenantId = values[0].strip('"')
+                zoneId = values[1].strip('"')
                 reservationId = values[2].strip('"')
 
                 # Imprimir o usar las variables según sea necesario
                 API.write_log(
-                    "Extrayendo variables id de la plaza reservada...")
+                    "Extrayendo variables id del Pase de reserva...")
+                API.write_log(f"Tenant ID: {tenantId}")
+                API.write_log(f"Zone ID: {zoneId}")
                 API.write_log(f"Reservation ID: {reservationId}")
+
+                # Solo usaremos la ultima que es el ID de la plaza encontrada
                 return reservationId
 
             else:
@@ -169,33 +181,74 @@ def load_data_place(reservation_id, secret):
         "isCarSharing": False,
     }
 
+    # Este endpoit requiere de 3 datos , tenantId, zoneId y reservationId, los dos primeros siempre son los mismos dado que solo se solicita plaza en Priegola, pero el tercero cambia, por lo que se debe extraer del pase de reserva que devuelve la cadena con 3 strings
+    # https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/ + tenantId + %7C + zoneId + %7C + reservationId
+
     # URL del endpoint
     url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7Ca91ee11f-a0c5-4a91-a2c5-f6d0642f1dff%7C" + reservation_id
 
     # Realizando la peticion
     try:
+        API.write_log("Reservando plaza...")
         response = requests.post(url, headers=headers, json=body)
         response.raise_for_status()
-        reserved_zone = response.json()
-        API.write_log(f'Estado de la respuesta: {response.status_code}')
-        API.write_log('Peticion exitosa.')
-        # cl(reserved_zone)
+        # reserved_zone = response.json()
+        API.write_log(
+            f'Estado de la respuesta de la peticion de plaza: {response.status_code}')
+        # API.write_log(
+        #     f'Texto de la respuesta de la peticion de plaza: {response.text}')
+
         # Crear el directorio 'res' si no existe
         if not os.path.exists("res"):
             os.makedirs("res")
 
-        API.write_log("Datos Extraidos en formato Json")
+        # Peticion aprobada, logica de verificacion de reserva de plaza
+        if response.status_code == 200:
+            API.write_log("Peticion aprobada, comprobando reserva...")
+            try:
+                reserved_zone = response.json()  # verifica si la respuesta es realmente un JSON
+                API.write_log('Peticion exitosa.')
+                log("👍")
+                API.write_log('Plaza reservada!.')
+                # API.write_log(f'Datos de la plaza reservada: {reserved_zone}')
 
-        filename = "reserved_zone.json"
-        folder = "res"
-        # Guardar la fecha en un archivo JSON dentro de la carpeta 'res'
-        with open(os.path.join(folder, filename), "w") as json_file:
-            json.dump(reserved_zone, json_file, ensure_ascii=False, indent=4)
-            API.write_log(
-                f"Datos guardados dentro de la carpeta {folder} , revisa el archivo {filename}"
-            )
+                API.write_log("Extrayendo datos de reserva en formato Json")
 
-        return reserved_zone
+                filename = "reserved_zone.json"
+                folder = "res"
+
+                # Guardar la fecha en un archivo JSON dentro de la carpeta 'res'
+                with open(os.path.join(folder, filename), "w") as json_file:
+                    json.dump(reserved_zone, json_file,
+                              ensure_ascii=False, indent=4)
+                    API.write_log(
+                        f"Dato de la plaza reservada guardados dentro de la carpeta {folder} , revisa el archivo {filename}"
+                    )
+                return reserved_zone
+
+            except json.JSONDecodeError:
+                # Manejo del caso en que la respuesta es solo una cadena de texto
+                API.write_log('La respuesta no es un JSON válido.')
+
+                API.write_log('Peticion denegada.')
+                log("👎")
+                API.write_log('Plaza no reservada. Revisa el calendario')
+
+                API.write_log(f'Respuesta recibida: {response.text}')
+
+                failed_response = response.text
+
+                filename = "failed_response.txt"
+                folder = "res"
+
+                # Guardar la fecha en un archivo JSON dentro de la carpeta 'res'
+                with open(os.path.join(folder, filename), "w") as text_file:
+                    text_file.write(failed_response)  # Corrección aquí
+                    API.write_log(
+                        f"Respuesta fallida guardada dentro de la carpeta {folder}, revisa el archivo {filename}"
+                    )
+                return -1
+
     except requests.HTTPError as e:
         API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")
         return None
@@ -204,7 +257,7 @@ def load_data_place(reservation_id, secret):
         return None
 
 
-# Eliminar la plaza reservada
+# Eliminar la plaza reservada (No en produccion)
 def delete_parking_place(secret, reservation_id):
     headers = {
         "Content-Type": "application/json; charset=utf-8",
