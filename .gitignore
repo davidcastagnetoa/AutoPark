@@ -2,12 +2,12 @@
 .vscode/
 __pycache__/
 chromedriver
-geckodriver
 tokenAcceso.txt
 tokenActualizacion.txt
 venv/
 res/
 logs/
+src/
 chromedriver.exe      
 geckodriver.exe 
 build/

@@ -1,5 +1,4 @@
 import os
-
 import sys
 from getTokensParking import getToken
 from getParkingZone import get_parking_place, load_data_place

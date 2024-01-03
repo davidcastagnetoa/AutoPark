@@ -32,5 +32,6 @@ source venv/bin/activate
 # Ejecutar script en el entorno
 python3 main.py
 
+deactivate
 # # Ejecutar tu script compilado
 # ./build/exe.linux-x86_64-3.11/main

@@ -10,4 +10,5 @@ class API:
     def write_log(message, type="info"):
         log(message)
         with open('logs/api-{}.log'.format(type), 'a', encoding='utf-8') as f:
-            f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")
+            f.write(
+                f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")

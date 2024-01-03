@@ -1,10 +1,9 @@
 # import inquirer
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 import json
@@ -102,10 +101,17 @@ def getToken():
         login_button = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "next"))
         )
+    except TimeoutException:
+        API.write_log("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado.")
+        driver.quit()
+        exit()
     except NoSuchElementException:
-        API.write_log("Boton de inicio de sesion no encontrado.")
-        API.write_log("Fallo de inicio de sesion ...")
-        driver.quit()  # Cerrar el navegador si el elemento no se encuentra
+        API.write_log("NoSuchElement: Boton de inicio de sesion no encontrado en la página.")
+        driver.quit()
+        exit()
+    except Exception as e:
+        print("Mapear esta excepcion", e)
+        driver.quit()
         exit()
 
     # Inicia sesion

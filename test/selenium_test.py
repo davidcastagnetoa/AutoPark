@@ -1,7 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
 
-from utils.logger import log, API
+from selenium.webdriver.firefox.options import Options
 
 
 firefox_options = Options()
@@ -15,7 +14,6 @@ firefox_options.add_argument("--disable-dev-shm-usage")
 try:
     driver = webdriver.Firefox(options=firefox_options)
     driver.get("https://www.google.com")
-    log(driver.title)
-    API.write_log(driver.title)
+    print(driver.title)
 finally:
     driver.quit()
