@@ -15,7 +15,7 @@ URL = os.getenv("URL")
 json_data = os.getenv("JSON_DATA")
 if json_data:
     config = json.loads(json_data)
-    ZONE = config["zone_priegola_2"]
+    ZONE = config["zone_victoria_2"]
     PLATE = config["plate"]
     USERID = config["userId"]
     OFFICEID = config["officeId"]
@@ -29,7 +29,7 @@ else:
 
 
 # La fecha es 7 días después de hoy
-date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+date = (datetime.now() + timedelta(days=8)).strftime("%Y-%m-%d")
 
 # # La fecha actual
 # date = datetime.now().strftime("%Y-%m-%d")
@@ -116,7 +116,7 @@ def get_parking_place(secret):
 
             else:
                 API.write_log(
-                    "Error al reservar la plaza, La respuesta no contiene los 3 valores."
+                    "Error al reservar la plaza, La respuesta no contiene los 3 valores. Pase de reserva NO adquirido!"
                 )
         except requests.exceptions.HTTPError as http_err:
             if response.status_code == 400 and '409-11' in response.text:
@@ -131,6 +131,10 @@ def get_parking_place(secret):
                 API.write_log(
                     f"Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {response.text}")
                 return -3
+            elif response.status_code == 400 and 'Booking max days exceeded' in response.text:
+                API.write_log(
+                    f"Error HTTP: 400 - Estas excediendo el limite de dias para peticion, Detalles: {response.text}")
+                return -4
             else:
                 API.write_log(
                     f"Error HTTP: {http_err}, Detalles: {response.text}")

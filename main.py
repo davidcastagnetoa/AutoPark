@@ -44,6 +44,14 @@ if __name__ == "__main__":
             API.write_log("Fin de linea\n")
             sys.exit(1)
 
+        if reservationId == -4:
+            msg = "Estas excediendo el limite de dias para petición. Máximo 7 días"
+            API.write_log(msg)
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            send_message(TOKEN, CHAT_ID, msg)
+            API.write_log("Fin de linea\n")
+            sys.exit(1)
+
         if reservationId is None:
             msg = "Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu código"
             API.write_log(msg)

@@ -15,3 +15,4 @@ dist/
 auto_park.sh
 autorun.sh
 schedule.txt
+logs/api-info.log
