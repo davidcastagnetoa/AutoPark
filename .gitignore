@@ -7,6 +7,7 @@ tokenActualizacion.txt
 venv/
 res/
 logs/
+downloads/
 src/
 chromedriver.exe      
 geckodriver.exe 
@@ -17,3 +18,7 @@ autorun.sh
 schedule.txt
 logs/api-info.log
 logs/autopark_log_01.log
+downloads/geckodriver
+downloads/geckodriver-v0.33.0-linux64.tar.gz
+downloads/geckodriver-v0.34.0-linux64.tar.gz
+geckodriver.log
