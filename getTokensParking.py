@@ -159,8 +159,7 @@ def getToken():
     # Lista de claves a verificar en localStorage
     keys_to_check = [
         "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-458492eb-f28b-414d-98dd-1bf31a7b453f-https://manageroffice.onmicrosoft.com/api/access_as_user--",
-        "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",
-    ]
+        "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]
 
     # Espera hasta que las claves estén en localStorage o se agote el tiempo (20 segundos aquí)
     try:
@@ -170,9 +169,7 @@ def getToken():
         )
         API.write_log("Datos encontrados en localStorage: ")
     except TimeoutException:
-        API.write_log(
-            "Las claves no se encontraron en localStorage dentro del tiempo especificado."
-        )
+        API.write_log("Las claves no se encontraron en localStorage dentro del tiempo especificado.")
         driver.quit()
         sys.exit(-1)
 

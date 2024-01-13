@@ -37,9 +37,7 @@ def getAvailabilityZones(secret_access):
     endDate = sumar_dias_laborables(startDate, 5)
     API.write_log(f"the endDate value is : {endDate}")
 
-    url = (
-        "https://office-manager-api.azurewebsites.net/api/Parking/GetAvailabilityZones"
-    )
+    url = "https://office-manager-api.azurewebsites.net/api/Parking/GetAvailabilityZones"
     headers = {
         "Authorization": "Bearer " + secret_access,
         "Content-Type": "application/json",
@@ -51,8 +49,7 @@ def getAvailabilityZones(secret_access):
         "endDate": endDate,
     }
     try:
-        response = requests.get(url, headers=headers,
-                                params=params)  # Peticion GET
+        response = requests.get(url, headers=headers, params=params)  # Peticion GET
         # Comprobar si la respuesta tiene un codigo de estado exitoso
         response.raise_for_status()
         API.write_log(f"Estado de la respuesta: {response.status_code}")
@@ -69,9 +66,7 @@ def getAvailabilityZones(secret_access):
         # Guardar la fecha en un archivo JSON dentro de la carpeta 'res'
         with open(os.path.join(folder, filename), "w") as json_file:
             json.dump(data, json_file, ensure_ascii=False, indent=4)
-            API.write_log(
-                f"Datos guardados dentro de la carpeta {folder} , revisa el archivo {filename}"
-            )
+            API.write_log(f"Datos guardados dentro de la carpeta {folder} , revisa el archivo {filename}")
 
     except requests.HTTPError as http_err:
         API.write_log(f"Error HTTP: {http_err}")

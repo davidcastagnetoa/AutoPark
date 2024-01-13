@@ -68,8 +68,7 @@ if __name__ == "__main__":
 
         if json_data == -1:
             msg = "Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
-            API.write_log(
-                'Comprueba los datos de la reserva en res/reserved_zone.json')
+            API.write_log('Comprueba los datos de la reserva en res/reserved_zone.json')
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -78,8 +77,7 @@ if __name__ == "__main__":
 
         if json_data is None:
             msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
-            API.write_log(
-                "Error al extraer datos de la reserva, verifica el dia de la reserva y la hora, recuerda que las reservas se abren a las 08:00 AM")
+            API.write_log("Error al extraer datos de la reserva, verifica el dia de la reserva y la hora, recuerda que las reservas se abren a las 08:00 AM")
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
             API.write_log("Fin de linea\n")
