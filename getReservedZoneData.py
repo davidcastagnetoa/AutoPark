@@ -1,19 +1,25 @@
 import json
 from datetime import datetime
+from halo import Halo
 
 
 def extract_information(json_data):
+    spinner = Halo(text='Extrayendo datos de reserva', spinner='dots')
+    spinner.start()
     # Asegúrate de que json_data sea una lista y contenga al menos un elemento
     if not json_data:
         print(f"The type of json_data is {type(json_data)}")
+        spinner.fail(f"The type of json_data is {type(json_data)}")
         return None
 
     if not isinstance(json_data, list):
         print(f"json_data no es una lista. {json_data}")
+        spinner.fail(f"json_data no es una lista. {json_data}")
         return -1
 
     if not json_data[0]:
         print(f"json_data es una lista vacia. {json_data}")
+        spinner.fail(f"json_data es una lista vacia. {json_data}")
         return -2
 
     # Extraer la informacion del primer elemento de la lista

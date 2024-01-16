@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 import os
 import sys
 from utils.logger import log, API
+from halo import Halo
+
 
 # Cargando credenciales de acceso
 load_dotenv()
@@ -68,7 +70,9 @@ ascii_art = """
 /           \.
 """
 API.write_log(ascii_art)
+print(ascii_art)
 API.write_log("\n__CONSULTA DE TOKEN__")
+print("\n__CONSULTA DE TOKEN__")
 
 # answers = inquirer.prompt(questions)
 # navegador = answers["navegator"]
@@ -97,55 +101,73 @@ def getToken():
     # Da tiempo para que la página se cargue
     # Espera hasta que el elemento con el ID "next" esté presente
     API.write_log(f"Cargando página {link}")
+    spinner = Halo(text=f'Cargando página {link}', spinner='dots')
+    spinner.start()
+    spinner.text = "Cargando datos de página"
     try:
         login_button = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "next"))
         )
+        spinner.succeed('Boton de inicio de sesion encontrado')
     except TimeoutException:
         API.write_log("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado.")
+        spinner.fail("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado. Fallo de inicio de sesión.")
         driver.quit()
         exit()
     except NoSuchElementException:
         API.write_log("NoSuchElement: Boton de inicio de sesion no encontrado en la página.")
+        spinner.fail("NoSuchElement: Boton de inicio de sesion no encontrado en la página. Fallo de inicio de sesión.")
         driver.quit()
         exit()
     except Exception as e:
         print("Mapear esta excepcion", e)
+        spinner.fail(f"{e}. Fallo de inicio de sesión.")
         driver.quit()
         exit()
 
     # Inicia sesion
+    spinner.text = "Localizando campo de usuario."
     try:
         # Busca el campo del nombre de usuario y envía los datos
+        spinner.succeed("Cargando credenciales de usuario")
         username_field = driver.find_element(By.ID, "signInName")
         username_field.clear()
         if USERNAME_HYBO is None:
             API.write_log("Error: USERNAME_HYBO no está definido.")
+            spinner.fail("Error: USERNAME_HYBO no está definido. Fallo de inicio de sesión.")
             sys.exit(1)
         username_field.send_keys(USERNAME_HYBO)
     except NoSuchElementException:
         API.write_log("Campo del nombre de usuario no encontrado.")
+        spinner.fail("Campo del nombre de usuario no encontrado. Fallo de inicio de sesión.")
 
+    spinner.text = "Localizando campo de contraseña."
     try:
         API.write_log("Cargando credenciales contraseña ...")
+        spinner.succeed("Cargando credenciales de contraseña")
         # Busca el campo de la contraseña y envía los datos
         password_field = driver.find_element(By.ID, "password")
         password_field.clear()
         if PASSWORD_HYBO is None:
-            API.write_log("Error: USERNAME_HYBO no está definido.")
+            API.write_log("Error: PASSWORD_HYBO no está definido.")
+            spinner.fail("Error: PASSWORD_HYBO no está definido. Fallo de inicio de sesión.")
             sys.exit(1)
         password_field.send_keys(PASSWORD_HYBO)
     except NoSuchElementException:
         API.write_log("Campo de la contraseña no encontrado.")
+        spinner.fail("Campo de la contraseña no encontrado. Fallo de inicio de sesión.")
 
+    spinner.text = "Iniciando sesión."
     try:
         # Busca el boton de inicio de sesion y haz clic en él
         login_button = driver.find_element(By.ID, "next")
         login_button.click()
         API.write_log("Iniciando sesion ...")
+        spinner.succeed("Iniciando sesión")
     except NoSuchElementException:
         API.write_log("Boton de inicio de sesion no encontrado.")
         API.write_log("fallo de inicio de sesion ...")
+        spinner.fail("Boton de inicio de sesion no encontrado. Fallo de inicio de sesión.")
 
     # Funcion para verificar si las claves están en localStorage
 
@@ -162,14 +184,17 @@ def getToken():
         "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]
 
     # Espera hasta que las claves estén en localStorage o se agote el tiempo (20 segundos aquí)
+    spinner.text = "Buscando datos en localStore ..."
     try:
-        API.write_log("Extrayendo tokens ...")
+        API.write_log("Buscando datos en localStore ...")
         WebDriverWait(driver, 20).until(
             lambda x: check_keys_in_localstorage(driver, keys_to_check)
         )
-        API.write_log("Datos encontrados en localStorage: ")
+        API.write_log("Datos encontrados en localStorage")
+        spinner.succeed("Datos encontrados en localStorage!")
     except TimeoutException:
         API.write_log("Las claves no se encontraron en localStorage dentro del tiempo especificado.")
+        spinner.fail("Error: Las claves no se encontraron en localStorage.")
         driver.quit()
         sys.exit(-1)
 
@@ -204,6 +229,7 @@ def getToken():
     if "No se encontraron" in access_and_refresh_item_values[-1]:
         # Remueve y guarda el último elemento
         not_found_message = access_and_refresh_item_values.pop()
+        spinner.fail(f"No se han encontrado claves de busqueda de tokens: {not_found_message}")
         API.write_log(not_found_message)
 
     # Ahora puedes asignar los valores restantes a variables
@@ -211,6 +237,7 @@ def getToken():
         accessToken = access_and_refresh_item_values[0]
         refreshToken = access_and_refresh_item_values[1]
 
+    spinner.text = "Extrayendo tokens ..."
     try:
         access_json_str = accessToken
         refresh_json_str = refreshToken
@@ -249,25 +276,31 @@ def getToken():
         log("😈")
 
         if secret_access is not None:
+            spinner.succeed("Token obtenido!.")
             return secret_access
         else:
             API.write_log("Clave 'secret' no encontrada")
+            spinner.fail("Clave 'secret' no encontrada!, Cerrando Navegador!")
+            driver.quit()
             return None
 
     except json.JSONDecodeError:
         API.write_log("Error al decodificar la cadena JSON")
+        spinner.fail(f"Error al decodificar la cadena JSON, Cerrando Navegador!")
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
         driver.quit()
         return None
     except TypeError:
         API.write_log("Tipo de dato incorrecto, se esperaba un diccionario")
+        spinner.fail(f"Tipo de dato incorrecto, se esperaba un diccionario, Cerrando Navegador!")
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
         driver.quit()
         return None
     except Exception as e:
         API.write_log(f"Se produjo un error desconocido: {e}")
+        spinner.fail(f"Se produjo un error desconocido: {e}, Cerrando Navegador!")
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
         driver.quit()
