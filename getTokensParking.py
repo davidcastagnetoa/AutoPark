@@ -4,12 +4,15 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 import json
 from dotenv import load_dotenv
 import os
 import sys
+import pickle
+import time
 from utils.logger import log, API
 
 # Cargando credenciales de acceso
@@ -38,13 +41,8 @@ firefox_options.add_argument("--headless")
 firefox_options.add_argument("--no-sandbox")
 firefox_options.add_argument("--disable-dev-shm-usage")
 
-# questions = [
-#     inquirer.List(
-#         "navegator",
-#         message="Elije un navegador",
-#         choices=["Chrome", "Firefox", "Cancelar"],
-#     ),
-# ]
+# Especificando la ruta de geckodriver con Service
+# service = Service('/home/admin/documents/AutoPark/downloads/geckodriver') # For Production in AWS Server
 ascii_art = """
          , ,\ ,'\,'\ ,'\ ,\ ,
    ,  ;\/ \/ \`'     `   '  /|
@@ -70,22 +68,9 @@ ascii_art = """
 API.write_log(ascii_art)
 API.write_log("\n__CONSULTA DE TOKEN__")
 
-# answers = inquirer.prompt(questions)
-# navegador = answers["navegator"]
-
-# if navegador == "Chrome":
-#     API.write_log("Iniciando navegador Chrome")
-#     driver = webdriver.Chrome(options=chrome_options)
-# elif navegador == "Firefox":
-#     API.write_log("Iniciando navegador Firefox")
-#     driver = webdriver.Firefox(options=firefox_options)
-# else:
-#     API.write_log("Operacion cancelada por el usuario.")
-#     exit()
-
-
 # Usar Chrome/Firefox por defecto, sin interaccion del usuario
 # driver = webdriver.Chrome(options=chrome_options)
+# driver = webdriver.Firefox(service=service, options=firefox_options) # For Production in AWS Server
 driver = webdriver.Firefox(options=firefox_options)
 
 # Abre la página web
@@ -99,7 +84,7 @@ def getToken():
     API.write_log(f"Cargando página {link}")
     try:
         login_button = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.ID, "next"))
+            EC.presence_of_element_located((By.ID, "MultiTenantADExchange"))
         )
     except TimeoutException:
         API.write_log("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado.")
@@ -114,41 +99,43 @@ def getToken():
         driver.quit()
         exit()
 
-    # Inicia sesion
     try:
-        # Busca el campo del nombre de usuario y envía los datos
-        username_field = driver.find_element(By.ID, "signInName")
-        username_field.clear()
-        if USERNAME_HYBO is None:
-            API.write_log("Error: USERNAME_HYBO no está definido.")
-            sys.exit(1)
-        username_field.send_keys(USERNAME_HYBO)
-    except NoSuchElementException:
-        API.write_log("Campo del nombre de usuario no encontrado.")
+        # Cargar la página de inicio (necesaria antes de cargar las cookies)
+        # driver.get("https://www.office.com/")
+        driver.get("https://app-officemanager.raona.com/")
 
-    try:
-        API.write_log("Cargando credenciales contraseña ...")
-        # Busca el campo de la contraseña y envía los datos
-        password_field = driver.find_element(By.ID, "password")
-        password_field.clear()
-        if PASSWORD_HYBO is None:
-            API.write_log("Error: USERNAME_HYBO no está definido.")
-            sys.exit(1)
-        password_field.send_keys(PASSWORD_HYBO)
-    except NoSuchElementException:
-        API.write_log("Campo de la contraseña no encontrado.")
+        # Cargar las cookies desde el archivo
+        with open('HyboCookies.pkl', 'rb') as file:
+            cookies = pickle.load(file)
+            for cookie in cookies:
+                driver.add_cookie(cookie)
 
-    try:
-        # Busca el boton de inicio de sesion y haz clic en él
-        login_button = driver.find_element(By.ID, "next")
-        login_button.click()
-        API.write_log("Iniciando sesion ...")
-    except NoSuchElementException:
-        API.write_log("Boton de inicio de sesion no encontrado.")
-        API.write_log("fallo de inicio de sesion ...")
+        # Navegar a la página después de cargar las cookies para restaurar la sesión
+        # driver.get("https://www.office.com/")
+        driver.get("https://app-officemanager.raona.com/")
+
+        time.sleep(5)
+        API.write_log("Credenciales 365 cargadas ...")
+        time.sleep(5)
+
+        print("Navegando a la aplicación de garajes...")
+        driver.get("https://app-officemanager.raona.com/")
+
+        # Iniciando sesion con Cuenta Office 365
+        try:
+            # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
+            login_365_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
+            login_365_button.click()
+            API.write_log("Iniciando sesión con cuenta 365 Office ...")
+        except TimeoutException:
+            API.write_log("El elemento no está disponible en la página.")
+
+        API.write_log("Sesión restaurada con éxito.")
+
+    except Exception as e:
+        API.write_log("Error al intentar iniciar sesión con cookies:", str(e))
 
     # Funcion para verificar si las claves están en localStorage
-
     def check_keys_in_localstorage(driver, keys):
         script = f"""
         let keysToCheck = {json.dumps(keys)};
