@@ -205,7 +205,7 @@ def load_data_place(
                 # verifica si la respuesta es realmente un JSON
                 reserved_zone = response.json()
                 API.write_log('Peticion exitosa.')
-                log("👍")
+                # log("👍")
                 API.write_log('Plaza reservada!.')
 
                 API.write_log("Extrayendo datos de reserva en formato Json")
@@ -238,7 +238,7 @@ def load_data_place(
                 # Manejo del caso en que la respuesta es solo una cadena de texto
                 API.write_log('La respuesta no es un JSON válido.')
                 API.write_log('Peticion denegada.')
-                log("👎")
+                # log("👎")
                 API.write_log('Plaza no reservada. Revisa el calendario')
                 API.write_log(f'Respuesta recibida: {response.text}')
 

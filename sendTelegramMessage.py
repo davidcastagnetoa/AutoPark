@@ -22,7 +22,7 @@ def send_message(token, chat_id, message):
         response.raise_for_status()
         API.write_log(f'Estado de la respuesta: {response.status_code}')
         API.write_log(f"Mensaje enviado!")
-        log("📧")
+        # log("📧")
         return response.json()
     except requests.exceptions.ConnectionError as e:
         # Capturar la excepcion de manera más general y luego verificar el tipo de error

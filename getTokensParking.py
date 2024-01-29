@@ -94,21 +94,16 @@ def getToken():
     # Espera hasta que el elemento con el ID "next" esté presente
     API.write_log(f"Cargando página {link}")
     try:
-        login_button = WebDriverWait(driver, 10).until(
+        login_button = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.ID, "MultiTenantADExchange"))
         )
+        API.write_log("Boton de inicio de sesion encontrado, inciando sesion en Office 365")
     except TimeoutException:
         API.write_log("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado.")
-        driver.quit()
-        exit()
     except NoSuchElementException:
         API.write_log("NoSuchElement: Boton de inicio de sesion no encontrado en la página.")
-        driver.quit()
-        exit()
     except Exception as e:
-        API.write_log("Mapear esta excepcion", e)
-        driver.quit()
-        exit()
+        API.write_log("Boton de inicio no entrado. Mapear esta excepcion", e)
 
     try:
         API.write_log("Navegando a la página de la aplicación...")
@@ -118,13 +113,30 @@ def getToken():
         try:
             # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
             API.write_log("Iniciando sesión con cuenta 365 Office ...")
-            login_365_button = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
+            login_365_button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
         except TimeoutException:
             API.write_log("El elemento no está disponible en la página.")
-            driver.quit()
-            sys.exit(-1)
 
+        API.write_log("Comprobando elemento SD_dropdown en la pagina")
+
+        try:
+            sd_dropdown = WebDriverWait(driver, 15).until(
+                EC.presence_of_element_located((By.ID, "itemoffice"))
+            )
+            API.write_log("DropDown localizado.")
+        except TimeoutException:
+            API.write_log("Timeout: Dropdown no encontrado dentro del tiempo esperado.")
+            driver.quit()
+            exit()
+        except NoSuchElementException:
+            API.write_log("NoSuchElement: Dropdown no encontrado en la página.")
+            driver.quit()
+            exit()
+        except Exception as e:
+            API.write_log("DropDown: Mapear esta excepcion", e)
+            driver.quit()
+            exit()
         API.write_log("Sesión restaurada con éxito.")
 
     except Exception as e:
@@ -136,21 +148,23 @@ def getToken():
 
     # Funcion para verificar si las claves están en localStorage
     def check_keys_in_localstorage(driver, keys):
+        API.write_log("Comprobando claves en LocalStorage")
+
         script = f"""
         let keysToCheck = {json.dumps(keys)};
         return keysToCheck.every(key => localStorage.getItem(key) !== null);
         """
         return driver.execute_script(script)
 
-    # Lista de claves a verificar en localStorage
+    # Lista de claves a verificar en localStorage: accesss_token, refresh_token
     keys_to_check = [
         "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-458492eb-f28b-414d-98dd-1bf31a7b453f-https://manageroffice.onmicrosoft.com/api/access_as_user--",
         "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]
 
-    # Espera hasta que las claves estén en localStorage o se agote el tiempo (20 segundos aquí)
+    # Espera hasta que las claves estén en localStorage o se agote el tiempo (25 segundos aquí)
     try:
         API.write_log("Extrayendo tokens ...")
-        WebDriverWait(driver, 20).until(
+        WebDriverWait(driver, 25).until(
             lambda x: check_keys_in_localstorage(driver, keys_to_check)
         )
         API.write_log("Datos encontrados en localStorage: ")
@@ -232,7 +246,7 @@ def getToken():
         with open("tokenActualizacion.txt", "w") as f:
             f.write(secret_refresh)
         API.write_log("Tokens guardados en archivos separados")
-        log("😈")
+        # log("😈")
 
         if secret_access is not None:
             return secret_access
