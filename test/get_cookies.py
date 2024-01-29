@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 from dotenv import load_dotenv
 import os
 import sys
@@ -239,32 +240,64 @@ def get_cookies():
 
 def login_with_cookies():
     try:
-        # Cargar la página de inicio (necesaria antes de cargar las cookies)
-        # driver.get("https://www.office.com/")
-        driver.get("https://app-officemanager.raona.com/")
-
         # Cargar las cookies desde el archivo
         with open('HyboCookies.pkl', 'rb') as file:
             cookies = pickle.load(file)
-            for cookie in cookies:
+
+        # Cargar la página de 'app-officemanager.raona.com' y establecer sus cookies
+        driver.get("https://app-officemanager.raona.com/")
+        for cookie in cookies:
+            if ".app-officemanager.raona.com" in cookie['domain']:
                 driver.add_cookie(cookie)
-        print("Cookies cargadas ...")
+            if "app-officemanager.raona.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+        print("Cookies de app-officemanager.raona.com cargadas ...")
+
+        # Cargar la página de 'manageroffice.b2clogin.com' y establecer sus cookies
+        driver.get("https://manageroffice.b2clogin.com/manageroffice.onmicrosoft.com/b2c_1a_signup_signin_custom/oauth2/v2.0/authorize?client_id=53416a92-85aa-4c86-bde0-3c06a7fd8c00&scope=https%3A%2F%2Fmanageroffice.onmicrosoft.com%2Fapi%2Faccess_as_user%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fapp-officemanager.raona.com%2F&client-request-id=ccf93630-44dd-45a7-9c4a-b0aa4645484f&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.30.0&client_info=1&code_challenge=FCFDVWfeMW_Y84Gc4cOoqoop2MK_z6x_ePYaBlYsxdQ&code_challenge_method=S256&nonce=82907033-71c5-4199-9b40-dd36b73844fb&state=eyJpZCI6IjFkYTk0MjEzLTFjMTYtNDBjMy1hYzViLWVjNGFkYjFhOGE5ZiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D")
+        for cookie in cookies:
+            if ".manageroffice.b2clogin.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+        print("Cookies de manageroffice.b2clogin.com cargadas ...")
+
+        # Cargar la página de 'login.microsoftonline.com' y establecer sus cookies
+        driver.get("https://login.microsoftonline.com/")
+        for cookie in cookies:
+            if "login.microsoftonline.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+        print("Cookies de login.microsoftonline.com cargadas ...")
+
+        driver.get("https://www.microsoft.com/")
+        for cookie in cookies:
+            if ".microsoft.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+            if "www.microsoft.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+        print("Cookies de microsoft.com cargadas ...")
+
+        driver.get("https://www.office.com/")
+        for cookie in cookies:
+            if "www.office.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+            if ".office.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+        print("Cookies de office.com cargadas ...")
+
+        driver.get("https://login.live.com/")
+        for cookie in cookies:
+            if "login.live.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+            if "login.live.com" in cookie['domain']:
+                driver.add_cookie(cookie)
+        print("Cookies de login.live cargadas ...")
 
         # Navegar a la página después de cargar las cookies para restaurar la sesión
-        # driver.get("https://www.office.com/")
-        driver.get("https://app-officemanager.raona.com/")
-
-        time.sleep(5)
-        print("Credenciales 365 cargadas ...")
-        time.sleep(5)
-
-        print("Navegando a la aplicación de garajes...")
         driver.get("https://app-officemanager.raona.com/")
 
         # Iniciando sesion con Cuenta Office 365
         try:
             # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
-            login_365_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
+            login_365_button = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
             print("Iniciando sesión con cuenta 365 Office ...")
         except TimeoutException:
@@ -273,9 +306,45 @@ def login_with_cookies():
         print("Sesión restaurada con éxito.")
 
     except Exception as e:
-        print("Error al intentar iniciar sesión con cookies:", str(e))
+        print("Error al intentar iniciar sesion con cookies:", str(e))
 
 
-get_cookies()
+def save_cookies(driver, domains):
+    all_cookies = []
+    for domain in domains:
+        try:
+            # Navega a cada dominio
+            driver.get(domain)
+            time.sleep(45)  # Ajusta este tiempo según sea necesario
+            print("Cookie capturadas en: ", domain)
+
+            # Recoge las cookies de ese dominio
+            cookies = driver.get_cookies()
+            all_cookies.extend(cookies)
+
+        except Exception as e:
+            print(f"Error al intentar guardar las cookies de {domain}:", str(e))
+
+    # Guardar todas las cookies recogidas en un archivo
+    with open('HyboCookies.pkl', 'wb') as file:
+        pickle.dump(all_cookies, file)
+    print("Todas las cookies han sido guardadas.")
+
+
+# Ejemplo de uso
+domains = [
+    "https://app-officemanager.raona.com/", "https://app-officemanager.raona.com/",
+    "https://manageroffice.b2clogin.com/manageroffice.onmicrosoft.com/b2c_1a_signup_signin_custom/oauth2/v2.0/authorize?client_id=53416a92-85aa-4c86-bde0-3c06a7fd8c00&scope=https%3A%2F%2Fmanageroffice.onmicrosoft.com%2Fapi%2Faccess_as_user%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fapp-officemanager.raona.com%2F&client-request-id=ccf93630-44dd-45a7-9c4a-b0aa4645484f&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.30.0&client_info=1&code_challenge=FCFDVWfeMW_Y84Gc4cOoqoop2MK_z6x_ePYaBlYsxdQ&code_challenge_method=S256&nonce=82907033-71c5-4199-9b40-dd36b73844fb&state=eyJpZCI6IjFkYTk0MjEzLTFjMTYtNDBjMy1hYzViLWVjNGFkYjFhOGE5ZiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D",
+    "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=fd9548d1-db02-40d0-b784-bbc8a15078ff&redirect_uri=https%3A%2F%2Fmanageroffice.b2clogin.com%2Fmanageroffice.onmicrosoft.com%2Foauth2%2Fauthresp&response_type=code&scope=profile+openid&response_mode=form_post&nonce=l%2Bqj%2FTt3l91nNKLJEB1CwQ%3D%3D&state=StateProperties%3DeyJTSUQiOiJ4LW1zLWNwaW0tcmM6ZDIzNDFiNGEtMTEzOS00ZTMxLWFjMmMtZjIxOWQ4ZDM4OTQwIiwiVElEIjoiZmY0NjI0YmMtYTZiNy00M2UxLTg4MzQtN2Q3MjVjMTYxNGVlIiwiVE9JRCI6IjQ1ODQ5MmViLWYyOGItNDE0ZC05OGRkLTFiZjMxYTdiNDUzZiJ9"
+    "https://www.office.com/", "https://www.live.com/", "https://www.microsoft.com/", "https://login.microsoftonline.com/"]
+
+# https://manageroffice.b2clogin.com/manageroffice.onmicrosoft.com/b2c_1a_signup_signin_custom/oauth2/v2.0/authorize?client_id=53416a92-85aa-4c86-bde0-3c06a7fd8c00&scope=https%3A%2F%2Fmanageroffice.onmicrosoft.com%2Fapi%2Faccess_as_user%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fapp-officemanager.raona.com%2F&client-request-id=ccf93630-44dd-45a7-9c4a-b0aa4645484f&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.30.0&client_info=1&code_challenge=FCFDVWfeMW_Y84Gc4cOoqoop2MK_z6x_ePYaBlYsxdQ&code_challenge_method=S256&nonce=82907033-71c5-4199-9b40-dd36b73844fb&state=eyJpZCI6IjFkYTk0MjEzLTFjMTYtNDBjMy1hYzViLWVjNGFkYjFhOGE5ZiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D
+
+
+# save_cookies(driver, domains)
+# get_cookies()
 # time.sleep(10)
-# login_with_cookies()
+login_with_cookies()
+
+
+# 27 coockies

@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 import json
 from dotenv import load_dotenv
 import os
@@ -41,7 +42,16 @@ firefox_options.add_argument("--headless")
 firefox_options.add_argument("--no-sandbox")
 firefox_options.add_argument("--disable-dev-shm-usage")
 
-# Especificando la ruta de geckodriver con Service
+# Ruta al perfil de Firefox
+profile_path = "/home/christiandavid/.mozilla/firefox/39eehsmk.selenium"
+
+# Crea un objeto FirefoxProfile con la ruta de tu perfil
+profile = FirefoxProfile(profile_path)
+
+# Agrega el perfil al objeto de opciones
+firefox_options.profile = profile
+
+# # Especificando la ruta de geckodriver con Service
 # service = Service('/home/admin/documents/AutoPark/downloads/geckodriver') # For Production in AWS Server
 ascii_art = """
          , ,\ ,'\,'\ ,'\ ,\ ,
@@ -68,8 +78,9 @@ ascii_art = """
 API.write_log(ascii_art)
 API.write_log("\n__CONSULTA DE TOKEN__")
 
-# Usar Chrome/Firefox por defecto, sin interaccion del usuario
+# # Usar Chrome/Firefox por defecto, sin interaccion del usuario
 # driver = webdriver.Chrome(options=chrome_options)
+
 # driver = webdriver.Firefox(service=service, options=firefox_options) # For Production in AWS Server
 driver = webdriver.Firefox(options=firefox_options)
 
@@ -95,45 +106,33 @@ def getToken():
         driver.quit()
         exit()
     except Exception as e:
-        print("Mapear esta excepcion", e)
+        API.write_log("Mapear esta excepcion", e)
         driver.quit()
         exit()
 
     try:
-        # Cargar la página de inicio (necesaria antes de cargar las cookies)
-        # driver.get("https://www.office.com/")
-        driver.get("https://app-officemanager.raona.com/")
-
-        # Cargar las cookies desde el archivo
-        with open('HyboCookies.pkl', 'rb') as file:
-            cookies = pickle.load(file)
-            for cookie in cookies:
-                driver.add_cookie(cookie)
-
-        # Navegar a la página después de cargar las cookies para restaurar la sesión
-        # driver.get("https://www.office.com/")
-        driver.get("https://app-officemanager.raona.com/")
-
-        time.sleep(5)
-        API.write_log("Credenciales 365 cargadas ...")
-        time.sleep(5)
-
-        print("Navegando a la aplicación de garajes...")
-        driver.get("https://app-officemanager.raona.com/")
+        API.write_log("Navegando a la página de la aplicación...")
+        driver.get(LINK)
 
         # Iniciando sesion con Cuenta Office 365
         try:
             # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
-            login_365_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
-            login_365_button.click()
             API.write_log("Iniciando sesión con cuenta 365 Office ...")
+            login_365_button = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
+            login_365_button.click()
         except TimeoutException:
             API.write_log("El elemento no está disponible en la página.")
+            driver.quit()
+            sys.exit(-1)
 
         API.write_log("Sesión restaurada con éxito.")
 
     except Exception as e:
-        API.write_log("Error al intentar iniciar sesión con cookies:", str(e))
+        API.write_log("Error al intentar iniciar sesión con perfil: ", str(e))
+        API.write_log("Asegurate de haber iniciado sesion y guardado tu inicio de sesion en dicho perfil")
+        API.write_log("De persistir, borra el perfil, crea uno nuevo, inicia sesion antes de usarlo")
+        driver.quit()
+        sys.exit(-1)
 
     # Funcion para verificar si las claves están en localStorage
     def check_keys_in_localstorage(driver, keys):
