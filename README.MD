@@ -1,6 +1,6 @@
 # AutoPark: Automated Weekday Parking Space Reservation System Using Python and Selenium
 
-Python program to automate booking parking spaces in a web application for a parking garage on weekdays. This Python script uses Selenium to open the browser, log into the web application, and retrieve the necessary tokens from the `localstore`. Once the token is obtained, it will be used to send requests to the server and reserve a parking space in the private garage. Once reserved, it will send the details of the booked space via Telegram.
+Python program to automate booking parking spaces in a web application for a parking garage on weekdays. This Python script uses Selenium to open the browser in headless mode, log into the web application, and retrieve the necessary tokens from the `localstore`. Once the token is obtained, it will be used to send requests to the server and reserve a parking space in the private garage. Once reserved, it will send the details of the booked space via Telegram.
 
 ## Requirements
 
