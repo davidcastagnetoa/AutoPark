@@ -38,9 +38,9 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 # Headless mode Firefox
-# firefox_options.add_argument("--headless")
-# firefox_options.add_argument("--no-sandbox")
-# firefox_options.add_argument("--disable-dev-shm-usage")
+firefox_options.add_argument("--headless")
+firefox_options.add_argument("--no-sandbox")
+firefox_options.add_argument("--disable-dev-shm-usage")
 
 # Ruta al perfil de Firefox, PARA BOTON DE INICIO POR MICROSOFT
 # Cambiar por la ruta a su perfil de Firefox que se utilizará para evitar la autenticación en Hybo
