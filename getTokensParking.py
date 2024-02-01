@@ -38,11 +38,12 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 # Headless mode Firefox
-firefox_options.add_argument("--headless")
-firefox_options.add_argument("--no-sandbox")
-firefox_options.add_argument("--disable-dev-shm-usage")
+# firefox_options.add_argument("--headless")
+# firefox_options.add_argument("--no-sandbox")
+# firefox_options.add_argument("--disable-dev-shm-usage")
 
-# Ruta al perfil de Firefox
+# Ruta al perfil de Firefox, PARA BOTON DE INICIO POR MICROSOFT
+# Cambiar por la ruta a su perfil de Firefox que se utilizará para evitar la autenticación en Hybo
 profile_path = "/home/christiandavid/.mozilla/firefox/39eehsmk.selenium"
 
 # Crea un objeto FirefoxProfile con la ruta de tu perfil
@@ -95,7 +96,7 @@ def getToken():
     API.write_log(f"Cargando página {link}")
     try:
         login_button = WebDriverWait(driver, 15).until(
-            EC.presence_of_element_located((By.ID, "MultiTenantADExchange"))
+            EC.presence_of_element_located((By.ID, "next"))
         )
         API.write_log("Boton de inicio de sesion encontrado, inciando sesion en Office 365")
     except TimeoutException:
@@ -107,34 +108,35 @@ def getToken():
 
     try:
         API.write_log("Navegando a la página de la aplicación...")
-        driver.get(LINK)
+        # driver.get(LINK)
 
         # Iniciando sesion con Cuenta Office 365
         try:
             # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
+            # BOTON DE INICIO POR MICROSOFT
             API.write_log("Iniciando sesión con cuenta 365 Office ...")
             login_365_button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
         except TimeoutException:
-            API.write_log("El elemento no está disponible en la página.")
+            API.write_log("El elemento no está disponible en la página. Posiblemente ya este dentro del perfil de usuario")
 
         API.write_log("Comprobando elemento SD_dropdown en la pagina")
-
         try:
-            sd_dropdown = WebDriverWait(driver, 15).until(
+            sd_dropdown = WebDriverWait(driver, 20).until(
                 EC.presence_of_element_located((By.ID, "itemoffice"))
             )
             API.write_log("DropDown localizado.")
+            API.write_log("Aplicacion dentro del perfil del usuario.")
         except TimeoutException:
-            API.write_log("Timeout: Dropdown no encontrado dentro del tiempo esperado.")
+            API.write_log("Timeout: Dropdown no encontrado dentro del tiempo esperado. Verificar en modo head")
             driver.quit()
             exit()
         except NoSuchElementException:
-            API.write_log("NoSuchElement: Dropdown no encontrado en la página.")
+            API.write_log("NoSuchElement: Dropdown no encontrado en la página. Verificar en modo head")
             driver.quit()
             exit()
         except Exception as e:
-            API.write_log("DropDown: Mapear esta excepcion", e)
+            API.write_log("DropDown: Mapear esta excepcion, Verificar en modo head:", e)
             driver.quit()
             exit()
         API.write_log("Sesión restaurada con éxito.")
@@ -156,7 +158,7 @@ def getToken():
         """
         return driver.execute_script(script)
 
-    # Lista de claves a verificar en localStorage: accesss_token, refresh_token
+    # Lista de claves a verificar en localStorage: accesss_token, refresh_token UNICAS PARA CADA USUARIO
     keys_to_check = [
         "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-458492eb-f28b-414d-98dd-1bf31a7b453f-https://manageroffice.onmicrosoft.com/api/access_as_user--",
         "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]

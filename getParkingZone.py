@@ -124,6 +124,9 @@ def get_parking_place(secret):
             elif response.status_code == 400 and 'Booking max days exceeded' in response.text:
                 API.write_log(f"Error HTTP: 400 - Estas excediendo el limite de dias para peticion, Detalles: {response.text}")
                 return -4
+            if response.status_code == 401:  # Añadido para manejar específicamente el error 401
+                API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. verifica que sean al menos las 22:00, Detalles: {response.text}")
+                return -5
             else:
                 API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
                 return None
@@ -133,6 +136,8 @@ def get_parking_place(secret):
             API.write_log(f"Error de timeout: {timeout_err}, Detalles: {response.text}")
         except requests.exceptions.RequestException as req_err:
             API.write_log(f"Error general en la peticion: {req_err}, Detalles: {response.text}")
+
+# [2024-02-01 21:56:09]: Error HTTP: 401 Client Error: Unauthorized for url: https://office-manager-api.azurewebsites.net/api/Parking/BookingsByContext, Detalles:
 
     else:
         API.write_log("Se requiere el token para realizar la solicitud")
