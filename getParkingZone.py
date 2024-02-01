@@ -124,7 +124,7 @@ def get_parking_place(secret):
             elif response.status_code == 400 and 'Booking max days exceeded' in response.text:
                 API.write_log(f"Error HTTP: 400 - Estas excediendo el limite de dias para peticion, Detalles: {response.text}")
                 return -4
-            if response.status_code == 401:  # Añadido para manejar específicamente el error 401
+            elif response.status_code == 401:
                 API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. verifica que sean al menos las 22:00, Detalles: {response.text}")
                 return -5
             else:
