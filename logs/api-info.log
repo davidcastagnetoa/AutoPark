@@ -50,3 +50,46 @@ __ENVIANDO MENSAJE POR TELEGRAM__
 2024-01-03 14:53:37 - Peticion denegada por alg�n firewall, Revisa tu firewall
 2024-01-03 14:53:37 - Fin de linea
 
+2024-02-01 23:26:42 - 
+         , ,\ ,'\,'\ ,'\ ,\ ,
+   ,  ;\/ \/ \`'     `   '  /|
+   |\/                      |
+   :                        |
+   :                        |
+    |                       |
+    :               -.     _|
+     :                \     `.
+     |         ________:______\.
+     :       ,'o       / o    ;
+     :       \       ,'-----./
+      \_      `--.--'        )
+     ,` `.              ,---'|
+     : `                     |
+      `,-'                   |
+      /      ,---.          ,'
+   ,-'            `-,------'   Developed By 
+  '   `.        ,--'           AbathurCris!
+ '     `-.____/
+/           \.
+
+2024-02-01 23:26:42 - 
+__CONSULTA DE TOKEN__
+2024-02-01 23:26:47 - Fecha a solicitar plaza: 2024-02-08
+2024-02-01 23:26:47 - Cargando página https://app-officemanager.raona.com
+2024-02-01 23:26:48 - Cargando credenciales contraseña ...
+2024-02-01 23:26:48 - Iniciando sesion ...
+2024-02-01 23:26:48 - Buscando datos en localStore ...
+2024-02-01 23:26:55 - Datos encontrados en localStorage
+2024-02-01 23:26:55 - Cerrando Navegador
+2024-02-01 23:26:56 - Tokens guardados en archivos separados
+2024-02-01 23:26:56 - 
+__SOLICITANDO PLAZA__
+2024-02-01 23:26:56 - Obteniendo Pase de reserva...
+2024-02-01 23:26:57 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-01 23:26:57 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-01 23:26:57 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-01 23:26:57 - Estado de la respuesta: 200
+2024-02-01 23:26:57 - Mensaje enviado! 📧
+2024-02-01 23:26:57 - Fin de linea
+

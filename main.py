@@ -65,6 +65,14 @@ if __name__ == "__main__":
             API.write_log("Fin de linea\n")
             sys.exit(1)
 
+        if reservationId == -5:
+            msg = "El servidor rechaza la peticion. Recuerda que las pruebas deben realizarse a partir de las 22:00 de Lunes a Viernes"
+            API.write_log(msg)
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            send_message(TOKEN, CHAT_ID, msg)
+            API.write_log("Fin de linea\n")
+            sys.exit(1)
+
         if reservationId is None:
             msg = "Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu código"
             spinner.fail(msg)
