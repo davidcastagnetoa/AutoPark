@@ -47,7 +47,7 @@ firefox_options.add_argument("--disable-dev-shm-usage")
 #         choices=["Chrome", "Firefox", "Cancelar"],
 #     ),
 # ]
-ascii_art = """
+ascii_art_bart = """
          , ,\ ,'\,'\ ,'\ ,\ ,
    ,  ;\/ \/ \`'     `   '  /|
    |\/                      |
@@ -69,8 +69,22 @@ ascii_art = """
  '     `-.____/
 /           \.
 """
-API.write_log(ascii_art)
-print(ascii_art)
+
+ascii_art_kithack = '''
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+'''
+
+API.write_log(ascii_art_kithack)
+print(ascii_art_kithack)
 API.write_log("\n__CONSULTA DE TOKEN__")
 print("\n__CONSULTA DE TOKEN__")
 
