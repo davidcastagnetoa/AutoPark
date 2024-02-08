@@ -81,6 +81,10 @@ ascii_art_kithack = '''
         "*$bd$$$$      '*$$$$$$$$$$$o+#" 
              """"          """"""" 
 
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
 '''
 
 API.write_log(ascii_art_kithack)
