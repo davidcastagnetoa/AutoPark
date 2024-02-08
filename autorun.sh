@@ -46,6 +46,3 @@ python3 main.py
 
 # Desactivar entorno virtual
 deactivate
-
-# # Ejecutar tu script compilado
-# ./build/exe.linux-x86_64-3.11/main
