@@ -88,7 +88,7 @@ ascii_art_kithack = '''
 '''
 
 API.write_log(ascii_art_kithack)
-print(ascii_art_kithack)
+# print(ascii_art_kithack)
 API.write_log("\n__CONSULTA DE TOKEN__")
 print("\n__CONSULTA DE TOKEN__")
 

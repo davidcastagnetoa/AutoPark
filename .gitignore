@@ -7,6 +7,8 @@ tokenActualizacion.txt
 venv/
 res/
 logs/
+logs/api-info.log
+logs/autopark_log_01.log
 downloads/
 src/
 chromedriver.exe      

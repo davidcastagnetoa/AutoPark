@@ -23,6 +23,18 @@
 # SSH_TTY=/dev/pts/0
 # OLDPWD=/home/admin
 
+cat << "EOF" | lolcat
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+EOF
+
 # Cambiar al directorio del script y .env
 cd /home/admin/documents/AutoPark
 
