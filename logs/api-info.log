@@ -93,3 +93,258 @@ __ENVIANDO MENSAJE POR TELEGRAM__
 2024-02-01 23:26:57 - Mensaje enviado! 📧
 2024-02-01 23:26:57 - Fin de linea
 
+2024-02-08 01:01:48 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+
+2024-02-08 01:01:48 - 
+__CONSULTA DE TOKEN__
+2024-02-08 01:01:53 - Fecha a solicitar plaza: 2024-02-15
+2024-02-08 01:01:53 - Cargando página https://app-officemanager.raona.com
+2024-02-08 01:01:55 - Cargando credenciales contraseña ...
+2024-02-08 01:01:55 - Iniciando sesion ...
+2024-02-08 01:01:55 - Buscando datos en localStore ...
+2024-02-08 01:02:02 - Datos encontrados en localStorage
+2024-02-08 01:02:02 - Cerrando Navegador
+2024-02-08 01:02:03 - Tokens guardados en archivos separados
+2024-02-08 01:02:03 - 
+__SOLICITANDO PLAZA__
+2024-02-08 01:02:03 - Obteniendo Pase de reserva...
+2024-02-08 01:02:04 - Estado de respuesta para obtener pase de reserva : 202
+2024-02-08 01:02:04 - Pase de reserva adquirido!!!
+2024-02-08 01:02:04 - Extrayendo variables id del Pase de reserva...
+2024-02-08 01:02:04 - Tenant ID: 7a903ac6-aeb5-4cf8-879c-c48f02fc36e7
+2024-02-08 01:02:04 - Zone ID: 35e0550e-953a-41b5-ba97-cacaa4a44160
+2024-02-08 01:02:04 - Reservation ID: 60a8ffbc-9c0d-44b9-8fe8-7493c1b12c43
+2024-02-08 01:02:04 - The reservationId is: 60a8ffbc-9c0d-44b9-8fe8-7493c1b12c43
+2024-02-08 01:02:04 - The reservationId is: 60a8ffbc-9c0d-44b9-8fe8-7493c1b12c43
+2024-02-08 01:02:07 - 
+__COMPROBANDO RESERVA DE PLAZA__
+2024-02-08 01:02:07 - Reservando plaza...
+2024-02-08 01:02:07 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C60a8ffbc-9c0d-44b9-8fe8-7493c1b12c43
+2024-02-08 01:02:07 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-08 01:02:07 - Texto de la respuesta de la peticion de plaza: [{"id":"60a8ffbc-9c0d-44b9-8fe8-7493c1b12c43","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-08T00:02:04.3262347Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-02-15T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["7a13ac15-98a5-4653-86cc-fbc5838b1c23"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"7a13ac15-98a5-4653-86cc-fbc5838b1c23","objectType":"OM.ParkingSeat","name":"103","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":295.8,"y":755.0,"width":61.0,"height":30.7}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-08 01:02:07 - Peticion aprobada, comprobando reserva...
+2024-02-08 01:02:07 - Peticion exitosa.
+2024-02-08 01:02:07 - Plaza reservada!.
+2024-02-08 01:02:07 - Extrayendo datos de reserva en formato Json
+2024-02-08 01:02:07 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-08 01:02:07 - 
+__DATOS DE PLAZA RESERVADA__
+2024-02-08 01:02:07 - 
+__EXTRAYENDO DATOS DE LA PLAZA__
+2024-02-08 01:02:07 - Fecha: 15 February de 2024
+2024-02-08 01:02:07 - Zona a aparcar: Victoria - PS2
+2024-02-08 01:02:07 - Numero de plaza: 103
+2024-02-08 01:02:07 - Turno: AllDay
+2024-02-08 01:02:07 - Matricula del Vehiculo: 6516KJT
+2024-02-08 01:02:07 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-08 01:02:08 - Estado de la respuesta: 200
+2024-02-08 01:02:08 - Mensaje enviado! 📧
+2024-02-08 01:02:08 - Fin de linea
+
+2024-02-08 01:04:48 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+           Developed By AbathurCris!
+
+2024-02-08 01:04:48 - 
+__CONSULTA DE TOKEN__
+2024-02-08 01:04:58 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+             
+           Developed By AbathurCris!
+
+2024-02-08 01:04:58 - 
+__CONSULTA DE TOKEN__
+2024-02-08 01:08:31 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-08 01:08:31 - 
+__CONSULTA DE TOKEN__
+2024-02-08 01:19:34 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-08 01:19:34 - 
+__CONSULTA DE TOKEN__
+2024-02-08 01:19:45 - Fecha a solicitar plaza: 2024-02-15
+2024-02-08 01:19:45 - Cargando página https://app-officemanager.raona.com
+2024-02-08 01:21:05 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-08 01:21:05 - 
+__CONSULTA DE TOKEN__
+2024-02-08 21:12:25 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-08 21:12:25 - 
+__CONSULTA DE TOKEN__
+2024-02-08 21:12:31 - Fecha a solicitar plaza: 2024-02-15
+2024-02-08 21:12:31 - Cargando página https://app-officemanager.raona.com
+2024-02-08 21:12:37 - Cargando credenciales contraseña ...
+2024-02-08 21:12:37 - Iniciando sesion ...
+2024-02-08 21:12:37 - Buscando datos en localStore ...
+2024-02-08 21:12:44 - Datos encontrados en localStorage
+2024-02-08 21:12:44 - Cerrando Navegador
+2024-02-08 21:12:45 - Tokens guardados en archivos separados
+2024-02-08 21:12:45 - 
+__SOLICITANDO PLAZA__
+2024-02-08 21:12:45 - Obteniendo Pase de reserva...
+2024-02-08 21:12:59 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-08 21:12:59 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-08 21:12:59 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-08 21:13:00 - Estado de la respuesta: 200
+2024-02-08 21:13:00 - Mensaje enviado! 📧
+2024-02-08 21:13:00 - Fin de linea
+
+2024-02-10 12:07:13 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-10 12:07:13 - 
+__CONSULTA DE TOKEN__
+2024-02-10 12:07:19 - Fecha a solicitar plaza: 2024-02-17
+2024-02-10 12:07:19 - Cargando página https://app-officemanager.raona.com
+2024-02-10 12:07:20 - Cargando credenciales contraseña ...
+2024-02-10 12:07:21 - Iniciando sesion ...
+2024-02-10 12:07:21 - Buscando datos en localStore ...
+2024-02-10 12:07:27 - Datos encontrados en localStorage
+2024-02-10 12:07:27 - Cerrando Navegador
+2024-02-10 12:07:28 - Tokens guardados en archivos separados
+2024-02-10 12:07:28 - 
+__SOLICITANDO PLAZA__
+2024-02-10 12:07:28 - Obteniendo Pase de reserva...
+2024-02-10 12:07:28 - Error HTTP: 400 - No es posible seleccionar el fin de semana, Detalles: It is not possible to select the weekend. (Parameter 'Date')
+2024-02-10 12:07:28 - No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo!!?
+2024-02-10 12:07:28 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-10 12:07:29 - Estado de la respuesta: 200
+2024-02-10 12:07:29 - Mensaje enviado! 📧
+2024-02-10 12:07:29 - Fin de linea
+
+2024-02-10 12:32:02 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-10 12:32:02 - 
+__CONSULTA DE TOKEN__
+2024-02-10 12:32:07 - Fecha a solicitar plaza: 2024-02-16
+2024-02-10 12:32:07 - Cargando página https://app-officemanager.raona.com
+2024-02-10 12:32:08 - Cargando credenciales contraseña ...
+2024-02-10 12:32:08 - Iniciando sesion ...
+2024-02-10 12:32:08 - Buscando datos en localStore ...
+2024-02-10 12:32:14 - Datos encontrados en localStorage
+2024-02-10 12:32:14 - Cerrando Navegador
+2024-02-10 12:32:16 - Tokens guardados en archivos separados
+2024-02-10 12:32:16 - 
+__SOLICITANDO PLAZA__
+2024-02-10 12:32:16 - Obteniendo Pase de reserva...
+2024-02-10 12:32:17 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-10 12:32:17 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-10 12:32:17 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-10 12:32:17 - Estado de la respuesta: 200
+2024-02-10 12:32:17 - Mensaje enviado! 📧
+2024-02-10 12:32:17 - Fin de linea
+
