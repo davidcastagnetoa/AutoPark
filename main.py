@@ -55,6 +55,19 @@ if __name__ == "__main__":
             API.write_log("Fin de linea\n")
             sys.exit(1)
 
+            # API.write_log("Iniciando segundo intento")
+            # time.sleep(10)
+            # reservationId = get_parking_place(secret_access)
+
+            # if reservationId == -3:
+            #     msg_2 = "Error en el segundo intento, revisa los mensajes previos o consulta la aplicacion web en un navegador"
+            #     API.write_log(msg_2)
+            #     API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            #     print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            #     send_message(TOKEN, CHAT_ID, msg_2)
+            #     API.write_log("Fin de linea\n")
+            #     sys.exit(1)
+
         if reservationId == -4:
             msg = "Estas excediendo el limite de dias para petición. Máximo 7 días"
             spinner.fail(msg)

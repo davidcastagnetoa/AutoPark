@@ -35,7 +35,7 @@ else:
     spinner.fail("No se encontro la configuracion JSON.")
 
 # La fecha es 7 días después de hoy
-date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+date = (datetime.now() + timedelta(days=6)).strftime("%Y-%m-%d")
 
 # # La fecha actual
 # date = datetime.now().strftime("%Y-%m-%d")
