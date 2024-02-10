@@ -24,5 +24,5 @@ downloads/geckodriver
 downloads/geckodriver-v0.33.0-linux64.tar.gz
 downloads/geckodriver-v0.34.0-linux64.tar.gz
 geckodriver.log
-
 logs/api-info.log
+data_telegram_curl.txt
