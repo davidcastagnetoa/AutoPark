@@ -7,7 +7,14 @@ app = Flask(__name__)
 def handle_webhook():
     update = request.get_json()
     print("Received webhook:", update)
-    # Aquí puedes procesar el update de Telegram según necesites
+
+    # Procesar el comando /hello
+    if 'message' in update and 'text' in update['message']:
+        text = update['message']['text']
+        if text == '/hello':
+            print("Mensaje recibido: /hello")
+            # Aquí puedes añadir más lógica, como responder al mensaje
+
     return jsonify({"status": "success"})
 
 

@@ -1,0 +1,51 @@
+cd /etc/systemd/system/flaskapp.service
+nano flaskapp.service
+
+---------------------------------
+
+[Unit]
+Description=Gunicorn instance to serve my Flask app
+After=network.target
+
+[Service]
+User=admin
+Group=admin
+WorkingDirectory=/home/admin/documents/AutoPark
+Environment="PATH=/home/admin/documents/AutoPark/flaskvenv/bin"
+ExecStart=/home/admin/documents/AutoPark/flaskvenv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 send_message_test:app
+
+
+[Install]
+WantedBy=multi-user.target
+
+-------------------------------------------------------
+### 1. Iniciar el Servicio
+sudo systemctl start flaskapp.service
+
+### 2. Habilitar el Servicio en el Arranque
+sudo systemctl enable flaskapp.service
+
+
+
+### EN caso de modificar flaskapp.services ###
+    ## 1. Recargar el Daemon de systemd
+    sudo systemctl daemon-reload
+
+    ## 2. Reiniciar el Servicio
+    sudo systemctl restart flaskapp.service
+
+    ## 3. Verificar el Estado del Servicio
+    sudo systemctl status flaskapp.service
+
+    ## 4. Ver logs Servicio
+    journalctl -u flaskapp.service
+
+    ## 5. Asegurarse de que el Puerto Esté Abierto
+    sudo ufw allow 5000
+
+### Para Actualizaciones del codigo:
+    ## 6. Detiene el Servicio
+    sudo systemctl stop flaskapp.service
+
+    ### 7. Iniciar el Servicio
+    sudo systemctl start flaskapp.service

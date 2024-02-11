@@ -64,7 +64,7 @@ def handle_webhook():
     if 'message' in update and 'text' in update['message']:
         text = update['message']['text']
         if text == '/hello':
-            send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. soy un bot de Telegram")
+            send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. como bot de Telegram, puedo ejecutar funciones de tu codigo de python")
             # Aquí puedes añadir más lógica, como responder al mensaje
 
     return jsonify({"status": "success"})

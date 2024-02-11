@@ -79,7 +79,7 @@ if __name__ == "__main__":
             sys.exit(1)
 
         if reservationId == -5:
-            msg = "El servidor rechaza la peticion. Recuerda que las pruebas deben realizarse a partir de las 22:00 de Lunes a Viernes"
+            msg = "El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
