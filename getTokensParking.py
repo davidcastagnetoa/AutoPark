@@ -38,13 +38,15 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 # Headless mode Firefox
-firefox_options.add_argument("--headless")
-firefox_options.add_argument("--no-sandbox")
-firefox_options.add_argument("--disable-dev-shm-usage")
+# firefox_options.add_argument("--headless")
+# firefox_options.add_argument("--no-sandbox")
+# firefox_options.add_argument("--disable-dev-shm-usage")
 
 # Ruta al perfil de Firefox, PARA BOTON DE INICIO POR MICROSOFT
 # Cambiar por la ruta a su perfil de Firefox que se utilizará para evitar la autenticación en Hybo
-profile_path = "/home/christiandavid/.mozilla/firefox/39eehsmk.selenium"
+
+# profile_path = "/home/christiandavid/.mozilla/firefox/39eehsmk.selenium"
+profile_path = "/home/christiandavid/Documents/Github/hector_data/p7jnmmd9.Selenium"  # Perfil de hector
 
 # Crea un objeto FirefoxProfile con la ruta de tu perfil
 profile = FirefoxProfile(profile_path)
@@ -160,8 +162,8 @@ def getToken():
 
     # Lista de claves a verificar en localStorage: accesss_token, refresh_token UNICAS PARA CADA USUARIO
     keys_to_check = [
-        "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-458492eb-f28b-414d-98dd-1bf31a7b453f-https://manageroffice.onmicrosoft.com/api/access_as_user--",
-        "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]
+        "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-3055fa7f-a944-4927-801e-a62b63119e43-https://manageroffice.onmicrosoft.com/api/access_as_user--",
+        "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]
 
     # Espera hasta que las claves estén en localStorage o se agote el tiempo (25 segundos aquí)
     try:
@@ -198,7 +200,7 @@ def getToken():
             return results;
         }
 
-        return getValuesByKeysFromLocalStorage(["39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-458492eb-f28b-414d-98dd-1bf31a7b453f-https://manageroffice.onmicrosoft.com/api/access_as_user--", "39e9e92e-8f46-404d-8014-eb84b2df0d89-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----"]);
+        return getValuesByKeysFromLocalStorage(["f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-3055fa7f-a944-4927-801e-a62b63119e43-https://manageroffice.onmicrosoft.com/api/access_as_user--", "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----"]);
         """
     )
 
