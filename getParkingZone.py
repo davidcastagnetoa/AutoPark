@@ -115,9 +115,14 @@ def get_parking_place(secret):
                 API.write_log(f"Tenant ID: {tenantId}")
                 API.write_log(f"Zone ID: {zoneId}")
                 API.write_log(f"Reservation ID: {reservationId}")
+                API.write_log(f"Reservation Date: {date}")
 
                 # Solo usaremos la ultima que es el ID de la plaza encontrada
                 spinner.succeed("ID de plaza encontrado")
+
+                with open('parking_place.txt', 'w') as f:
+                    f.write(reservationId)
+
                 return reservationId
 
             else:
@@ -294,39 +299,3 @@ def load_data_place(
         API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")
         spinner.fail(f"Error HTTP: {e}, Detalles: {response.text}")
         return None
-
-
-# Eliminar la plaza reservada (No en produccion)
-def delete_parking_place(secret, reservation_id):
-    headers = {
-        "Content-Type": "application/json; charset=utf-8",
-        "Authorization": f"Bearer {secret}",
-    }
-
-    body = {
-        "userId": USERID,
-        "reservationId": reservation_id,
-    }
-
-    DELETE_URL = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/" + reservation_id
-
-    if secret:
-        try:
-            response = requests.delete(DELETE_URL, headers=headers, json=body)
-            response.raise_for_status()
-
-            if response.text:  # Verifica si hay contenido en la respuesta
-                data = response.json()
-                API.write_log("Peticion exitosa.")
-                API.write_log(f"Estado de la respuesta: {response.status_code}")
-                API.write_log(data)
-                API.write_log("Plaza eliminada correctamente")
-            else:
-                API.write_log("Peticion exitosa, pero no hay contenido en la respuesta.")
-
-        except requests.HTTPError as e:
-            API.write_log(f"Error HTTP: {e}")
-            API.write_log("Error al eliminar la plaza")
-        except Exception as e:
-            API.write_log(f"Error: {e}")
-            API.write_log("Error al eliminar la plaza")

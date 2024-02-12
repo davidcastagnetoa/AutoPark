@@ -4,52 +4,29 @@ import os
 import errno
 from halo import Halo
 from flask import Flask, request, jsonify
+from sendTelegramMessage import send_message
+from deleteParkingZone import delete_parking_place
+from getTokensParking import getToken
+from utils.logger import log, API
+from halo import Halo
 
 # Cargando credenciales de acceso
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
+# Llamando spinner
+spinner = Halo(text='Comprobando variables de entorno', spinner='dots')
+spinner.start()
 
-def send_message(token, chat_id, message):
-    spinner = Halo(text=f'Preparando envío de mensaje', spinner='dots')
-    spinner.start()
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    datos = {
-        "chat_id": chat_id,
-        "text": message,
-        "parse_mode": "HTML"
-    }
-    spinner.text = "Enviando mensaje"
-    try:
-        response = requests.post(url, data=datos)
-        response.raise_for_status()
-        print(f'Estado de la respuesta: {response.status_code}')
-        print(f"Mensaje enviado! 📧")
-        spinner.succeed("Mensaje enviado! 📧")
-        return response.json()
-    except requests.exceptions.ConnectionError as e:
-        # Capturar la excepcion de manera más general y luego verificar el tipo de error
-        if e.args and isinstance(e.args[0], requests.packages.urllib3.exceptions.ProtocolError):
-            inner_exception = e.args[0].__context__
-            if isinstance(inner_exception, ConnectionResetError) and inner_exception.errno == errno.WSAECONNRESET:
-                print("Peticion denegada por algún firewall, Revisa tu firewall")
-                spinner.fail("Peticion denegada por algún firewall, Revisa tu firewall")
-            else:
-                print(f"Error de conexión: {e}")
-                spinner.fail(f"Error de conexión: {e}")
-        else:
-            print(f"Error de conexión: {e}")
-            spinner.fail(f"Error de conexión: {e}")
-        return None
-    except requests.HTTPError as e:
-        print(f"Error HTTP: {e}, Detalles: {response.text}")
-        spinner.fail("Fallo al enviar mensaje")
-        return None
-    except Exception as e:
-        print(f"Error HTTP: {e}, Detalles: {response.text}")
-        spinner.fail("Fallo al enviar mensaje")
-        return None
+
+# Obteniendo Token
+secret_access = getToken()
+if secret_access is not None:
+    API.write_log("\n__SOLICITANDO TOKEN DE ACCESO__")
+    print("\n__SOLICITANDO TOKEN DE ACCESO__")
+    spinner.text = "Llamando a funcion para obtener reservationId"
+    reservationId = ""
 
 
 app = Flask(__name__)
@@ -66,6 +43,9 @@ def handle_webhook():
         if text == '/hello':
             send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. soy un bot de Telegram")
             # Aquí puedes añadir más lógica, como responder al mensaje
+            if text == '/delete':
+                pass
+                # delete_parking_place(secret_access, reservationId)
 
     return jsonify({"status": "success"})
 
