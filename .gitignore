@@ -5,6 +5,7 @@ chromedriver
 tokenAcceso.txt
 tokenActualizacion.txt
 venv/
+flaskvenv/
 res/
 logs/
 logs/api-info.log
