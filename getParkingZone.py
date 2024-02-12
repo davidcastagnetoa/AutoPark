@@ -35,7 +35,7 @@ else:
     spinner.fail("No se encontro la configuracion JSON.")
 
 # La fecha es 7 días después de hoy
-date = (datetime.now() + timedelta(days=6)).strftime("%Y-%m-%d")
+date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
 
 # # La fecha actual
 # date = datetime.now().strftime("%Y-%m-%d")
@@ -120,8 +120,8 @@ def get_parking_place(secret):
                 # Solo usaremos la ultima que es el ID de la plaza encontrada
                 spinner.succeed("ID de plaza encontrado")
 
-                with open('parking_place.txt', 'w') as f:
-                    f.write(reservationId)
+                # with open('parking_place.txt', 'w') as f:
+                #     f.write(reservationId)
 
                 return reservationId
 
