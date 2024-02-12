@@ -44,6 +44,7 @@ def handle_webhook():
             send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. soy un bot de Telegram")
             # Aquí puedes añadir más lógica, como responder al mensaje
             if text == '/delete':
+                send_message(TOKEN, CHAT_ID, "Hola, Dime la fecha de la plaza a liberar")
                 pass
                 # delete_parking_place(secret_access, reservationId)
 
