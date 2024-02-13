@@ -12,11 +12,12 @@ import json
 from dotenv import load_dotenv
 import os
 import sys
-import pickle
-import time
+# import pickle
+# import time
 from utils.logger import log, API
-
 from urllib3.exceptions import ProtocolError
+from halo import Halo
+
 
 # Tu codigo para iniciar WebDriver y realizar acciones
 
@@ -38,7 +39,6 @@ firefox_capabilities = firefox_options.to_capabilities()
 
 # Ruta al perfil de Firefox, PARA BOTON DE INICIO POR MICROSOFT
 # Cambiar por la ruta a su perfil de Firefox que se utilizara para evitar la autenticacion en Hybo
-
 profile_path = "hector"
 # profile_path = "/mnt/c/Users/david.castagneto/AppData/Roaming/Mozilla/Firefox/Profiles/qi4jpiz5.hector_2"
 
@@ -85,6 +85,7 @@ ascii_art_kithack = '''
 API.write_log(ascii_art_kithack)
 
 API.write_log("\n__CONSULTA DE TOKEN__")
+print("\n__CONSULTA DE TOKEN__")
 
 
 def getToken():
@@ -96,24 +97,34 @@ def getToken():
     # Da tiempo para que la pagina se cargue
     # Espera hasta que el elemento con el ID "next" este presente
     API.write_log(f"Cargando pagina {link}")
+    spinner = Halo(text=f'Cargando pagina {link}', spinner='dots')
+    spinner.start()
+    spinner.text = "Cargando datos de pagina"
     try:
         login_button = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.ID, "next"))
         )
+        spinner.succeed('Boton de inicio de sesion encontrado')
         API.write_log("Boton de inicio de sesion encontrado, inciando sesion en Office 365")
     except TimeoutException:
+        spinner.fail("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado. Fallo de inicio de sesion.")
         API.write_log("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado.")
     except NoSuchElementException:
+        spinner.fail("NoSuchElement: Boton de inicio de sesion no encontrado en la pagina. Fallo de inicio de sesion.")
         API.write_log("NoSuchElement: Boton de inicio de sesion no encontrado en la pagina.")
     except Exception as e:
+        spinner.fail(f"{e}. Fallo de inicio de sesion.")
+        print("Mapear esta excepcion", e)
         API.write_log("Boton de inicio no entrado. Mapear esta excepcion", e)
 
+    spinner.text = "Localizando boton de inicio de sesion de Office 365."
     try:
         API.write_log("Navegando a la pagina de la aplicacion...")
         # Iniciando sesion con Cuenta Office 365
         try:
-            # Espera hasta que el boton de inicio de sesion de Office 365 este presente y luego haz clic
+            # Espera hasta que el boton de inicio d e sesion de Office 365 este presente y luego haz clic
             # BOTON DE INICIO POR MICROSOFT
+            spinner.succeed("Iniciando sesion con cuenta 365 Office ...")
             API.write_log("Iniciando sesion con cuenta 365 Office ...")
             login_365_button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
@@ -121,27 +132,36 @@ def getToken():
             API.write_log("El elemento no esta disponible en la pagina. Posiblemente ya este dentro del perfil de usuario")
 
         API.write_log("Comprobando elemento SD_dropdown en la pagina")
+        spinner.text = "Comprobando elemento SD_dropdown en la pagina."
         try:
             sd_dropdown = WebDriverWait(driver, 20).until(
                 EC.presence_of_element_located((By.ID, "itemoffice"))
             )
+            spinner.succeed("DropDown localizado!. Sesion iniciada")
             API.write_log("DropDown localizado.")
             API.write_log("Aplicacion dentro del perfil del usuario.")
         except TimeoutException:
+            spinner.fail("Timeout: Dropdown no encontrado dentro del tiempo esperado. Verificar en modo head.")
             API.write_log("Timeout: Dropdown no encontrado dentro del tiempo esperado. Verificar en modo head")
             driver.quit()
             exit()
         except NoSuchElementException:
+            spinner.fail("NoSuchElement: Dropdown no encontrado en la pagina. Verificar en modo head")
             API.write_log("NoSuchElement: Dropdown no encontrado en la pagina. Verificar en modo head")
             driver.quit()
             exit()
         except Exception as e:
+            spinner.fail("DropDown: Mapear esta excepcion, Verificar en modo head:", e)
+            print("DropDown: Mapear esta excepcion, Verificar en modo head:", e)
             API.write_log("DropDown: Mapear esta excepcion, Verificar en modo head:", e)
             driver.quit()
             exit()
         API.write_log("Sesion restaurada con exito.")
 
     except Exception as e:
+        spinner.fail("Error al intentar iniciar sesion con perfil: ", str(e))
+        print("Asegurate de haber iniciado sesion y guardado tu inicio de sesion en dicho perfil")
+        print("De persistir, borra el perfil, crea uno nuevo, inicia sesion antes de usarlo")
         API.write_log("Error al intentar iniciar sesion con perfil: ", str(e))
         API.write_log("Asegurate de haber iniciado sesion y guardado tu inicio de sesion en dicho perfil")
         API.write_log("De persistir, borra el perfil, crea uno nuevo, inicia sesion antes de usarlo")
@@ -163,6 +183,7 @@ def getToken():
         "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-3055fa7f-a944-4927-801e-a62b63119e43-https://manageroffice.onmicrosoft.com/api/access_as_user--",
         "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]
 
+    spinner.text = "Buscando datos en localStore ..."
     # Espera hasta que las claves esten en localStorage o se agote el tiempo (25 segundos aqui)
     try:
         API.write_log("Extrayendo tokens ...")
@@ -170,8 +191,10 @@ def getToken():
             lambda x: check_keys_in_localstorage(driver, keys_to_check)
         )
         API.write_log("Datos encontrados en localStorage: ")
+        spinner.succeed("Datos encontrados en localStorage!")
     except TimeoutException:
         API.write_log("Las claves no se encontraron en localStorage dentro del tiempo especificado.")
+        spinner.fail("Error: Las claves no se encontraron en localStorage dentro del tiempo especificado. Revisa en modo head")
         driver.quit()
         sys.exit(-1)
 
@@ -206,6 +229,7 @@ def getToken():
     if "No se encontraron" in access_and_refresh_item_values[-1]:
         # Remueve y guarda el ultimo elemento
         not_found_message = access_and_refresh_item_values.pop()
+        spinner.fail(f"No se han encontrado claves de busqueda de tokens: {not_found_message}")
         API.write_log(not_found_message)
 
     # Ahora puedes asignar los valores restantes a variables
@@ -213,6 +237,7 @@ def getToken():
         accessToken = access_and_refresh_item_values[0]
         refreshToken = access_and_refresh_item_values[1]
 
+    spinner.text = "Extrayendo tokens ..."
     try:
         access_json_str = accessToken
         refresh_json_str = refreshToken
@@ -239,8 +264,8 @@ def getToken():
         # API.write_log(f"{credential_type_refresh}, Secret: {secret_refresh}\n")
 
         # Cierra el navegador
-        API.write_log("Cerrando Navegador")
-        driver.quit()
+        # API.write_log("Cerrando Navegador")
+        # driver.quit()
 
         # Guardar los tokens en archivos separados
         with open("tokenAcceso.txt", "w") as f:
@@ -251,25 +276,31 @@ def getToken():
         # log("😈")
 
         if secret_access is not None:
+            spinner.succeed("Token obtenido!, Cerrando Navegador!")
+            driver.quit()
             return secret_access
         else:
             API.write_log("Clave 'secret' no encontrada")
+            spinner.fail("Clave 'secret' no encontrada!, Cerrando Navegador!")
             return None
 
     except json.JSONDecodeError:
         API.write_log("Error al decodificar la cadena JSON")
+        spinner.fail(f"Error al decodificar la cadena JSON, Cerrando Navegador!")
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
         driver.quit()
         return None
     except TypeError:
         API.write_log("Tipo de dato incorrecto, se esperaba un diccionario")
+        spinner.fail(f"Tipo de dato incorrecto, se esperaba un diccionario, Cerrando Navegador!")
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
         driver.quit()
         return None
     except Exception as e:
         API.write_log(f"Se produjo un error desconocido: {e}")
+        spinner.fail(f"Se produjo un error desconocido: {e}, Cerrando Navegador!")
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
         driver.quit()
