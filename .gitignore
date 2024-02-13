@@ -1,4 +1,4 @@
-# .env
+.env
 .vscode/
 __pycache__/
 chromedriver
@@ -8,6 +8,7 @@ venv/
 windvenv/
 # res/
 logs/
+hector/
 downloads/
 src/
 chromedriver.exe      
