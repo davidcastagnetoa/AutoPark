@@ -1,0 +1,13 @@
+scp  -i "hector_keys.pem" /c/Users/david.castagneto/Documents/keys/others/logins.json admin@ec2-13-38-245-253.eu-west-3.compute.amazonaws.com:/home/admin/applications/Parking_SD/AutoPark/hector_profile/logins.json
+
+scp  -i "hector_keys.pem" /c/Users/david.castagneto/Documents/keys/others/sessionstore.jsonlz4 admin@ec2-13-38-245-253.eu-west-3.compute.amazonaws.com:/home/admin/applications/Parking_SD/AutoPark/hector_profile/sessionstore.jsonlz4
+
+scp  -i "hector_keys.pem" /c/Users/david.castagneto/Documents/keys/others/storage.sqlite admin@ec2-13-38-245-253.eu-west-3.compute.amazonaws.com:/home/admin/applications/Parking_SD/AutoPark/hector_profile/storage.sqlite
+
+
+
+
+
+
+
+scp -r -i "hector_keys.pem" "/c/Users/david.castagneto/Documents/keys/storage" admin@ec2-13-38-245-253.eu-west-3.compute.amazonaws.com:/home/admin/applications/Parking_SD/AutoPark/hector_profile/

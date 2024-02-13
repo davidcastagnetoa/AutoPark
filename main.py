@@ -16,6 +16,8 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 if __name__ == "__main__":
     secret_access = getToken()
+    API.write_log("Aplicando tiempo de espera, enviando token de 365 a DB de Hybo...")
+    time.sleep(35)
 
     # secret_access = ""
 
@@ -72,7 +74,8 @@ if __name__ == "__main__":
             sys.exit(1)
 
         API.write_log(f"The reservationId is: {reservationId}")
-        time.sleep(3)
+        API.write_log("Aplicando tiempo de espera...")
+        time.sleep(10)
 
         API.write_log("\n__COMPROBANDO RESERVA DE PLAZA__")
         json_data = load_data_place(reservationId, secret_access)

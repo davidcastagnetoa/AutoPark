@@ -16,85 +16,69 @@ import pickle
 import time
 from utils.logger import log, API
 
+from urllib3.exceptions import ProtocolError
+
+# Tu código para iniciar WebDriver y realizar acciones
+
 # Cargando credenciales de acceso
 load_dotenv()
 USERNAME_HYBO = os.getenv("USERNAME_HYBO")
 PASSWORD_HYBO = os.getenv("PASSWORD_HYBO")
 LINK = os.getenv("LINK")
 
+print(USERNAME_HYBO)
+print(PASSWORD_HYBO)
+print(LINK)
+
 # Configura las opciones para Firefox
 # firefox_options = webdriver.FirefoxOptions()
 firefox_options = Options()
 firefox_capabilities = firefox_options.to_capabilities()
 
-# Configura las opciones para Chrome
-# chrome_options = webdriver.ChromeOptions()
-chrome_options = Options()
-chrome_capabilities = chrome_options.to_capabilities()
-
-# Headless mode Chrome
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--no-sandbox")
-chrome_options.add_argument("--disable-dev-shm-usage")
-
 # Headless mode Firefox
-# firefox_options.add_argument("--headless")
-# firefox_options.add_argument("--no-sandbox")
-# firefox_options.add_argument("--disable-dev-shm-usage")
+firefox_options.add_argument("--headless")
+firefox_options.add_argument("--no-sandbox")
+firefox_options.add_argument("--disable-dev-shm-usage")
 
 # Ruta al perfil de Firefox, PARA BOTON DE INICIO POR MICROSOFT
 # Cambiar por la ruta a su perfil de Firefox que se utilizará para evitar la autenticación en Hybo
 
-# profile_path = "/home/christiandavid/.mozilla/firefox/39eehsmk.selenium"
 profile_path = "hector"
-# profile_path = "/c/Users/david.castagneto/AppData/Roaming/Mozilla/Firefox/Profiles/qi4jpiz5.hector_2" # Perfil de hector
+# profile_path = "/mnt/c/Users/david.castagneto/AppData/Roaming/Mozilla/Firefox/Profiles/qi4jpiz5.hector_2"
+
+try:
+    # Crea un objeto FirefoxProfile con la ruta de tu perfil
+    profile = FirefoxProfile(profile_path)
+
+    # Agrega el perfil al objeto de opciones
+    firefox_options.profile = profile
+
+    # # Especificando la ruta de geckodriver con Service
+    # service = Service('/home/admin/.cache/selenium/geckodriver/linux64/0.34.0/geckodriver')  # For Production in AWS Server
+
+    # driver = webdriver.Firefox(service=service, options=firefox_options)  # For Production in AWS Server
+    driver = webdriver.Firefox(options=firefox_options)
+
+    # Abre la página web
+    link = LINK
+    driver.get(link)
+
+except ProtocolError as e:
+    API.write_log(f"Error al inicializar el WebDriver: {e}")
+    API.write_log("Revisa el perfil de firefox, no ha sido posible extraer los datos del perfil")
+    if driver is None:
+        driver.quit()
 
 
-# Crea un objeto FirefoxProfile con la ruta de tu perfil
-profile = FirefoxProfile(profile_path)
-
-# Agrega el perfil al objeto de opciones
-firefox_options.profile = profile
-
-# # Especificando la ruta de geckodriver con Service
-# service = Service('/home/admin/documents/AutoPark/downloads/geckodriver') # For Production in AWS Server
-ascii_art = """
-         , ,\ ,'\,'\ ,'\ ,\ ,
-   ,  ;\/ \/ \`'     `   '  /|
-   |\/                      |
-   :                        |
-   :                        |
-    |                       |
-    :               -.     _|
-     :                \     `.
-     |         ________:______\.
-     :       ,'o       / o    ;
-     :       \       ,'-----./
-      \_      `--.--'        )
-     ,` `.              ,---'|
-     : `                     |
-      `,-'                   |
-      /      ,---.          ,'
-   ,-'            `-,------'   Developed By 
-  '   `.        ,--'           AbathurCris!
- '     `-.____/
-/           \.
-"""
-API.write_log(ascii_art)
 API.write_log("\n__CONSULTA DE TOKEN__")
-
-# # Usar Chrome/Firefox por defecto, sin interaccion del usuario
-# driver = webdriver.Chrome(options=chrome_options)
-
-# driver = webdriver.Firefox(service=service, options=firefox_options) # For Production in AWS Server
-driver = webdriver.Firefox(options=firefox_options)
-
-# Abre la página web
-link = LINK
-driver.get(link)
 
 
 def getToken():
+    global driver
+    if driver is None:
+        print("Error: 'driver' no está inicializado.")
+        return None  # O maneja este caso como sea apropiado
+
     # Da tiempo para que la página se cargue
     # Espera hasta que el elemento con el ID "next" esté presente
     API.write_log(f"Cargando página {link}")
