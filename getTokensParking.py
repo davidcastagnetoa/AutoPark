@@ -33,13 +33,14 @@ firefox_options = Options()
 firefox_capabilities = firefox_options.to_capabilities()
 
 # Headless mode Firefox
-# firefox_options.add_argument("--headless")
-# firefox_options.add_argument("--no-sandbox")
-# firefox_options.add_argument("--disable-dev-shm-usage")
+firefox_options.add_argument("--headless")
+firefox_options.add_argument("--no-sandbox")
+firefox_options.add_argument("--disable-dev-shm-usage")
 
 # Ruta al perfil de Firefox, PARA BOTON DE INICIO POR MICROSOFT
 # Cambiar por la ruta a su perfil de Firefox que se utilizara para evitar la autenticacion en Hybo
 profile_path = "hector"
+# profile_path = "/mnt/c/Users/david.castagneto/Documents/Personal_Projects/AutoPark/hector"
 # profile_path = "/mnt/c/Users/david.castagneto/AppData/Roaming/Mozilla/Firefox/Profiles/qi4jpiz5.hector_2"
 
 try:
@@ -49,10 +50,16 @@ try:
     # Agrega el perfil al objeto de opciones
     firefox_options.profile = profile
 
-    # # Especificando la ruta de geckodriver con Service
+    # # Especificando la ruta de geckodriver con Service, Esta opcion es cuando no se ha añadido geckodriver al PATH
     # service = Service('/home/admin/.cache/selenium/geckodriver/linux64/0.34.0/geckodriver')  # For Production in AWS Server
+    # service = Service('/home/gusdev/.cache/selenium/geckodriver/linux64/0.34.0/geckodriver')  # For WSL terminal
 
-    # driver = webdriver.Firefox(service=service, options=firefox_options)  # For Production in AWS Server
+    # # Para añadir al PATH, siga estas instrucciones:
+    # # 1. Localice la ruta de su archivo geckodriver con este comando: sudo find / -name "geckodriver" 2>/dev/null
+    # # 2. Añada temporalmente al path con este comando: export PATH=$PATH:/path/to/geckodriver
+    # # 3. Añada permanentemente al path con este comando: echo 'export PATH=$PATH:/path/to/geckodriver' >> ~/.bashrc
+
+    # driver = webdriver.Firefox(service=service, options=firefox_options)  # For Production in AWS Server or WSL terminal
     driver = webdriver.Firefox(options=firefox_options)
 
     # Abre la pagina web

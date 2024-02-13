@@ -34,9 +34,8 @@ def send_message(token, chat_id, message):
         if e.args and isinstance(e.args[0], requests.packages.urllib3.exceptions.ProtocolError):
             inner_exception = e.args[0].__context__
             if isinstance(inner_exception, ConnectionResetError) and inner_exception.errno == errno.WSAECONNRESET:
-                API.write_log(
-                    "Peticion denegada por algun firewall, Revisa tu firewall")
-                spinner.fail("Peticion denegada por algún firewall, Revisa tu firewall")
+                API.write_log("Denegado, el firewall ha bloqueado esta petición. Consulte con el administrador de su red.")
+                spinner.fail("Denegado, el firewall ha bloqueado esta petición. Consulte con el administrador de su red.")
             else:
                 API.write_log(f"Error de conexion: {e}")
                 spinner.fail(f"Error de conexión: {e}")
@@ -55,4 +54,4 @@ def send_message(token, chat_id, message):
 
 
 # # Ejemplo
-# send_message(TOKEN, CHAT_ID, "Hola, soy un bot de Telegram")
+send_message(TOKEN, CHAT_ID, "Hola, soy un bot de Telegram")
