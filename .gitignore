@@ -1,11 +1,12 @@
-.env
+# .env
 .vscode/
 __pycache__/
 chromedriver
 tokenAcceso.txt
 tokenActualizacion.txt
 venv/
-res/
+windvenv/
+# res/
 logs/
 downloads/
 src/

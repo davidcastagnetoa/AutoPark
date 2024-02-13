@@ -46,7 +46,9 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 # Cambiar por la ruta a su perfil de Firefox que se utilizará para evitar la autenticación en Hybo
 
 # profile_path = "/home/christiandavid/.mozilla/firefox/39eehsmk.selenium"
-profile_path = "/home/christiandavid/Documents/Github/hector_data/p7jnmmd9.Selenium"  # Perfil de hector
+profile_path = "hector"
+# profile_path = "/c/Users/david.castagneto/AppData/Roaming/Mozilla/Firefox/Profiles/qi4jpiz5.hector_2" # Perfil de hector
+
 
 # Crea un objeto FirefoxProfile con la ruta de tu perfil
 profile = FirefoxProfile(profile_path)
@@ -241,8 +243,8 @@ def getToken():
         # API.write_log(f"{credential_type_refresh}, Secret: {secret_refresh}\n")
 
         # Cierra el navegador
-        API.write_log("Cerrando Navegador")
-        driver.quit()
+        # API.write_log("Cerrando Navegador")
+        # driver.quit()
 
         # Guardar los tokens en archivos separados
         with open("tokenAcceso.txt", "w") as f:

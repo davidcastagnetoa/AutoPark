@@ -1,0 +1,54 @@
+[
+    [
+        {
+            "id": "f86d5726-f921-48bb-a97d-82e76bc6dac5",
+            "objectType": "OM.ParkingReservation",
+            "createdAtUtc": "2024-02-13T00:05:05.258129Z",
+            "userId": "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382",
+            "userName": "Héctor González De la Vera",
+            "officeId": "9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8",
+            "date": "2024-02-20T00:00:00",
+            "zoneId": "35e0550e-953a-41b5-ba97-cacaa4a44160",
+            "seatId": [
+                "079ac209-35b9-402a-8dbf-ba96f316aeea"
+            ],
+            "turn": "AllDay",
+            "zone": {
+                "id": "35e0550e-953a-41b5-ba97-cacaa4a44160",
+                "objectType": "OM.ParkingZone",
+                "name": "Victoria - PS2",
+                "officeId": "9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8",
+                "mapImageUrl": "https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png",
+                "tags": [],
+                "vehicleType": "Car",
+                "vehicleEngineType": "Fuel",
+                "currencyCode": "EUR"
+            },
+            "seat": {
+                "id": "079ac209-35b9-402a-8dbf-ba96f316aeea",
+                "objectType": "OM.ParkingSeat",
+                "name": "107",
+                "zoneId": "35e0550e-953a-41b5-ba97-cacaa4a44160",
+                "zone": "Victoria - PS2",
+                "enabled": true,
+                "tags": [],
+                "mapPoints": {
+                    "x": 172.8,
+                    "y": 724.7,
+                    "width": 30.7,
+                    "height": 61.0
+                }
+            },
+            "vehicle": {
+                "id": "28eb114a-2fc2-4e74-a1c9-e5de83c135b8",
+                "objectType": "OM.Vehicle",
+                "type": "Car",
+                "engine": "Fuel",
+                "licensePlate": "5827LCN"
+            },
+            "status": "Pending",
+            "userBasicInformations": [],
+            "bookingType": "Day"
+        }
+    ]
+]
