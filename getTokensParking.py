@@ -18,7 +18,7 @@ from utils.logger import log, API
 
 from urllib3.exceptions import ProtocolError
 
-# Tu código para iniciar WebDriver y realizar acciones
+# Tu codigo para iniciar WebDriver y realizar acciones
 
 # Cargando credenciales de acceso
 load_dotenv()
@@ -26,22 +26,18 @@ USERNAME_HYBO = os.getenv("USERNAME_HYBO")
 PASSWORD_HYBO = os.getenv("PASSWORD_HYBO")
 LINK = os.getenv("LINK")
 
-print(USERNAME_HYBO)
-print(PASSWORD_HYBO)
-print(LINK)
-
 # Configura las opciones para Firefox
 # firefox_options = webdriver.FirefoxOptions()
 firefox_options = Options()
 firefox_capabilities = firefox_options.to_capabilities()
 
 # Headless mode Firefox
-firefox_options.add_argument("--headless")
-firefox_options.add_argument("--no-sandbox")
-firefox_options.add_argument("--disable-dev-shm-usage")
+# firefox_options.add_argument("--headless")
+# firefox_options.add_argument("--no-sandbox")
+# firefox_options.add_argument("--disable-dev-shm-usage")
 
 # Ruta al perfil de Firefox, PARA BOTON DE INICIO POR MICROSOFT
-# Cambiar por la ruta a su perfil de Firefox que se utilizará para evitar la autenticación en Hybo
+# Cambiar por la ruta a su perfil de Firefox que se utilizara para evitar la autenticacion en Hybo
 
 profile_path = "hector"
 # profile_path = "/mnt/c/Users/david.castagneto/AppData/Roaming/Mozilla/Firefox/Profiles/qi4jpiz5.hector_2"
@@ -59,7 +55,7 @@ try:
     # driver = webdriver.Firefox(service=service, options=firefox_options)  # For Production in AWS Server
     driver = webdriver.Firefox(options=firefox_options)
 
-    # Abre la página web
+    # Abre la pagina web
     link = LINK
     driver.get(link)
 
@@ -69,6 +65,24 @@ except ProtocolError as e:
     if driver is None:
         driver.quit()
 
+ascii_art_kithack = '''
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+'''
+
+API.write_log(ascii_art_kithack)
 
 API.write_log("\n__CONSULTA DE TOKEN__")
 
@@ -76,12 +90,12 @@ API.write_log("\n__CONSULTA DE TOKEN__")
 def getToken():
     global driver
     if driver is None:
-        print("Error: 'driver' no está inicializado.")
+        print("Error: 'driver' no esta inicializado.")
         return None  # O maneja este caso como sea apropiado
 
-    # Da tiempo para que la página se cargue
-    # Espera hasta que el elemento con el ID "next" esté presente
-    API.write_log(f"Cargando página {link}")
+    # Da tiempo para que la pagina se cargue
+    # Espera hasta que el elemento con el ID "next" este presente
+    API.write_log(f"Cargando pagina {link}")
     try:
         login_button = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.ID, "next"))
@@ -90,23 +104,21 @@ def getToken():
     except TimeoutException:
         API.write_log("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado.")
     except NoSuchElementException:
-        API.write_log("NoSuchElement: Boton de inicio de sesion no encontrado en la página.")
+        API.write_log("NoSuchElement: Boton de inicio de sesion no encontrado en la pagina.")
     except Exception as e:
         API.write_log("Boton de inicio no entrado. Mapear esta excepcion", e)
 
     try:
-        API.write_log("Navegando a la página de la aplicación...")
-        # driver.get(LINK)
-
+        API.write_log("Navegando a la pagina de la aplicacion...")
         # Iniciando sesion con Cuenta Office 365
         try:
-            # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
+            # Espera hasta que el boton de inicio de sesion de Office 365 este presente y luego haz clic
             # BOTON DE INICIO POR MICROSOFT
-            API.write_log("Iniciando sesión con cuenta 365 Office ...")
+            API.write_log("Iniciando sesion con cuenta 365 Office ...")
             login_365_button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
         except TimeoutException:
-            API.write_log("El elemento no está disponible en la página. Posiblemente ya este dentro del perfil de usuario")
+            API.write_log("El elemento no esta disponible en la pagina. Posiblemente ya este dentro del perfil de usuario")
 
         API.write_log("Comprobando elemento SD_dropdown en la pagina")
         try:
@@ -120,23 +132,23 @@ def getToken():
             driver.quit()
             exit()
         except NoSuchElementException:
-            API.write_log("NoSuchElement: Dropdown no encontrado en la página. Verificar en modo head")
+            API.write_log("NoSuchElement: Dropdown no encontrado en la pagina. Verificar en modo head")
             driver.quit()
             exit()
         except Exception as e:
             API.write_log("DropDown: Mapear esta excepcion, Verificar en modo head:", e)
             driver.quit()
             exit()
-        API.write_log("Sesión restaurada con éxito.")
+        API.write_log("Sesion restaurada con exito.")
 
     except Exception as e:
-        API.write_log("Error al intentar iniciar sesión con perfil: ", str(e))
+        API.write_log("Error al intentar iniciar sesion con perfil: ", str(e))
         API.write_log("Asegurate de haber iniciado sesion y guardado tu inicio de sesion en dicho perfil")
         API.write_log("De persistir, borra el perfil, crea uno nuevo, inicia sesion antes de usarlo")
         driver.quit()
         sys.exit(-1)
 
-    # Funcion para verificar si las claves están en localStorage
+    # Funcion para verificar si las claves estan en localStorage
     def check_keys_in_localstorage(driver, keys):
         API.write_log("Comprobando claves en LocalStorage")
 
@@ -151,7 +163,7 @@ def getToken():
         "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-accesstoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00-3055fa7f-a944-4927-801e-a62b63119e43-https://manageroffice.onmicrosoft.com/api/access_as_user--",
         "f6aa8e63-4d55-4e6a-a37e-0b388a2cf382-b2c_1a_signup_signin_custom.458492eb-f28b-414d-98dd-1bf31a7b453f-manageroffice.b2clogin.com-refreshtoken-53416a92-85aa-4c86-bde0-3c06a7fd8c00----",]
 
-    # Espera hasta que las claves estén en localStorage o se agote el tiempo (25 segundos aquí)
+    # Espera hasta que las claves esten en localStorage o se agote el tiempo (25 segundos aqui)
     try:
         API.write_log("Extrayendo tokens ...")
         WebDriverWait(driver, 25).until(
@@ -192,7 +204,7 @@ def getToken():
 
     # Manejar el caso en que se incluye un mensaje sobre claves no encontradas
     if "No se encontraron" in access_and_refresh_item_values[-1]:
-        # Remueve y guarda el último elemento
+        # Remueve y guarda el ultimo elemento
         not_found_message = access_and_refresh_item_values.pop()
         API.write_log(not_found_message)
 
@@ -216,7 +228,7 @@ def getToken():
         secret_access = access_dict.get(
             "secret", "Clave 'secret' no encontrada")
 
-        # Extraer los valores de "credentialType" y "secret" para el token de actualización
+        # Extraer los valores de "credentialType" y "secret" para el token de actualizacion
         credential_type_refresh = refresh_dict.get(
             "credentialType", "Clave 'credentialType' no encontrada"
         )
@@ -227,8 +239,8 @@ def getToken():
         # API.write_log(f"{credential_type_refresh}, Secret: {secret_refresh}\n")
 
         # Cierra el navegador
-        # API.write_log("Cerrando Navegador")
-        # driver.quit()
+        API.write_log("Cerrando Navegador")
+        driver.quit()
 
         # Guardar los tokens en archivos separados
         with open("tokenAcceso.txt", "w") as f:

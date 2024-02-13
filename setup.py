@@ -1,7 +1,7 @@
 from cx_Freeze import setup, Executable, sys
 
-# Lista de archivos adicionales (ejemplo: imágenes, fuentes, etc.)
-# Si no tienes archivos adicionales, simplemente deja la lista vacía.
+# Lista de archivos adicionales (ejemplo: imagenes, fuentes, etc.)
+# Si no tienes archivos adicionales, simplemente deja la lista vacia.
 
 additional_files = [
     ("static/icon.ico", "static/icon.ico"),
@@ -18,7 +18,7 @@ build_options = {
         "urllib3",
         "idna",
         "certifi",
-        # Añade otros paquetes según sea necesario
+        # Añade otros paquetes segun sea necesario
     ],
     "excludes": ["tkinter"],
     "include_files": additional_files,

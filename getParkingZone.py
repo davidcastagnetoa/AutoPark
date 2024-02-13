@@ -23,11 +23,11 @@ if json_data:
     DATETIMEVEHICLE_CREATED = config["createdAtUtc"]
     DATETIMEVEHICLE_MODIFIED = config["modifiedAtUtc"]
     TURN = config["turn"]
-    # Acceder a otros valores en 'config' según sea necesario
+    # Acceder a otros valores en 'config' segun sea necesario
 else:
     API.write_log("No se encontro la configuracion JSON.")
 
-# La fecha es 7 días después de hoy
+# La fecha es 7 dias despues de hoy
 date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
 
 # # La fecha actual
@@ -100,7 +100,7 @@ def get_parking_place(secret):
                 zoneId = values[1].strip('"')
                 reservationId = values[2].strip('"')
 
-                # Imprimir o usar las variables según sea necesario
+                # Imprimir o usar las variables segun sea necesario
                 API.write_log("Extrayendo variables id del Pase de reserva...")
                 API.write_log(f"Tenant ID: {tenantId}")
                 API.write_log(f"Zone ID: {zoneId}")
@@ -239,7 +239,7 @@ def load_data_place(
 
             except json.JSONDecodeError:
                 # Manejo del caso en que la respuesta es solo una cadena de texto
-                API.write_log('La respuesta no es un JSON válido.')
+                API.write_log('La respuesta no es un JSON valido.')
                 API.write_log('Peticion denegada.')
                 # log("👎")
                 API.write_log('Plaza no reservada. Revisa el calendario')

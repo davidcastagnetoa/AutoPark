@@ -21,7 +21,7 @@ load_dotenv()
 MICROSOFT_ID = os.getenv("MICROSOFT_ID")
 MICROSOFT_PASS = os.getenv("MICROSOFT_PASS")
 
-# Configuración de las opciones de Firefox para el modo headless
+# Configuracion de las opciones de Firefox para el modo headless
 firefox_options = Options()
 # firefox_options.add_argument("--headless")
 # firefox_options.add_argument("--no-sandbox")
@@ -40,12 +40,12 @@ def get_cookies():
 
         # Iniciando sesion con Cuenta Office 365
         try:
-            # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
+            # Espera hasta que el boton de inicio de sesion de Office 365 este presente y luego haz clic
             login_365_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
-            print("Iniciando sesión con cuenta 365 Office ...")
+            print("Iniciando sesion con cuenta 365 Office ...")
         except TimeoutException:
-            print("El elemento MultiTenantADExchange no está disponible en la página.")
+            print("El elemento MultiTenantADExchange no esta disponible en la pagina.")
 
         inputUserName = "i0116"
         buttonNext = "idSIButton9"
@@ -55,8 +55,8 @@ def get_cookies():
         yes_button = "idSIButton9"
         checkBoxInput = "KmsiCheckboxField"
 
-        # Da tiempo a que la primera página se cargue
-        # Espera hasta que el boton "next" esté presente
+        # Da tiempo a que la primera pagina se cargue
+        # Espera hasta que el boton "next" este presente
         try:
             login_button = WebDriverWait(driver, 25).until(
                 EC.presence_of_element_located((By.ID, buttonNext))
@@ -66,7 +66,7 @@ def get_cookies():
             driver.quit()
             exit()
         except NoSuchElementException as e:
-            print("NoSuchElement: Boton de siguiente no encontrado en la página.", str(e))
+            print("NoSuchElement: Boton de siguiente no encontrado en la pagina.", str(e))
             driver.quit()
             exit()
         except Exception as e:
@@ -76,38 +76,38 @@ def get_cookies():
 
         # Inicia sesion
         try:
-            # Busca el campo del nombre de usuario y envía los datos
+            # Busca el campo del nombre de usuario y envia los datos
             print("Cargando credenciales usuario ...")
-            # Espera hasta que el elemento esté presente
+            # Espera hasta que el elemento este presente
             userNameField = WebDriverWait(driver, 20).until(
                 EC.presence_of_element_located((By.ID, inputUserName))
             )
             userNameField.clear()
             if MICROSOFT_ID is None:
-                print("Error: MICROSOFT_ID no está definido.")
+                print("Error: MICROSOFT_ID no esta definido.")
                 sys.exit(1)
             userNameField.send_keys(MICROSOFT_ID)
             print("Usuario enviado correctamente.")
         except NoSuchElementException as e:
-            print("No se encontró el elemento 'userName': ", str(e))
+            print("No se encontro el elemento 'userName': ", str(e))
 
         try:
-            # Busca el boton de siguiente de sesion y haz clic en él
+            # Busca el boton de siguiente de sesion y haz clic en el
             next_button = driver.find_element(By.ID, buttonNext)
             next_button.click()
             print("Siguiente ...")
         except NoSuchElementException as e:
             print("Boton de siguiente de sesion no encontrado.")
-            print("fallo de botón siguiente ...", str(e))
+            print("fallo de boton siguiente ...", str(e))
 
-        # Da tiempo a que la segunda página se cargue
-        # Espera hasta que el boton "sign in" esté presente
+        # Da tiempo a que la segunda pagina se cargue
+        # Espera hasta que el boton "sign in" este presente
         try:
             # Elimina el ElementClickInterceptedError, <div class="lightbox-cover disable-lightbox">
             element = driver.find_element(By.ID, signInButton)
             actions = ActionChains(driver)
             actions.move_to_element(element).perform()
-            # Después de hacer scroll, intenta hacer clic
+            # Despues de hacer scroll, intenta hacer clic
             element.click()
 
             login_button = WebDriverWait(driver, 25).until(
@@ -118,7 +118,7 @@ def get_cookies():
             driver.quit()
             exit()
         except NoSuchElementException as e:
-            print("NoSuchElement: Boton de Sign In no encontrado en la página.", str(e))
+            print("NoSuchElement: Boton de Sign In no encontrado en la pagina.", str(e))
             driver.quit()
             exit()
         except StaleElementReferenceException:
@@ -139,15 +139,15 @@ def get_cookies():
             exit()
 
         try:
-            # Busca el campo de la contraseña y envía los datos
+            # Busca el campo de la contraseña y envia los datos
             print("Cargando credenciales contraseña ...")
-            # Espera hasta que el elemento esté presente
+            # Espera hasta que el elemento este presente
             password_field = WebDriverWait(driver, 20).until(
                 EC.presence_of_element_located((By.ID, inputPassword))
             )
             password_field.clear()
             if MICROSOFT_PASS is None:
-                print("Error: MICROSOFT_PASS no está definido.")
+                print("Error: MICROSOFT_PASS no esta definido.")
                 sys.exit(1)
             password_field.send_keys(MICROSOFT_PASS)
             print("Contraseña enviada correctamente.")
@@ -155,7 +155,7 @@ def get_cookies():
             print("Campo de la contraseña no encontrado.", str(e))
 
         try:
-            # Busca el boton de inicio de sesion y haz clic en él
+            # Busca el boton de inicio de sesion y haz clic en el
             signInButton = driver.find_element(By.ID, signInButton)
             signInButton.click()
             print("Iniciando sesion ...")
@@ -165,7 +165,7 @@ def get_cookies():
 
         # Esperando verificacion de credenciales
         try:
-            # Espera hasta que el elemento esté presente y sea clickeable
+            # Espera hasta que el elemento este presente y sea clickeable
             element = WebDriverWait(
                 driver, 10).until(
                 EC.element_to_be_clickable(
@@ -173,7 +173,7 @@ def get_cookies():
             # Haz clic en el elemento
             element.click()
         except TimeoutException:
-            print("El elemento no se encontró en el tiempo esperado.")
+            print("El elemento no se encontro en el tiempo esperado.")
         except StaleElementReferenceException:
             # Si se produce StaleElementReferenceException, espera un poco y vuelve a intentar
             print("StaleElementReferenceException capturado, volviendo a intentar...")
@@ -188,17 +188,17 @@ def get_cookies():
         time.sleep(50)
 
         try:
-            # Busca el botón de siguiente de sesión y haz clic en él
+            # Busca el boton de siguiente de sesion y haz clic en el
             verify_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, verifyButton)))
             # Haz clic en el elemento
             verify_button.click()
-            print("Verificando código SMS...")
+            print("Verificando codigo SMS...")
         except NoSuchElementException as e:
-            print("Botón de verificar no encontrado.")
-            print("Fallo de botón verificar ...", str(e))
+            print("Boton de verificar no encontrado.")
+            print("Fallo de boton verificar ...", str(e))
 
         try:
-            # Busca el ckeckbox input y haz clic en él
+            # Busca el ckeckbox input y haz clic en el
             checkbox_input = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, checkBoxInput)))
             # Haz clic en el elemento
             checkbox_input.click()
@@ -208,14 +208,14 @@ def get_cookies():
             print("Fallo de checkbox ...", str(e))
 
         try:
-            # Busca el ckeckbox input y haz clic en él
+            # Busca el ckeckbox input y haz clic en el
             yes_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, yes_button)))
             # Haz clic en el elemento
             yes_button.click()
-            print("Marcando botón 'Si' ...")
+            print("Marcando boton 'Si' ...")
         except NoSuchElementException as e:
-            print("Botón de 'Si' no encontrado.")
-            print("Fallo de botón 'Si' ...", str(e))
+            print("Boton de 'Si' no encontrado.")
+            print("Fallo de boton 'Si' ...", str(e))
 
         url = driver.current_url
         print("Url actual: ", url)
@@ -230,7 +230,7 @@ def get_cookies():
         assert "https://app-officemanager.raona.com" in driver.current_url, \
             "No se pudo autenticar en Azure Active Directory."
 
-        print("Se ha iniciado sesión correctamente.")
+        print("Se ha iniciado sesion correctamente.")
         driver.quit()
 
     except Exception as e:
@@ -244,7 +244,7 @@ def login_with_cookies():
         with open('HyboCookies.pkl', 'rb') as file:
             cookies = pickle.load(file)
 
-        # Cargar la página de 'app-officemanager.raona.com' y establecer sus cookies
+        # Cargar la pagina de 'app-officemanager.raona.com' y establecer sus cookies
         driver.get("https://app-officemanager.raona.com/")
         for cookie in cookies:
             if ".app-officemanager.raona.com" in cookie['domain']:
@@ -253,14 +253,14 @@ def login_with_cookies():
                 driver.add_cookie(cookie)
         print("Cookies de app-officemanager.raona.com cargadas ...")
 
-        # Cargar la página de 'manageroffice.b2clogin.com' y establecer sus cookies
+        # Cargar la pagina de 'manageroffice.b2clogin.com' y establecer sus cookies
         driver.get("https://manageroffice.b2clogin.com/manageroffice.onmicrosoft.com/b2c_1a_signup_signin_custom/oauth2/v2.0/authorize?client_id=53416a92-85aa-4c86-bde0-3c06a7fd8c00&scope=https%3A%2F%2Fmanageroffice.onmicrosoft.com%2Fapi%2Faccess_as_user%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fapp-officemanager.raona.com%2F&client-request-id=ccf93630-44dd-45a7-9c4a-b0aa4645484f&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.30.0&client_info=1&code_challenge=FCFDVWfeMW_Y84Gc4cOoqoop2MK_z6x_ePYaBlYsxdQ&code_challenge_method=S256&nonce=82907033-71c5-4199-9b40-dd36b73844fb&state=eyJpZCI6IjFkYTk0MjEzLTFjMTYtNDBjMy1hYzViLWVjNGFkYjFhOGE5ZiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D")
         for cookie in cookies:
             if ".manageroffice.b2clogin.com" in cookie['domain']:
                 driver.add_cookie(cookie)
         print("Cookies de manageroffice.b2clogin.com cargadas ...")
 
-        # Cargar la página de 'login.microsoftonline.com' y establecer sus cookies
+        # Cargar la pagina de 'login.microsoftonline.com' y establecer sus cookies
         driver.get("https://login.microsoftonline.com/")
         for cookie in cookies:
             if "login.microsoftonline.com" in cookie['domain']:
@@ -291,19 +291,19 @@ def login_with_cookies():
                 driver.add_cookie(cookie)
         print("Cookies de login.live cargadas ...")
 
-        # Navegar a la página después de cargar las cookies para restaurar la sesión
+        # Navegar a la pagina despues de cargar las cookies para restaurar la sesion
         driver.get("https://app-officemanager.raona.com/")
 
         # Iniciando sesion con Cuenta Office 365
         try:
-            # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
+            # Espera hasta que el boton de inicio de sesion de Office 365 este presente y luego haz clic
             login_365_button = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
-            print("Iniciando sesión con cuenta 365 Office ...")
+            print("Iniciando sesion con cuenta 365 Office ...")
         except TimeoutException:
-            print("El elemento no está disponible en la página.")
+            print("El elemento no esta disponible en la pagina.")
 
-        print("Sesión restaurada con éxito.")
+        print("Sesion restaurada con exito.")
 
     except Exception as e:
         print("Error al intentar iniciar sesion con cookies:", str(e))
@@ -315,7 +315,7 @@ def save_cookies(driver, domains):
         try:
             # Navega a cada dominio
             driver.get(domain)
-            time.sleep(45)  # Ajusta este tiempo según sea necesario
+            time.sleep(45)  # Ajusta este tiempo segun sea necesario
             print("Cookie capturadas en: ", domain)
 
             # Recoge las cookies de ese dominio

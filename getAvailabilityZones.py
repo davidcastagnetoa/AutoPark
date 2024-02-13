@@ -42,7 +42,7 @@ def getAvailabilityZones(secret_access):
         "Authorization": "Bearer " + secret_access,
         "Content-Type": "application/json",
     }
-    # Parámetros de consulta
+    # Parametros de consulta
     params = {
         "officeId": "9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8",
         "startDate": startDate,

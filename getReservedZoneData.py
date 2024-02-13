@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 def extract_information(json_data):
-    # Asegúrate de que json_data sea una lista y contenga al menos un elemento
+    # Asegurate de que json_data sea una lista y contenga al menos un elemento
     if not json_data:
         print(f"The type of json_data is {type(json_data)}")
         return None
@@ -59,5 +59,5 @@ def extract_information(json_data):
 #     print(f"Plaza: {plaza}")
 #     print(f"Zona: {zona}")
 #     print(f"Turno: {turno}")
-#     print(f"Matrícula: {matricula}")
+#     print(f"Matricula: {matricula}")
 #     print(f"Fecha: {fecha}")

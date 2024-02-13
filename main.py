@@ -26,7 +26,7 @@ if __name__ == "__main__":
         reservationId = get_parking_place(secret_access)
 
         if reservationId == -1:
-            msg = "No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
+            msg = "No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duermete ya!"
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
             sys.exit(1)
 
         if reservationId == -4:
-            msg = "Estas excediendo el limite de dias para petición. Máximo 7 días"
+            msg = "Estas excediendo el limite de dias para peticion. Maximo 7 dias"
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -66,7 +66,7 @@ if __name__ == "__main__":
             sys.exit(1)
 
         if reservationId is None:
-            msg = "Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu código"
+            msg = "Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu codigo"
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         json_data = load_data_place(reservationId, secret_access)
 
         if json_data == -1:
-            msg = "Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
+            msg = "Plaza no reservada, mala suerte!, prueba otro dia o revisa la fecha de solicitud"
             API.write_log('Comprueba los datos de la reserva en res/reserved_zone.json')
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
@@ -90,7 +90,7 @@ if __name__ == "__main__":
             sys.exit(1)
 
         if json_data is None:
-            msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+            msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>dia</b> de la reserva"
             API.write_log("Error al extraer datos de la reserva, verifica el dia de la reserva y la hora, recuerda que las reservas se abren a las 08:00 AM")
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -104,7 +104,7 @@ if __name__ == "__main__":
         result = extract_information(json_data)
 
         if result is None:
-            msg = "Datos de entrada, json_data is None. No se pudo extraer la información. Verifica los datos de entrada."
+            msg = "Datos de entrada, json_data is None. No se pudo extraer la informacion. Verifica los datos de entrada."
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -132,7 +132,7 @@ if __name__ == "__main__":
             API.write_log(f"Turno: {turno}")
             API.write_log(f"Matricula del Vehiculo: {matricula}")
             message = "<b>Plaza: </b>" + plaza + "\n" + "<b>Zona: </b>" + zona + "\n" + "<b>Turno: </b>" + \
-                turno + "\n" + "<b>Matrícula: </b>" + matricula + "\n" "<b>Fecha: </b>" + fecha
+                turno + "\n" + "<b>Matricula: </b>" + matricula + "\n" "<b>Fecha: </b>" + fecha
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, message)
             API.write_log("Fin de linea\n")

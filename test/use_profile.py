@@ -16,7 +16,7 @@ MICROSOFT_PASS = os.getenv("MICROSOFT_PASS")
 # Opciones de Firefox
 firefox_options = Options()
 
-# # Configuración de las opciones de Firefox para el modo headless
+# # Configuracion de las opciones de Firefox para el modo headless
 # firefox_options.add_argument("--headless")
 # firefox_options.add_argument("--no-sandbox")
 # firefox_options.add_argument("--disable-dev-shm-usage")
@@ -42,14 +42,14 @@ def login_with_firefox_profile():
         driver.get("https://app-officemanager.raona.com/")
         # Iniciando sesion con Cuenta Office 365
         try:
-            # Espera hasta que el botón de inicio de sesión de Office 365 esté presente y luego haz clic
+            # Espera hasta que el boton de inicio de sesion de Office 365 este presente y luego haz clic
             login_365_button = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, "MultiTenantADExchange")))
             login_365_button.click()
-            print("Iniciando sesión con cuenta 365 Office ...")
+            print("Iniciando sesion con cuenta 365 Office ...")
         except TimeoutException:
-            print("El elemento no está disponible en la página.")
+            print("El elemento no esta disponible en la pagina.")
 
-        print("Sesión restaurada con éxito.")
+        print("Sesion restaurada con exito.")
     except Exception as e:
         print("Error al intentar iniciar sesion con perfil de selenium personalizado:", str(e))
 
@@ -57,18 +57,18 @@ def login_with_firefox_profile():
 login_with_firefox_profile()
 
 # en windows:
-# 1.- Cerrar Firefox: Asegúrate de que todas las instancias de Firefox estén cerradas.
+# 1.- Cerrar Firefox: Asegurate de que todas las instancias de Firefox esten cerradas.
 
 # 2.- Abrir el Gestor de Perfiles:
-#     Presiona Win + R para abrir el cuadro de diálogo Ejecutar.
-#     Escribe firefox.exe -P y presiona Enter. Esto abrirá el Gestor de Perfiles.
+#     Presiona Win + R para abrir el cuadro de dialogo Ejecutar.
+#     Escribe firefox.exe -P y presiona Enter. Esto abrira el Gestor de Perfiles.
 
 # 3.- Crea el Perfil:
-# Haz clic en el botón "Crear perfil" en el gestor de perfiles que se abre. Esto iniciará el asistente de creación de perfiles.
+# Haz clic en el boton "Crear perfil" en el gestor de perfiles que se abre. Esto iniciara el asistente de creacion de perfiles.
 # Haz clic en "Siguiente" en el asistente.
-# Elije un nombre y dale a siguiente. Puedes dejar que Firefox elija una ubicación predeterminada o puedes especificar una ruta de directorio personalizada.
+# Elije un nombre y dale a siguiente. Puedes dejar que Firefox elija una ubicacion predeterminada o puedes especificar una ruta de directorio personalizada.
 # Antes de darle a finalizar asegurate de copiar la ruta del perfil de Firefox en la variable profile_path de este script.
 
-# Nota: La ventaja de utilizar este método es que no necesitas crear un nuevo usuario cada vez que quieres probar algo.
-# Si todo sale bien, deberías estar logueado en la aplicación sin necesidad de ingresar tus credenciales cada vez que inicies Selenium.
-# Si hay algún problema, puedes volver a intentarlo con otro perfil de Firefox.
+# Nota: La ventaja de utilizar este metodo es que no necesitas crear un nuevo usuario cada vez que quieres probar algo.
+# Si todo sale bien, deberias estar logueado en la aplicacion sin necesidad de ingresar tus credenciales cada vez que inicies Selenium.
+# Si hay algun problema, puedes volver a intentarlo con otro perfil de Firefox.
