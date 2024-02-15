@@ -54,13 +54,16 @@ try:
     # service = Service('/home/admin/.cache/selenium/geckodriver/linux64/0.34.0/geckodriver')  # For Production in AWS Server
     # service = Service('/home/gusdev/.cache/selenium/geckodriver/linux64/0.34.0/geckodriver')  # For WSL terminal
 
+    # service = Service('/home/davidcastagneto/.cache/selenium/geckodriver/linux64/0.34.0/geckodriver')  # For WSL terminal
+
     # # Para añadir al PATH, siga estas instrucciones:
     # # 1. Localice la ruta de su archivo geckodriver con este comando: sudo find / -name "geckodriver" 2>/dev/null
-    # # 2. Añada temporalmente al path con este comando: export PATH=$PATH:/path/to/geckodriver
+    # # 2. Añada temporalmente al path con este comando: export PATH=$PATH:/path/to/geckodriver (carpeta que contiene archivo)
     # # 3. Añada permanentemente al path con este comando: echo 'export PATH=$PATH:/path/to/geckodriver' >> ~/.bashrc
+    # # 4. Reinicie su terminal con este comando: source ~/.bashrc
 
-    # driver = webdriver.Firefox(service=service, options=firefox_options)  # For Production in AWS Server or WSL terminal
     driver = webdriver.Firefox(options=firefox_options)
+    # driver = webdriver.Firefox(service=service, options=firefox_options)  # For Production in AWS Server or WSL terminal
 
     # Abre la pagina web
     link = LINK

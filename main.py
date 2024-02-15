@@ -18,9 +18,9 @@ CHAT_ID = os.getenv("CHAT_ID")
 if __name__ == "__main__":
     secret_access = getToken()
     API.write_log("Aplicando tiempo de espera, enviando token de 365 a DB de Hybo...")
-    print("Aplicando tiempo de espera, enviando token de 365 a DB de Hybo...")
     spinner = Halo(text='Solicitud de token iniciada', spinner='dots')
     spinner.start()
+    spinner.text = "Aplicando tiempo de espera, enviando token de 365 a DB de Hybo..."
     time.sleep(35)
 
     # secret_access = ""
@@ -85,7 +85,7 @@ if __name__ == "__main__":
             msg = "Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu codigo"
             spinner.fail(msg)
             API.write_log(msg)
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")    
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
             API.write_log("Fin de linea\n")

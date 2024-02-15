@@ -45,4 +45,4 @@ def send_message(token, chat_id, message):
 
 
 # Ejemplo de uso
-send_message(TOKEN, CHAT_ID, "Hola, soy un bot de Telegram")
+# send_message(TOKEN, CHAT_ID, "Hola, soy un bot de Telegram")
