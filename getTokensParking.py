@@ -278,8 +278,8 @@ def getToken():
         secret_refresh = refresh_dict.get(
             "secret", "Clave 'secret' no encontrada")
 
-        # API.write_log(f"{credential_type_access}, Secret: {secret_access}\n")
-        # API.write_log(f"{credential_type_refresh}, Secret: {secret_refresh}\n")
+        API.write_log(f"{credential_type_access}, Secret: {secret_access}\n")
+        API.write_log(f"{credential_type_refresh}, Secret: {secret_refresh}\n")
 
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
@@ -291,7 +291,11 @@ def getToken():
         with open("tokenActualizacion.txt", "w") as f:
             f.write(secret_refresh)
         API.write_log("Tokens guardados en archivos separados")
-        log("😈")
+
+        try:
+            log("😈")
+        except UnicodeEncodeError:
+            print("Error al imprimir emoji. Continuando con el proceso.")
 
         if secret_access is not None:
             spinner.succeed("Token obtenido!.")
@@ -316,9 +320,10 @@ def getToken():
         API.write_log("Cerrando Navegador")
         driver.quit()
         return None
+
     except Exception as e:
-        API.write_log(f"Se produjo un error desconocido: {e}")
-        spinner.fail(f"Se produjo un error desconocido: {e}, Cerrando Navegador!")
+        API.write_log(f"Se produjo un error desconocido al obtener el token: {e}")
+        spinner.fail(f"Se produjo un error desconocido al obtener el token: {e}, Cerrando Navegador!")
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
         driver.quit()

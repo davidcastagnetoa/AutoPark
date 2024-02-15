@@ -6,6 +6,8 @@ tokenAcceso.txt
 tokenActualizacion.txt
 venv/
 flaskvenv/
+hector/
+windvenv/
 res/
 logs/
 logs/api-info.log

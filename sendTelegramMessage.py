@@ -25,8 +25,15 @@ def send_message(token, chat_id, message):
         response = requests.post(url, data=datos)
         response.raise_for_status()
         API.write_log(f'Estado de la respuesta: {response.status_code}')
-        API.write_log(f"Mensaje enviado! 📧")
-        spinner.succeed("Mensaje enviado! 📧")
+
+        try:
+            API.write_log(f"Mensaje enviado! 📧")
+            spinner.succeed("Mensaje enviado! 📧")
+        except UnicodeEncodeError:
+            print("Error al imprimir emoji.")
+            API.write_log("Mensaje enviado!")
+            spinner.succeed("Mensaje enviado!")
+
         return response.json()
     except requests.exceptions.ConnectionError as e:
         # Capturar la excepcion de manera más general y luego verificar el tipo de error
