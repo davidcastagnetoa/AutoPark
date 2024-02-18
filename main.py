@@ -16,6 +16,8 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 
 if __name__ == "__main__":
+    API.write_log("\n__CONSULTA DE TOKEN__")
+    print("\n__CONSULTA DE TOKEN__")
     secret_access = getToken()
     spinner = Halo(text='Solicitud de token iniciada', spinner='dots')
     spinner.start()
@@ -165,7 +167,9 @@ if __name__ == "__main__":
             sys.exit(1)
         else:
             spinner.succeed("Datos de plaza extraído!")
-            plaza, zona, turno, matricula, fecha = result
+            plaza, zona, turno, matricula, fecha, id = result
+
+            API.write_log(f"Id: {id}")
             API.write_log(f"Fecha: {fecha}")
             API.write_log(f"Zona a aparcar: {zona}")
             API.write_log(f"Numero de plaza: {plaza}")

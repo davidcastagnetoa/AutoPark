@@ -13,7 +13,6 @@ import sys
 from utils.logger import log, API
 from halo import Halo
 
-
 # Cargando credenciales de acceso
 load_dotenv()
 USERNAME_HYBO = os.getenv("USERNAME_HYBO")
@@ -47,6 +46,7 @@ firefox_options.add_argument("--disable-dev-shm-usage")
 #         choices=["Chrome", "Firefox", "Cancelar"],
 #     ),
 # ]
+
 ascii_art_bart = """
          , ,\ ,'\,'\ ,'\ ,\ ,
    ,  ;\/ \/ \`'     `   '  /|
@@ -70,27 +70,6 @@ ascii_art_bart = """
 /           \.
 """
 
-ascii_art_kithack = '''
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-'''
-
-API.write_log(ascii_art_kithack)
-# print(ascii_art_kithack)
-API.write_log("\n__CONSULTA DE TOKEN__")
-print("\n__CONSULTA DE TOKEN__")
 
 # answers = inquirer.prompt(questions)
 # navegador = answers["navegator"]
@@ -106,8 +85,6 @@ print("\n__CONSULTA DE TOKEN__")
 #     exit()
 
 
-# Usar Chrome/Firefox por defecto, sin interaccion del usuario
-# driver = webdriver.Chrome(options=chrome_options)
 driver = webdriver.Firefox(options=firefox_options)
 
 # Abre la página web
@@ -131,17 +108,17 @@ def getToken():
         API.write_log("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado.")
         spinner.fail("Timeout: Boton de inicio de sesion no encontrado dentro del tiempo esperado. Fallo de inicio de sesión.")
         driver.quit()
-        exit()
+        return None
     except NoSuchElementException:
         API.write_log("NoSuchElement: Boton de inicio de sesion no encontrado en la página.")
         spinner.fail("NoSuchElement: Boton de inicio de sesion no encontrado en la página. Fallo de inicio de sesión.")
         driver.quit()
-        exit()
+        return None
     except Exception as e:
-        print("Mapear esta excepcion", e)
+        print("Mapear esta excepcion: ", e)
         spinner.fail(f"{e}. Fallo de inicio de sesión.")
         driver.quit()
-        exit()
+        return None
 
     # Inicia sesion
     spinner.text = "Localizando campo de usuario."
@@ -153,11 +130,12 @@ def getToken():
         if USERNAME_HYBO is None:
             API.write_log("Error: USERNAME_HYBO no está definido.")
             spinner.fail("Error: USERNAME_HYBO no está definido. Fallo de inicio de sesión.")
-            sys.exit(1)
+            return None
         username_field.send_keys(USERNAME_HYBO)
     except NoSuchElementException:
         API.write_log("Campo del nombre de usuario no encontrado.")
         spinner.fail("Campo del nombre de usuario no encontrado. Fallo de inicio de sesión.")
+        return None
 
     spinner.text = "Localizando campo de contraseña."
     try:
@@ -169,11 +147,12 @@ def getToken():
         if PASSWORD_HYBO is None:
             API.write_log("Error: PASSWORD_HYBO no está definido.")
             spinner.fail("Error: PASSWORD_HYBO no está definido. Fallo de inicio de sesión.")
-            sys.exit(1)
+            return None
         password_field.send_keys(PASSWORD_HYBO)
     except NoSuchElementException:
         API.write_log("Campo de la contraseña no encontrado.")
         spinner.fail("Campo de la contraseña no encontrado. Fallo de inicio de sesión.")
+        return None
 
     spinner.text = "Iniciando sesión."
     try:
@@ -186,6 +165,7 @@ def getToken():
         API.write_log("Boton de inicio de sesion no encontrado.")
         API.write_log("fallo de inicio de sesion ...")
         spinner.fail("Boton de inicio de sesion no encontrado. Fallo de inicio de sesión.")
+        return None
 
     # Funcion para verificar si las claves están en localStorage
 
@@ -214,7 +194,7 @@ def getToken():
         API.write_log("Las claves no se encontraron en localStorage dentro del tiempo especificado.")
         spinner.fail("Error: Las claves no se encontraron en localStorage.")
         driver.quit()
-        sys.exit(-1)
+        return None
 
     # Ejecuta el script para obtener el AccessToken y RefreshToken del localStorage
     access_and_refresh_item_values = driver.execute_script(

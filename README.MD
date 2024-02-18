@@ -101,27 +101,35 @@ In these links, you will find manuals and examples for configuring the Telegram 
 
 2. The script will open the browser, perform the login, and fetch the requested data from the `localStorage`.
 
-## Compile
+## Despliegue de Aplicación Flask con Gunicorn y systemd
 
-1. Install cx-Freeze
-   ```bash
-   pip install cx-Freeze
-   ```
-2. The script `setup.py` include geckodriver.exe, chromedriver.exe and .env file on the root
+La aplicación Flask está diseñada para escuchar en un puerto específico (en este caso, el puerto 5000) y ejecutar una función en respuesta a mensajes recibidos a través de un bot de Telegram. Esta interacción permite una funcionalidad dinámica, donde las acciones específicas pueden ser desencadenadas por comandos enviados al bot.
 
-3. To create a executable file run the next command.
+### Configuración del Entorno
 
-   - On Windows System:
+1. ##### Creación de un Entorno Virtual
 
-   ```bash
-   python setup.py bdist_msi
-   ```
+Para mantener las dependencias organizadas y asegurar que nuestra aplicación se ejecute en un entorno aislado, crearemos un entorno virtual dedicado para nuestra aplicación Flask y Gunicorn.
 
-   - On Linux System:
+```bash
+python3 -m venv flaskvenv
+```
 
-   ```bash
-   python setup.py build
-   ```
+2. ##### Activación del Entorno Virtual
+
+Activa el entorno virtual para comenzar a instalar las dependencias necesarias.
+
+```bash
+source flaskvenv/bin/activate
+```
+
+3. ##### Instalación de Flask y Gunicorn
+
+Con el entorno virtual activado, instala Flask y Gunicorn. Estos serán los componentes clave para servir tu aplicación.
+
+```bash
+pip install flask gunicorn
+```
 
 ## Code Explanation
 
@@ -131,6 +139,79 @@ In these links, you will find manuals and examples for configuring the Telegram 
 - Extracts and displays specific keys from the JSON object stored in `localStorage`.
 - Use this data to obtain the token and make a request to the server
 - After receiving the response, make another web request to send a message via Telegram.
+
+### Configuración del Servicio systemd
+
+1. ##### Crear un Archivo de Unidad de Servicio systemd
+
+Crea un archivo flaskapp.service en el directorio /etc/systemd/system/ con el siguiente contenido:
+
+```bash
+[Unit]
+Description=Gunicorn instance to serve my Flask app
+After=network.target
+
+[Service]
+User=<tu_usuario>
+Group=<tu_grupo>
+WorkingDirectory=/ruta/a/tu/app
+Environment="PATH=/ruta/a/flaskvenv/bin"
+ExecStart=/ruta/a/flaskvenv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 app:app
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2. ##### Habilitar y Arrancar el Servicio
+   Habilita el servicio para que se inicie en el arranque y luego arráncalo.
+
+```bash
+sudo systemctl enable flaskapp.service
+sudo systemctl start flaskapp.service
+```
+
+3. ##### Recargar systemd para Aceptar Cambios
+   Si realizas cambios en el archivo de servicio, recarga systemd para asegurarte de que se apliquen.
+
+```bash
+sudo systemctl daemon-reload
+```
+
+4. ##### Iniciar el Servicio Gunicorn
+   Para iniciar el servicio después de cualquier ajuste o reinicio:
+
+```bash
+sudo systemctl restart flaskapp.service
+```
+
+5. #### Verificar el Estado del Servicio
+   Comprueba el estado del servicio para asegurarte de que se está ejecutando correctamente.
+
+```bash
+sudo systemctl status flaskapp.service
+```
+
+6. #### Revisar Logs en Caso de Errores
+   Si encuentras problemas o el servicio no se inicia correctamente, revisa los logs del sistema.
+
+```bash
+journalctl -u flaskapp.service
+```
+
+7. #### Detener el Servicio Gunicorn
+   Si necesitas detener el servicio, utiliza:
+
+```bash
+sudo systemctl stop flaskapp.service
+```
+
+8. #### Configuración del Firewall
+   Para permitir el tráfico en el puerto 5000, configura ufw con el siguiente comando:
+
+```bash
+sudo ufw allow 5000
+sudo ufw status
+```
 
 ## Important Notes
 

@@ -120,9 +120,6 @@ def get_parking_place(secret):
                 # Solo usaremos la ultima que es el ID de la plaza encontrada
                 spinner.succeed("ID de plaza encontrado")
 
-                # with open('parking_place.txt', 'w') as f:
-                #     f.write(reservationId)
-
                 return reservationId
 
             else:

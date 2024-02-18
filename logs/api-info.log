@@ -23,8 +23,8 @@
 2024-01-03 14:53:09 - 
 __CONSULTA DE TOKEN__
 2024-01-03 14:53:17 - Fecha a solicitar plaza: 2024-01-10
-2024-01-03 14:53:17 - Cargando p�gina https://app-officemanager.raona.com
-2024-01-03 14:53:23 - Cargando credenciales contrase�a ...
+2024-01-03 14:53:17 - Cargando p�gina https://app-officemanager.raona.com
+2024-01-03 14:53:23 - Cargando credenciales contrase�a ...
 2024-01-03 14:53:24 - Iniciando sesion ...
 2024-01-03 14:53:24 - Extrayendo tokens ...
 2024-01-03 14:53:31 - Datos encontrados en localStorage: 
@@ -47,7 +47,7 @@ __COMPROBANDO RESERVA DE PLAZA__
 2024-01-03 14:53:37 - Error al extraer datos de la reserva, verifica el dia de la reserva y la hora, recuerda que las reservas se abren a las 08:00 AM
 2024-01-03 14:53:37 - 
 __ENVIANDO MENSAJE POR TELEGRAM__
-2024-01-03 14:53:37 - Peticion denegada por alg�n firewall, Revisa tu firewall
+2024-01-03 14:53:37 - Peticion denegada por alg�n firewall, Revisa tu firewall
 2024-01-03 14:53:37 - Fin de linea
 
 2024-02-01 23:26:42 - 
@@ -348,7 +348,7 @@ __ENVIANDO MENSAJE POR TELEGRAM__
 2024-02-10 12:32:17 - Mensaje enviado! 📧
 2024-02-10 12:32:17 - Fin de linea
 
-2024-02-15 17:22:52 - 
+2024-02-13 07:59:01 - 
                                    .::!!!!!!!:.
   .!!!!!:.                        .:!!!!!!!!!!!!
   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
@@ -364,238 +364,55 @@ __ENVIANDO MENSAJE POR TELEGRAM__
         ┖───────────────────────────────┙
         
 
-2024-02-15 17:22:52 - 
+2024-02-13 07:59:01 - 
 __CONSULTA DE TOKEN__
-2024-02-15 17:23:00 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:23:00 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:23:01 - Cargando credenciales contraseña ...
-2024-02-15 17:23:02 - Iniciando sesion ...
-2024-02-15 17:23:02 - Buscando datos en localStore ...
-2024-02-15 17:23:22 - Las claves no se encontraron en localStorage dentro del tiempo especificado.
-2024-02-15 17:23:46 - 
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-
-2024-02-15 17:23:46 - 
-__CONSULTA DE TOKEN__
-2024-02-15 17:23:49 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:23:49 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:23:50 - Cargando credenciales contraseña ...
-2024-02-15 17:23:50 - Iniciando sesion ...
-2024-02-15 17:23:50 - Buscando datos en localStore ...
-2024-02-15 17:24:11 - Las claves no se encontraron en localStorage dentro del tiempo especificado.
-2024-02-15 17:31:41 - 
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-
-2024-02-15 17:31:41 - 
-__CONSULTA DE TOKEN__
-2024-02-15 17:31:44 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:31:44 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:31:46 - Cargando credenciales contraseña ...
-2024-02-15 17:31:46 - Iniciando sesion ...
-2024-02-15 17:31:46 - Buscando datos en localStore ...
-2024-02-15 17:31:49 - Datos encontrados en localStorage
-2024-02-15 17:31:49 - Cerrando Navegador
-2024-02-15 17:31:50 - Tokens guardados en archivos separados
-2024-02-15 17:31:50 - Se produjo un error desconocido: 'charmap' codec can't encode character '\U0001f608' in position 23: character maps to <undefined>
-2024-02-15 17:31:50 - Cerrando Navegador
-2024-02-15 17:32:10 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:32:10 - Fin de linea
-
-2024-02-15 17:33:46 - 
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-
-2024-02-15 17:33:46 - 
-__CONSULTA DE TOKEN__
-2024-02-15 17:33:52 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:33:52 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:33:53 - Cargando credenciales contraseña ...
-2024-02-15 17:33:54 - Iniciando sesion ...
-2024-02-15 17:33:54 - Buscando datos en localStore ...
-2024-02-15 17:33:57 - Datos encontrados en localStorage
-2024-02-15 17:33:57 - Cerrando Navegador
-2024-02-15 17:33:57 - Tokens guardados en archivos separados
-2024-02-15 17:33:57 - Se produjo un error desconocido: 'charmap' codec can't encode character '\U0001f608' in position 23: character maps to <undefined>
-2024-02-15 17:33:57 - Cerrando Navegador
-2024-02-15 17:33:57 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:33:58 - Fin de linea
-
-2024-02-15 17:34:44 - 
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-
-2024-02-15 17:34:44 - 
-__CONSULTA DE TOKEN__
-2024-02-15 17:34:51 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:34:51 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:34:51 - Cargando credenciales contraseña ...
-2024-02-15 17:34:52 - Iniciando sesion ...
-2024-02-15 17:34:52 - Buscando datos en localStore ...
-2024-02-15 17:34:55 - Datos encontrados en localStorage
-2024-02-15 17:34:55 - Tokens guardados en archivos separados
-2024-02-15 17:34:55 - Se produjo un error desconocido: 'charmap' codec can't encode character '\U0001f608' in position 23: character maps to <undefined>
-2024-02-15 17:34:55 - Cerrando Navegador
-2024-02-15 17:34:55 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:34:55 - Fin de linea
-
-2024-02-15 17:40:58 - 
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-
-2024-02-15 17:40:58 - 
-__CONSULTA DE TOKEN__
-2024-02-15 17:41:01 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:41:01 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:41:02 - Cargando credenciales contraseña ...
-2024-02-15 17:41:02 - Iniciando sesion ...
-2024-02-15 17:41:02 - Buscando datos en localStore ...
-2024-02-15 17:41:05 - Datos encontrados en localStorage
-2024-02-15 17:41:05 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImY4MWIwYjVmLWU4NmUtNGYzMi1hNmZkLWNhM2NlYTE3NTRkMiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MDE1MjY1LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgwMTg4NjUsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MDE1MjY1fQ.Q0xQ37MYhOoI_S0zczQmEoXE0rzQmbMG9hN3M74lCkmL0o5Yaur1VoZjAmVyk8AeKOryEJgjgAZ_56MMpJ71uEiONhw9aJRyIuOmhzk6KRpfwgDb3tQEwko8d2MiE1lOawYPgqqU-LpRkIBRGxnEsUJ81jA4H8w0ZEwI_G3vcRDZjdeROAR_C1_cOpaXJkc6VsVh4kDOfICDg2dfqfvw7zXsgVIYQOeaE6ABGA23Mm28Ok57p0CJqYDNOZnsbgfhdIkOIMieYJaOTSLATO4kaoQnwzPrt4pb2PCdmAZKSorB_eG-XDMd1PX-8eXzV84Q5obcGn9qf9Lq3Y1-1-_Vmw
-
-2024-02-15 17:41:05 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.NBQSkYTuIyMc-bVQGUqqnIy5gKwhyRnFPKnH7jRRCIwwNxFx9qUKKCvtsHLpGvbHyA_eDqBetmB5SD5qvEykDSx7fI9x8EMoC7evmDCFfVKBG3OyNulv8Je3OauoIgsdndhw7fLqybUmMabhl0VsrwiLnKdh_xVy8pH8YxKsz2pQN0rTEHJ7d4v8t8Rg0DLYX0FqWqAMRTESKgOa0zA_Xn2au1NGO-BZroUePCNDFN4KIxm3yKiM0IMTPQZAb6id-yS5p323Qwm3VvG8pP8uMK5UfdtTn3ZzQxYiFFfQytIQv5r9em76qurwh7AX-fqOmETplpHeVaom9zfMK7gxcg.kkSI057WxUSW2ON0.GYl1XQWGbbsP5mflc5Jkku5Z-5TlhC39bObteW54zwWvwpYwNNg5RgzEWo1mYOBD-HgDP8YKP5gBeECB495rhzxi58x4FqC9FmzkvkI6YLDS01LIIfRoqED2AYsZQSjw4JYNeQj1aQF-T3qZdiOgCqUArKOXVhxZIAoVb-ZlFkhHeDFY3cnU0ahwGIwFiJql6UKWRYcfZgS1-zeT6iuc0pLlkJP9YSCAM3jRGDUeTjDdcOmmvl2kQpiNeboiJIPDASmBQK-hZuCRj4brOxsPQVN1DTExqDS6gc2j-XkxeTfpFWdzDwQFKCTjfLDa0--7holDzXQwr1Lk5LrEZaLcwfCQBBZRGwsJ2hl107mMr3qvD6ZbAYd2B4gR4pSzUJaUjgYEGJ5VFsWRd9EahNnjwYlzjL_YcPzYhYvz96Dzajw1KXR757sL-w_jOu4w1SUKrcxch3F8-vhKitn6Pvc3V1e1iZr18sqq-QEs0SqvG8fv7iAxJTnJQDmn4QcO5FfInJqmYvIbGGGFDk0d4c1h7UWB9rkCIm1R8vPI7iJMckry3J7CiZ62L-N2-9pZMzvlMCVWXFBmJ7hMfgot9YvkuE1e29nL2DkdFDMR6cOKyBOj6cPvlAEB0h-sfxjovyZ3jt-N1ZbInBxe4xSVmmu5w1NQIw56j2Wz9-YQjIclQU6vVqJW5-jtCghpJvrSQmuMU7iKkEBCQErnBNTVTCEm4MZ7rcOAZZywgyBYGZ2UiKsP_R4ejQlMxCgaWouGtty-BvW0S0ufEnt2TmN23PzG9UcbwOqbbN72RaOANVyZW9LPY36UkVL2IxNWHAHSr31lnf9VxOgSlCUdXCFbsucHUJWmJsJevPywkGObZeRZD98KRMyDkPYtgue9709Lxo510JayP6irExJv7pBHotQ5vNl42mAWybIMSXXzmyUZj5gtSoHlf7HcVUelEGr6ksF9mc7ETli_dRwLO0Yr9WReFDDWxCcYfTM1e2Y7t1dkfSC5Cj4pN23-_rGBYTpH3F_UzajvE7u52Vu0Fftvfdi0x8_A4fruTLwtor6voWLhkq_Y.z49FV7usacDQSmiJOidnBA
-
-2024-02-15 17:41:05 - Tokens guardados en archivos separados
-2024-02-15 17:41:05 - Se produjo un error desconocido: 'charmap' codec can't encode character '\U0001f608' in position 23: character maps to <undefined>
-2024-02-15 17:41:05 - Cerrando Navegador
-2024-02-15 17:41:05 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:41:06 - Fin de linea
-
-2024-02-15 17:43:03 - 
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-
-2024-02-15 17:43:03 - 
-__CONSULTA DE TOKEN__
-2024-02-15 17:43:10 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:43:10 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:43:11 - Cargando credenciales contraseña ...
-2024-02-15 17:43:11 - Iniciando sesion ...
-2024-02-15 17:43:11 - Buscando datos en localStore ...
-2024-02-15 17:43:15 - Datos encontrados en localStorage
-2024-02-15 17:43:15 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjdlMTc0MzQwLTg2YTAtNDlkOC1hMDhkLThkNDI2Nzg5NGIzYiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MDE1Mzk0LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgwMTg5OTQsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MDE1Mzk0fQ.JWsAULrD1RcjISaNxNOnXSiRt8nM_qpFq1v-_URhoaDgiADCFPc9KnrdzCVIjNoCECPcBE-mZSJv-AbffvZIht0u2AMtXQ4YtvAJ1fhZusHz97dTdl0SFrRwOh6Z1XiU16AoS3TN7dryAQHiYiKuwSh4vXm1_7KYTftJ3C0PzN7q5ajxmikauho_acdO9V7kytoee4hd-jt8YuM890iOZtf3ASwx65x4aYON0aedPtVLcWLl1NQ7XAk96pMPsXwu_pHgJgmoEh1BMAdgAh4VokV_oPfY3RBgaw0TldaUCcWGAAfJxnEgLjt5rjkQY3POWC5qpKBGY7V0UBeq47mTKw
-
-2024-02-15 17:43:15 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.QRVCWC4_dnSeHrJyQ93keBaUGyAN1uP1LBM0IsCjZHZVvkK_FWGEtf4bLitDqSSZItsWv3WadQOt4Soeon7sy3Rc-khUyPK96e9jSVE01alhfZXDXRfrQhcER87HP2eE7tlKtydLQZ2383HV4_tID5URtH-yhIj3Znxah_7REVi9ADZ8p940llHP469EsqAHvan5D9qz00pJlwFANKv88CmW7HXg2G21va5tnd49qhOx3BjqKeDj2AEvmLx-8MZey5coqspEAaz8E5LITMEWSY9hIuZ51Lckq4_WxZ-zSAJQzjgK5Q0_kQoHdF1dFAb-xxGOsPc2tdO5DVDmKVrZWQ.7XFW1B5UsIeMWnJT.iU4IBxAz-x76TWxZz_YD3n_FFAoQOS2qcA-5f7MYyF_086NtSERCrJFaW4OL9H73lCFImTr_DQbBgBZ23Bbuy4YeG4a-zCxjiWW_eypKUegqXodGD_jRVtzMO1L_rk_iec0Ty92_dsx5MMHVztdXyhG8SjwvQYfhQS7EyqTuYQdVmlPll9uU645LwhkYNvSRcSytMmgwjtphVXIevTSDt7WxvQWpmoRTBG9TjZXy_SewdF8BuF0skajZ0ObCV6xVB0MbGUZ3iaRGzV4dkrdGfFW5r_WFIBrqb2d7MWY_LWinM_lZorng5ALlVgwSQpXqoN39fuf6ea-hfE-BDSNexWOmj0TgQn8emA1wAk4ZtVcDJDy3zbbxWMWOCaTbtXN-yHh-feq5WmFCq99Bi-CP5TBgyysLgn1jeSHhrh_pnI4HcFwFWXjlDu5pez4_Th6D3M7dk8Dnlm9dzzhNoRoxgE1W3YLCxNumVsuy2uL8xZCBfGbmrsRBPnA7g4gIzOXS_Xei_7LWi6GKGPQBmjPPq3bbyJCFaGKjStvMUO_3NzLpNnyW4pPb1zXomxBC54u-VuelKI8Bq2MDZ-ZRX4n5BjZnFPHdX4uoL1IljyDp04WoYPM14irQKwJHr6QlaM2Vr_WdOIYMlVxe-AH-Goodmdyr0mPj5OJ8xd245ZsRT9pyVaPuk8PyuovqObJQF_pE4AVKIS2W3sWpVX549b9l3_2sEnly_W8DIkoEna0gEa79lJWSAt2iJpq9YuMdGGpMEg-x76731j0ndP0hmHlxTXLUz3H9SICL-VlOgDEa1L3TJ25goF8z784cdCh6GO_0vKsmlQPphWu0jsQjWig_TkARNuNpyanQjTVaa1LC_9j1Hfhl20OrCOLnlVLt-PgitQy5KQeRd56Px2egOan-Wbu6edkkujXNgCYJ5sS9oITfJJbSAcXKaECJ_t69bDrYB0RS3ZrQOVNdYQj7CZYQeVU4Gfgd2_2EEWgJzY9CatX7YD6Iew8v6ZxhFY0QdErZxC4fszoKBgh1rxyZWJdOSBvYuaKD3kZ5HRwB.jW-x0NxafvwsvukZ5LVIBw
-
-2024-02-15 17:43:15 - Tokens guardados en archivos separados
-2024-02-15 17:43:15 - Se produjo un error desconocido al obtener el token: 'charmap' codec can't encode character '\U0001f608' in position 23: character maps to <undefined>
-2024-02-15 17:43:15 - Cerrando Navegador
-2024-02-15 17:43:15 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:43:15 - Fin de linea
-
-2024-02-15 17:43:56 - 
-                                   .::!!!!!!!:.
-  .!!!!!:.                        .:!!!!!!!!!!!!
-  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
-      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
-      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
-      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
-      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
-        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
-             """"          """"""" 
-
-        ╔───────────────────────────────╗
-        |   Developed By AbathurCris!   |
-        ┖───────────────────────────────┙
-        
-
-2024-02-15 17:43:56 - 
-__CONSULTA DE TOKEN__
-2024-02-15 17:44:00 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:44:00 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:44:01 - Cargando credenciales contraseña ...
-2024-02-15 17:44:01 - Iniciando sesion ...
-2024-02-15 17:44:01 - Buscando datos en localStore ...
-2024-02-15 17:44:04 - Datos encontrados en localStorage
-2024-02-15 17:44:04 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6Ijc4Mzc5NjdjLWZiNWUtNDg1Ny05YzNmLTcxMzJlNGE0NWZiZiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MDE1NDQ0LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgwMTkwNDQsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MDE1NDQ0fQ.ZXfXP2p2hANx7vrhgju_33OVG6Yk4ruc9VCtBnIypIvUevIUJqufYmzJ-1M_s3npUDlLy8wzoyR7PcWlje4bAW_EKJHHb8z0HRDMXDsLmWFehVpgtd8_GidrNOSTE6rJxcyQ4cLvF6K0GbeyT7PNCzHVCmH30f6DPBXm2OkxdwlrBw8JlDBj8MawaOWSNP6lVom0aCzx8qGISK6DkHhsJo32Hut3kgh9sQ__uOHMnRxRu1hgF5IiX5YhZz2QvM2f7yyx9XALN_KXxZNeoVGgbgAGXxfCUdikhOjJeFB6RTTU_gDpOeR6wT4N6GqW0v7qZxiTPvH2a8fz34GO11bLDg
-
-2024-02-15 17:44:04 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.F6WVbU8JlOsS_Dra57vw04wwETooFgsIBi1pW6XJ8spv6QLsdhZoAMSJMQxXNURVyv8rTBzSySKJb3vOH_c6ATF_56ubdzmiJmTUDoyJRLp3jG6-nu32CZHNYUl2kevzvhJrGgwSsGQFmyoqUpE8uS5QUo-UcGxmM30wJo-EodUn4i_ZHmuR1JDT2M_LzdWkreA7mMNrYDkeleMgbWdqSADnWVujrCadncfWDV468ov_nuwQYdNdQ1aFCZ4Eu-v_CIMlkMMVbh909K7CS74Q9ZMzM7hgQ942aaD51N7r26K4vdkXSvSdQUrsfgxRZt3pjhip2VfxVVHCQUyo8PjG8Q.c4bBHboXw2zH5-tB.yvrx4ItpcYf9If-UMHUBzSUg5tHNiQIw6xWE4f48nTM0dctGqjzk97bRYR_3gxX8D-FGtb2I6MDvzWRY-KAO4UEyS1VupVnN6hipJXwvV6ZSkiJJc-ojR16DxF3Nm_Yn8LLrXyUtU6MBK25optgfiEiWiuLMAgZK4S1M2d_jxvHTvs16UZeoeOgPLKyzhyYyXsTKYUHJb80bFh8Dk08gCqTZhGFZARZh9lqyesrqncgk4aZ_U5ggF_JCnI9aCkZKtAa7VU5IfiabFnLGstuqbKxjicj8qDc9alN77eBgCakNxY2xqfEO1aQIn1NdBKdo49KZj7qksyYZej7LIEqNqWcdFpugylSmBi6EWhz1HkAk30gf-K8OwlRoDe2-hbKoR4UgvnnNFmDwsjG-MKHA73j5IxIttzy0CXWECHQ8K2iliba-ICQMcbxT3HSj3zSfCS67diSvIBYcAj7NmMopjl83pB_tMS3H8fgaHdxLwRtGRm1_6ZbzLfnmyRG94p1Ps1SdDc4nr7LCfbAE0Qe4boR1tcU53uPr6K6PzeLkPjmy87aAj6M9vKHEdedy6Kun9ci1JKiujto214Mx-OwxJzaYyr3D11b17qTzIoHG4gptIlesXWV7jFGwCsgZspPKV9Yor1eWgbHhy0jlkY7ydioD-gXhwoW6cVfywqGDE7g2lxmPkSW-vgtze6aGDcfeYoHgX-pylh3o1yg9MBs0dA7YK5MW-u1Dmv3ChYT_FoumvkUR2-R_NbAxf69jE5tYfHc74JBv_FPWnwClMYcIS7CeNDeTV6-QetpQwGHdlY_omMP_CtOXIE5mJ9pqzTIFOSQASi1JjuUE4JY3CAODV6f4yhLJqCLyDbcgOSVGspukbzK9wnTXkWAFOjQouXCWUiRIbQG24-4tND_DFGbFWeJ4WlsKMsvbA_AUFSzvQniFrtNgV7dwtiCEg1uIGit_x8kUT3Y-QciF_7mOff9o30Jya7YKSdm8h6nwHUlDj5nglJJC1Gb02DFxPlk0GthH_CxLhZqVfRtR5mPTlRl4Mm9usl2t1KcciV31bw.5M9ARKJWYh-cg6L7Jd_ebA
-
-2024-02-15 17:44:04 - Tokens guardados en archivos separados
-2024-02-15 17:44:04 - 
+2024-02-13 07:59:08 - Fecha a solicitar plaza: 2024-02-20
+2024-02-13 07:59:08 - Cargando página https://app-officemanager.raona.com
+2024-02-13 07:59:09 - Cargando credenciales contraseña ...
+2024-02-13 07:59:09 - Iniciando sesion ...
+2024-02-13 07:59:09 - Buscando datos en localStore ...
+2024-02-13 07:59:16 - Datos encontrados en localStorage
+2024-02-13 07:59:16 - Cerrando Navegador
+2024-02-13 07:59:18 - Tokens guardados en archivos separados
+2024-02-13 07:59:18 - 
 __SOLICITANDO PLAZA__
-2024-02-15 17:44:04 - Obteniendo Pase de reserva...
-2024-02-15 17:44:05 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
-2024-02-15 17:44:05 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
-2024-02-15 17:44:05 - 
+2024-02-13 07:59:18 - Obteniendo Pase de reserva...
+2024-02-13 07:59:19 - Estado de respuesta para obtener pase de reserva : 202
+2024-02-13 07:59:19 - Pase de reserva adquirido!!!
+2024-02-13 07:59:19 - Extrayendo variables id del Pase de reserva...
+2024-02-13 07:59:19 - Tenant ID: 7a903ac6-aeb5-4cf8-879c-c48f02fc36e7
+2024-02-13 07:59:19 - Zone ID: 35e0550e-953a-41b5-ba97-cacaa4a44160
+2024-02-13 07:59:19 - Reservation ID: aab9953e-10d4-4339-b83b-b6f1ee5a2714
+2024-02-13 07:59:19 - Reservation Date: 2024-02-20
+2024-02-13 07:59:19 - The reservationId is: aab9953e-10d4-4339-b83b-b6f1ee5a2714
+2024-02-13 07:59:19 - The reservationId is: aab9953e-10d4-4339-b83b-b6f1ee5a2714
+2024-02-13 07:59:22 - 
+__COMPROBANDO RESERVA DE PLAZA__
+2024-02-13 07:59:22 - Reservando plaza...
+2024-02-13 07:59:22 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caab9953e-10d4-4339-b83b-b6f1ee5a2714
+2024-02-13 07:59:23 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-13 07:59:23 - Texto de la respuesta de la peticion de plaza: [{"id":"aab9953e-10d4-4339-b83b-b6f1ee5a2714","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-13T06:59:18.5622033Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-02-20T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["7a13ac15-98a5-4653-86cc-fbc5838b1c23"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"7a13ac15-98a5-4653-86cc-fbc5838b1c23","objectType":"OM.ParkingSeat","name":"103","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":295.8,"y":755.0,"width":61.0,"height":30.7}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-13 07:59:23 - Peticion aprobada, comprobando reserva...
+2024-02-13 07:59:23 - Peticion exitosa.
+2024-02-13 07:59:23 - Plaza reservada!.
+2024-02-13 07:59:23 - Extrayendo datos de reserva en formato Json
+2024-02-13 07:59:23 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-13 07:59:23 - 
+__DATOS DE PLAZA RESERVADA__
+2024-02-13 07:59:23 - 
+__EXTRAYENDO DATOS DE LA PLAZA__
+2024-02-13 07:59:23 - Fecha: 20 February de 2024
+2024-02-13 07:59:23 - Zona a aparcar: Victoria - PS2
+2024-02-13 07:59:23 - Numero de plaza: 103
+2024-02-13 07:59:23 - Turno: AllDay
+2024-02-13 07:59:23 - Matricula del Vehiculo: 6516KJT
+2024-02-13 07:59:23 - 
 __ENVIANDO MENSAJE POR TELEGRAM__
-2024-02-15 17:44:05 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:44:05 - Fin de linea
+2024-02-13 07:59:23 - Estado de la respuesta: 200
+2024-02-13 07:59:23 - Mensaje enviado! 📧
+2024-02-13 07:59:23 - Fin de linea
 
-2024-02-15 17:47:38 - 
+2024-02-14 07:59:02 - 
                                    .::!!!!!!!:.
   .!!!!!:.                        .:!!!!!!!!!!!!
   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
@@ -611,27 +428,55 @@ __ENVIANDO MENSAJE POR TELEGRAM__
         ┖───────────────────────────────┙
         
 
-2024-02-15 17:47:38 - 
+2024-02-14 07:59:02 - 
 __CONSULTA DE TOKEN__
-2024-02-15 17:47:44 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:47:44 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:47:45 - Cargando credenciales contraseña ...
-2024-02-15 17:47:46 - Iniciando sesion ...
-2024-02-15 17:47:46 - Buscando datos en localStore ...
-2024-02-15 17:47:49 - Datos encontrados en localStorage
-2024-02-15 17:47:49 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImE3NDcxMWM5LWIxNGEtNGNhNi04YjA3LTEyOTAwZmY1MzU1OCIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MDE1NjY5LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgwMTkyNjksImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MDE1NjY5fQ.a-hDhiyx3KdZbP2lRQHLtq0n6TZQr-0gEbwgXb-lR2KArZ1sEo0LSlz1MFwqQKvsYZsgKy1r7FkQZSSImd6aeyNJK--rbcO3jj46qe7vovEjOrzzwaA8PMEIb6Uv9hLnpjjyN2vdKaH3HZZXA7Rcy2pTENKrEcqAsLUTFk7xyw8NTqMdLfsMd8xxAhZ0d0ov4WbwRzoQvB3W3_BJ9yrHi2mGTwm-YVh-N8wxdrH1dDkNml6NmrQGGYjNJN1DvgUSsKPzh3Wn1RXC0J3ZsLZpyk0PueUF2gcfI7ZbKubdl40xjVOjybl8jU4AWix6E5Fd3dm-AoBJtGeY_yi6NBZbkg
-
-2024-02-15 17:47:49 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.aFPjVG5SAh_GZpTUYHRPD3pvrduN9l8BJ57Ruo9Pz9BzxJ7fmlsl-Zchii4FSZkwYtKnYdJjTE8O7s-Qy0YbrlC4Tv4amZqSPDjf7dj6cnE82W1cm-OJQRILjGjFxWx_PV-mkL3tQCn_NqB8IuTrtYEuPmayWngS3LLI5gK0LuYXeupZzBZPQSAWEqlY7i9LiAabfJjnARYDT01ggJwtTB_Pj7RJicY5BEBmStJx4LORxvySB6EeXutU9q4Y3XbO8uRF0dhLFelqczhcg6KT2MQOT05RhV5gas8noI59gSrFsOpq23x1Q5dTXVsSpPJxJ23gkARGWwwRT469seHPEA.LZx9AbSw8isM0qxj.l4O_aiqiHx5DCQH2d5id1C7Kcu7o0vWbY5x-QSboMnpwa8O2gP_QOBTzET052DYQ1lgcqt-VMghOMlqhvlTPrjH-4GnUQvMa3Eje3-KkdSCl_4fG7qqD6T6OvnPxiCJKRt6TltjkBLC3eH9BuxpGdmhw7qWyqmmE-0H7JKHs1XJPtbeZdCDjCxpCP8fLVQ3eJKhh068K-2Ft4L98OfJCXTGGDkfetRDwQAZl_dSs_2kFLFLMviYi0dTDKFrZzcDGeX2v6SV2T1YqpIrRNM33P3RDS_zkM5vS6S9-DxpcKl-TAXZKdN3WeBCSWuVDbWZyKOI87BpDJZMpYpdVzZy8d9g6DGSV7m_CBlbT6F-I_qqb2uyo-6oFWQlM34S215ArzEGcO1h_diXlbWe2P9vU91uQxIN50F8qncqIdjfD6P4YhaB-GOyCmPgNrVLfvKJAgFjsIOz62VuUdnPu6PI1mTuBUkR6jPryfB8Af7i1dvoPHQHB_c6QjH9XYtSqGw2frx31o1HwPbRjSfwa5BU2Yixuuqh8mjaLXqDee3pi-NmeEzwczY14TNOIgMpHwGvxh_aCFEm1smYKc0grdNmRmGsI-DlDwgHe7rrACp1zBIsdqeYwN4VM61eXXDMJWFRhQ7_NyvUzJJGX0vp3vztkXb3-2emh4rGc29Hsryl9H11kG15RHJszSdH9CS53YA_FAaHfUA8BGKjjqRtRE4rJRji8CPptXEknEWQrwSNP8jF6xGfj8bANEVZGXO3WZxe8_-x9lbQVpFbkcpQr8omeL00ZqWEx3YYuoGz8sFhtMz25mqOdLyCKJn5j4YgUg43umIk1siM2TQlKuRtiFnd8mpWikMgMXBq8bTKajeg4Q1v51Nj_C9Zle5pyAFuaZLQUEKxrsCU0LbQMyEC4ayZI-85uOv7KIk9sMt0wAdPjJPZmvUf15raAjDOA2icKg7tXsWhmnfQ17qtl31PLH6bwEi3fnFIY1tez9lFAEJQu8j__pBLDAmufSffm7d28BC50oRtRiiXrmA7MPaqvY1fpwzfy4VZIlvnUwRIJBx2h.1R76Ry6U7u8HgXWpi4N8Ug
-
-2024-02-15 17:47:49 - Tokens guardados en archivos separados
-2024-02-15 17:47:49 - 
+2024-02-14 07:59:08 - Fecha a solicitar plaza: 2024-02-21
+2024-02-14 07:59:08 - Cargando página https://app-officemanager.raona.com
+2024-02-14 07:59:09 - Cargando credenciales contraseña ...
+2024-02-14 07:59:10 - Iniciando sesion ...
+2024-02-14 07:59:10 - Buscando datos en localStore ...
+2024-02-14 07:59:17 - Datos encontrados en localStorage
+2024-02-14 07:59:17 - Cerrando Navegador
+2024-02-14 07:59:24 - Tokens guardados en archivos separados
+2024-02-14 07:59:24 - 
 __SOLICITANDO PLAZA__
-2024-02-15 17:47:49 - Obteniendo Pase de reserva...
-2024-02-15 17:47:50 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
-2024-02-15 17:47:50 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
-2024-02-15 17:47:50 - 
+2024-02-14 07:59:24 - Obteniendo Pase de reserva...
+2024-02-14 07:59:24 - Estado de respuesta para obtener pase de reserva : 202
+2024-02-14 07:59:24 - Pase de reserva adquirido!!!
+2024-02-14 07:59:24 - Extrayendo variables id del Pase de reserva...
+2024-02-14 07:59:24 - Tenant ID: 7a903ac6-aeb5-4cf8-879c-c48f02fc36e7
+2024-02-14 07:59:24 - Zone ID: 35e0550e-953a-41b5-ba97-cacaa4a44160
+2024-02-14 07:59:24 - Reservation ID: 2cd1dd06-4956-43f8-89b2-ef122aff6a3c
+2024-02-14 07:59:24 - Reservation Date: 2024-02-21
+2024-02-14 07:59:24 - The reservationId is: 2cd1dd06-4956-43f8-89b2-ef122aff6a3c
+2024-02-14 07:59:24 - The reservationId is: 2cd1dd06-4956-43f8-89b2-ef122aff6a3c
+2024-02-14 07:59:27 - 
+__COMPROBANDO RESERVA DE PLAZA__
+2024-02-14 07:59:27 - Reservando plaza...
+2024-02-14 07:59:27 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C2cd1dd06-4956-43f8-89b2-ef122aff6a3c
+2024-02-14 07:59:28 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-14 07:59:28 - Texto de la respuesta de la peticion de plaza: [{"id":"2cd1dd06-4956-43f8-89b2-ef122aff6a3c","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-14T06:59:24.8590726Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-02-21T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["4baa17f4-afd1-434d-af3d-b8182fb2559b"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"4baa17f4-afd1-434d-af3d-b8182fb2559b","objectType":"OM.ParkingSeat","name":"83","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":119.1,"y":569.2,"width":62.0,"height":30.7}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-14 07:59:28 - Peticion aprobada, comprobando reserva...
+2024-02-14 07:59:28 - Peticion exitosa.
+2024-02-14 07:59:28 - Plaza reservada!.
+2024-02-14 07:59:28 - Extrayendo datos de reserva en formato Json
+2024-02-14 07:59:28 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-14 07:59:28 - 
+__DATOS DE PLAZA RESERVADA__
+2024-02-14 07:59:28 - 
+__EXTRAYENDO DATOS DE LA PLAZA__
+2024-02-14 07:59:28 - Fecha: 21 February de 2024
+2024-02-14 07:59:28 - Zona a aparcar: Victoria - PS2
+2024-02-14 07:59:28 - Numero de plaza: 83
+2024-02-14 07:59:28 - Turno: AllDay
+2024-02-14 07:59:28 - Matricula del Vehiculo: 6516KJT
+2024-02-14 07:59:28 - 
 __ENVIANDO MENSAJE POR TELEGRAM__
-2024-02-15 17:48:20 - 
+2024-02-14 07:59:28 - Estado de la respuesta: 200
+2024-02-14 07:59:28 - Mensaje enviado! 📧
+2024-02-14 07:59:28 - Fin de linea
+
+2024-02-15 07:59:02 - 
                                    .::!!!!!!!:.
   .!!!!!:.                        .:!!!!!!!!!!!!
   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
@@ -647,30 +492,55 @@ __ENVIANDO MENSAJE POR TELEGRAM__
         ┖───────────────────────────────┙
         
 
-2024-02-15 17:48:20 - 
+2024-02-15 07:59:02 - 
 __CONSULTA DE TOKEN__
-2024-02-15 17:48:24 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:48:24 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:48:25 - Cargando credenciales contraseña ...
-2024-02-15 17:48:25 - Iniciando sesion ...
-2024-02-15 17:48:25 - Buscando datos en localStore ...
-2024-02-15 17:48:28 - Datos encontrados en localStorage
-2024-02-15 17:48:28 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjRkNmM3YzY0LTdlZjEtNDBiNy04ZThjLWFhYWEzYzA3NjkyYiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MDE1NzA4LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgwMTkzMDgsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MDE1NzA4fQ.RF01dTqNGbvQgZvqwPGtVpyx90T_HGZDXqxaj33c-eHEaloJNCQJANIEMVpM19jHZaKK8YlnYoApL8K8QcIi-fvHRuRdGAUFtKL3plbSZqci4WdJaZbWAFhj71ScmPg-hruZqnn273hxVH2TWDv_x7u4htbicGoFh71ejJaJBYUU3TrOcLBZWFFlRj4nnyujnhD9RAe1grMbkDr9vKxfYNMxmTEmOZviq0_DtI7uxBzDncKKm3hbpqj6zvCQMrWOUpgonPJTTKRHJDtAZgTrvRE9Vk_pFz80lzTbOMlc30vMY1UUudwWZWZBz7PlG_HHjfahulewxfV1lJddOB7Ngg
-
-2024-02-15 17:48:28 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.L1hyDrdcG9mpUcHBv_SbX8gWn5cFY_Qfh3zIxc02HKVtFtNL1Tk-nGop_1BOT2thnLwPfIgnXD9OBgtQteI89mLq1Nd0C7iPt4xQ1km1QagQtl3hxigR6VkXji_gaYa9IQ-ay8U0MMYaaejHkFTfQJwd6l1PeXdOLOg0L7DJYiSMb6lyEyTHlyjIRSd9tUQdqmkcXVm_7XISdO2UIEMXIBKN4ZWrPNgFcgjsJsPdYN4T-YW3gtvNs2HmaJr7kUqDBhJKXjRwipEaTTdxqUasBmt6m9Jau34ATIiLDLBLTfyX8D_IC2gq_q6vWYp1Yna0Jh72qnXYjXC4uBCwePlzHw.kRwVLg1X992K8eJk.tumBHHqCb2iOSOhBqGwnqtitfoEKXgyqCFtg8RBhdNDNcilSBctPrI6z9EYbSdU0oSpxK2ezyho2OJ9LLvhOv8Ne9M7I_ERwWp-87d6NhgdUGhtTt00XAhwXLl2OXZRxpZhyjB9VwGNhcmwSjubPVZJ-SHaz19mkl8rNBiPkln1eZSZOw10t898mO_E63v77VjfCQE0zzWsMbmi4fBXzJwv2QnFrsx3B_dWfFBeBOOoq7qyV8YxS9lB7szN8AZnrKADcGwZ6906N47E4YRExUrSdLgIsGNucbvxarQtFcnK8rQGIDDcfoxXHJxJz3Q72DDKcy7jgXzk5CQVXYMIwiwqZCyewPmQ1DuXtyozpilU_XkZe-okTfQKCRuj3-OSPkYCOBNWUbZx2vvctEH3lX2tAmR4KQBesR81KE9Z-C5Bgv8AXpX2j_qJSsUyDLMbsCBtA78I5O8T5isOcqr-vyBaKeWR5u3bPNGyP6seKy-b3RnTJ_qY_W6FbaQ8vMjkgHz61avJx7BoxsFbQ64OFA2su0FjoSxkxNm1KSDu4_psoHXWJpJELgErexg6gT_k8813LbzpizRhrvFQ8xpyZbSy5HnV4wmKA5gWZ3RhXtqVGTiH5RgrV17YHBfAnnj0ioeT06OdwJ8Ur81W7EiH2C2moU92-Jo0q7cfGEtwoqW0SCEJkYrOExsKZyU9eqMdHgh5tBaZ9pXkTQw9T3u9aofB98-CAeG0idKj_ajDOe0fWL9iMB1bTym4yXyV3pNSXAwW-h4xD3Jp93nuJvkEntYE_ZRAk0meVPFSYyhjVf6rSVQyu_NZntaIn5BwjpaJQSrMWFQ6P1RhyFxack-9YGeI0uzus0mY_ROAj-pK1WrRBe1OGDf9Ki3lIGtdx2pihQfFbtFfIM_WaeETWRaw6D2nfsnJBo3IVvK5Ot7EAjyxcRVjf2v7gdthi6o2vlrGqxWsp-huJ5DSPqpxO2PrTTztz_8nkp1hptwJtgoCAM5rqO83QELl_76oO_F8L0gPipqq79rwdCgDCl_Ol3EZUmsflXrLXmYpMMbwzkyk.2khteOSquavuMJO7t0GGkg
-
-2024-02-15 17:48:28 - Tokens guardados en archivos separados
-2024-02-15 17:48:28 - 
+2024-02-15 07:59:08 - Fecha a solicitar plaza: 2024-02-22
+2024-02-15 07:59:08 - Cargando página https://app-officemanager.raona.com
+2024-02-15 07:59:10 - Cargando credenciales contraseña ...
+2024-02-15 07:59:10 - Iniciando sesion ...
+2024-02-15 07:59:10 - Buscando datos en localStore ...
+2024-02-15 07:59:16 - Datos encontrados en localStorage
+2024-02-15 07:59:16 - Cerrando Navegador
+2024-02-15 07:59:18 - Tokens guardados en archivos separados
+2024-02-15 07:59:18 - 
 __SOLICITANDO PLAZA__
-2024-02-15 17:48:28 - Obteniendo Pase de reserva...
-2024-02-15 17:48:29 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
-2024-02-15 17:48:29 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
-2024-02-15 17:48:29 - 
+2024-02-15 07:59:18 - Obteniendo Pase de reserva...
+2024-02-15 07:59:19 - Estado de respuesta para obtener pase de reserva : 202
+2024-02-15 07:59:19 - Pase de reserva adquirido!!!
+2024-02-15 07:59:19 - Extrayendo variables id del Pase de reserva...
+2024-02-15 07:59:19 - Tenant ID: 7a903ac6-aeb5-4cf8-879c-c48f02fc36e7
+2024-02-15 07:59:19 - Zone ID: 35e0550e-953a-41b5-ba97-cacaa4a44160
+2024-02-15 07:59:19 - Reservation ID: 4fe8ed7f-1ecc-48f0-9106-5cc46a165027
+2024-02-15 07:59:19 - Reservation Date: 2024-02-22
+2024-02-15 07:59:19 - The reservationId is: 4fe8ed7f-1ecc-48f0-9106-5cc46a165027
+2024-02-15 07:59:19 - The reservationId is: 4fe8ed7f-1ecc-48f0-9106-5cc46a165027
+2024-02-15 07:59:22 - 
+__COMPROBANDO RESERVA DE PLAZA__
+2024-02-15 07:59:22 - Reservando plaza...
+2024-02-15 07:59:22 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C4fe8ed7f-1ecc-48f0-9106-5cc46a165027
+2024-02-15 07:59:22 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-15 07:59:22 - Texto de la respuesta de la peticion de plaza: [{"id":"4fe8ed7f-1ecc-48f0-9106-5cc46a165027","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-15T06:59:18.9946749Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-02-22T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["4baa17f4-afd1-434d-af3d-b8182fb2559b"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"4baa17f4-afd1-434d-af3d-b8182fb2559b","objectType":"OM.ParkingSeat","name":"83","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":119.1,"y":569.2,"width":62.0,"height":30.7}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-15 07:59:22 - Peticion aprobada, comprobando reserva...
+2024-02-15 07:59:22 - Peticion exitosa.
+2024-02-15 07:59:22 - Plaza reservada!.
+2024-02-15 07:59:22 - Extrayendo datos de reserva en formato Json
+2024-02-15 07:59:22 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-15 07:59:22 - 
+__DATOS DE PLAZA RESERVADA__
+2024-02-15 07:59:22 - 
+__EXTRAYENDO DATOS DE LA PLAZA__
+2024-02-15 07:59:22 - Fecha: 22 February de 2024
+2024-02-15 07:59:22 - Zona a aparcar: Victoria - PS2
+2024-02-15 07:59:22 - Numero de plaza: 83
+2024-02-15 07:59:22 - Turno: AllDay
+2024-02-15 07:59:22 - Matricula del Vehiculo: 6516KJT
+2024-02-15 07:59:22 - 
 __ENVIANDO MENSAJE POR TELEGRAM__
-2024-02-15 17:48:29 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:48:29 - Fin de linea
+2024-02-15 07:59:22 - Estado de la respuesta: 200
+2024-02-15 07:59:22 - Mensaje enviado! 📧
+2024-02-15 07:59:22 - Fin de linea
 
-2024-02-15 17:51:47 - 
+2024-02-15 14:35:58 - 
                                    .::!!!!!!!:.
   .!!!!!:.                        .:!!!!!!!!!!!!
   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
@@ -686,26 +556,9 @@ __ENVIANDO MENSAJE POR TELEGRAM__
         ┖───────────────────────────────┙
         
 
-2024-02-15 17:51:47 - 
+2024-02-15 14:35:58 - 
 __CONSULTA DE TOKEN__
-2024-02-15 17:51:54 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 17:51:54 - Cargando página https://app-officemanager.raona.com
-2024-02-15 17:51:55 - Cargando credenciales contraseña ...
-2024-02-15 17:51:55 - Iniciando sesion ...
-2024-02-15 17:51:55 - Buscando datos en localStore ...
-2024-02-15 17:51:58 - Datos encontrados en localStorage
-2024-02-15 17:51:58 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjhlZWIwZDMxLTA1NDItNDZjMS04MTY4LTNkYWMyMjMyNWFlZSIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MDE1OTE4LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgwMTk1MTgsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MDE1OTE4fQ.FQbv4vm1SihPgEQBlPvKiDTRXCCMUPjNQ3fru522SMYlN7POAj92UvpSEB1iHamX9M3vFhassptfWemuAwy3boQLYMvOHBxbWhT1Y0CvcswJFNX3kCEdTX_1ZrSjrfzUG4eYjk-qLJiW-Vdr_FCzt2CM6Qrxw1pHFXxCWRB7lytp9hgflWL2KACOYkVSStfshBVzBff3vcUbp0GBqRj10iTmk3tlwAJ0dvpinMnALf_a7xDqDycybHIAOc9AiQkRol-3HHHcoS_KwtxwnPjaFCA8uzRu_gS73E2rKmVijCDb7MDMLQzDoFNKsHWwNO8oNDV2oO5YdsiPPfrTOE394g
-
-2024-02-15 17:51:58 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.RbR3VmfMbkjZV9USS3Y7bdoYbZBRcwnSEM7nYCQYJxRqoA6Rlte806Mtgy6j5BRmknWxjNqr3ZXD1MKmZhKsFa_KH6gPoSLfXn2jqW3W6JBbdUrCzGF_ZoGIk9NEqmr6_SQ0OsfWnR-TVMBn98L_Y2R4Lyngn35vQjHQcB_4erisZpRMTDPk5MOLMGqT11GZGdFBroI6CKAAAKm5IkgFkOuT9N8dsMQoUUd80s9izyY8olZFeIgHyf2xTfmYDan20wzHNiM_esG8TxCuG2YWJyy4_sxpSXrpvHUn6l9FQNQaEnitjzjeyUFIxuB_Coz38jmFNDV-cQZmXxrmZjaTFA.oPf6xu5u8oqR416p.QDxbXcYekUHczkwqtkSsf7GIEA3nNjZRRQobkm3vCjjXtzheZf3AmPWi-nZwVfuVVJF-66-Jy9XyMDlDjxgSIdCwDaxQ35KyMAlsvy9jodybJgm4V8_cIooDSJXWlkr0lKtM-JyvHOhe-aE0J_YUn7V2W3mxdOQoVkKUWkN4TTAKYCasoafhr1jm-KunIPgMGaO2zpI_-KYjpZTiB_5wfzgrB22gTeMxFDEFaDmCMOyLkefIKDT5EsLD4dM_nL1Iot7WTT2MoB5FNGPWaXXey1FVdA_kybclaCjPgsiXL6STHqjTV6QjT3i1QlL86tdBe5Mho6nMNygxp7IKsGd0FKrgqNZr661wWlxRmfZijFNLp3eVS5LpGN4EpFFLxsjSND-kMecaBnTz3SQ0d4sn8p6dd-7bhioJAqN5gddoQvfbLJom6reRX4JS9WkMWNriaAPcdgJy0YAvvGwOIc8qAFJMiNHYfwrW6-rBTYACYemYSTvUwIFyUxuPTpIgCx2kZX7I9y6bTtKlJ-lq8FSPA8WOBnF3iBLW8iXoy_zTPCxy4-JwmRGCD60wInAOFLN2FfjELZTF7thvk9fVAqEuvQ000v_6qhmJVwO18fF-Mjfk42l5Z2YaF_Tpk90WsJzx6_dXmej4HFbc9-oA2kH_OHZ0F8cz9skuzm9BhdZ8n4xapGGHhwJTacMRDxfcL4ERqdt17jmgR5b9yP8T6gZDAGvnAkZHWuwFVgf8W19Px9MCKMutjPoEwfx3vMhSTtzkjt428IvtjvKWofpikm1yh-0BS_QJHbCMrmIWeHLmutIn-x0TnHF-LVGsNRF_-Ta8GQjwSU7zHJ7Vx5M4hPpQR6Adz8RanadniCsqG8xG51P8ANYy4ht4Ik5awMkllQ3sfVbd2xu-iGuzdbwTifnsWONRsw90pR9JSKUMV3etQkyLXMbrtPVSNZugb2PV1Pzi-lanmDEInOF47_bat0O0ddGdgAD5Vb4uzwTWfcoOuVX3CWdvsG1orkeaP1ymfnMOeXg7UEyZp62ccV1JTWBHrTTI__uQCWs96teSfg.z5oM6Bc7ksYGfKPEfpAxeQ
-
-2024-02-15 17:51:58 - Cerrando Navegador
-2024-02-15 17:51:59 - Tokens guardados en archivos separados
-2024-02-15 17:51:59 - Se produjo un error desconocido al obtener el token: 'charmap' codec can't encode character '\U0001f608' in position 23: character maps to <undefined>
-2024-02-15 17:51:59 - Cerrando Navegador
-2024-02-15 17:52:19 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 17:52:19 - Fin de linea
-
-2024-02-15 18:06:20 - 
+2024-02-15 14:35:58 - 
                                    .::!!!!!!!:.
   .!!!!!:.                        .:!!!!!!!!!!!!
   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
@@ -721,27 +574,643 @@ __CONSULTA DE TOKEN__
         ┖───────────────────────────────┙
         
 
-2024-02-15 18:06:20 - 
+2024-02-15 14:35:58 - 
 __CONSULTA DE TOKEN__
-2024-02-15 18:06:24 - Fecha a solicitar plaza: 2024-02-22
-2024-02-15 18:06:24 - Cargando página https://app-officemanager.raona.com
-2024-02-15 18:06:24 - Cargando credenciales contraseña ...
-2024-02-15 18:06:24 - Iniciando sesion ...
-2024-02-15 18:06:24 - Buscando datos en localStore ...
-2024-02-15 18:06:27 - Datos encontrados en localStorage
-2024-02-15 18:06:27 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjExZDkzYWNhLWNhNWUtNGY1Ni1iM2IwLWJjMWNhYWIzNWMzMiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MDE2Nzg3LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgwMjAzODcsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MDE2Nzg3fQ.GXvf2B8xqTqGESToyXtB5XsHtIhVdY1JXPp7OPxRAlAKbq31F8-p6RbrIHmAoKdZH0X0Tj05u-ZGs29BXifhAGq34YNvZhlK9XRmTwdCDgb5itb4jPXCAWBHgTmre1ZWWbKwO-TJPHnvUDwn8fHd1xEITdzmpocIUUio7sj5R3eM2n_41_MWBwStKxKsxwtrq185UunDvA-auntUpj6qWvSJ-qa577gUU5Jd8hfuL0MKuzunHgZelsc7C1KLIV5T-7zlmaHoHN46iHd5DnIivIIxCsh2VFQmXvRQR58eG1-tWEGm5YzLXj2VbZmYqljTN2mPm7lbji0Op-po8mh5Xg
+2024-02-15 14:35:58 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
 
-2024-02-15 18:06:27 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.xRuK63mO-Hr3sPu9YVIHKL-G4Hbw4Hj3vaMxWnbjTokBHUp19UfeFvlSoO4EUfukkyCIuuHYRkFxrggjmsT6arebSqv5S0SrQPNBdxKkOXRXtc70LKzSwOnCkISPBBxosGyyhHyZorhmZDKSMLCddbo2Lv4PFycFuhKtR3NMMoyEoT34LdxEeEd5b1cDtDKDm3brAOzwyl3sJtBR8E4lB-d299d-sMYai2dRaPt8fmnlsGh-wh8Vgz4SmY0IsPszLVUFY4xsZPv1epPlK1p6l7Xwxj_JpIRtG5S1LXJ_BzzFHdVKAX4yFpllVckv_LXnAWz-k0UdRzR1kcE2pYt7Uw.O6f_xDGFeIbN0fsg.jHyvVQKmD-JEg0HPI1gmZ3CXmmYe0akoCbnyncHsdi8yk98PvI7g4CBvD-PLltZjR2ZN91IOyId1Mg24mvCbRF0Z41-j9h13DGHyU0aTcXvDkS4RRGype2bQLnJQS0Rf037ljBnfXhLbAbazXUHHoqFB1-o02BPvufsoGk4Exl19WzbxSj20f1K_2U4GEB0nB60BqvMsE2jqQ2CiRoEdNiKGtlZm0j7zhqGBW69R_4_BR8mvO-rfVwnbdGmMtoQljDz3vNB0nediqdGl07YlqDk_g69s6hSE7g09ZtNVahTwm7KMoLT27juKTINdYcEkuwpRFKZfmiYfghQ8d3nTk9bzxuXUVm2wTlFEX5bqweJACFeoUoqiZ4XxAerecjJvdy9H48K0if_48DiIKFji4HtyGpYVXEABbSjUwrY9TrjgxUQ0BaBO3xxnBLg-5MHODQ6cAiAIZ8hiRbWzCwETPy4YexTikQ4d67YdUass3f4Y5Xsli61G37fT_HYwooN5dcHCD1OzYqDnrTstSJMPEOkZCFsiGtp890aQGJU-23lat2ldRwrIUG9Jz3IVSqpkF5ZB59AmUJ_fpHqQoKxBLBDgZ91pWmAkID624w7p-WE5iLEwZ3haZYxgG-FQ3N-vYYh0fpTUbimDY5eh7mWh-PPUx9H59bGMvFpAURQnreCi30CiG4N4XOHwMsGd--ZheKRs_CJ7V7cxLWH7sBHqyHyL2PU76Twc-uIi8VJixpDSe8VgX1tz8GsARv9cEOEcAEOTTYXvvKTRNlfjjkYssgV8jdyIEkJwhFKqxeJizeOwIWeDt3qlxB-KKu-BvJE02CjNwwwImCajcJyBm8ATck2M_xH87XwViL5jcdfRbVXY1UkFV-PHtTHB8boOjW0t9Zlb3JeOJrmg2M8KqdJtoV8CLmldtKqXeLL0ROfMDDCR3vXJfGJoWhss8aqt7Gpu61ywvKQVvKdxCVs9vDNwocKcwbk-d-DdjWQ2adYVVG0kunMzlSHT56YvwdtTlC3jIRG1sPnPkLmp724tQDqLJABgRImD5SDR2kFIiHHhA2k.u0yzbirz7hwZE5V3J7ZUKQ
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
 
-2024-02-15 18:06:27 - Cerrando Navegador
-2024-02-15 18:06:28 - Tokens guardados en archivos separados
-2024-02-15 18:06:28 - 
+2024-02-15 14:35:58 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:37:48 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:37:48 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:37:48 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:37:48 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:37:48 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:37:48 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:48:41 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:48:41 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:48:42 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:48:42 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:48:42 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:48:42 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:50:17 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:50:17 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:50:24 - Cargando página https://app-officemanager.raona.com
+2024-02-15 15:50:26 - Cargando credenciales contraseña ...
+2024-02-15 15:50:26 - Iniciando sesion ...
+2024-02-15 15:50:26 - Buscando datos en localStore ...
+2024-02-15 15:50:33 - Datos encontrados en localStorage
+2024-02-15 15:50:33 - Cerrando Navegador
+2024-02-15 15:50:35 - Tokens guardados en archivos separados
+2024-02-15 15:50:35 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-15 15:52:06 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:52:06 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:52:11 - Cargando página https://app-officemanager.raona.com
+2024-02-15 15:52:12 - Cargando credenciales contraseña ...
+2024-02-15 15:52:13 - Iniciando sesion ...
+2024-02-15 15:52:13 - Buscando datos en localStore ...
+2024-02-15 15:53:02 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:53:02 - 
+__CONSULTA DE TOKEN__
+2024-02-15 15:54:57 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 15:54:57 - 
+__CONSULTA DE TOKEN__
+2024-02-15 16:29:20 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 16:29:20 - 
+__CONSULTA DE TOKEN__
+2024-02-15 16:57:10 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 16:57:10 - 
+__CONSULTA DE TOKEN__
+2024-02-15 18:18:30 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 18:18:30 - 
+__CONSULTA DE TOKEN__
+2024-02-15 21:42:59 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-15 21:42:59 - 
+__CONSULTA DE TOKEN__
+2024-02-16 01:01:41 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-16 01:01:41 - 
+__CONSULTA DE TOKEN__
+2024-02-16 01:37:31 - Estado de la respuesta: 200
+2024-02-16 01:37:31 - Mensaje enviado! 📧
+2024-02-16 01:37:31 - Estado de la respuesta: 200
+2024-02-16 01:37:31 - Mensaje enviado! 📧
+2024-02-16 01:37:32 - Estado de la respuesta: 200
+2024-02-16 01:37:32 - Mensaje enviado! 📧
+2024-02-16 01:37:32 - Estado de la respuesta: 200
+2024-02-16 01:37:32 - Mensaje enviado! 📧
+2024-02-16 01:37:32 - Estado de la respuesta: 200
+2024-02-16 01:37:32 - Mensaje enviado! 📧
+2024-02-16 01:42:52 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-16 01:42:52 - 
+__CONSULTA DE TOKEN__
+2024-02-16 01:42:57 - Fecha a solicitar plaza: 2024-02-23
+2024-02-16 01:42:57 - Cargando página https://app-officemanager.raona.com
+2024-02-16 01:42:59 - Cargando credenciales contraseña ...
+2024-02-16 01:42:59 - Iniciando sesion ...
+2024-02-16 01:42:59 - Buscando datos en localStore ...
+2024-02-16 01:43:05 - Datos encontrados en localStorage
+2024-02-16 01:43:05 - Cerrando Navegador
+2024-02-16 01:43:07 - Tokens guardados en archivos separados
+2024-02-16 01:43:07 - 
 __SOLICITANDO PLAZA__
-2024-02-15 18:06:28 - Obteniendo Pase de reserva...
-2024-02-15 18:06:28 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
-2024-02-15 18:06:29 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
-2024-02-15 18:06:29 - 
+2024-02-16 01:43:07 - Obteniendo Pase de reserva...
+2024-02-16 01:43:07 - Estado de respuesta para obtener pase de reserva : 202
+2024-02-16 01:43:07 - Pase de reserva adquirido!!!
+2024-02-16 01:43:07 - Extrayendo variables id del Pase de reserva...
+2024-02-16 01:43:07 - Tenant ID: 7a903ac6-aeb5-4cf8-879c-c48f02fc36e7
+2024-02-16 01:43:07 - Zone ID: 35e0550e-953a-41b5-ba97-cacaa4a44160
+2024-02-16 01:43:07 - Reservation ID: 7c86dbb3-289a-4cd0-9650-f085a1015998
+2024-02-16 01:43:07 - Reservation Date: 2024-02-23
+2024-02-16 01:43:07 - The reservationId is: 7c86dbb3-289a-4cd0-9650-f085a1015998
+2024-02-16 01:43:07 - The reservationId is: 7c86dbb3-289a-4cd0-9650-f085a1015998
+2024-02-16 01:43:10 - 
+__COMPROBANDO RESERVA DE PLAZA__
+2024-02-16 01:43:10 - Reservando plaza...
+2024-02-16 01:43:10 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C7c86dbb3-289a-4cd0-9650-f085a1015998
+2024-02-16 01:43:10 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-16 01:43:10 - Texto de la respuesta de la peticion de plaza: [{"id":"7c86dbb3-289a-4cd0-9650-f085a1015998","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-16T00:43:07.5827111Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-02-23T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["4baa17f4-afd1-434d-af3d-b8182fb2559b"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"4baa17f4-afd1-434d-af3d-b8182fb2559b","objectType":"OM.ParkingSeat","name":"83","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":119.1,"y":569.2,"width":62.0,"height":30.7}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-16 01:43:10 - Peticion aprobada, comprobando reserva...
+2024-02-16 01:43:10 - Peticion exitosa.
+2024-02-16 01:43:10 - Plaza reservada!.
+2024-02-16 01:43:10 - Extrayendo datos de reserva en formato Json
+2024-02-16 01:43:10 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-16 01:43:10 - 
+__DATOS DE PLAZA RESERVADA__
+2024-02-16 01:43:10 - 
+__EXTRAYENDO DATOS DE LA PLAZA__
+2024-02-16 01:43:10 - Fecha: 23 February de 2024
+2024-02-16 01:43:10 - Zona a aparcar: Victoria - PS2
+2024-02-16 01:43:10 - Numero de plaza: 83
+2024-02-16 01:43:10 - Turno: AllDay
+2024-02-16 01:43:10 - Matricula del Vehiculo: 6516KJT
+2024-02-16 01:43:10 - 
 __ENVIANDO MENSAJE POR TELEGRAM__
-2024-02-15 18:06:29 - Peticion denegada por algún firewall, Revisa tu firewall
-2024-02-15 18:06:29 - Fin de linea
+2024-02-16 01:43:11 - Estado de la respuesta: 200
+2024-02-16 01:43:11 - Mensaje enviado! 📧
+2024-02-16 01:43:11 - Fin de linea
+
+2024-02-16 01:48:24 - Estado de la respuesta: 200
+2024-02-16 01:48:24 - Mensaje enviado! 📧
+2024-02-16 01:48:30 - Estado de la respuesta: 200
+2024-02-16 01:48:30 - Mensaje enviado! 📧
+2024-02-16 02:27:04 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-16 02:27:04 - 
+__CONSULTA DE TOKEN__
+2024-02-16 02:27:12 - Fecha a solicitar plaza: 2024-02-23
+2024-02-16 02:27:12 - Cargando página https://app-officemanager.raona.com
+2024-02-16 02:27:13 - Cargando credenciales contraseña ...
+2024-02-16 02:27:13 - Iniciando sesion ...
+2024-02-16 02:27:13 - Buscando datos en localStore ...
+2024-02-16 02:27:20 - Datos encontrados en localStorage
+2024-02-16 02:27:20 - Cerrando Navegador
+2024-02-16 02:27:21 - Tokens guardados en archivos separados
+2024-02-16 02:27:21 - 
+__SOLICITANDO PLAZA__
+2024-02-16 02:27:21 - Obteniendo Pase de reserva...
+2024-02-16 02:27:22 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-16 02:27:22 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-16 02:27:22 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-16 02:27:22 - Estado de la respuesta: 200
+2024-02-16 02:27:22 - Mensaje enviado! 📧
+2024-02-16 02:27:22 - Fin de linea
+
+2024-02-16 02:43:27 - Estado de la respuesta: 200
+2024-02-16 02:43:27 - Mensaje enviado! 📧
+2024-02-16 02:44:03 - Estado de la respuesta: 200
+2024-02-16 02:44:03 - Mensaje enviado! 📧
+2024-02-16 02:44:03 - Estado de la respuesta: 200
+2024-02-16 02:44:03 - Mensaje enviado! 📧
+2024-02-16 02:44:03 - Estado de la respuesta: 200
+2024-02-16 02:44:03 - Mensaje enviado! 📧
+2024-02-16 02:44:56 - Estado de la respuesta: 200
+2024-02-16 02:44:56 - Mensaje enviado! 📧
+2024-02-16 02:44:56 - Estado de la respuesta: 200
+2024-02-16 02:44:56 - Mensaje enviado! 📧
+2024-02-16 02:44:56 - Estado de la respuesta: 200
+2024-02-16 02:44:56 - Mensaje enviado! 📧
+2024-02-16 02:44:56 - Estado de la respuesta: 200
+2024-02-16 02:44:56 - Mensaje enviado! 📧
+2024-02-16 02:44:57 - Estado de la respuesta: 200
+2024-02-16 02:44:57 - Mensaje enviado! 📧
+2024-02-16 02:44:57 - Estado de la respuesta: 200
+2024-02-16 02:44:57 - Mensaje enviado! 📧
+2024-02-16 02:44:57 - Estado de la respuesta: 200
+2024-02-16 02:44:57 - Mensaje enviado! 📧
+2024-02-16 02:44:57 - Estado de la respuesta: 200
+2024-02-16 02:44:57 - Mensaje enviado! 📧
+2024-02-16 02:45:05 - Estado de la respuesta: 200
+2024-02-16 02:45:05 - Mensaje enviado! 📧
+2024-02-16 02:45:10 - Estado de la respuesta: 200
+2024-02-16 02:45:10 - Mensaje enviado! 📧
+2024-02-16 02:45:36 - Estado de la respuesta: 200
+2024-02-16 02:45:36 - Mensaje enviado! 📧
+2024-02-16 02:45:59 - Estado de la respuesta: 200
+2024-02-16 02:45:59 - Mensaje enviado! 📧
+2024-02-16 02:46:12 - Estado de la respuesta: 200
+2024-02-16 02:46:12 - Mensaje enviado! 📧
+2024-02-16 03:01:00 - Estado de la respuesta: 200
+2024-02-16 03:01:00 - Mensaje enviado! 📧
+2024-02-16 03:13:45 - Estado de la respuesta: 200
+2024-02-16 03:13:45 - Mensaje enviado! 📧
+2024-02-16 07:59:01 - 
+                                   .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+
+        ╔───────────────────────────────╗
+        |   Developed By AbathurCris!   |
+        ┖───────────────────────────────┙
+        
+
+2024-02-16 07:59:01 - 
+__CONSULTA DE TOKEN__
+2024-02-16 07:59:07 - Fecha a solicitar plaza: 2024-02-23
+2024-02-16 07:59:07 - Estado de la respuesta: 200
+2024-02-16 07:59:07 - Mensaje enviado! 📧
+2024-02-16 07:59:07 - Cargando página https://app-officemanager.raona.com
+2024-02-16 07:59:08 - Cargando credenciales contraseña ...
+2024-02-16 07:59:08 - Iniciando sesion ...
+2024-02-16 07:59:08 - Buscando datos en localStore ...
+2024-02-16 07:59:15 - Datos encontrados en localStorage
+2024-02-16 07:59:15 - Cerrando Navegador
+2024-02-16 07:59:17 - Tokens guardados en archivos separados
+2024-02-16 07:59:17 - 
+__SOLICITANDO PLAZA__
+2024-02-16 07:59:17 - Obteniendo Pase de reserva...
+2024-02-16 07:59:18 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-16 07:59:18 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-16 07:59:18 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-16 07:59:18 - Estado de la respuesta: 200
+2024-02-16 07:59:18 - Mensaje enviado! 📧
+2024-02-16 07:59:18 - Fin de linea
+
+2024-02-18 06:02:55 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:02:55 - Estado de la respuesta: 200
+2024-02-18 06:02:55 - Mensaje enviado! 📧
+2024-02-18 06:03:06 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 06:03:06 - Token Obtenido
+2024-02-18 06:03:06 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:03:06 - Estado de la respuesta: 200
+2024-02-18 06:03:06 - Mensaje enviado! 📧
+2024-02-18 06:03:06 - No reservations found for the date: 2023-12-24 00:00:00
+2024-02-18 06:03:06 - Error: cannot unpack non-iterable NoneType object, No es posible eliminar la plaza
+2024-02-18 06:03:06 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:03:07 - Estado de la respuesta: 200
+2024-02-18 06:03:07 - Mensaje enviado! 📧
+2024-02-18 06:03:07 - Fin de linea
+
+2024-02-18 06:06:00 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:06:00 - Estado de la respuesta: 200
+2024-02-18 06:06:00 - Mensaje enviado! 📧
+2024-02-18 06:06:13 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 06:06:13 - Token Obtenido
+2024-02-18 06:06:13 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:06:13 - Estado de la respuesta: 200
+2024-02-18 06:06:13 - Mensaje enviado! 📧
+2024-02-18 06:06:13 - No reservations found for the date: 2023-12-24 00:00:00
+2024-02-18 06:06:13 - No se ha obtenido la información de la plaza. reservedID is None
+2024-02-18 06:06:13 - Error: No se pudo obtener el <b>ID de la reserva</b>., No es posible eliminar la plaza
+2024-02-18 06:06:13 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:06:13 - Estado de la respuesta: 200
+2024-02-18 06:06:13 - Mensaje enviado! 📧
+2024-02-18 06:06:13 - Fin de linea
+
+2024-02-18 06:10:09 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:10:09 - Estado de la respuesta: 200
+2024-02-18 06:10:09 - Mensaje enviado! 📧
+2024-02-18 06:10:15 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:10:15 - Estado de la respuesta: 200
+2024-02-18 06:10:15 - Mensaje enviado! 📧
+2024-02-18 06:10:20 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:10:20 - Estado de la respuesta: 200
+2024-02-18 06:10:20 - Mensaje enviado! 📧
+2024-02-18 06:10:25 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 06:10:25 - Token Obtenido
+2024-02-18 06:10:25 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:10:25 - Estado de la respuesta: 200
+2024-02-18 06:10:25 - Mensaje enviado! 📧
+2024-02-18 06:10:25 - No reservations found for the date: 2023-12-24 00:00:00
+2024-02-18 06:10:25 - No se ha obtenido la información de la plaza. No se pudo obtener el ID de la reserva.
+2024-02-18 06:10:25 - No existe plaza reservada para esa fecha. Plaza <b>no</b> reservada o fecha incorrecta
+2024-02-18 06:10:25 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:10:26 - Estado de la respuesta: 200
+2024-02-18 06:10:26 - Mensaje enviado! 📧
+2024-02-18 06:10:26 - Fin de linea
+
+2024-02-18 06:10:38 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:10:38 - Estado de la respuesta: 200
+2024-02-18 06:10:38 - Mensaje enviado! 📧
+2024-02-18 06:11:01 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 06:11:01 - Token Obtenido
+2024-02-18 06:11:01 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:11:01 - Estado de la respuesta: 200
+2024-02-18 06:11:01 - Mensaje enviado! 📧
+2024-02-18 06:11:01 - No reservations found for the date: 2023-12-23 00:00:00
+2024-02-18 06:11:01 - No se ha obtenido la información de la plaza. No se pudo obtener el ID de la reserva.
+2024-02-18 06:11:01 - No existe plaza reservada para esa fecha. Plaza <b>no</b> reservada o fecha incorrecta
+2024-02-18 06:11:01 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:11:01 - Estado de la respuesta: 200
+2024-02-18 06:11:01 - Mensaje enviado! 📧
+2024-02-18 06:11:01 - Fin de linea
+
+2024-02-18 06:11:14 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:11:14 - Estado de la respuesta: 200
+2024-02-18 06:11:14 - Mensaje enviado! 📧
+2024-02-18 06:11:29 - Formato de fecha incorrecto. Por favor, usa el formato YYYY-MM-DD.
+2024-02-18 06:11:29 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:11:29 - Estado de la respuesta: 200
+2024-02-18 06:11:29 - Mensaje enviado! 📧
+2024-02-18 06:11:51 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:11:51 - Estado de la respuesta: 200
+2024-02-18 06:11:51 - Mensaje enviado! 📧
+2024-02-18 06:12:06 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 06:12:06 - Token Obtenido
+2024-02-18 06:12:06 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:12:06 - Estado de la respuesta: 200
+2024-02-18 06:12:06 - Mensaje enviado! 📧
+2024-02-18 06:12:06 - Date: 2024-02-23 00:00:00
+2024-02-18 06:12:06 - The Reservation Id: 7c86dbb3-289a-4cd0-9650-f085a1015998
+2024-02-18 06:12:06 - Información de la plaza obtenida. Id de la plaza obtenido: 7c86dbb3-289a-4cd0-9650-f085a1015998
+2024-02-18 06:12:06 - Reservation Id de reserva a eliminar: 7c86dbb3-289a-4cd0-9650-f085a1015998
+2024-02-18 06:12:06 - Plaza eliminada!
+2024-02-18 06:12:06 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:12:06 - Estado de la respuesta: 200
+2024-02-18 06:12:06 - Mensaje enviado! 📧
+2024-02-18 06:15:27 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:15:27 - Estado de la respuesta: 200
+2024-02-18 06:15:27 - Mensaje enviado! 📧
+2024-02-18 06:15:48 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 06:15:48 - Token Obtenido
+2024-02-18 06:15:48 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:15:48 - Estado de la respuesta: 200
+2024-02-18 06:15:48 - Mensaje enviado! 📧
+2024-02-18 06:15:48 - Date: 2023-12-25 00:00:00
+2024-02-18 06:15:48 - The Reservation Id: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 06:15:48 - Información de la plaza obtenida. Id de la plaza obtenido: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 06:15:48 - Reservation Id de reserva a eliminar: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 06:15:49 - Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: 
+2024-02-18 06:15:49 - El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token
+2024-02-18 06:15:49 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:15:49 - Estado de la respuesta: 200
+2024-02-18 06:15:49 - Mensaje enviado! 📧
+2024-02-18 06:15:49 - Error al eliminar la plaza. Fallo de funcion delete_parking_place: El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token
+2024-02-18 06:15:49 - Error al eliminar la plaza, . No es posible eliminar la plaza
+2024-02-18 06:15:49 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 06:15:49 - Estado de la respuesta: 200
+2024-02-18 06:15:49 - Mensaje enviado! 📧
+2024-02-18 06:15:49 - Fin de linea
 
