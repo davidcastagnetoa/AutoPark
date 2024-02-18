@@ -43,7 +43,7 @@ def handle_webhook():
             conversation_state[chat_id] = 'awaiting_date'
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, "Por favor, envía la fecha de la reserva a eliminar en formato YYYY-MM-DD, o escribe /cancel para cancelar.")
+            send_message(TOKEN, CHAT_ID, "Escribe la fecha de la reserva a eliminar en formato YYYY-MM-DD, o escribe el comando <b>cancel</b> para cancelar.")
 
         elif text == '/cancel' and conversation_state.get(chat_id) == 'awaiting_date':
             conversation_state.pop(chat_id, None)
@@ -80,10 +80,6 @@ def handle_webhook():
                             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
                             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
                             send_message(TOKEN, CHAT_ID, "Operación cancelada.")
-
-                        API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-                        print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-                        send_message(TOKEN, CHAT_ID, "Envía la fecha de la reserva a eliminar en formato YYYY-MM-DD, o escribe /cancel para cancelar")
 
                         spinner.text = "Obteniendo información de la plaza"
                         reservedID, plaza, zona, turno, matricula, fecha = reservedPlaceData(date_to_delete)
