@@ -122,6 +122,11 @@ def delete_parking_place(secret, reserved_id):
                 API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
                 spinner.stop()
                 return -5
+            elif response.status_code == 404 and 'Object reference not set to an instance of an object.' in response.text:  # Suponiendo que 404 es el código de error para objeto no encontrado
+                spinner.fail("Error HTTP: 404, La plaza de garaje especificada no existe o ya fue eliminada")
+                API.write_log(f"Error HTTP: 404, La plaza de garaje especificada no existe o ya fue eliminada, Detalles: {response.text}")
+                spinner.stop()
+                return -6
             else:
                 API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: {http_err}, Detalles: {response.text}")

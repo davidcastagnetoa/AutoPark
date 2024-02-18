@@ -101,6 +101,15 @@ def handle_webhook():
                                     send_message(TOKEN, CHAT_ID, msg)
                                     raise Exception(msg)
 
+                                if result_Delete_Place == -6:
+                                    msg = "La plaza de garaje especificada no existe o ya fue eliminada"
+                                    spinner.fail(msg)
+                                    API.write_log(msg)
+                                    API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+                                    print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+                                    send_message(TOKEN, CHAT_ID, msg)
+                                    raise Exception(msg)
+
                                 if result_Delete_Place is not True:
                                     msg = "El servidor rechaza la peticion. Revisa los errores"
                                     spinner.fail(msg)
