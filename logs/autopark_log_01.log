@@ -114,4 +114,37 @@ __SOLICITANDO PLAZA__
 
 __ENVIANDO MENSAJE POR TELEGRAM__
 ⠋ Preparando envío de mensaje⠙ Enviando mensaje⠹ Enviando mensaje✔ Mensaje enviado! 📧
+/home/admin/documents/AutoPark/autorun.sh: line 13: lolcat: command not found
+⠋ Comprobando variables de entorno⠙ Comprobando variables de entorno✔ Variables de entorno encontradas
+Fecha a solicitar plaza: 2024-02-26
+
+__CONSULTA DE TOKEN__
+⠋ Cargando página https://app-officemanager.raona.com⠙ Cargando página https://app-officemanager.raona.com⠹ Cargando datos de página⠸ Cargando datos de página⠼ Cargando datos de página⠴ Cargando datos de página⠦ Cargando datos de página⠧ Cargando datos de página⠇ Cargando datos de página⠏ Cargando datos de página⠋ Cargando datos de página⠙ Cargando datos de página⠹ Cargando datos de página⠸ Cargando datos de página⠼ Cargando datos de página⠴ Cargando datos de página✔ Boton de inicio de sesion encontrado
+✔ Cargando credenciales de usuario
+✔ Cargando credenciales de contraseña
+✔ Iniciando sesión
+✔ Datos encontrados en localStorage!
+[2024-02-19 07:59:23]: 😈
+✔ Token obtenido!.
+⠋ Solicitud de token iniciada
+__SOLICITANDO PLAZA__
+⠙ Ejecutando funcion de reserva de plaza⠹ Ejecutando funcion de reserva de plaza⠸ Ejecutando funcion de reserva de plaza⠼ Ejecutando funcion de reserva de plaza⠴ Ejecutando funcion de reserva de plaza✔ Pase de reserva adquirido!!!
+✔ ID de plaza encontrado
+⠦ Ejecutando funcion de reserva de plaza⠧ Ejecutando funcion de reserva de plaza⠇ Ejecutando funcion de reserva de plaza⠏ Ejecutando funcion de reserva de plaza⠋ Ejecutando funcion de reserva de plaza⠙ Ejecutando funcion de reserva de plaza⠹ Ejecutando funcion de reserva de plaza⠸ Ejecutando funcion de reserva de plaza⠼ Ejecutando funcion de reserva de plaza⠴ Ejecutando funcion de reserva de plaza⠦ Ejecutando funcion de reserva de plaza⠧ Ejecutando funcion de reserva de plaza⠇ Ejecutando funcion de reserva de plaza⠏ Ejecutando funcion de reserva de plaza⠋ Ejecutando funcion de reserva de plaza⠙ Ejecutando funcion de reserva de plaza⠹ Ejecutando funcion de reserva de plaza⠸ Ejecutando funcion de reserva de plaza⠼ Ejecutando funcion de reserva de plaza⠴ Ejecutando funcion de reserva de plaza⠦ Ejecutando funcion de reserva de plaza⠧ Ejecutando funcion de reserva de plaza⠇ Ejecutando funcion de reserva de plaza⠏ Ejecutando funcion de reserva de plaza⠋ Ejecutando funcion de reserva de plaza⠙ Ejecutando funcion de reserva de plaza⠹ Ejecutando funcion de reserva de plaza⠸ Ejecutando funcion de reserva de plaza⠼ Ejecutando funcion de reserva de plaza⠴ Ejecutando funcion de reserva de plaza⠦ Ejecutando funcion de reserva de plaza⠧ Ejecutando funcion de reserva de plaza⠇ Ejecutando funcion de reserva de plaza⠏ Ejecutando funcion de reserva de plaza⠋ Ejecutando funcion de reserva de plaza⠙ Ejecutando funcion de reserva de plaza⠹ Ejecutando funcion de reserva de plaza
+__COMPROBANDO RESERVA DE PLAZA__
+⠸ Comprobando pase de reserva⠼ Comprobando pase de reserva⠴ Comprobando pase de reserva✔ Peticion aprobada!
+✔ Peticion exitosa. Plaza reservada!
+[2024-02-19 07:59:27]: 👍
+✔ Datos extraidos del archivo reserved_zone.json
+✔ Datos de plaza reservada extraidos!
+
+__DATOS DE PLAZA RESERVADA__
+✔ Pase de reserva comprobado!
+
+__EXTRAYENDO DATOS DE LA PLAZA__
+⠋ Extrayendo datos de reserva⠙ Extrayendo datos de reserva✔ Datos extraídos con éxito.
+✔ Datos de plaza extraído!
+
+__ENVIANDO MENSAJE POR TELEGRAM__
+⠋ Preparando envío de mensaje⠙ Enviando mensaje⠹ Enviando mensaje✔ Mensaje enviado! 📧
 

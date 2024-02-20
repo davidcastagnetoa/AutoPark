@@ -84,7 +84,7 @@ ascii_art_bart = """
 #     API.write_log("Operacion cancelada por el usuario.")
 #     exit()
 
-
+firefox_options.binary_location = '/usr/bin/firefox'
 driver = webdriver.Firefox(options=firefox_options)
 
 # Abre la página web
@@ -130,11 +130,13 @@ def getToken():
         if USERNAME_HYBO is None:
             API.write_log("Error: USERNAME_HYBO no está definido.")
             spinner.fail("Error: USERNAME_HYBO no está definido. Fallo de inicio de sesión.")
+            driver.quit()
             return None
         username_field.send_keys(USERNAME_HYBO)
     except NoSuchElementException:
         API.write_log("Campo del nombre de usuario no encontrado.")
         spinner.fail("Campo del nombre de usuario no encontrado. Fallo de inicio de sesión.")
+        driver.quit()
         return None
 
     spinner.text = "Localizando campo de contraseña."
@@ -147,6 +149,7 @@ def getToken():
         if PASSWORD_HYBO is None:
             API.write_log("Error: PASSWORD_HYBO no está definido.")
             spinner.fail("Error: PASSWORD_HYBO no está definido. Fallo de inicio de sesión.")
+            driver.quit()
             return None
         password_field.send_keys(PASSWORD_HYBO)
     except NoSuchElementException:
@@ -165,10 +168,10 @@ def getToken():
         API.write_log("Boton de inicio de sesion no encontrado.")
         API.write_log("fallo de inicio de sesion ...")
         spinner.fail("Boton de inicio de sesion no encontrado. Fallo de inicio de sesión.")
+        driver.quit()
         return None
 
     # Funcion para verificar si las claves están en localStorage
-
     def check_keys_in_localstorage(driver, keys):
         script = f"""
         let keysToCheck = {json.dumps(keys)};
@@ -263,6 +266,7 @@ def getToken():
 
         # Cierra el navegador
         API.write_log("Cerrando Navegador")
+        print("Cerrando Navegador")
         driver.quit()
 
         # Guardar los tokens en archivos separados
@@ -276,9 +280,12 @@ def getToken():
             log("😈")
         except UnicodeEncodeError:
             print("Error al imprimir emoji. Continuando con el proceso.")
+        finally:
+            driver.quit()
 
         if secret_access is not None:
             spinner.succeed("Token obtenido!.")
+            driver.quit()
             return secret_access
         else:
             API.write_log("Clave 'secret' no encontrada")
@@ -308,3 +315,5 @@ def getToken():
         API.write_log("Cerrando Navegador")
         driver.quit()
         return None
+    finally:
+        driver.quit()

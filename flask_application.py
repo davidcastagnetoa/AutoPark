@@ -7,7 +7,7 @@ from halo import Halo
 from flask import Flask, request, jsonify
 from sendTelegramMessage import send_message
 from deleteParkingZone import delete_parking_place
-from getTokensParking import getToken
+# from getTokensParking import getToken
 from deleteParkingZone import reservedPlaceData
 from utils.logger import log, API
 from halo import Halo
@@ -67,8 +67,8 @@ def handle_webhook():
 
                 spinner.text = "Solicitando token"
                 try:
-                    secret_access = getToken()
-                    # secret_access = "faketoken0123456789jdt"
+                    # secret_access = getToken()
+                    secret_access = "faketoken0123456789jdt"
                     if secret_access is not None:
                         spinner.succeed("Token Obtenido")
                         API.write_log("Token Obtenido")
@@ -91,6 +91,7 @@ def handle_webhook():
                             spinner.text = "Eliminando plaza..."
                             try:
                                 result_Delete_Place = delete_parking_place(secret_access, reservedID)
+                                print(result_Delete_Place)
 
                                 if result_Delete_Place == -5:
                                     msg = "El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"

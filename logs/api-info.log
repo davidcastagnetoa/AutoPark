@@ -1214,3 +1214,429 @@ __ENVIANDO MENSAJE POR TELEGRAM__
 2024-02-18 06:15:49 - Mensaje enviado! 📧
 2024-02-18 06:15:49 - Fin de linea
 
+2024-02-18 07:30:15 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 07:30:15 - Estado de la respuesta: 200
+2024-02-18 07:30:15 - Mensaje enviado! 📧
+2024-02-18 07:30:23 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 07:30:23 - Cargando página https://app-officemanager.raona.com
+2024-02-18 07:30:23 - Cargando credenciales contraseña ...
+2024-02-18 07:30:24 - Iniciando sesion ...
+2024-02-18 07:30:24 - Buscando datos en localStore ...
+2024-02-18 07:30:34 - Datos encontrados en localStorage
+2024-02-18 07:30:34 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjM2NGFkMzljLTVmNGEtNGEzMS05ZjQzLTczNzUyNzg2YmY0MiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MjM3ODM0LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgyNDE0MzQsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MjM3ODM0fQ.Su5L7j5lwjJdpaoYekpgdp7a_aH4Nv0CAr7F64icDbNaJiMzvoYNHhJRVnj3eurtDau2hcftcckRPAcxTIKqieNwlwLTT9ar1kwVh-lFyjvJeS4_0VmcY_JV66H92dof7X4EqFw_2oTb_rD0_SSFMSrhpgBt8MDaEm48jSQjQGVNg7cRpoWVIpfSW2jtmFs_0t7hQN_8MijCO1s_311qvsZEw2cV2fcZG2Em1WVkFin5RvidRoPiAZdeHM9XUVH-I3j_dRoMtjAqUdBaoJQe8sUqlabkXkQO2j6VUlLaHv2RVPF-AYxIVoCpex0-krQzpxb-JkxNBo1MNJwvaXgTUA
+
+2024-02-18 07:30:34 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.4b7fIpuJEwU8NXGM_BDi3HLIsOG2vNWFhoAJfhMHCjzSiwk4nVBNK48mmqf_ZN9O_P1Dl2H7eMCLxt8w5qzywu6xE4xvm6b5JRe2Yxe6vUNQ63uuYtPcK10iwyUh3rrGF4PrycsA8P_hflB6qYwJRSY_BpVFd2JRi5QdkUiZLRtXZxwlKWzKN1nYEykY7LkvIo2nFVvz8d0qqwkGx9luwGNeahHWsoZYQdmAtWS1bR_huZ3FcNBGuL_2kqDZPphCItBUbOlVobN6kxk5Z2JCDNJNsT3MPiQWV2bNIoW-lndJkCEG4jLGX9leMbnaQ4sd1q-C-UAPnTbL54bkbAzkMQ.toLdEH7qvGD3iPx6.yeYRE3npEE7pGPlc1B2aac03jvaELXJChCn-UrqsuOww2mEJlTh9wDIKZu8vyCEpfu1Cbwu38yhW-T1DdFwIE6UgPI5yugT-MvHc-wvofrezAO8s5b028zgdzwyNCTYuD8DSEhrzPjeERBL_Slmm3RygtTV8OTKoJk7ionwqCMm3ayNDWL6N_lYf0NMGebqbAvv0RfTsxebXN9NhMXzCHmIj7zbFzwGWcABNpXanYgU4S_ftbf8Q5ICwtHL25VkOTf0XGbmuENBdxmjny-U-gSr3mb-Q9_8PY3x_VC-zB__iApxzTKJyhx-VSzgJp0s4XqHsMGysMOTEleMw1jCN-yaRP2T0oC4BMjX8eY1CMcKRfIcdSzq31xpru-GQm6FI70TZ5eao9c4H1ePjQg2C0jMIrfgHHvNhr8qPn7BPfihHPthqRc5XppZ1vvDN5w4-JotzLO3KG-oxpj6Uwz3dyYSEWFMjEb7wT1PxQ4ord2mmoxIRFjAdvzdfrpvgxCdnQ0SZCDdkF3ptdgxwRwmQEaSJPEIoPd3Ei3xzGB189zas62OR2jeM8_2DQEW_JSBiHmeVjGV9l25IrElNQO1JamcaqYD0MfS9vyS_dJSQwDdacQw06PciKw4Si8CqSD7OtBnAqNvAs3__0YC45oi9GqAent0LYS12ra2fCn01v9zDVA65gk11nhZvWGCgYD5KgfdIOZu6I41uJKTnngeMqhgMjKTTQi_43GlO_EMuJENsm0Obeej60n3FDucOBIKf3HjDO82PBraAeeHBkx1ho304ra9j_oQHHwRROvPc0Bz8IULucrfmgkLhgoHQuZGfwBnrqKbMVZ_Y5rP6yn_Ea_Y-DmsMadgEao0aF6lFlS-DdXJep6Rm8KqcixKJFnZ_0FKvKOx8Uun6PWm2tKwf1iu-cvjak-nWXmShEMubS4nU6k8rPuWlhEZMzOo8vbh_RPWcG8SOxlg5ms29RpteaGxGS4DOCmloAxpmjAMnhfGA6EwjhbsUUpG7oXAvYt9Mvo6F_qf7U-EHXQNeYx8mqV7jSYvWlrQ06DEjTksT2w.iAdObyh-I8dQKYHfbACvnA
+
+2024-02-18 07:30:34 - Cerrando Navegador
+2024-02-18 07:30:35 - Tokens guardados en archivos separados
+2024-02-18 07:30:35 - Token Obtenido
+2024-02-18 07:30:35 - Date: 2023-12-25 00:00:00
+2024-02-18 07:30:35 - The Reservation Id: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 07:30:35 - Información de la plaza obtenida. Id de la plaza obtenido: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 07:30:35 - Reservation Id de reserva a eliminar: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 07:30:36 - Error HTTP: 400 Client Error: Bad Request for url: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/41d90c5c-1562-47ae-908b-367db1c7b776, Detalles: Object reference not set to an instance of an object.
+2024-02-18 07:30:36 - El servidor rechaza la peticion. Revisa los errores
+2024-02-18 07:30:36 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 07:30:36 - Estado de la respuesta: 200
+2024-02-18 07:30:36 - Mensaje enviado! 📧
+2024-02-18 07:30:36 - Error al eliminar la plaza. Fallo de funcion delete_parking_place: El servidor rechaza la peticion. Revisa los errores
+2024-02-18 07:30:36 - Error al eliminar la plaza, . No es posible eliminar la plaza
+2024-02-18 07:30:36 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 07:30:36 - Estado de la respuesta: 200
+2024-02-18 07:30:36 - Mensaje enviado! 📧
+2024-02-18 07:30:36 - Fin de linea
+
+2024-02-18 07:34:44 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 07:34:44 - Estado de la respuesta: 200
+2024-02-18 07:34:44 - Mensaje enviado! 📧
+2024-02-18 07:34:48 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-18 07:34:48 - Cargando página https://app-officemanager.raona.com
+2024-02-18 07:34:48 - Cargando credenciales contraseña ...
+2024-02-18 07:34:49 - Iniciando sesion ...
+2024-02-18 07:34:49 - Buscando datos en localStore ...
+2024-02-18 07:34:58 - Datos encontrados en localStorage
+2024-02-18 07:34:58 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjIzMzBmMjRlLTA1ZTAtNDMwMi1iM2VmLTNlYTJjN2RhYWFhYSIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MjM4MDk3LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgyNDE2OTcsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MjM4MDk3fQ.hZIQ8dx0VGfHAPWdjv3JBB2F94BCAnDYzBWlc2FTsbAaTyeg8wBd8fzU8F88XVkg0FM-3aw5FRWHoV_nZOtxWfqLaxGaA0zY1a5UkX1ZQ-B87GqhQbHc76rW4ROPADr8uGA9vPwBLOqoyavZyDLzZWi7Q2tWTgSP5ZKKJ1KEVgfRSxuuQYW-X-MR51kmyVtrMAxzDlLjhnDMCCUxByoh1TFUJnjrixwKqvzc6__E5RCjRWVUjU2rYSdkHaxdRheyY39HSEkot7Tc68PeGIKE_Ab4RzaObrj6F4mjPM45bAscGKOHnJ8ixIowBU8H4yO0tEP9fXtbg2unaKjm43olAw
+
+2024-02-18 07:34:58 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.1DZpF2F0zLn6EBlJlWbCqqEf9jCM1jijqYmztpx01JWtjxf2mv_-DZ-NiwzrjDsoJNI7XnL5e4IFsNwUT-cDeoZOdI_G-ARH1HpL0vF4HML-MXkwlxJ3M9ymjSamr5uXFm07ModYbIe5k5XK9MEXsTIVgv0Rqlwd08bcmvJI_nsUoVhM2wehogXHy2nMWqssFWMr0-EbEXThfVE2nF9EwUr-TdoKGzFUPVw5TxHg7lKqhN-UINoRe0uDWuN4a_glhQgezx3vAljTvFG8QymwaEE5ELwjw9TY2aCy8D43thdBs02qaw3Fr09BF3Eq6Wf1Xs-m0ECbt2HoIWS1dnulnw.mo2rRyNzP1CWUyAR.-nqXOHtJ8PlUP3EZR--94hbTtujkHM23VPeU1lCb7ViBwC3Unle4MgZyb6Ndf4bbTVilTxbqT2zfhBmiO3fSNfWa94L841eblJGy38vMazyUq9SrcmDm5_FYtltqKtGxKxbanKFmq55bFhgZcdnz-lxlVaysj_PUmFs-1D8Rk15TjHgTox4u23BkpQkzz8kuT6_PJh4WylNWxrVpJ6y7lyAhFGi6XPU1Nqu6fPfZ-VOt0jQb7rvuY4ULeSeLY4hAQJ2plNJKBBRQfRgUjpBUPjtEvwMYq-cfJdAiHG77Jnh0C08PCmMLXOvzYMocHmrOLFaxQZ_NQzAhhe9qJyvljbTScEOocBFS93sVfK3K_HkbuCmJ8_4dzDU1XVRz04WLGCKTztItDp_nZExZoEm2fwpagturL0ASL4q-DtVCKen8TFeY4C8Mlxru-Yz8m-6iNIeanluOS8Q47tEiOXh75VVwKyj61BXBNtrXHU1O8-8jhSpKzBo2QDqq4m76RGKywquyTH1rnwu5eArl9VfADqUH4UBByNwh9mJqhNwRwm9GxILrDUhpSHNs6rPCxi9nGLzh2FaDndfTpMXT9QwpPnoBKy9VEzcZcCUKk1gSi3VpDWmG1NtQD6cPdkxiAsKSnlN9c288hDxXw0XFfhIVKo6_M-XZAlz1UX_tlaZ1DlGEm0-RGQlDLvdeRmwVoHEjWJ-zDH0YPWONMrEYU3FLx18r4uV5AlLppLZS9cgd3cUuu6l4vaoG87tm5Z6n8xNHcsaZwkyVxUv-vUCvkFgzAZMtY2m8aR856WZ4YBcTDvHvIUt6pZhOyaiTAbPhI1EAjokiYUgc3qQ07dSp_mIO2crNJqVOlk-YiMf7Su4247SLc_5yyDuWWeHA3cyywub0_hkIjfCQQ_WXJvwYrK7iboZSx9RwpkB_B8S7JTUgsdmt4VTp4_RkXdSKHwTDIvuLOQXvZDW48FMF4vuGHZoU4wStShVPFIiifk8LhGYr3Sqoha7R1D93_9QXTZLzuc5iBs66RoeKtInsRHFDqa2n51QUinNeWWrruzvNamw9zoJn3g.r1p_K4Wo6ZvHOZqPDB7cUQ
+
+2024-02-18 07:34:58 - Cerrando Navegador
+2024-02-18 07:34:59 - Tokens guardados en archivos separados
+2024-02-18 07:34:59 - Token Obtenido
+2024-02-18 07:34:59 - Date: 2023-12-25 00:00:00
+2024-02-18 07:34:59 - The Reservation Id: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 07:34:59 - Información de la plaza obtenida. Id de la plaza obtenido: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 07:34:59 - Reservation Id de reserva a eliminar: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-18 07:35:00 - Error HTTP: 400 Client Error: Bad Request for url: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/41d90c5c-1562-47ae-908b-367db1c7b776, Detalles: Object reference not set to an instance of an object.
+2024-02-18 07:35:00 - El servidor rechaza la peticion. Revisa los errores
+2024-02-18 07:35:00 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 07:35:00 - Estado de la respuesta: 200
+2024-02-18 07:35:00 - Mensaje enviado! 📧
+2024-02-18 07:35:00 - Error al eliminar la plaza. Fallo de funcion delete_parking_place: El servidor rechaza la peticion. Revisa los errores
+2024-02-18 07:35:00 - Error al eliminar la plaza, . No es posible eliminar la plaza
+2024-02-18 07:35:00 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-18 07:35:00 - Estado de la respuesta: 200
+2024-02-18 07:35:00 - Mensaje enviado! 📧
+2024-02-18 07:35:00 - Fin de linea
+
+2024-02-19 07:59:07 - Fecha a solicitar plaza: 2024-02-26
+2024-02-19 07:59:07 - 
+__CONSULTA DE TOKEN__
+2024-02-19 07:59:07 - Cargando página https://app-officemanager.raona.com
+2024-02-19 07:59:08 - Cargando credenciales contraseña ...
+2024-02-19 07:59:09 - Iniciando sesion ...
+2024-02-19 07:59:09 - Buscando datos en localStore ...
+2024-02-19 07:59:17 - Datos encontrados en localStorage
+2024-02-19 07:59:17 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImEzMWEwMjQ3LTVkNDEtNDVjNS05NGE0LWUyNjFjYTY4MDFmNiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MzI1OTU1LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgzMjk1NTUsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MzI1OTU1fQ.OJGcHdxjuFWXJgE13-s8BfftbiNVl0Mc_EQI20kFBTypUjQwSeVFm8CKFNburDL1M7dMAkUWuLbNpm30PMLdzbSQsyzLzpXVtZRVRkrkajBZsG20wsDzT2hC19xcdnBvqmYWYk2neVP7rtZl0Xs-a7GPI4-HDMUA4yiUiSOZVeP784-ijpalH5uamQREA3SF3bKDWhHwPUCtzmD5_oTD_TLRRBLFiYxaGOdzGeQuxIeQ51daxViB9PRz2yQwONl0xFLpLGB2hPz9wbwuL5Xj5e4-ONHLPArffevP5M7VqFJmHEo7McfYPhtrlT0fHK_k3qTyEbWHzVfICZCw0N2AsA
+
+2024-02-19 07:59:17 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.ciXE-EUhfqYGnYF7m6WxRnsZf0G3LHebdttxrVWIn94tgJ3H3-bhq9lURUV0V2Xs7e7388ubhtBZ7Mo0Bec-8gzdFCHhMF7vlzKJAuiDwGd9PQBtBNRnF0Be8tkV3T80mbpJ0CZqCF1BXLLfl0g44tt3XNS1TdZNn76O6JIf8OQic2jyNWzsGvOnvUPRYq8QERJxkdgtA5McX1lQI1C4zJSG_A3q9gHMQvoQyi_51VXPEs93aKNO_pc6JBw_M3saUdKYvNg5ks0K45uN-xnMr_I_I1TQGobctny0lpSkvDQ02t_klHIT9sZ-5iHS4vQsT42HOiK7jzY3pakj8b036Q.EoDeYYbOy1DFAY92.MGisngAcgff2W3Oc-jBTXLtVYGWV_rTUwx2xJSqbywgxriXMiFt-ZUONhi0p4ozNzRB-5ukRscMdYkvru-RZi_hcHPSpE1IfSLofwNTyrOBbD8mM_2u0P6MK2xHsLxf2wPWSyb4s3EzLruL8Y7ZNXBTz60DM1fquOiJ5RA421LOo5JM1bfD1DidzBbQnqFPe24SAYR1F4IwSIUaGcCrC9GE1Sy3aXce_UrMfjQvF0zqjyqAzFIs33oY-Sq7hd8mweJnFc3_rUo8uet1Ub1WZhZShSMQVG47fiG2ZD43zIlY1X-PRXdF8Bm32b8_MIcwClhy8iMfxmd6H8bYtdy8AoqwTQ4ZX5sHzGFHQ6V6jkW4wGzvZt9NEE6WIjlbi3gfqXAkgakbPl5XjMaMoTvkwFKEi7pa08kDtfDLlL76bVAjjo_GBeBT1uQ0WmZdMt2Yq6GBxn-fwJgOsdMqUqosONbCzKK9Bob_dyE2IvH5BlmUla4JW9bJDa_gVcdR78OIydlK-BKpeomTTG80iwTi0Hhu7JK_UBYx_h70VebOawJU9Ss6rHjubOTBnTJ8Sr2T9NI9-PyWtbmykSxSA-JZbZCnVO1cdVmSNyVOon6RyWT22IKsgOW1VFO0zDnh0l1GeJrjq-s9Foz-Nqa3SfUD2en844dJSz152iKdbLYTNJsrtk3OdirEgmSf-QmOs24NGgDQGWA4eIlWFZ0wfqStQlda_86Hn8qxvkxFuI3AV3EYpMDfs5QCozkbglfECtFmo5WC3VWpOUURyLpvmQbPYUaW9moiMXWoRjMoWwbWrPCCup92sg9ixgmtgTSO5ambNQa5gTizxFYVchbRG045-YScL5vrfRHBSGOjFFyX1EZhYdiD8p1eaRB7Ozhv5qOdq7rYde_QHoYzgNQ85tNiyw6vJjGefe3h20M-Wft1W1X9aVLAamgwSuNttbuuDLoxn1CQP4rr9czxgMdBiswt4GctUAI4kYgNsFlb-cqh10YtQn4YzPJ_jhyuE1eVfkLtuSg0GFFReKonR_W1lJ8UIq9V3PLT5KuJUtEihd2QU.bcftOo7KgOScZjekSpnbhw
+
+2024-02-19 07:59:17 - Cerrando Navegador
+2024-02-19 07:59:23 - Tokens guardados en archivos separados
+2024-02-19 07:59:23 - 
+__SOLICITANDO PLAZA__
+2024-02-19 07:59:23 - Obteniendo Pase de reserva...
+2024-02-19 07:59:24 - Estado de respuesta para obtener pase de reserva : 202
+2024-02-19 07:59:24 - Pase de reserva adquirido!!!
+2024-02-19 07:59:24 - Extrayendo variables id del Pase de reserva...
+2024-02-19 07:59:24 - Tenant ID: 7a903ac6-aeb5-4cf8-879c-c48f02fc36e7
+2024-02-19 07:59:24 - Zone ID: 35e0550e-953a-41b5-ba97-cacaa4a44160
+2024-02-19 07:59:24 - Reservation ID: 1bb3fe46-89cd-46ef-a807-5947987df512
+2024-02-19 07:59:24 - Reservation Date: 2024-02-26
+2024-02-19 07:59:24 - The reservationId is: 1bb3fe46-89cd-46ef-a807-5947987df512
+2024-02-19 07:59:24 - The reservationId is: 1bb3fe46-89cd-46ef-a807-5947987df512
+2024-02-19 07:59:27 - 
+__COMPROBANDO RESERVA DE PLAZA__
+2024-02-19 07:59:27 - Reservando plaza...
+2024-02-19 07:59:27 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C1bb3fe46-89cd-46ef-a807-5947987df512
+2024-02-19 07:59:27 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-19 07:59:27 - Texto de la respuesta de la peticion de plaza: [{"id":"1bb3fe46-89cd-46ef-a807-5947987df512","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-19T06:59:24.2704726Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-02-26T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["079ac209-35b9-402a-8dbf-ba96f316aeea"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"079ac209-35b9-402a-8dbf-ba96f316aeea","objectType":"OM.ParkingSeat","name":"107","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":172.8,"y":724.7,"width":30.7,"height":61.0}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-19 07:59:27 - Peticion aprobada, comprobando reserva...
+2024-02-19 07:59:27 - Peticion exitosa.
+2024-02-19 07:59:27 - Plaza reservada!.
+2024-02-19 07:59:27 - Extrayendo datos de reserva en formato Json
+2024-02-19 07:59:27 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-19 07:59:27 - 
+__DATOS DE PLAZA RESERVADA__
+2024-02-19 07:59:27 - 
+__EXTRAYENDO DATOS DE LA PLAZA__
+2024-02-19 07:59:27 - Id: 1bb3fe46-89cd-46ef-a807-5947987df512
+2024-02-19 07:59:27 - Fecha: 26 February de 2024
+2024-02-19 07:59:27 - Zona a aparcar: Victoria - PS2
+2024-02-19 07:59:27 - Numero de plaza: 107
+2024-02-19 07:59:27 - Turno: AllDay
+2024-02-19 07:59:27 - Matricula del Vehiculo: 6516KJT
+2024-02-19 07:59:27 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-19 07:59:27 - Estado de la respuesta: 200
+2024-02-19 07:59:27 - Mensaje enviado! 📧
+2024-02-19 07:59:27 - Fin de linea
+
+2024-02-20 02:10:59 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:10:59 - Estado de la respuesta: 200
+2024-02-20 02:10:59 - Mensaje enviado! 📧
+2024-02-20 02:11:07 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:11:07 - Estado de la respuesta: 200
+2024-02-20 02:11:07 - Mensaje enviado! 📧
+2024-02-20 02:11:29 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:11:30 - Estado de la respuesta: 200
+2024-02-20 02:11:30 - Mensaje enviado! 📧
+2024-02-20 02:11:38 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:11:38 - Estado de la respuesta: 200
+2024-02-20 02:11:38 - Mensaje enviado! 📧
+2024-02-20 02:11:43 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:11:43 - Estado de la respuesta: 200
+2024-02-20 02:11:43 - Mensaje enviado! 📧
+2024-02-20 02:12:00 - 
+__SOLICITANDO TOKEN DE ACCESO__
+2024-02-20 02:12:00 - Cargando página https://app-officemanager.raona.com
+2024-02-20 02:12:00 - Cargando credenciales contraseña ...
+2024-02-20 02:12:00 - Iniciando sesion ...
+2024-02-20 02:12:00 - Buscando datos en localStore ...
+2024-02-20 02:12:07 - Datos encontrados en localStorage
+2024-02-20 02:12:07 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImRhMTFhNzczLWI2NzAtNDhhNC1iOTljLWUyMjU5NzIxZThmNCIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4MzkxNTI3LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgzOTUxMjcsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4MzkxNTI3fQ.S6VZmVfTzAQ-U3eGA1MAN6HKAcO9C1Cm9mUhkwrYUXUMVpMQ-nqKg2jLq3Ji9x_6UOUkAzEu0xTDI6wDx6WVp0a2LpDpOP1roAIFy0kbaVRlpRqYo1kfZ51U2KDXV0WPDkCKvExbVx94QEIOheWR8lw79vKlr5mzxPVVFyaotkqc1DY_IO8r5aCx3oxmKt8Kw69TSRMLm5BVgHOModlxNGqxZGnBYW48N8Vg9ufs1fTb9WwO-DiMeiPqsoqpGhde813JqOLouDS_9ZXxqT8aLzHWczrVEEXWWEoVeEyv0YsAifL7pg25CWv24LAHepEqTayzftjDBwXU0zzUdB4uNA
+
+2024-02-20 02:12:07 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.PFhK9BCT6kuiIR9rBrUa6Pzu3Nimew2bIHHHCYBNyPO_HkB2nRlK5KqOf7W145Yo39PsHqxdXndCpI9JeME-9dugcC2UroVKxk1I1XpeCmO-KLuq5VHHsv6IyxlQxOQMkE-NfIICtWPb0KJPgPTn_lAzKeZzDSSQRUppSkllHfwbXJc2b_oJzwaORoT-392RWnvzzBz6ctjl52x3tXo5KdL7AiFHU8ba3Vqfj784WljP7kjUvctE5rhDw5j4t8RUPMiXM_yJyJtWRmhj480HWn3Iw2UPUvGhGzaTiF6tZyZfnpyGB1PbNtiQLi6fz9tBDPwtIrq2MKO3u-9j4JQ8OA.7fZpXWfyFpyGQELf.cG2Q4ZwNKGrDTQDOeT2XczIS8sNZy9udQCiGv9jAlBZW9rPQMlqwrsstu47wdnUDje3B3Ys4-dGzrxRL0OyyFYHxe4JchhOKpvfUKJ_I0XYR5F7BVSXfJwSU339adShwoX9ihwa8Go1q8s5JgA632qzCH3loGZP_4CYA55ygpJP64zxDIzc62-093_AafUlJjKAfMM_iAhMKsPfmMlVfUW8Zlr1URqBbRgRzu1-pyjLTHx47zw92ib2G1lfXPVilxLp1tyAAZd2mObdssdc_RFkolthZj2024-02-20 02:12:08 - Tokens guardados en archivos separados
+2024-02-20 02:12:08 - Token Obtenido
+2024-02-20 02:12:08 - Date: 2023-12-25 00:00:00
+2024-02-20 02:12:08 - The Reservation Id: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-20 02:12:08 - Información de la plaza obtenida. Id de la plaza obtenido: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-20 02:12:08 - Reservation Id de reserva a eliminar: 41d90c5c-1562-47ae-908b-367db1c7b776
+2024-02-20 02:12:09 - Error HTTP: 400 Client Error: Bad Request for url: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/41d90c5c-1562-47ae-908b-367db1c7b776, Detalles: Object reference not set to an instance of an object.
+2024-02-20 02:12:09 - El servidor rechaza la peticion. Revisa los errores
+2024-02-20 02:12:09 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:12:09 - Estado de la respuesta: 200
+2024-02-20 02:12:09 - Mensaje enviado! 📧
+2024-02-20 02:12:09 - Error al eliminar la plaza. Fallo de funcion delete_parking_place: El servidor rechaza la peticion. Revisa los errores
+2024-02-20 02:12:09 - Error al eliminar la plaza, . No es posible eliminar la plaza
+2024-02-20 02:12:09 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:12:09 - Estado de la respuesta: 200
+2024-02-20 02:12:09 - Mensaje enviado! 📧
+2024-02-20 02:12:09 - Fin de linea
+
+2024-02-20 02:12:30 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:12:30 - Estado de la respuesta: 200
+2024-02-20 02:12:30 - Mensaje enviado! 📧
+2024-02-20 02:54:55 - Fecha a solicitar plaza: 2024-02-27
+2024-02-20 02:54:55 - 
+__CONSULTA DE TOKEN__
+2024-02-20 02:54:55 - Cargando página https://app-officemanager.raona.com
+2024-02-20 02:54:56 - Cargando credenciales contraseña ...
+2024-02-20 02:54:57 - Iniciando sesion ...
+2024-02-20 02:54:57 - Buscando datos en localStore ...
+2024-02-20 02:55:03 - Datos encontrados en localStorage
+2024-02-20 02:55:04 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImI3ZDU4NmZkLTEwMTQtNGZlYy1hOWZiLTA3Y2VlNzg3NmNlYiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4Mzk0MTAzLCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDgzOTc3MDMsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4Mzk0MTAzfQ.MMDxVKzu06IgOiw1ZheqDnHt6pOfITRwdi4YwSxkHvqjKbKbjFlEDT7M68BDyAiWDMcyjeNZe_D7-X0udXozyA-uqfPQFlzuTxMo3kWk_TAjtiBj7X4PDihxJd3IDtXX_e3l-9yTFc5e2ef4zhkcCMOG3Ja597hiJY5o3twMdHs9e_yA9_etLBKYqOeiEnzjekeA4Kx6kWbfBFIjYMqr7M_nvxy_wB5ZAFhdBZ8FbTeFKeTf5qPPzKUx2-7hW9orzgQav6kZdEpkBf5b8oUztJ_gaMuBhW3fQNZVJ9amBvjwdouzQofML7PERU2YM2MQNZuJoNPVicBWhefkbQdeMQ
+
+2024-02-20 02:55:04 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.IgchPygt9ZM5E-8JqN0SYCB4rqnWMRmfKx9KXRsnrZr4UJnUfSZGpLijF-abLbom9t8sKTzs2Uq6d2hHYEhD_84jzI8c1Pbg6HTJonYEMiDe2jA3xhxaNhkK51x_IJva6Hj2fD-54oxJCobAEXUNOUumqe75ClR4zjYNMI8QdeFiM8zyHV7aTJtxHU_DYmOUIxpcGkzU2NquaS5RgtHeNIqlSBZJNuwHDg7265RjIIG3Jgd_IDiATQig6PtelYJXV7l3gCmkaNmxnEYDDtt05TUCKODkQqpTgJamh-kYEoeTFadGdp41aa0IcSWt3DdSXd-ZH6KdHPQlGXXLixsdMA.ldS8-6LB5ZzQJTbp.s1tBS4Dg8oNRxAhvKUjeRzUQqr1Q7BD9FNepuSmmU7dZZCtf092DimT20Vq7q0zN2RmeOTcw8FhrvSWt1VHoJuvgTTOCUBZO6BsQRBqdWzgfwHEkcP2XinOciFbGBH6xDNqVavnenCxLPWyBUE6yz20ktCUOYTFbBqIvW63Uw93kCBOUmiA-cNYslNGgvnHaNLIACVAUqqfd_UrHEG-QLFSaszr2sG7n4BsgmaUH6OMQYt_P5hcM7BfrdkMftdqF1xFaURF-W5xLE37-9t-MhCPe59n8R2j7ZD8XLAtHp8jOBGSPj9HwNXexeAF8-w98Gwa6RVeDJjXCIOu1hLvCJVpCholnd0zXthA2KGEXaPiDRyCjhwkZC9EVy7cWBJYu_RyXe6zlD7YgXCjqUKHyjYNTI0U5wotZFilFoO1rr3g3vvhAeEvWn3P8YAEfZSsPKp1IM6JvgGSzbtqnOCsppzTVbpBIF1TswNKDr40I8ADIxJNSQn0hCkPdraoo5_kzCBinj1LrYQ421PckpHY_l-0MmEMgD-xRznM0KPPnteXkMFn777BLToFJU04CVwkoeAcHOGsOjb-NDAeO8wpfJrkiCRHFHu4dBS8AeFqnl-3O5d9udAwZoFnTiMpoR-cXiMknTXpZV1Y7vd2eLVZUIVZemAq65_xvhs-R6rigsxp7svl4mR9ASR19kg2WJnQpG0gSRC-t5MLGLzVsn_YAgXa9RwK9mnuF2f1oifOEO64Y_NRqKSjVDzAxyFR9TE1afUI7Ovt1_DV1nPDfMDZzhmhP98oLjbls11LG1pkiPK-3Nfscq_a2PKCLLCCPHJx5n-uJFUzi4sfNWFf5MZHa5aWTvcFQ_uKR51JJ99VcsTSrCnu3qrLTDifEJOH_Q3Ew8yu6T7DvWHy5gwb28ySjkLKbI1ZIgwjB7RNHrZAwpNb_J3Hps5ob7UWJnIu2wbe7-P1xl_XOO-nmENzewo6SMTSEeu_lfjf2DgmQmpmKgTDgib1-Xc1MOUsaf4W_BggPm1kE3y52HKN_Z78TFZi6x3_RCvYYQ-dJF1Dq3KGCDCRS2dM.fgS38-WwmpXVLZxtjaLBvQ
+
+2024-02-20 02:55:04 - Cerrando Navegador
+2024-02-20 02:55:05 - Tokens guardados en archivos separados
+2024-02-20 02:55:05 - 
+__SOLICITANDO PLAZA__
+2024-02-20 02:55:05 - Obteniendo Pase de reserva...
+2024-02-20 02:55:05 - Estado de respuesta para obtener pase de reserva : 202
+2024-02-20 02:55:05 - Pase de reserva adquirido!!!
+2024-02-20 02:55:05 - Extrayendo variables id del Pase de reserva...
+2024-02-20 02:55:05 - Tenant ID: 7a903ac6-aeb5-4cf8-879c-c48f02fc36e7
+2024-02-20 02:55:05 - Zone ID: 35e0550e-953a-41b5-ba97-cacaa4a44160
+2024-02-20 02:55:05 - Reservation ID: d5d4e214-1330-43c1-8b7b-de5515590d93
+2024-02-20 02:55:05 - Reservation Date: 2024-02-27
+2024-02-20 02:55:05 - The reservationId is: d5d4e214-1330-43c1-8b7b-de5515590d93
+2024-02-20 02:55:05 - The reservationId is: d5d4e214-1330-43c1-8b7b-de5515590d93
+2024-02-20 02:55:08 - 
+__COMPROBANDO RESERVA DE PLAZA__
+2024-02-20 02:55:08 - Reservando plaza...
+2024-02-20 02:55:08 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Cd5d4e214-1330-43c1-8b7b-de5515590d93
+2024-02-20 02:55:09 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-20 02:55:09 - Texto de la respuesta de la peticion de plaza: [{"id":"d5d4e214-1330-43c1-8b7b-de5515590d93","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-20T01:55:05.8551741Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-02-27T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["12b39baa-b203-462e-a40e-fafff9ffeac5"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"12b39baa-b203-462e-a40e-fafff9ffeac5","objectType":"OM.ParkingSeat","name":"92","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":295.8,"y":415.7,"width":61.0,"height":30.7}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-20 02:55:09 - Peticion aprobada, comprobando reserva...
+2024-02-20 02:55:09 - Peticion exitosa.
+2024-02-20 02:55:09 - Plaza reservada!.
+2024-02-20 02:55:09 - Extrayendo datos de reserva en formato Json
+2024-02-20 02:55:09 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-20 02:55:09 - 
+__DATOS DE PLAZA RESERVADA__
+2024-02-20 02:55:09 - 
+__EXTRAYENDO DATOS DE LA PLAZA__
+2024-02-20 02:55:09 - Id: d5d4e214-1330-43c1-8b7b-de5515590d93
+2024-02-20 02:55:09 - Fecha: 27 February de 2024
+2024-02-20 02:55:09 - Zona a aparcar: Victoria - PS2
+2024-02-20 02:55:09 - Numero de plaza: 92
+2024-02-20 02:55:09 - Turno: AllDay
+2024-02-20 02:55:09 - Matricula del Vehiculo: 6516KJT
+2024-02-20 02:55:09 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 02:55:09 - Estado de la respuesta: 200
+2024-02-20 02:55:09 - Mensaje enviado! 📧
+2024-02-20 02:55:09 - Fin de linea
+
+2024-02-20 03:14:19 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 03:14:19 - Estado de la respuesta: 200
+2024-02-20 03:14:19 - Mensaje enviado! 📧
+2024-02-20 03:14:19 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 03:14:19 - Estado de la respuesta: 200
+2024-02-20 03:14:19 - Mensaje enviado! 📧
+2024-02-20 03:14:20 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 03:14:20 - Estado de la respuesta: 200
+2024-02-20 03:14:20 - Mensaje enviado! 📧
+2024-02-20 03:15:03 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 03:15:04 - Estado de la respuesta: 200
+2024-02-20 03:15:04 - Mensaje enviado! 📧
+2024-02-20 04:03:58 - Fecha a solicitar plaza: 2024-02-27
+2024-02-20 04:03:58 - 
+__CONSULTA DE TOKEN__
+2024-02-20 04:03:58 - Cargando página https://app-officemanager.raona.com
+2024-02-20 04:04:00 - Cargando credenciales contraseña ...
+2024-02-20 04:04:00 - Iniciando sesion ...
+2024-02-20 04:04:00 - Buscando datos en localStore ...
+2024-02-20 04:04:07 - Datos encontrados en localStorage
+2024-02-20 04:04:07 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjZmNThjYmEzLWI5YzEtNDZlOC1hNjNiLTAwNTk1MmNmMDY0NyIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4Mzk4MjQ3LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDg0MDE4NDcsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4Mzk4MjQ3fQ.AJXFwNlFBaJSgAl_cYCBv-dC-qgKCWQ4hHIk8fqmxYB-hfNTIGuKEoDAra9k2ZgMXECRKt3bJMMms06uV9jN978K7ozmEUvPZyt5aqAznAfBcGPhk_FcG_x7Mxv3jz0sNWr5mZAzAZKVSpp2XJ8423N-5Dg8CTSQOOHnGQ0eBLGiSY9pr5g_BCysSbekuJ7isyMgeALhxSEGT7aNcbXPJ6FA26Vw7KSm4mXIYdhiL4VX4lWkLGXSGpPiZ7XIPkzTJj9cBdrOpQuc1bTQNNxM0YJJmA8xYMwUEod1HmeRcHL40-Aw1_s6j1bBDLJnIc9gUf6vfdoJdEU6S4SNjwCecw
+
+2024-02-20 04:04:07 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.hI41B4I3LfODztwLkrhwt2Kghsb5aViVWO24R5JP-iEbFRf1rqhGd9LHFumFqrMrtFXXzBQMi9slc6v5rfMP7E7IaQA1WUEtTN9OXd9legrHsYROk0wPL8qKoIADZCrQ1D58ePPJmFueRMpLSYVzA30m3r4_uXOOv7xIX5BQq7E8D8r72K5op2rWdZgkL0DKUc0fDjCdIk_vFEAlUXoj2I8MVLBPLVUPUQS67BvmT42PzW1HiNUiiud7uX7sM3CwmaEM0oMTYwdGhWOgbkJ3nZPHSoJnhzt23IZedkoFMCUuaEiXC_Rza5bp6Sa6_vibsRCgiQG8MperRaOGxqf0sg.ZpqNdTFvOdq-55wY.LhTcFPf08quUB27GGIdzSF4QY8-bv0-jBEksbBI95J5dez3pzzune5-T0Bsdd-KeqCfx7v-kyQLbXqBN45GpU6u7OBoJoNfhDBXRyNL24aXvmwg0mKO2ov8sPzZ75DMInAJpJkGUWSTFWSfPnAyjQpw3yoZml2sRLg2YPlPHZl5jqPrM1q7a10ASzfrBHx37flsmh629Pg9ZBsCzN1RR0ot_FMwF5cYeFfxxMVIf-YXvBNse_vzRrUFE7W2n8ebAqvVkZt0Vv90m4EwaZ21Tg8OZebFPJeFOoVBXcF9egTW8nYBiv9DYP5AMbrspYf2NUKRAxfZht6wqO0aDZsH-MZtw8Av3deKQgvFSp5sqvinW4FF0P6YbOjG6NsrQmvgRzGwEn3p-QyB75mmE_gpOHz1GSYB5jpof99DWTK5z-tEXEyDHksuIi2eIZadfNfVaSU-ICNdEjPsU36C9FbdlcFdQYI6DtBbn0GmK4Qym7F_6SJDQ2nxOVqpgvB2hqeUgFCAwatoHQSmEuEwmRxyGeTIpa61fW7m981QRbhQmQXUZekZmmsWjXY24S1sKDOpe4R3cIFMjKIeTvLdZPSJ7uLa70_s5HLstFJAQ0xTKEZ3TO3sjfpHOihSdseNaYlP-RSwpiD0wx7SlSyyLWb4x-Y_IgEyLxNeOCdMr1m3MZp2m_NnQleaNIYF5Qhf1T5ni7DIchY_mguXTF4znq3UyZwW66RLOrUxXBdm7BAPaNU6SQT12uUwBAHDxlWxj7YHpJ7RXxC0pRZgoFIPvPWOOemCBFsbYjI_WAJOpAtQfX2SjQuoCZ461AYxNhCh0n1-OtFdVp_wOvuagmm-YGbt6wSrijPfKzY0IUPiCKPFFs6kG3h0ZpV4_YBQMVaUrcWQhf3Xq6ejD0z-7ri7g3PcobZy1JOPgOe6-cZkSrsllInwEn9z510vvwHpLRbjzN-0K8a-nJhEDElQfEXEQ7Qy7S1JkjfzizXZ6B9kIC32Zy8dVG69DAnzp3UQ3UC9REdgzBjhBWqHJLo9BasjyMIW8osqFpQuw8cCXGSbe328wtdI.gjOqMOllgSZR28IXLEen5g
+
+2024-02-20 04:04:07 - Cerrando Navegador
+2024-02-20 04:04:08 - Tokens guardados en archivos separados
+2024-02-20 04:04:08 - 
+__SOLICITANDO PLAZA__
+2024-02-20 04:04:08 - Obteniendo Pase de reserva...
+2024-02-20 04:04:09 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-20 04:04:09 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-20 04:04:09 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:04:09 - Estado de la respuesta: 200
+2024-02-20 04:04:09 - Mensaje enviado! 📧
+2024-02-20 04:04:09 - Fin de linea
+
+2024-02-20 04:13:24 - Fecha a solicitar plaza: 2024-02-27
+2024-02-20 04:13:24 - 
+__CONSULTA DE TOKEN__
+2024-02-20 04:13:24 - Cargando página https://app-officemanager.raona.com
+2024-02-20 04:13:25 - Cargando credenciales contraseña ...
+2024-02-20 04:13:26 - Iniciando sesion ...
+2024-02-20 04:13:26 - Buscando datos en localStore ...
+2024-02-20 04:13:35 - Datos encontrados en localStorage
+2024-02-20 04:13:35 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjQ3MTQzZDhlLTEzZjgtNDllMi04Y2UzLTYzZDNhZjY4NWI2YSIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4Mzk4ODE0LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDg0MDI0MTQsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4Mzk4ODE0fQ.IG506-OqBEhar4rKGGpqowRX6h8xRC5HooNf8E7nfUxEbH_ZA39RVtwomfd6fFTSqDBXHOJ0tMoX1S7y1sxm_EKFvYrsRpAkhLIMDMRHCnSvFWZvPuqZNSPcPKLpt9Ok0QuAmloXkXOxV4A17tn1pbOPZTFKltV0fmNyWr-c_rbp1fCh1hwO90wYYzQ3Uwu23Ip7BGXyS_NFHSxc-UXDT1XCv3DZZ7iG157scykNzKuqlRiVyQpNobbCRfzFSYGzzt2pQFQnTy8MUYfKtYoXM-8r9jcH9HWoHq670pFNcYYxzvMlQrfD2qo1NrzCmOzVt2PHnus_g_9TDhb-0bz-Hw
+
+2024-02-20 04:13:35 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.oNsrwcFWD2D_cfb3JnNV5URUW2YH6QCdgQ-x8TseJ4eSbgDQV4FzL8hr0YNj0DIS-RKa88NMQb4MGOnu5IWqyG06VPg0fOi1YKnCOOi4QCpDiup2QexCOMoaIqvV4bM7RcJr2k__R3oZ_HjBKMDF3oukdSAxCikcEaxFRtsEGq8lV4Ii6MjVp9NvtNr8S3ZBCoN8lIuoRqGj-ksqQqiRNP8h6GSACR4Ik90w9_C0bKVKetH2KpOauJqShnwIkInWE1BnJPEwIOm5Ers1XTXhurN8bKaXxxGz8M-Fvrqc7rW8Zve-yGQ2MByLbKmh2vIOR6gjjUCd1okYZ_ns7b8jng.kg86Gs5Aa29GQcWH.5SpJhaRT5R90QDPLJo1R-GfK9JaxmZWW6mtzJoijNx8Fq-ogOfCo9ONum4OWI4DmZEg8whUp4hnPyXJOxUMBlJKVyc0IMH54vKbdNVFbObcUuI46GuZbtN976WxlMdFydJ32kotMgRTPgZ_6FFg4r7E9GykARRgrC1RhWmp9ounn1VkaBsb7nIQp-clc3E5Lu47TtnPHS_O1v_N9-vS4deBZSRfW-z7nlOjcs-145Sq2eK_hCdgl--XAoIQ1Clkb8hscck_0__N96mfFDqmX5Q5m3M1rHfaj3IopfvLgftqwe2Exs5e6aPPi5yH-j-qD6RmdmCCsWsdYS2Q9ZdC9qe9dJGF-6QB3MA53rcEdauwjEKsdzzMVWI0GhZSJg3i5CzXkj21uLobaZjS4n9d6DZT5HT8IBa8buHC59wGG3p0zrC9pxAWQwhxKgdHLHn6ZCeflZWpBiROIeVZ78GIPQ0amlGzt2M-bELbe7w5JTpxOMoGnMlqlFLLT3ahQtsRSFiN99XePca82aDqXT0oAkoWtg26Nd3x0NpBwG6Q0eGlALxTKtb_yT9tgkBZsRRuSguEvDkMRnk2giG-ZQMLOufR5s0Bjwt8fBRLXab8GULRnWnodLCHutmJy7znJIcRQJ4Y_FyZNAmExSaaTMey4aR1xSDw5nRFi1KLDYuJPXVecFY_D4OlGavWi7biuU3KzLZsoppck6tWeOdrS_nntEd8uYFS2nkYE9zywCtlL8QvOKqEEjvl1Lo3LTTN_JD2pvSSsi2UEz3uZaRQQCG5VAXtPaMACG4zOtMPYdbChUq5fkfsdAWAjUysETLJROVEuBMa9j-qB17ao-GOpU5np17N1KDwxK_EksVN3uqXazginQAk0_k7CfE8PLS1mQOUgZwGmTlEbCMrwjLW42G9oOz1V5YITFHUo82WJhvXqZlnKP5ZytJHO_K9P6u5S1IxwXUySGATuini21wvzYy3oyrZQQ7y38lktjaOyWko6E1_QRv3dVyxIXlf7Zow1-25Jj-SkeeLKouTFUKVxrDCvNMa-t32d3cK8LlHm2aqk.8-mHY3ug5sEN72whnOJk1A
+
+2024-02-20 04:13:35 - Cerrando Navegador
+2024-02-20 04:13:39 - Tokens guardados en archivos separados
+2024-02-20 04:13:39 - 
+__SOLICITANDO PLAZA__
+2024-02-20 04:13:39 - Obteniendo Pase de reserva...
+2024-02-20 04:13:39 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-20 04:13:39 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-20 04:13:39 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:13:39 - Estado de la respuesta: 200
+2024-02-20 04:13:39 - Mensaje enviado! 📧
+2024-02-20 04:13:39 - Fin de linea
+
+2024-02-20 04:50:46 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:46 - Estado de la respuesta: 200
+2024-02-20 04:50:46 - Mensaje enviado! 📧
+2024-02-20 04:50:46 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:46 - Estado de la respuesta: 200
+2024-02-20 04:50:46 - Mensaje enviado! 📧
+2024-02-20 04:50:46 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:47 - Estado de la respuesta: 200
+2024-02-20 04:50:47 - Mensaje enviado! 📧
+2024-02-20 04:50:47 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:47 - Estado de la respuesta: 200
+2024-02-20 04:50:47 - Mensaje enviado! 📧
+2024-02-20 04:50:47 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:47 - Estado de la respuesta: 200
+2024-02-20 04:50:47 - Mensaje enviado! 📧
+2024-02-20 04:50:47 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:48 - Estado de la respuesta: 200
+2024-02-20 04:50:48 - Mensaje enviado! 📧
+2024-02-20 04:50:48 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:48 - Estado de la respuesta: 200
+2024-02-20 04:50:48 - Mensaje enviado! 📧
+2024-02-20 04:50:48 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:48 - Estado de la respuesta: 200
+2024-02-20 04:50:48 - Mensaje enviado! 📧
+2024-02-20 04:50:48 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:49 - Estado de la respuesta: 200
+2024-02-20 04:50:49 - Mensaje enviado! 📧
+2024-02-20 04:50:49 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:49 - Estado de la respuesta: 200
+2024-02-20 04:50:49 - Mensaje enviado! 📧
+2024-02-20 04:50:49 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:49 - Estado de la respuesta: 200
+2024-02-20 04:50:49 - Mensaje enviado! 📧
+2024-02-20 04:50:49 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:50:50 - Estado de la respuesta: 200
+2024-02-20 04:50:50 - Mensaje enviado! 📧
+2024-02-20 04:53:43 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:53:44 - Estado de la respuesta: 200
+2024-02-20 04:53:44 - Mensaje enviado! 📧
+2024-02-20 04:53:53 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 04:53:53 - Estado de la respuesta: 200
+2024-02-20 04:53:53 - Mensaje enviado! 📧
+2024-02-20 05:03:57 - Fecha a solicitar plaza: 2024-02-27
+2024-02-20 05:03:57 - 
+__CONSULTA DE TOKEN__
+2024-02-20 05:03:57 - Cargando página https://app-officemanager.raona.com
+2024-02-20 05:03:59 - Cargando credenciales contraseña ...
+2024-02-20 05:03:59 - Iniciando sesion ...
+2024-02-20 05:03:59 - Buscando datos en localStore ...
+2024-02-20 05:04:06 - Datos encontrados en localStorage
+2024-02-20 05:04:06 - AccessToken, Secret: eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6Ijg0ZDc1MWUxLTc4ZjAtNDNiNS04ZTM3LTY0NmQ2NjZhMDg4MyIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA4NDAxODQ2LCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDg0MDU0NDYsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA4NDAxODQ2fQ.dkhxEQHSTDyXJX5_jEcx0Mt-tEqHcSB11v9zwx35A1DI3U8OvFImsszwieZ71pWdMkcoRLyEeAoRDwW_lmEx2GF4r1l3zFBjjHO8Pia4PcJoaPNAx3FiqsOuzRUuYiWdQYTSDO-3uhthjD9uxfH1IEHwWfaTUUNZuRmv-K13q8YXXGUjNEKERFxwG5b-752odfsGV43r2iSt1XB5I4gleNE6RimsmSs6gADNQ88tj_dTg_SH0dtTKnuIV_VGE73UhCs37nn77MW6CRI8zQ-Gc_qT-MNg1PaYyWcZx9h6fHTl8hX4rxeAE5fPT4IOQ_8raKgtz7tgCmWWBoYo-rRvBw
+
+2024-02-20 05:04:06 - RefreshToken, Secret: eyJraWQiOiJCQnBQOGhmbE1iaW5ndmpjeGQ1NzZIUURPRkV4R2tBTWliXzN3NjExVjJFIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6IjEuMCJ9.Qt2k5WGBGwb8CR0Uau6ArhV8aXScI0N4R870KWccHHYHEA9Yl1Adyts79xcOdEudcUUrRq280MkI1Wn7zQ-VE7P52Ww7wQNL7RzjhmccIdTRyi3CZg219tXtAXhcIFI62cD8mpdrcgu53WR4KdLxRtdP0X8cpAigxHftah0JJv1NpZjAAwKSIzxloDiVAXBQYQk_EEfmejWAG8m6plR1CvHGDUE9jENoqbGZcLSl9hi1gPxNdpOXOng0O4s2wln9PhasguiR_crVNWccRZJb_-zl-GCbAQ_WipHs5XpeXOySW1-Lj3whjdDFouuuNbki2jkLYcpOY5MUPmSMMCUS0A.PiARS_596MjR3zZO.Be0kM7iWYRvG-9RqPp1XMlH0IZu1wZzdIsCjoLD-8_QnHDQDIMVW5CHjdrhPmTL84mcIW5Yfvw34_9Jir57y6HZbD_qVGWkrEUrcGJ5CE8kKGf2GYrpcrbBFq5J7spxMacpxnJTeNQ2bG7CZ3PxFGpocjfz3bxzxCfx93SgWuMUhlOQY3OaI5aRtJjQ79vhIQ4lihOW0XVvupRMHNHBpl_cKmdUdKBfWzCbK115FhRUbDHnPHQK6eZuV2y9FmigUzehpIiDdWJsasvDm-CCbTSc_ifSal0YMph1VAacjfOMpSXQx6k8MVaEZorndbhop1V5YemqZE44rE-VfvXF1sDcSCqA_mw8KlY30rAy8BxXgFW0UpUJpza3Na8yK6PG0N9THrsjhfbSK853T91D7hf9m3M3K46IedDzzfh8g1wS1YJTnOLTTOc8lAW8YhRLvaYHwM9oC1EWYhPt6jN4MQPvF2jpKAzE1Z0-CCVrhoXM3qvTuWex2E7dVKGZkgq1K_hmI3onFKz7js74i7QD9O9pmH57Xgt-c5Iy34JK6gY7XIDPx26J4_m0bWHS-GkftQug3DAv_6zjH4YvOdfklFI4KTR9UVMy0deZGdMmiu_8xtowrsjnuZN4SmqJ67pdzTNuiJ3KZ2cE9_SeeK30Drshmt-lB41MZ8iuPmCUK4SQX6am2hdE-IKO35328qLyRdfyCgZyfXAmFvWpROp_KBh6VsPLNW4fvSBHjPwQKceDMw7HRY1_k8BME9tpiadDgZGnsckd9JpcqRdjVs2VY9n6VBN8TTU0PA2R-5vegihK_WP1eFugd979q7Lu6xp4epfN0rVBHpNZ2gVorMu75mCN-aZzY1moNyst4bY4Nr9bA_BoI1lp1Fc94ZMajbUEtNaHsXXtbzyzlpClSU6Xs83XtQzmYzxtQ_dyXmWX5fmNlSrdXisLFYyVa16bgLI-LCXljLOmwaxjb9Q9nZo0gpTTWCtPk7yD7-_zA3nINlMHfRXibHXStZKJVFw2KshwQP002gKa_Lj1texColzNKi_5iPdtvEb8jFNpzoYs-9Q.AiRjF2YFrJI7pdNAEsP7uQ
+
+2024-02-20 05:04:06 - Cerrando Navegador
+2024-02-20 05:04:08 - Tokens guardados en archivos separados
+2024-02-20 05:04:08 - 
+__SOLICITANDO PLAZA__
+2024-02-20 05:04:08 - Obteniendo Pase de reserva...
+2024-02-20 05:04:08 - Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {"code":"409-12","mails":["david.castagneto@securitasdirect.es"]}
+2024-02-20 05:04:08 - <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador
+2024-02-20 05:04:08 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:04:08 - Estado de la respuesta: 200
+2024-02-20 05:04:08 - Mensaje enviado! 📧
+2024-02-20 05:04:08 - Fin de linea
+
+2024-02-20 05:06:21 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:06:22 - Estado de la respuesta: 200
+2024-02-20 05:06:22 - Mensaje enviado! 📧
+2024-02-20 05:06:22 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:06:23 - Estado de la respuesta: 200
+2024-02-20 05:06:23 - Mensaje enviado! 📧
+2024-02-20 05:06:23 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:06:24 - Estado de la respuesta: 200
+2024-02-20 05:06:24 - Mensaje enviado! 📧
+2024-02-20 05:07:34 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:07:35 - Estado de la respuesta: 200
+2024-02-20 05:07:35 - Mensaje enviado! 📧
+2024-02-20 05:07:49 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:07:49 - Estado de la respuesta: 200
+2024-02-20 05:07:49 - Mensaje enviado! 📧
+2024-02-20 05:07:54 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:07:54 - Estado de la respuesta: 200
+2024-02-20 05:07:54 - Mensaje enviado! 📧
+2024-02-20 05:18:50 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:18:50 - Estado de la respuesta: 200
+2024-02-20 05:18:50 - Mensaje enviado! 📧
+2024-02-20 05:18:50 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:18:50 - Estado de la respuesta: 200
+2024-02-20 05:18:50 - Mensaje enviado! 📧
+2024-02-20 05:38:44 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:38:44 - Estado de la respuesta: 200
+2024-02-20 05:38:44 - Mensaje enviado! 📧
+2024-02-20 05:39:01 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:39:01 - Estado de la respuesta: 200
+2024-02-20 05:39:01 - Mensaje enviado! 📧
+2024-02-20 05:39:26 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:39:26 - Estado de la respuesta: 200
+2024-02-20 05:39:26 - Mensaje enviado! 📧
+2024-02-20 05:39:31 - 
+__ENVIANDO MENSAJE POR TELEGRAM__
+2024-02-20 05:39:31 - Estado de la respuesta: 200
+2024-02-20 05:39:31 - Mensaje enviado! 📧
