@@ -118,6 +118,17 @@ if __name__ == "__main__":
             API.write_log("Fin de linea\n")
             sys.exit(1)
 
+        if json_data == -2:
+            msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
+            API.write_log('Error al extraer datos de la reserva. El middleware rechaza la peticion. El token usado no es valido. verifica en la pagina de Hybo')
+            API.write_log(msg)
+            spinner.fail(msg)
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            send_message(TOKEN, CHAT_ID, msg)
+            API.write_log("Fin de linea\n")
+            sys.exit(1)
+
         if json_data is None:
             msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
             spinner.fail("Error al extraer datos de la reserva, verifica el día de la reserva")
@@ -136,7 +147,7 @@ if __name__ == "__main__":
         API.write_log("\n__EXTRAYENDO DATOS DE LA PLAZA__")
         print("\n__EXTRAYENDO DATOS DE LA PLAZA__")
         result = extract_information(json_data)
-        spinner.text = "Extrayendo datos de plaza reservada"
+        spinner.text = "Extrayendo datos de plaza reservada, guardando en reservas.db"
 
         if result is None:
             msg = "Datos de entrada, json_data is None. No se pudo extraer la información. Verifica los datos de entrada."

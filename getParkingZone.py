@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 from utils.logger import log, API
 from halo import Halo
 
+from getReservedZoneData import extract_information
+
 # Cargando credenciales de acceso
 load_dotenv()
 URL = os.getenv("URL")
@@ -198,7 +200,7 @@ def load_data_place(
     }
 
     # Este endpoit requiere de 3 datos , tenantId, zoneId y reservationId, los dos primeros
-    # siempre son los mismos dado que solo se solicita plaza en Priegola, pero el tercero
+    # siempre son los mismos dado que solo se solicita plaza en Priegola o Victoria, pero el tercero
     # cambia, por lo que se debe extraer del pase de reserva que devuelve la cadena con 3 strings
     # https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/ + tenantId + %7C + zoneId + %7C + reservationId
 
@@ -287,12 +289,28 @@ def load_data_place(
                     API.write_log(f"Respuesta fallida guardada dentro de la carpeta {folder}, revisa el archivo {filename}")
                     spinner.fail(f"Respuesta fallida guardada dentro de la carpeta {folder}, revisa el archivo {filename}")
                 return -1
+    except requests.exceptions.HTTPError as http_err:
+        if response.status_code == 401:
+            API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
+            return -2
+        else:
+            API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
+            spinner.fail(f"Error HTTP: {http_err}, Detalles: {response.text}")
+            return None
 
-    except requests.HTTPError as e:
-        API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")
-        spinner.fail(f"Error HTTP: {e}, Detalles: {response.text}")
-        return None
     except Exception as e:
         API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")
         spinner.fail(f"Error HTTP: {e}, Detalles: {response.text}")
         return None
+
+
+# https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2
+
+token2 = "eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImQyNDY3MzUwLWYzNWUtNDVmZS1iMDQwLTI2NTNkYWEzN2Y3OSIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA5MjA5NDcxLCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDkyMTMwNzEsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA5MjA5NDcxfQ.Dj4sFAFTeYlHEAzLF4_LrB2fKTXOUIdYgvwnoC-D9IBD9kNzAqVLVzrJKGYfc-wd1TB80OrOY8-EFHLsggJua4henaoRIvCCUtbQjBZUrrnRD6un83PM9UpchMQarhEZd-8YS9nplm5qqVTpWbA6j2WwDnUX1ax1NgzJDwH_DZmNuzjyHlQ6ndMbI5uURPDHnp-KLWUChrZLXgycPadSE6b8gfPZDA3RuSgAOcqsR6NJ7aiqLAxGpeNcboBLBYls-sacGVi-4MMjBbdcq17OKxc9r3AAaFKTtPGmrbG26ABy0-PjTQ0HbU6epA_OGWFBS-6pCTXkykuYLIJkKfcNFg"
+
+reservationID_test = "af61e59e-e8cd-47d0-a8a8-eba071ae6fd2"
+
+jpondatatest = load_data_place(reservationID_test, token2)
+result = extract_information(jpondatatest)
+print(jpondatatest)
+print(result)

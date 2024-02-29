@@ -1640,3 +1640,41 @@ __ENVIANDO MENSAJE POR TELEGRAM__
 __ENVIANDO MENSAJE POR TELEGRAM__
 2024-02-20 05:39:31 - Estado de la respuesta: 200
 2024-02-20 05:39:31 - Mensaje enviado! 📧
+2024-02-29 13:13:32 - Fecha a solicitar plaza: 2024-03-07
+2024-02-29 13:13:32 - Reservando plaza...
+2024-02-29 13:13:32 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2
+2024-02-29 13:13:32 - Error HTTP: 401 Client Error: Unauthorized for url: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2, Detalles: 
+2024-02-29 13:16:31 - Fecha a solicitar plaza: 2024-03-07
+2024-02-29 13:16:31 - Reservando plaza...
+2024-02-29 13:16:31 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2
+2024-02-29 13:16:31 - Error HTTP: 401 Client Error: Unauthorized for url: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2, Detalles: 
+2024-02-29 13:32:08 - Fecha a solicitar plaza: 2024-03-07
+2024-02-29 13:32:08 - Reservando plaza...
+2024-02-29 13:32:08 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2
+2024-02-29 13:32:09 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-29 13:32:09 - Texto de la respuesta de la peticion de plaza: [{"id":"af61e59e-e8cd-47d0-a8a8-eba071ae6fd2","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-29T07:00:39.3900223Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David Castagneto Aguirre","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-03-07T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["61dcc3a3-67e8-4c7b-8a8e-3fbb0f8946ac"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"61dcc3a3-67e8-4c7b-8a8e-3fbb0f8946ac","objectType":"OM.ParkingSeat","name":"11","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":295.8,"y":80.0,"width":29.2,"height":61.0}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-29 13:32:09 - Peticion aprobada, comprobando reserva...
+2024-02-29 13:32:09 - Peticion exitosa.
+2024-02-29 13:32:09 - Plaza reservada!.
+2024-02-29 13:32:09 - Extrayendo datos de reserva en formato Json
+2024-02-29 13:32:09 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-29 13:58:01 - Fecha a solicitar plaza: 2024-03-07
+2024-02-29 13:58:01 - Reservando plaza...
+2024-02-29 13:58:01 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2
+2024-02-29 13:58:01 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-29 13:58:01 - Texto de la respuesta de la peticion de plaza: [{"id":"af61e59e-e8cd-47d0-a8a8-eba071ae6fd2","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-29T07:00:39.3900223Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David Castagneto Aguirre","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-03-07T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["61dcc3a3-67e8-4c7b-8a8e-3fbb0f8946ac"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"61dcc3a3-67e8-4c7b-8a8e-3fbb0f8946ac","objectType":"OM.ParkingSeat","name":"11","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":295.8,"y":80.0,"width":29.2,"height":61.0}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-29 13:58:01 - Peticion aprobada, comprobando reserva...
+2024-02-29 13:58:01 - Peticion exitosa.
+2024-02-29 13:58:01 - Plaza reservada!.
+2024-02-29 13:58:01 - Extrayendo datos de reserva en formato Json
+2024-02-29 13:58:01 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json
+2024-02-29 14:01:15 - Fecha a solicitar plaza: 2024-03-07
+2024-02-29 14:01:15 - Reservando plaza...
+2024-02-29 14:01:15 - Endpoint: https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2
+2024-02-29 14:01:16 - Estado de la respuesta de la peticion de plaza: 200
+2024-02-29 14:01:16 - Texto de la respuesta de la peticion de plaza: [{"id":"af61e59e-e8cd-47d0-a8a8-eba071ae6fd2","objectType":"OM.ParkingReservation","createdAtUtc":"2024-02-29T07:00:39.3900223Z","userId":"39e9e92e-8f46-404d-8014-eb84b2df0d89","userName":"David Castagneto Aguirre","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","date":"2024-03-07T00:00:00","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","seatId":["61dcc3a3-67e8-4c7b-8a8e-3fbb0f8946ac"],"turn":"AllDay","zone":{"id":"35e0550e-953a-41b5-ba97-cacaa4a44160","objectType":"OM.ParkingZone","name":"Victoria - PS2","officeId":"9b122c05-e7d6-4ce4-9936-0d3a8cfcc6c8","mapImageUrl":"https://officemanagerstorage.blob.core.windows.net/securitas/images/parkingzone/b4e65d58-ac86-487d-82ff-cbb3b95f96d2.png","tags":[],"vehicleType":"Car","vehicleEngineType":"Fuel","currencyCode":"EUR"},"seat":{"id":"61dcc3a3-67e8-4c7b-8a8e-3fbb0f8946ac","objectType":"OM.ParkingSeat","name":"11","zoneId":"35e0550e-953a-41b5-ba97-cacaa4a44160","zone":"Victoria - PS2","enabled":true,"tags":[],"mapPoints":{"x":295.8,"y":80.0,"width":29.2,"height":61.0}},"vehicle":{"id":"05411e97-7078-45c7-9452-a856a053bc69","objectType":"OM.Vehicle","type":"Car","engine":"Fuel","licensePlate":"6516KJT"},"status":"Pending","userBasicInformations":[],"bookingType":"Day"}]
+2024-02-29 14:01:16 - Peticion aprobada, comprobando reserva...
+2024-02-29 14:01:16 - Peticion exitosa.
+2024-02-29 14:01:16 - Plaza reservada!.
+2024-02-29 14:01:16 - Extrayendo datos de reserva en formato Json
+2024-02-29 14:01:16 - Dato de la plaza reservada guardados dentro de la carpeta res, revisa el archivo reserved_zone.json

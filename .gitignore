@@ -4,6 +4,7 @@ __pycache__/
 chromedriver
 tokenAcceso.txt
 tokenActualizacion.txt
+schedule.sh
 venv/
 flaskvenv/
 hector/
