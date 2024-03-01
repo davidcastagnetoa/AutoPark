@@ -107,9 +107,14 @@ if __name__ == "__main__":
         spinner.text = "Comprobando pase de reserva"
         json_data = load_data_place(reservationId, secret_access)
 
-        if json_data == -1:
-            msg = "Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
-            API.write_log('Comprueba los datos de la reserva en res/reserved_zone.json')
+        if json_data in [-1, -2, None]:
+            if json_data == -1:
+                msg = "Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
+            elif json_data == -2:
+                msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
+            else:
+                msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+
             API.write_log(msg)
             spinner.fail(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
@@ -118,16 +123,31 @@ if __name__ == "__main__":
             API.write_log("Fin de linea\n")
             sys.exit(1)
 
-        if json_data == -2:
-            msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
-            API.write_log('Error al extraer datos de la reserva. El middleware rechaza la peticion. El token usado no es valido. verifica en la pagina de Hybo')
+        elif json_data == -3:
+            msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 60 segundos"
             API.write_log(msg)
             spinner.fail(msg)
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Fin de linea\n")
-            sys.exit(1)
+            # API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            # print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            # send_message(TOKEN, CHAT_ID, msg)
+
+            time.sleep(60)
+            json_data = load_data_place(reservationId, secret_access)
+            if json_data in [-1, -2, -3, None]:
+                if json_data == -1:
+                    msg = "Segundo intento fallido. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
+                elif json_data == -2:
+                    msg = "Segundo intento fallido. <b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
+                elif json_data == -3:
+                    msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. Se han realizado dos intentos en 60 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                else:
+                    msg = "Segundo intento fallido. <b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+
+                API.write_log(msg)
+                spinner.fail(msg)
+                API.write_log("Fin de linea\n")
+                send_message(TOKEN, CHAT_ID, msg)
+                sys.exit(1)
 
         if json_data is None:
             msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"

@@ -293,6 +293,10 @@ def load_data_place(
         if response.status_code == 401:
             API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
             return -2
+        elif response.status_code == 502:  # Aquí verificamos si es un error 502 Bad Gateway
+            API.write_log(f"Error HTTP: 502 Server Error: Bad Gateway, Detalles: {response.text}")
+            spinner.fail(f"Error HTTP: 502 Server Error: Bad Gateway, Detalles: {response.text}")
+            return -3  # Retornamos -3 como indicaste
         else:
             API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
             spinner.fail(f"Error HTTP: {http_err}, Detalles: {response.text}")
@@ -304,13 +308,13 @@ def load_data_place(
         return None
 
 
-# https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Caf61e59e-e8cd-47d0-a8a8-eba071ae6fd2
+# https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Ca1c39312-9092-4b6f-a295-37354f7262a7
 
-# token2 = "eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImQyNDY3MzUwLWYzNWUtNDVmZS1iMDQwLTI2NTNkYWEzN2Y3OSIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA5MjA5NDcxLCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDkyMTMwNzEsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA5MjA5NDcxfQ.Dj4sFAFTeYlHEAzLF4_LrB2fKTXOUIdYgvwnoC-D9IBD9kNzAqVLVzrJKGYfc-wd1TB80OrOY8-EFHLsggJua4henaoRIvCCUtbQjBZUrrnRD6un83PM9UpchMQarhEZd-8YS9nplm5qqVTpWbA6j2WwDnUX1ax1NgzJDwH_DZmNuzjyHlQ6ndMbI5uURPDHnp-KLWUChrZLXgycPadSE6b8gfPZDA3RuSgAOcqsR6NJ7aiqLAxGpeNcboBLBYls-sacGVi-4MMjBbdcq17OKxc9r3AAaFKTtPGmrbG26ABy0-PjTQ0HbU6epA_OGWFBS-6pCTXkykuYLIJkKfcNFg"
+token2 = "eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImQyNDY3MzUwLWYzNWUtNDVmZS1iMDQwLTI2NTNkYWEzN2Y3OSIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA5MjA5NDcxLCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDkyMTMwNzEsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA5MjA5NDcxfQ.Dj4sFAFTeYlHEAzLF4_LrB2fKTXOUIdYgvwnoC-D9IBD9kNzAqVLVzrJKGYfc-wd1TB80OrOY8-EFHLsggJua4henaoRIvCCUtbQjBZUrrnRD6un83PM9UpchMQarhEZd-8YS9nplm5qqVTpWbA6j2WwDnUX1ax1NgzJDwH_DZmNuzjyHlQ6ndMbI5uURPDHnp-KLWUChrZLXgycPadSE6b8gfPZDA3RuSgAOcqsR6NJ7aiqLAxGpeNcboBLBYls-sacGVi-4MMjBbdcq17OKxc9r3AAaFKTtPGmrbG26ABy0-PjTQ0HbU6epA_OGWFBS-6pCTXkykuYLIJkKfcNFg"
 
-# reservationID_test = "af61e59e-e8cd-47d0-a8a8-eba071ae6fd2"
+reservationID_test = "af61e59e-e8cd-47d0-a8a8-eba071ae6fd2"
 
-# jpondatatest = load_data_place(reservationID_test, token2)
-# result = extract_information(jpondatatest)
-# print(jpondatatest)
+jpondatatest = load_data_place(reservationID_test, token2)
+result = extract_information(jpondatatest)
+print(jpondatatest)
 # print(result)
