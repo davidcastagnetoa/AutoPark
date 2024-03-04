@@ -32,19 +32,25 @@ if __name__ == "__main__":
         if reservationId in [-1, -2, -3, -4, -5, -6, None]:
             if reservationId == -1:
                 msg = "Pase de reservada NO OBTENIDO. No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
+                log = "Pase de reservada NO OBTENIDO. No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
             elif reservationId == -2:
                 msg = "Pase de reservada NO OBTENIDO. No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo!!?"
+                msg = "Pase de reservada NO OBTENIDO. No es posible seleccionar plaza los fines de semana. Que cojones piensas hacer un finde en el trabajo!!?"
             elif reservationId == -3:
                 msg = "Pase de reservada NO OBTENIDO. <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
+                log = "Pase de reservada NO OBTENIDO. Ya existe una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
             elif reservationId == -4:
                 msg = "Pase de reservada NO OBTENIDO. Estas excediendo el limite de dias para petición. Máximo 7 días"
+                log = "Pase de reservada NO OBTENIDO. Estas excediendo el limite de dias para petición. Máximo 7 días"
             elif reservationId == -5:
                 msg = "Pase de reservada NO OBTENIDO. El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
+                log = "Pase de reservada NO OBTENIDO. El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
             else:
-                msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+                msg = "Pase de reservada NO OBTENIDO. <b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+                log = "Pase de reservada NO OBTENIDO. Error al extraer datos de la reserva, verifica el día de la reserva"
 
-            API.write_log(msg)
-            spinner.fail(msg)
+            API.write_log(log)
+            spinner.fail(log)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -57,7 +63,7 @@ if __name__ == "__main__":
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Iniciando segundo intento")
+            API.write_log("Iniciando segundo intento en 30 segundos")
 
             time.sleep(30)
 
@@ -65,21 +71,28 @@ if __name__ == "__main__":
             if reservationId in [-1, -2, -3, -4, -5, -6, None]:
                 if reservationId == -1:
                     msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
+                    log = "Segundo intento fallido. Pase de reservada NO OBTENIDO. No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
                 elif reservationId == -2:
                     msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo!!?"
+                    log = "Segundo intento fallido. Pase de reservada NO OBTENIDO. No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo!!?"
                 elif reservationId == -3:
                     msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
+                    log = "Segundo intento fallido. Pase de reservada NO OBTENIDO. Ya existe una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
                 elif reservationId == -4:
                     msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. Estas excediendo el limite de dias para petición. Máximo 7 días"
+                    log = "Segundo intento fallido. Pase de reservada NO OBTENIDO. Estas excediendo el limite de dias para petición. Máximo 7 días"
                 elif reservationId == -5:
                     msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
+                    log = "Segundo intento fallido. Pase de reservada NO OBTENIDO. El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
                 elif reservationId == -6:
-                    msg = "<b>Error</b> al solicitar la reserva. Pase de reservada NO OBTENIDO. Servidor de origen no se está comunicando con el servidor de enlace. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                    msg = "<b>Error</b> al solicitar la reserva. Pase de reservada NO OBTENIDO. Error Bad Gateway. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento. <b>Vamos que te estan puteando, pero no te rindas!</b>"
+                    log = "Error al solicitar la reserva. Pase de reservada NO OBTENIDO. Error Bad Gateway. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
                 else:
                     msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu código"
+                    log = "Segundo intento fallido. Pase de reservada NO OBTENIDO. Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu código"
 
-                spinner.fail(msg)
-                API.write_log(msg)
+                spinner.fail(log)
+                API.write_log(log)
                 print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
                 API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
                 send_message(TOKEN, CHAT_ID, msg)
@@ -102,16 +115,22 @@ if __name__ == "__main__":
             API.write_log("Comprobando pase de reserva en Priegola")
             json_data = load_data_place(reservationId, secret_access, use_zone_2=True)
 
-        if json_data in [-1, -2, None]:
+        if json_data in [-1, -2, -4, None]:
             if json_data == -1:
-                msg = "Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
+                msg = "<b>Peticion aprobada</b>, pero la respuesta del servidor <b>no es un JSON valido</b>. Comprueba en pagina web la reserva"
+                log = f"La Peticion fue aprobada, pero no se pudo comprobar la reserva con el id: {reservationId}. La respuesta del servidor no es un JSON valido. Comprueba en pagina web la reserva"
             elif json_data == -2:
                 msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
+                log = "Error al extraer datos de la reserva. El middleware rechaza la peticion. El token usado no es valido. verifica en la pagina de Hybo"
+            elif json_data == -4:
+                msg = "<b>Error</b> al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
+                log = "Error al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
             else:
-                msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+                msg = "<b>Error</b>. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
+                log = "Error. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
 
-            API.write_log(msg)
-            spinner.fail(msg)
+            API.write_log(log)
+            spinner.fail(log)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -120,8 +139,9 @@ if __name__ == "__main__":
 
         elif json_data == -3:
             msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 60 segundos"
-            API.write_log(msg)
-            spinner.fail(msg)
+            log = "Error al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 60 segundos"
+            API.write_log(log)
+            spinner.fail(log)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
@@ -136,18 +156,25 @@ if __name__ == "__main__":
                 API.write_log("Segundo intento. Comprobando pase de reserva en Priegola")
                 json_data = load_data_place(reservationId, secret_access, use_zone_2=True)
 
-            if json_data in [-1, -2, -3, None]:
+            if json_data in [-1, -2, -3, -4, None]:
                 if json_data == -1:
-                    msg = "Segundo intento fallido. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
+                    msg = "Segundo intento fallido. <b>Peticion aprobada</b>, pero la respuesta del servidor <b>no es un JSON valido</b>. Comprueba en pagina web la reserva"
+                    log = "Segundo intento fallido. Peticion aprobada, pero la respuesta del servidor no es un JSON valido. Comprueba en pagina web la reserva"
                 elif json_data == -2:
                     msg = "Segundo intento fallido. <b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
+                    log = "Segundo intento fallido. Error al extraer datos de la reserva. El middleware rechaza la peticion. El token usado no es valido. verifica en la pagina de Hybo"
                 elif json_data == -3:
                     msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. Se han realizado dos intentos en 60 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                    log = "Error al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. Se han realizado dos intentos en 60 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                elif json_data == -4:
+                    msg = "<b>Error</b> al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
+                    log = "Error al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
                 else:
-                    msg = "Segundo intento fallido. <b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+                    msg = "Segundo intento fallido. <b>Error</b>. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
+                    log = "Segundo intento fallido. Error!. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
 
-                spinner.fail(msg)
-                API.write_log(msg)
+                spinner.fail(log)
+                API.write_log(log)
                 print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
                 API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
                 send_message(TOKEN, CHAT_ID, msg)

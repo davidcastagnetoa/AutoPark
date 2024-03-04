@@ -214,6 +214,8 @@ def load_data_place(reservation_id, secret, use_zone_2=False):
     # URL del endpoint - Priegola
     # url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7Ca91ee11f-a0c5-4a91-a2c5-f6d0642f1dff%7C" + reservation_id
 
+    # https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C 0bf356c3-5986-46b7-bc14-6bcd2385d2a5
+
     # URL del endpoint - Victoria
     url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C" + zone_to_use + "%7C" + reservation_id
     # url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C" + reservation_id
@@ -300,10 +302,14 @@ def load_data_place(reservation_id, secret, use_zone_2=False):
         if response.status_code == 401:
             API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
             return -2
-        elif response.status_code == 502:  # Aquí verificamos si es un error 502 Bad Gateway
+        elif response.status_code == 502:
             API.write_log(f"Error HTTP: 502 Server Error: Bad Gateway, Detalles: {response.text}")
             spinner.fail(f"Error HTTP: 502 Server Error: Bad Gateway, Detalles: {response.text}")
-            return -3  # Retornamos -3 como indicaste
+            return -3
+        elif response.status_code == 409:
+            API.write_log(f"Error HTTP: 409 - Conflicto, Detalles: {response.text}")
+            spinner.fail(f"Error HTTP: 409 - Conflicto, Detalles: {response.text}")
+            return -4
         else:
             API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
             spinner.fail(f"Error HTTP: {http_err}, Detalles: {response.text}")

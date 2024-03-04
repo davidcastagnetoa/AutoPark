@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cat << "EOF" | lolcat
+
                                      .::!!!!!!!:.
   .!!!!!:.                        .:!!!!!!!!!!!!.
   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
@@ -10,6 +11,14 @@ cat << "EOF" | lolcat
       ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
         "*$bd$$$$      '*$$$$$$$$$$$o+#" 
              """"          """"""" 
+             
+    ╔────────────────────────────────────╗
+    |  Soy el principio de la eternidad, |
+    |  el tercero en cada cuento,        |
+    |  estoy donde comienza el espacio   |
+    |  y existo en mitad del tiempo!     |
+    ┖────────────────────────────────────┙
+
 EOF
 
 # Cambiar al directorio del script y .env

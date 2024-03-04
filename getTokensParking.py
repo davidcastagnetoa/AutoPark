@@ -70,6 +70,31 @@ ascii_art_bart = """
 /           \.
 """
 
+ascii_art_eyes = '''
+
+                                     .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!.
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+        "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+             """"          """"""" 
+             
+    ╔────────────────────────────────────╗
+    |  Soy el principio de la eternidad, |
+    |  el tercero en cada cuento,        |
+    |  estoy donde comienza el espacio   |
+    |  y existo en mitad del tiempo!     |
+    ┖────────────────────────────────────┙
+
+
+'''
+
+
+API.write_log(ascii_art_eyes)
+
 
 # answers = inquirer.prompt(questions)
 # navegador = answers["navegator"]
