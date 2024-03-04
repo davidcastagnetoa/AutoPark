@@ -23,6 +23,7 @@ if json_data:
     config = json.loads(json_data)
     # Aqui puedes definir la zona en la que se quiere reservar plaza
     ZONE = config["zone_victoria_2"]
+    ZONE_2 = config["zone_priegola_2"]
     PLATE = config["plate"]
     USERID = config["userId"]
     OFFICEID = config["officeId"]
@@ -47,9 +48,12 @@ print(f"Fecha a solicitar plaza: {date}")
 
 
 # Reservar la plaza y Obtener su ID
-def get_parking_place(secret):
+def get_parking_place(secret, use_zone_2=False):
     # URL del endpoint
     url = URL + "/BookingsByContext"
+
+    # Victoria en el primer intento, sino Priegola
+    zone_to_use = ZONE_2 if use_zone_2 else ZONE
 
     # Construyendo los datos para la peticion
     headers = {
@@ -61,7 +65,7 @@ def get_parking_place(secret):
     payload = {
         "userId": USERID,
         "officeId": OFFICEID,
-        "zoneId": ZONE,
+        "zoneId": zone_to_use,
         "vehicle": {
             "id": VEHICLEID,
             "objectType": "OM.Vehicle",
@@ -123,7 +127,6 @@ def get_parking_place(secret):
                 spinner.succeed("ID de plaza encontrado")
 
                 return reservationId
-
             else:
                 API.write_log("Error al reservar la plaza, La respuesta no contiene los 3 valores. Pase de reserva NO adquirido!")
         except requests.exceptions.HTTPError as http_err:
@@ -145,7 +148,12 @@ def get_parking_place(secret):
                 return -4
             elif response.status_code == 401:
                 API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
+                spinner.fail(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
                 return -5
+            elif response.status_code == 502:
+                API.write_log(f"Error HTTP: 502, Bad Gateway, Detalles: {response.text}")
+                spinner.fail(f"Error HTTP: 502, Bad Gateway, Detalles: {response.text}")
+                return -6
             else:
                 API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: {http_err}, Detalles: {response.text}")
@@ -166,9 +174,8 @@ def get_parking_place(secret):
         return None
 
 
-def load_data_place(
-    reservation_id,
-        secret):
+def load_data_place(reservation_id, secret, use_zone_2=False):
+    zone_to_use = ZONE_2 if use_zone_2 else ZONE
     # Construyendo los datos para la peticion
     headers = {
         "Authorization": "Bearer " + secret,
@@ -178,7 +185,7 @@ def load_data_place(
     body = {
         "userId": USERID,
         "officeId": OFFICEID,
-        "zoneId": ZONE,
+        "zoneId": zone_to_use,
         "vehicle": {
             "id": VEHICLEID,
             "objectType": "OM.Vehicle",
@@ -208,7 +215,7 @@ def load_data_place(
     # url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7Ca91ee11f-a0c5-4a91-a2c5-f6d0642f1dff%7C" + reservation_id
 
     # URL del endpoint - Victoria
-    url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C" + ZONE + "%7C" + reservation_id
+    url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C" + zone_to_use + "%7C" + reservation_id
     # url = "https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7C" + reservation_id
 
     # Realizando la peticion

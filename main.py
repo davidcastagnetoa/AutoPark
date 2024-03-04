@@ -14,6 +14,8 @@ load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
+segundo_intento = False
+
 
 if __name__ == "__main__":
     API.write_log("\n__CONSULTA DE TOKEN__")
@@ -25,78 +27,64 @@ if __name__ == "__main__":
         API.write_log("\n__SOLICITANDO PLAZA__")
         print("\n__SOLICITANDO PLAZA__")
         spinner.text = "Ejecutando funcion de reserva de plaza"
-        reservationId = get_parking_place(secret_access)
+        reservationId = get_parking_place(secret_access, use_zone_2=False)
 
-        if reservationId == -1:
-            msg = "No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
+        if reservationId in [-1, -2, -3, -4, -5, -6, None]:
+            if reservationId == -1:
+                msg = "Pase de reservada NO OBTENIDO. No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
+            elif reservationId == -2:
+                msg = "Pase de reservada NO OBTENIDO. No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo!!?"
+            elif reservationId == -3:
+                msg = "Pase de reservada NO OBTENIDO. <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
+            elif reservationId == -4:
+                msg = "Pase de reservada NO OBTENIDO. Estas excediendo el limite de dias para petición. Máximo 7 días"
+            elif reservationId == -5:
+                msg = "Pase de reservada NO OBTENIDO. El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
+            else:
+                msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
+
+            API.write_log(msg)
             spinner.fail(msg)
-            API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
             API.write_log("Fin de linea\n")
             sys.exit(1)
 
-        if reservationId == -2:
-            msg = "No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo!!?"
-            spinner.fail("No es posible seleccionar plaza los fines de semana. Que cojones piensas hacer un finde en el trabajo!?")
-            API.write_log(msg)
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Fin de linea\n")
-            sys.exit(1)
-
-        if reservationId == -3:
-            msg = "<b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
-            spinner.fail("Ya existe una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador")
-            API.write_log(msg)
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Fin de linea\n")
-            sys.exit(1)
-
-            # API.write_log("Iniciando segundo intento")
-            # time.sleep(10)
-            # reservationId = get_parking_place(secret_access)
-
-            # if reservationId == -3:
-            #     msg_2 = "Error en el segundo intento, revisa los mensajes previos o consulta la aplicacion web en un navegador"
-            #     API.write_log(msg_2)
-            #     API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            #     print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            #     send_message(TOKEN, CHAT_ID, msg_2)
-            #     API.write_log("Fin de linea\n")
-            #     sys.exit(1)
-
-        if reservationId == -4:
-            msg = "Estas excediendo el limite de dias para petición. Máximo 7 días"
-            spinner.fail(msg)
-            API.write_log(msg)
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Fin de linea\n")
-            sys.exit(1)
-
-        if reservationId == -5:
-            msg = "El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
+        if reservationId == -6:
+            segundo_intento = True
+            msg = "Pase de reservada NO OBTENIDO. El servidor rechaza la peticion. Servidor de origen no se está comunicando con el servidor de enlace. Repitiendo solicitud a MD en 30 segundos en Priegola"
             API.write_log(msg)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Fin de linea\n")
-            sys.exit(1)
+            API.write_log("Iniciando segundo intento")
 
-        if reservationId is None:
-            msg = "Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu código"
-            spinner.fail(msg)
-            API.write_log(msg)
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Fin de linea\n")
-            sys.exit(1)
+            time.sleep(30)
+
+            reservationId = get_parking_place(secret_access, use_zone_2=True)  # Aqui solicitamos a Priegola
+            if reservationId in [-1, -2, -3, -4, -5, -6, None]:
+                if reservationId == -1:
+                    msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. No es posible reservar entre las 0:00 y 8:00 horas. Deja ya de hacer pruebas y duérmete ya!"
+                elif reservationId == -2:
+                    msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. No es posible seleccionar plaza los <b>fines de semana</b>. Que cojones piensas hacer un finde en el trabajo!!?"
+                elif reservationId == -3:
+                    msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. <b>Ya existe</b> una plaza reservada!, revisa los mensajes previos o consulta la aplicacion web en un navegador"
+                elif reservationId == -4:
+                    msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. Estas excediendo el limite de dias para petición. Máximo 7 días"
+                elif reservationId == -5:
+                    msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. El servidor rechaza la peticion. El token usado no es valido. Realiza pruebas en postman para verificar la validez del token"
+                elif reservationId == -6:
+                    msg = "<b>Error</b> al solicitar la reserva. Pase de reservada NO OBTENIDO. Servidor de origen no se está comunicando con el servidor de enlace. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                else:
+                    msg = "Segundo intento fallido. Pase de reservada NO OBTENIDO. Error de Servidor, revisa los detalles, y de paso haz algo de provecho y añade esta excepcion en tu bloque except de tu código"
+
+                spinner.fail(msg)
+                API.write_log(msg)
+                print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+                API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+                send_message(TOKEN, CHAT_ID, msg)
+                API.write_log("Fin de linea\n")
+                sys.exit(1)
 
         API.write_log(f"The reservationId is: {reservationId}")
         API.write_log(f"The reservationId is: {reservationId}")
@@ -104,8 +92,15 @@ if __name__ == "__main__":
 
         API.write_log("\n__COMPROBANDO RESERVA DE PLAZA__")
         print("\n__COMPROBANDO RESERVA DE PLAZA__")
-        spinner.text = "Comprobando pase de reserva"
-        json_data = load_data_place(reservationId, secret_access)
+
+        if segundo_intento == False:
+            spinner.text = "Comprobando pase de reserva en Victoria"
+            API.write_log("Comprobando pase de reserva en Victoria")
+            json_data = load_data_place(reservationId, secret_access, use_zone_2=False)
+        else:
+            spinner.text = "Comprobando pase de reserva en Priegola"
+            API.write_log("Comprobando pase de reserva en Priegola")
+            json_data = load_data_place(reservationId, secret_access, use_zone_2=True)
 
         if json_data in [-1, -2, None]:
             if json_data == -1:
@@ -127,12 +122,20 @@ if __name__ == "__main__":
             msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 60 segundos"
             API.write_log(msg)
             spinner.fail(msg)
-            # API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            # print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            # send_message(TOKEN, CHAT_ID, msg)
-
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            send_message(TOKEN, CHAT_ID, msg)
             time.sleep(60)
-            json_data = load_data_place(reservationId, secret_access)
+
+            if segundo_intento == False:
+                spinner.text = "Segundo intento. Comprobando pase de reserva en Victoria"
+                API.write_log("Segundo intento. Comprobando pase de reserva en Victoria")
+                json_data = load_data_place(reservationId, secret_access, use_zone_2=False)
+            else:
+                spinner.text = "Segundo intento. Comprobando pase de reserva en Priegola"
+                API.write_log("Segundo intento. Comprobando pase de reserva en Priegola")
+                json_data = load_data_place(reservationId, secret_access, use_zone_2=True)
+
             if json_data in [-1, -2, -3, None]:
                 if json_data == -1:
                     msg = "Segundo intento fallido. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud"
@@ -143,21 +146,13 @@ if __name__ == "__main__":
                 else:
                     msg = "Segundo intento fallido. <b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
 
-                API.write_log(msg)
                 spinner.fail(msg)
-                API.write_log("Fin de linea\n")
+                API.write_log(msg)
+                print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+                API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
                 send_message(TOKEN, CHAT_ID, msg)
+                API.write_log("Fin de linea\n")
                 sys.exit(1)
-
-        if json_data is None:
-            msg = "<b>Error</b> al extraer datos de la reserva, verifica el <b>día</b> de la reserva"
-            spinner.fail("Error al extraer datos de la reserva, verifica el día de la reserva")
-            API.write_log("Error al extraer datos de la reserva, verifica el dia de la reserva y la hora, recuerda que las reservas se abren a las 08:00 AM")
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, msg)
-            API.write_log("Fin de linea\n")
-            sys.exit(1)
 
         API.write_log("\n__DATOS DE PLAZA RESERVADA__")
         print("\n__DATOS DE PLAZA RESERVADA__")
