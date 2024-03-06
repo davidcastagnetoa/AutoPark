@@ -1,5 +1,6 @@
 import os
 import sys
+from datetime import datetime, timedelta
 from getTokensParking import getToken
 from getParkingZone import get_parking_place, load_data_place
 from getReservedZoneData import extract_information
@@ -16,6 +17,17 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 segundo_intento = False
 
+# Función para calcular el tiempo de espera hasta las 07:59:30
+
+
+def calcular_tiempo_espera(h, m, s, ms):
+    ahora = datetime.now()
+    objetivo = ahora.replace(hour=h, minute=m, second=s, microsecond=ms)
+    if ahora > objetivo:
+        objetivo += timedelta(days=1)  # Si ya pasó la hora, espera hasta el día siguiente
+    tiempo_espera = (objetivo - ahora).total_seconds()
+    return tiempo_espera
+
 
 if __name__ == "__main__":
     API.write_log("\n__CONSULTA DE TOKEN__")
@@ -24,8 +36,16 @@ if __name__ == "__main__":
     spinner = Halo(text='Solicitud de token iniciada', spinner='dots')
     spinner.start()
     if secret_access is not None:
-        API.write_log("\n__SOLICITANDO PLAZA__")
-        print("\n__SOLICITANDO PLAZA__")
+        spinner.text = 'A la espera de la hora acordada'
+        tiempo_espera = calcular_tiempo_espera(8, 00, 00, 00)
+        spinner.text = f"Esperando {tiempo_espera} segundos hasta las 08:00:00"
+        time.sleep(tiempo_espera)  # Espera hasta las 08:00:00
+        ahora = datetime.now().strftime("%H:%M:%S")
+        API.write_log("\n__SOLICITUD DE PLAZA__")
+        print("\n__SOLICITUD DE PLAZA__")
+        spinner.succeed(f'Solicitando plaza a las {ahora}')
+        API.write_log(f'Solicitando plaza a las {ahora}')
+
         spinner.text = "Ejecutando funcion de reserva de plaza"
         reservationId = get_parking_place(secret_access, use_zone_2=False)
 
