@@ -6,11 +6,11 @@ tokenAcceso.txt
 tokenActualizacion.txt
 venv/
 windvenv/
+hector_p_linux/
+hector_profile/
 res/
-comandos_scp.txt
-crontab.txt
+geckodriver
 logs/
-hector/
 downloads/
 src/
 chromedriver.exe      
@@ -27,6 +27,5 @@ downloads/geckodriver
 downloads/geckodriver-v0.33.0-linux64.tar.gz
 downloads/geckodriver-v0.34.0-linux64.tar.gz
 geckodriver.log
+
 logs/api-info.log
-setup.py
-test_POST.py
