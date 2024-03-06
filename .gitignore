@@ -6,7 +6,7 @@ tokenAcceso.txt
 tokenActualizacion.txt
 venv/
 windvenv/
-# res/
+res/
 comandos_scp.txt
 crontab.txt
 logs/
@@ -20,6 +20,7 @@ dist/
 auto_park.sh
 autorun.sh
 schedule.txt
+schedule.sh
 logs/api-info.log
 logs/autopark_log_01.log
 downloads/geckodriver
