@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from utils.logger import log, API
 from halo import Halo
 
-from getReservedZoneData import extract_information
+# from getReservedZoneData import extract_information
 
 # Cargando credenciales de acceso
 load_dotenv()
