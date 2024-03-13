@@ -15,6 +15,7 @@ load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
+# Otras variables
 segundo_intento = False
 
 # Función para calcular el tiempo de espera hasta las 07:59:30
@@ -38,13 +39,23 @@ if __name__ == "__main__":
     if secret_access is not None:
         spinner.text = 'A la espera de la hora acordada'
         tiempo_espera = calcular_tiempo_espera(8, 00, 00, 00)
-        spinner.text = f"Esperando {tiempo_espera} segundos hasta las 08:00:00"
-        time.sleep(tiempo_espera)  # Espera hasta las 08:00:00
         ahora = datetime.now().strftime("%H:%M:%S")
         API.write_log("\n__SOLICITUD DE PLAZA__")
         print("\n__SOLICITUD DE PLAZA__")
-        spinner.succeed(f'Solicitando plaza a las {ahora}')
+        spinner.text = f'Solicitando plaza a las {ahora}'
         API.write_log(f'Solicitando plaza a las {ahora}')
+        API.write_log(f'Tiempo de espera en segundos hasta las 08:00: {tiempo_espera}')
+
+        if (tiempo_espera) > 700:
+            log = f'Tiempo de espera excedido. Cancelando peticion, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en crontab.'
+            msg = f'Tiempo de espera excedido. <b>Cancelando peticion</b>, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en <b>crontab</b>.En caso de duda consulta con el <b>Gran Administrador XD</b>'
+            spinner.fail(log)
+            API.write_log(log)
+            send_message(TOKEN, CHAT_ID, msg)
+            sys.exit(1)
+
+        spinner.text = f"Esperando {tiempo_espera} segundos hasta las 08:00:00"
+        time.sleep(tiempo_espera)  # Espera hasta las 08:00:00
 
         spinner.text = "Ejecutando funcion de reserva de plaza"
         reservationId = get_parking_place(secret_access, use_zone_2=False)
