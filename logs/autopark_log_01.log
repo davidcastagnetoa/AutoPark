@@ -394,4 +394,18 @@ __EXTRAYENDO DATOS DE LA PLAZA__
 
 __ENVIANDO MENSAJE POR TELEGRAM__
 ⠋ Preparando envío de mensaje⠙ Enviando mensaje⠹ Enviando mensaje✔ Mensaje enviado! 📧
-
+/home/admin/documents/AutoPark/autorun.sh: line 22: lolcat: command not found
+⠋ Comprobando variables de entorno⠙ Comprobando variables de entorno✔ Variables de entorno encontradas
+Fecha a solicitar plaza: 2024-03-21
+
+__CONSULTA DE TOKEN__
+⠋ Cargando página https://app-officemanager.raona.com⠙ Cargando datos de página⠹ Cargando datos de página⠸ Cargando datos de página⠼ Cargando datos de página⠴ Cargando datos de página⠦ Cargando datos de página⠧ Cargando datos de página⠇ Cargando datos de página⠏ Cargando datos de página⠋ Cargando datos de página⠙ Cargando datos de página⠹ Cargando datos de página⠸ Cargando datos de página⠼ Cargando datos de página⠴ Cargando datos de página⠦ Cargando datos de página⠧ Cargando datos de página✔ Boton de inicio de sesion encontrado
+✔ Cargando credenciales de usuario
+✔ Cargando credenciales de contraseña
+✔ Iniciando sesión
+✖ Error: Las claves no se encontraron en localStorage.
+⠋ Solicitud de token iniciada⠋ Preparando envío de mensaje⠙ Solicitud de token iniciada⠙ Enviando mensaje⠹ Solicitud de token iniciada⠹ Enviando mensaje⠸ Solicitud de token iniciada⠸ Enviando mensaje⠼ Solicitud de token iniciada✔ Mensaje enviado! 📧
+✖ No se ha obtenido el token correctamente!
+Fin de linea
+
+
