@@ -39,7 +39,7 @@ def handle_webhook():
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. soy un bot de Telegram")
 
-        if text == "/consult":
+        if text == "/consultar":
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, "Consultando reservas en base de datos. Proceso aun en desarrollo")
