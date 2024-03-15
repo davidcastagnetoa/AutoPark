@@ -34,34 +34,29 @@ def handle_webhook():
     spinner.start()
     if 'message' in update and 'text' in update['message']:
         text = update['message']['text']
-        if text == '/hello':
+        if text == '/hola':
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. soy un bot de Telegram")
 
-        if text == '/consultar':
+        if text == "/reservas":
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. soy un bot de Telegram")
+            send_message(TOKEN, CHAT_ID, "Consultando reservas en base de datos. Proceso aun en desarrollo")
 
-        # if text == "/consultar":
-        #     API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-        #     print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-        #     send_message(TOKEN, CHAT_ID, "Consultando reservas en base de datos. Proceso aun en desarrollo")
-
-        if text == '/delete':
+        if text == '/eliminar':
             conversation_state[chat_id] = 'awaiting_date'
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, "Escribe la fecha de la reserva a eliminar en formato YYYY-MM-DD, o escribe el comando <b>cancel</b> para cancelar.")
 
-        if text == "/cancel":
+        if text == "/cancelar":
             del conversation_state[chat_id]
             API.write_log("\n__CONVERSACIÓN TERMINADA__\n")
             print("\n__CONVERSACIÓN TERMINADA__\n")
             send_message(TOKEN, CHAT_ID, "Operación cancelada.")
 
-        if text == '/cancel' and conversation_state.get(chat_id) == 'awaiting_date':
+        if text == '/cancelar' and conversation_state.get(chat_id) == 'awaiting_date':
             conversation_state.pop(chat_id, None)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")

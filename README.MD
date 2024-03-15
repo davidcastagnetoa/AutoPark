@@ -177,7 +177,7 @@ sudo systemctl start flaskapp.service
 sudo systemctl daemon-reload
 ```
 
-4. ##### Iniciar el Servicio Gunicorn
+4. ##### Iniciar el Servicio Gunicorn (PARA ACTUALIZACIONES EN EL CODIGO DE PYTHON)
    Para iniciar el servicio después de cualquier ajuste o reinicio:
 
 ```bash
