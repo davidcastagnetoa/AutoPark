@@ -39,6 +39,11 @@ def handle_webhook():
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, "Hola, he recibido tu saludo y te respondo. soy un bot de Telegram")
 
+        if text == "/consult":
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            send_message(TOKEN, CHAT_ID, "Consultando reservas en base de datos. Proceso aun en desarrollo")
+
         if text == '/delete':
             conversation_state[chat_id] = 'awaiting_date'
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
@@ -50,11 +55,6 @@ def handle_webhook():
             API.write_log("\n__CONVERSACIÓN TERMINADA__\n")
             print("\n__CONVERSACIÓN TERMINADA__\n")
             send_message(TOKEN, CHAT_ID, "Operación cancelada.")
-
-        if text == "/consult":
-            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
-            send_message(TOKEN, CHAT_ID, "Consultando reservas en base de datos. Proceso aun en desarrollo")
 
         if text == '/cancel' and conversation_state.get(chat_id) == 'awaiting_date':
             conversation_state.pop(chat_id, None)
