@@ -45,6 +45,17 @@ def handle_webhook():
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, "Escribe la fecha de la reserva a eliminar en formato YYYY-MM-DD, o escribe el comando <b>cancel</b> para cancelar.")
 
+        elif text == "/cancel":
+            del conversation_state[chat_id]
+            API.write_log("\n__CONVERSACIÓN TERMINADA__\n")
+            print("\n__CONVERSACIÓN TERMINADA__\n")
+            send_message(TOKEN, CHAT_ID, "Operación cancelada.")
+
+        elif text == "/consult":
+            API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
+            send_message(TOKEN, CHAT_ID, "Consultando reservas en base de datos. Proceso aun en desarrollo")
+
         elif text == '/cancel' and conversation_state.get(chat_id) == 'awaiting_date':
             conversation_state.pop(chat_id, None)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")

@@ -36,6 +36,14 @@ if __name__ == "__main__":
     secret_access = getToken()
     spinner = Halo(text='Solicitud de token iniciada', spinner='dots')
     spinner.start()
+    if secret_access == -1:
+        log = "Primer intento de token fallido. Fallo al obtener datos en LocalStorage."
+        API.write_log("Primer intento de token fallido. Fallo al obtener datos en LocalStorage. Se realiza segundo intento.")
+        spinner.fail(log)
+        spinner.text = 'Lanzando segundo intento'
+        time.sleep(10)
+        secret_access = getToken()
+
     if secret_access is not None:
         spinner.text = 'A la espera de la hora acordada'
         tiempo_espera = calcular_tiempo_espera(8, 00, 00, 00)

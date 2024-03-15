@@ -125,7 +125,7 @@ def getToken():
     spinner.start()
     spinner.text = "Cargando datos de página"
     try:
-        login_button = WebDriverWait(driver, 10).until(
+        login_button = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.ID, "next"))
         )
         spinner.succeed('Boton de inicio de sesion encontrado')
@@ -213,7 +213,7 @@ def getToken():
     spinner.text = "Buscando datos en localStore ..."
     try:
         API.write_log("Buscando datos en localStore ...")
-        WebDriverWait(driver, 20).until(
+        WebDriverWait(driver, 30).until(
             lambda x: check_keys_in_localstorage(driver, keys_to_check)
         )
         API.write_log("Datos encontrados en localStorage")
@@ -222,7 +222,7 @@ def getToken():
         API.write_log("Las claves no se encontraron en localStorage dentro del tiempo especificado.")
         spinner.fail("Error: Las claves no se encontraron en localStorage.")
         driver.quit()
-        return None
+        return -1
 
     # Ejecuta el script para obtener el AccessToken y RefreshToken del localStorage
     access_and_refresh_item_values = driver.execute_script(
