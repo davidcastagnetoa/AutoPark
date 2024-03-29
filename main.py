@@ -17,6 +17,7 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 # Otras variables
 segundo_intento = False
+debug_mode = False  # Cambia a True para activar modo debug
 
 # Función para calcular el tiempo de espera hasta las 07:59:30
 
@@ -54,16 +55,17 @@ if __name__ == "__main__":
         API.write_log(f'Solicitando plaza a las {ahora}')
         API.write_log(f'Tiempo de espera en segundos hasta las 08:00: {tiempo_espera}')
 
-        if (tiempo_espera) > 700:
-            log = f'Tiempo de espera excedido. Cancelando peticion, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en crontab.'
-            msg = f'Tiempo de espera excedido. <b>Cancelando peticion</b>, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en <b>crontab</b>.En caso de duda consulta con el <b>Gran Administrador XD</b>'
-            spinner.fail(log)
-            API.write_log(log)
-            send_message(TOKEN, CHAT_ID, msg)
-            sys.exit(1)
+        if debug_mode == False:
+            if (tiempo_espera) > 700:
+                log = f'Tiempo de espera excedido. Cancelando peticion, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en crontab.'
+                msg = f'Tiempo de espera excedido. <b>Cancelando peticion</b>, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en <b>crontab</b>.En caso de duda consulta con el <b>Gran Administrador XD</b>'
+                spinner.fail(log)
+                API.write_log(log)
+                send_message(TOKEN, CHAT_ID, msg)
+                sys.exit(1)
 
-        spinner.text = f"Esperando {tiempo_espera} segundos hasta las 08:00:00"
-        time.sleep(tiempo_espera)  # Espera hasta las 08:00:00
+            spinner.text = f"Esperando {tiempo_espera} segundos hasta las 08:00:00"
+            time.sleep(tiempo_espera)  # Espera hasta las 08:00:00
 
         spinner.text = "Ejecutando funcion de reserva de plaza"
         reservationId = get_parking_place(secret_access, use_zone_2=False)
@@ -154,19 +156,16 @@ if __name__ == "__main__":
             API.write_log("Comprobando pase de reserva en Priegola")
             json_data = load_data_place(reservationId, secret_access, use_zone_2=True)
 
-        if json_data in [-1, -2, -4, None]:
+        if json_data in [-1, -2, -4]:
             if json_data == -1:
                 msg = "<b>Peticion aprobada</b>, pero la respuesta del servidor <b>no es un JSON valido</b>. Comprueba en pagina web la reserva"
                 log = f"La Peticion fue aprobada, pero no se pudo comprobar la reserva con el id: {reservationId}. La respuesta del servidor no es un JSON valido. Comprueba en pagina web la reserva"
             elif json_data == -2:
                 msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
                 log = "Error al extraer datos de la reserva. El middleware rechaza la peticion. El token usado no es valido. verifica en la pagina de Hybo"
-            elif json_data == -4:
+            else:
                 msg = "<b>Error</b> al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
                 log = "Error al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
-            else:
-                msg = "<b>Error</b>. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
-                log = "Error. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
 
             API.write_log(log)
             spinner.fail(log)
@@ -176,15 +175,23 @@ if __name__ == "__main__":
             API.write_log("Fin de linea\n")
             sys.exit(1)
 
-        elif json_data == -3:
-            msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 60 segundos"
-            log = "Error al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 60 segundos"
+        elif json_data in [-3, -5, None]:
+            if json_data == -3:
+                msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 30 segundos"
+                log = "Error al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 30 segundos"
+            elif json_data == -5:
+                msg = "<b>Error</b> al extraer datos de la reserva. middleware rechaza la peticion. Error PETICION HTTP Desconociodo. Mapea el error. Repitiendo solicitud a MD en 30 segundos"
+                log = "Error al extraer datos de la reserva. middleware rechaza la peticion. Error PETICION HTTP Desconociodo. Mapea el error. Repitiendo solicitud a MD en 30 segundos"
+            else:
+                msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. Error Desconocido. Mapea el error que ha devuelto el servidor. Repitiendo solicitud a MD en 30 segundos"
+                log = "Error al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. <b>Error 502</b>. Repitiendo solicitud a MD en 30 segundos"
+
             API.write_log(log)
             spinner.fail(log)
             API.write_log("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             print("\n__ENVIANDO MENSAJE POR TELEGRAM__")
             send_message(TOKEN, CHAT_ID, msg)
-            time.sleep(60)
+            time.sleep(30)
 
             if segundo_intento == False:
                 spinner.text = "Segundo intento. Comprobando pase de reserva en Victoria"
@@ -195,7 +202,7 @@ if __name__ == "__main__":
                 API.write_log("Segundo intento. Comprobando pase de reserva en Priegola")
                 json_data = load_data_place(reservationId, secret_access, use_zone_2=True)
 
-            if json_data in [-1, -2, -3, -4, None]:
+            if json_data in [-1, -2, -3, -4, -5, None]:
                 if json_data == -1:
                     msg = "Segundo intento fallido. <b>Peticion aprobada</b>, pero la respuesta del servidor <b>no es un JSON valido</b>. Comprueba en pagina web la reserva"
                     log = "Segundo intento fallido. Peticion aprobada, pero la respuesta del servidor no es un JSON valido. Comprueba en pagina web la reserva"
@@ -203,14 +210,17 @@ if __name__ == "__main__":
                     msg = "Segundo intento fallido. <b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion. <b>El token usado no es valido</b>. verifica en la pagina de Hybo"
                     log = "Segundo intento fallido. Error al extraer datos de la reserva. El middleware rechaza la peticion. El token usado no es valido. verifica en la pagina de Hybo"
                 elif json_data == -3:
-                    msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. Se han realizado dos intentos en 60 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
-                    log = "Error al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. Se han realizado dos intentos en 60 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                    msg = "<b>Error</b> al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                    log = "Error al extraer datos de la reserva. El middleware rechaza la peticion, recibió una respuesta inválida de un servidor upstream. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
                 elif json_data == -4:
                     msg = "<b>Error</b> al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
                     log = "Error al extraer datos de la reserva. Plaza no reservada, mala suerte!, prueba otro día o revisa la fecha de solicitud."
+                elif json_data == -5:
+                    msg = "<b>Error</b> al extraer datos de la reserva. middleware rechaza la peticion. Error PETICION HTTP Desconociodo. Mapea el error. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                    log = "Error al extraer datos de la reserva. middleware rechaza la peticion. Error PETICION HTTP Desconociodo. Mapea el error. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
                 else:
-                    msg = "Segundo intento fallido. <b>Error</b>. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
-                    log = "Segundo intento fallido. Error!. El middleware rechaza la peticion. mapea el error que ha devuelto el servidor"
+                    msg = "Segundo intento fallido. <b>Error</b>. El middleware rechaza la peticion. Error Desconocido. Mapea el error que ha devuelto el servidor. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
+                    log = "Segundo intento fallido. Error!. El middleware rechaza la peticion. Error Desconocido. Mapea el error que ha devuelto el servidor. Se han realizado dos intentos en 30 segundos de diferencia. Valora aumentar el tiempo o añadir un tercer intento."
 
                 spinner.fail(log)
                 API.write_log(log)

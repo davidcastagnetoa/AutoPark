@@ -6,11 +6,17 @@ from datetime import datetime, timedelta
 from utils.logger import log, API
 from halo import Halo
 
-# from getReservedZoneData import extract_information
 
 # Cargando credenciales de acceso
 load_dotenv()
 URL = os.getenv("URL")
+
+# ###### For Test Only ######
+# from sendTelegramMessage import send_message
+# from getReservedZoneData import extract_information
+# TOKEN = os.getenv("TELEGRAM_TOKEN")
+# CHAT_ID = os.getenv("CHAT_ID")
+# ###### End of Test Section #######
 
 # Accede a la variable en formato JSON
 json_data = os.getenv("JSON_DATA")
@@ -34,7 +40,7 @@ if json_data:
     # Acceder a otros valores en 'config' según sea necesario
     spinner.succeed("Variables de entorno encontradas")
 else:
-    API.write_log("No se encontro la configuracion JSON.")
+    print("No se encontro la configuracion JSON.")
     spinner.fail("No se encontro la configuracion JSON.")
 
 # La fecha es 7 días después de hoy
@@ -43,7 +49,7 @@ date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
 # # La fecha actual
 # date = datetime.now().strftime("%Y-%m-%d")
 
-API.write_log(f"Fecha a solicitar plaza: {date}")
+print(f"Fecha a solicitar plaza: {date}")
 print(f"Fecha a solicitar plaza: {date}")
 
 
@@ -92,17 +98,17 @@ def get_parking_place(secret, use_zone_2=False):
         # Realizar la peticion POST
         spinner.text = "Obteniendo Pase de reserva."
         try:
-            API.write_log("Obteniendo Pase de reserva...")
+            print("Obteniendo Pase de reserva...")
             response = requests.post(url, headers=headers, data=json.dumps(payload))
 
             # Verificar el estado de la respuesta
             response.raise_for_status()
 
-            API.write_log(f"Estado de respuesta para obtener pase de reserva : {response.status_code}")
-            # API.write_log(
+            print(f"Estado de respuesta para obtener pase de reserva : {response.status_code}")
+            # print(
             #     f"Texto de respuesta para obtener pase de reserva : {response.text}")
 
-            API.write_log("Pase de reserva adquirido!!!")
+            print("Pase de reserva adquirido!!!")
             spinner.succeed("Pase de reserva adquirido!!!")
 
             # La respuesta es una cadena de texto con los valores separados por |
@@ -117,59 +123,59 @@ def get_parking_place(secret, use_zone_2=False):
                 reservationId = values[2].strip('"')
 
                 # Imprimir o usar las variables según sea necesario
-                API.write_log("Extrayendo variables id del Pase de reserva...")
-                API.write_log(f"Tenant ID: {tenantId}")
-                API.write_log(f"Zone ID: {zoneId}")
-                API.write_log(f"Reservation ID: {reservationId}")
-                API.write_log(f"Reservation Date: {date}")
+                print("Extrayendo variables id del Pase de reserva...")
+                print(f"Tenant ID: {tenantId}")
+                print(f"Zone ID: {zoneId}")
+                print(f"Reservation ID: {reservationId}")
+                print(f"Reservation Date: {date}")
 
                 # Solo usaremos la ultima que es el ID de la plaza encontrada
                 spinner.succeed("ID de plaza encontrado")
 
                 return reservationId
             else:
-                API.write_log("Error al reservar la plaza, La respuesta no contiene los 3 valores. Pase de reserva NO adquirido!")
+                print("Error al reservar la plaza, La respuesta no contiene los 3 valores. Pase de reserva NO adquirido!")
         except requests.exceptions.HTTPError as http_err:
             if response.status_code == 400 and '409-11' in response.text:
-                API.write_log(f"No es posible reservar entre las 0:00 y 8:00 horas, Detalles: {response.text}")
+                print(f"No es posible reservar entre las 0:00 y 8:00 horas, Detalles: {response.text}")
                 spinner.fail(f"No es posible reservar entre las 0:00 y 8:00 horas, Detalles: {response.text}")
                 return -1
             elif response.status_code == 400 and 'It is not possible to select the weekend.' in response.text:
-                API.write_log(f"Error HTTP: 400 - No es posible seleccionar el fin de semana, Detalles: {response.text}")
+                print(f"Error HTTP: 400 - No es posible seleccionar el fin de semana, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: 400 - No es posible seleccionar el fin de semana, Detalles: {response.text}")
                 return -2
             elif response.status_code == 409 and '409-12' in response.text:
-                API.write_log(f"Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {response.text}")
+                print(f"Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: 409 - Ya existe una plaza reservada a esta fecha, Detalles: {response.text}")
                 return -3
             elif response.status_code == 400 and 'Booking max days exceeded' in response.text:
-                API.write_log(f"Error HTTP: 400 - Estas excediendo el limite de dias para peticion, Detalles: {response.text}")
+                print(f"Error HTTP: 400 - Estas excediendo el limite de dias para peticion, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: 400 - Estas excediendo el limite de dias para peticion, Detalles: {response.text}")
                 return -4
             elif response.status_code == 401:
-                API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
+                print(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
                 return -5
             elif response.status_code == 502:
-                API.write_log(f"Error HTTP: 502, Bad Gateway, Detalles: {response.text}")
+                print(f"Error HTTP: 502, Bad Gateway, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: 502, Bad Gateway, Detalles: {response.text}")
                 return -6
             else:
-                API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
+                print(f"Error HTTP: {http_err}, Detalles: {response.text}")
                 spinner.fail(f"Error HTTP: {http_err}, Detalles: {response.text}")
                 return None
         except requests.exceptions.ConnectionError as conn_err:
-            API.write_log(f"Error de conexion: {conn_err}, Detalles: {response.text}")
+            print(f"Error de conexion: {conn_err}, Detalles: {response.text}")
             spinner.fail(f"Error de conexion: {conn_err}, Detalles: {response.text}")
         except requests.exceptions.Timeout as timeout_err:
-            API.write_log(f"Error de timeout: {timeout_err}, Detalles: {response.text}")
+            print(f"Error de timeout: {timeout_err}, Detalles: {response.text}")
             spinner.fail(f"Error de timeout: {timeout_err}, Detalles: {response.text}")
         except requests.exceptions.RequestException as req_err:
-            API.write_log(f"Error general en la peticion: {req_err}, Detalles: {response.text}")
+            print(f"Error general en la peticion: {req_err}, Detalles: {response.text}")
             spinner.fail(f"Error general en la peticion: {req_err}, Detalles: {response.text}")
 
     else:
-        API.write_log("Se requiere el token para realizar la solicitud")
+        print("Se requiere el token para realizar la solicitud")
         spinner.fail("Se requiere el token para realizar la solicitud")
         return None
 
@@ -223,13 +229,13 @@ def load_data_place(reservation_id, secret, use_zone_2=False):
     # Realizando la peticion
     spinner.text = "Reservando plaza."
     try:
-        API.write_log("Reservando plaza...")
-        API.write_log("Endpoint: " + url)
+        print("Reservando plaza...")
+        print("Endpoint: " + url)
         response = requests.post(url, headers=headers, json=body)
         response.raise_for_status()
         # reserved_zone = response.json()
-        API.write_log(f'Estado de la respuesta de la peticion de plaza: {response.status_code}')
-        API.write_log(f'Texto de la respuesta de la peticion de plaza: {response.text}')
+        print(f'Estado de la respuesta de la peticion de plaza: {response.status_code}')
+        print(f'Texto de la respuesta de la peticion de plaza: {response.text}')
 
         # Crear el directorio 'res' si no existe
         if not os.path.exists("res"):
@@ -240,15 +246,15 @@ def load_data_place(reservation_id, secret, use_zone_2=False):
         if response.status_code == 200:
             spinner.succeed("Peticion aprobada!")
             spinner.text = "Comprobando reserva."
-            API.write_log("Peticion aprobada, comprobando reserva...")
+            print("Peticion aprobada, comprobando reserva...")
             try:
                 # verifica si la respuesta es realmente un JSON
                 reserved_zone = response.json()
-                API.write_log('Peticion exitosa.')
+                print('Peticion exitosa.')
                 spinner.succeed('Peticion exitosa. Plaza reservada!')
                 log("👍")
-                API.write_log('Plaza reservada!.')
-                API.write_log("Extrayendo datos de reserva en formato Json")
+                print('Plaza reservada!.')
+                print("Extrayendo datos de reserva en formato Json")
 
                 filename = "reserved_zone.json"
                 folder = "res"
@@ -273,18 +279,18 @@ def load_data_place(reservation_id, secret, use_zone_2=False):
                 # Escribir todos los datos (incluyendo la nueva respuesta) en el archivo JSON
                 with open(file_path, "w", encoding="utf-8") as json_file:
                     json.dump(existing_data, json_file, ensure_ascii=False, indent=4)
-                API.write_log(f"Dato de la plaza reservada guardados dentro de la carpeta {folder}, revisa el archivo {filename}")
+                print(f"Dato de la plaza reservada guardados dentro de la carpeta {folder}, revisa el archivo {filename}")
                 spinner.succeed("Datos de plaza reservada extraidos!")
                 return reserved_zone
 
             except json.JSONDecodeError:
                 # Manejo del caso en que la respuesta es solo una cadena de texto
-                API.write_log('La respuesta no es un JSON válido.')
-                API.write_log('Peticion denegada.')
+                print('La respuesta no es un JSON válido.')
+                print('Peticion denegada.')
                 spinner.fail('La respuesta no es un JSON válido. Petición Denegada!')
                 log("👎")
-                API.write_log('Plaza no reservada. Revisa el calendario')
-                API.write_log(f'Respuesta recibida: {response.text}')
+                print('Plaza no reservada. Revisa el calendario')
+                print(f'Respuesta recibida: {response.text}')
                 spinner.fail('Plaza no reservada. Revisa el calendario')
 
                 failed_response = response.text
@@ -295,39 +301,46 @@ def load_data_place(reservation_id, secret, use_zone_2=False):
                 spinner.text = "Guardando fecha de archivo JSON"
                 with open(os.path.join(folder, filename), "w") as text_file:
                     text_file.write(failed_response)
-                    API.write_log(f"Respuesta fallida guardada dentro de la carpeta {folder}, revisa el archivo {filename}")
+                    print(f"Respuesta fallida guardada dentro de la carpeta {folder}, revisa el archivo {filename}")
                     spinner.fail(f"Respuesta fallida guardada dentro de la carpeta {folder}, revisa el archivo {filename}")
                 return -1
     except requests.exceptions.HTTPError as http_err:
         if response.status_code == 401:
-            API.write_log(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
+            print(f"Error HTTP: 401, El servidor rechaza la peticion. El token usado no es valido, Detalles: {response.text}")
             return -2
         elif response.status_code == 502:
-            API.write_log(f"Error HTTP: 502 Server Error: Bad Gateway, Detalles: {response.text}")
+            print(f"Error HTTP: 502 Server Error: Bad Gateway, Detalles: {response.text}")
             spinner.fail(f"Error HTTP: 502 Server Error: Bad Gateway, Detalles: {response.text}")
             return -3
         elif response.status_code == 409:
-            API.write_log(f"Error HTTP: 409 - Conflicto, Detalles: {response.text}")
+            print(f"Error HTTP: 409 - Conflicto, Detalles: {response.text}")
             spinner.fail(f"Error HTTP: 409 - Conflicto, Detalles: {response.text}")
             return -4
         else:
-            API.write_log(f"Error HTTP: {http_err}, Detalles: {response.text}")
+            print(f"Error HTTP: {http_err}, Detalles: {response.text}")
             spinner.fail(f"Error HTTP: {http_err}, Detalles: {response.text}")
-            return None
+            return -5
 
     except Exception as e:
-        API.write_log(f"Error HTTP: {e}, Detalles: {response.text}")
+        print(f"Error HTTP: {e}, Error Desconocido, Detalles: {response.text}")
         spinner.fail(f"Error HTTP: {e}, Detalles: {response.text}")
         return None
 
 
 # https://office-manager-api.azurewebsites.net/api/Parking/Bookings/Status/7a903ac6-aeb5-4cf8-879c-c48f02fc36e7%7C35e0550e-953a-41b5-ba97-cacaa4a44160%7Ca1c39312-9092-4b6f-a295-37354f7262a7
 
-# token2 = "eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6ImQyNDY3MzUwLWYzNWUtNDVmZS1iMDQwLTI2NTNkYWEzN2Y3OSIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzA5MjA5NDcxLCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MDkyMTMwNzEsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzA5MjA5NDcxfQ.Dj4sFAFTeYlHEAzLF4_LrB2fKTXOUIdYgvwnoC-D9IBD9kNzAqVLVzrJKGYfc-wd1TB80OrOY8-EFHLsggJua4henaoRIvCCUtbQjBZUrrnRD6un83PM9UpchMQarhEZd-8YS9nplm5qqVTpWbA6j2WwDnUX1ax1NgzJDwH_DZmNuzjyHlQ6ndMbI5uURPDHnp-KLWUChrZLXgycPadSE6b8gfPZDA3RuSgAOcqsR6NJ7aiqLAxGpeNcboBLBYls-sacGVi-4MMjBbdcq17OKxc9r3AAaFKTtPGmrbG26ABy0-PjTQ0HbU6epA_OGWFBS-6pCTXkykuYLIJkKfcNFg"
+# token2 = "eyJhbGciOiJSUzI1NiIsImtpZCI6InpWVjNyd2hYSlRZRVRnWlczeG9BSnBia0Vienl0T01TWjctS3U2SHZISzAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIzOWU5ZTkyZS04ZjQ2LTQwNGQtODAxNC1lYjg0YjJkZjBkODkiLCJuYW1lIjoiRGF2aWQiLCJPTVRlbmFudElkIjoiN2E5MDNhYzYtYWViNS00Y2Y4LTg3OWMtYzQ4ZjAyZmMzNmU3IiwiT01TdWJzY3JpcHRpb25FbmFibGVkIjp0cnVlLCJPTVN1YnNjcmlwdGlvbkV4cGlyYXRpb25EYXRlIjoxNzQ2MDg2NDAwLCJPTVVzZXJFbmFibGVkIjp0cnVlLCJPTUdyb3VwcyI6ImZmNTBjNzU3LTczYTktNDZiZC05OTFlLTVkYmVlMTIwNDAwYjthODNhYWM4ZC0xNGU5LTQwNzAtYmU3Zi02YmE0NWE4ZjQzN2EiLCJPTVJvbGVzIjoiUGFya2luZ0FwcFVzZXI7Um9vbUFwcFVzZXIiLCJ0aWQiOiI0NTg0OTJlYi1mMjhiLTQxNGQtOThkZC0xYmYzMWE3YjQ1M2YiLCJwYXNzd29yZEV4cGlyZWQiOmZhbHNlLCJub25jZSI6IjQwMTFjYmJkLWNlODYtNGJjMC04MmQ0LTUxMDIwNjY4ZjgzMiIsInNjcCI6ImFjY2Vzc19hc191c2VyIiwiYXpwIjoiNTM0MTZhOTItODVhYS00Yzg2LWJkZTAtM2MwNmE3ZmQ4YzAwIiwidmVyIjoiMS4wIiwiaWF0IjoxNzExNTM1MzYxLCJhdWQiOiI2ZDc3NDkzYS0yNGYwLTQ1YmMtYjYxZC0zNDE5YjU5MTAzNWQiLCJleHAiOjE3MTE1Mzg5NjEsImlzcyI6Imh0dHBzOi8vbWFuYWdlcm9mZmljZS5iMmNsb2dpbi5jb20vNDU4NDkyZWItZjI4Yi00MTRkLTk4ZGQtMWJmMzFhN2I0NTNmL3YyLjAvIiwibmJmIjoxNzExNTM1MzYxfQ.Uk1vk7o_nkxYEzOU9XP-gCGn0F_oY-K7SUlRnZIxq1_yUa1qfr_Zysgz89v790DZmkocBvmiuhsNGbbiRPkiOW69wxFbyIMhx8jqYGHECNhxOK5h_PBymU1l9yXHqZrUimsaDpvElZToHMRscrm-bmct_4e35nij2tZFtCiI4ANgtKXM3fKZro9wxx7ZenNLYFT66zOuACKHJuL6lFh2EsnwJKH4-qesqP3yM7a0YM-hYE4jzoBXeR62BWoafNmlmsRVzNwuvojB0MkbQkhc845BD5E-z-260Y_6nE_kc_5CvWo4-efPbrVCe5Pd1b1jQ9-EQfV6kXCIk6zmC-1Bsw"
 
-# reservationID_test = "af61e59e-e8cd-47d0-a8a8-eba071ae6fd2"
+# reservationID_test = "1754b206-6624-4d47-9fe3-ac4a48d62f59"
 
-# jpondatatest = load_data_place(reservationID_test, token2)
+# jpondatatest = load_data_place(reservationID_test, token2, use_zone_2=False)
 # result = extract_information(jpondatatest)
+# plaza, zona, turno, matricula, fecha, id = result
+# message = "<b>Plaza: </b>" + plaza + "\n" + "<b>Zona: </b>" + zona + "\n" + "<b>Turno: </b>" + \
+#     turno + "\n" + "<b>Matrícula: </b>" + matricula + "\n" "<b>Fecha: </b>" + fecha
+
+
 # print(jpondatatest)
-# # print(result)
+# print(result)
+# print(message)
+# send_message(TOKEN, CHAT_ID, message)
