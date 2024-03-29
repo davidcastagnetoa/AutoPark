@@ -19,6 +19,10 @@ USERNAME_HYBO = os.getenv("USERNAME_HYBO")
 PASSWORD_HYBO = os.getenv("PASSWORD_HYBO")
 LINK = os.getenv("LINK")
 
+# Otras variables
+debug_mode = False  # Cambia a True para activar modo debug
+
+
 # Configura las opciones para Firefox
 # firefox_options = webdriver.FirefoxOptions()
 firefox_options = Options()
@@ -34,10 +38,11 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
-# Headless mode Firefox
-firefox_options.add_argument("--headless")
-firefox_options.add_argument("--no-sandbox")
-firefox_options.add_argument("--disable-dev-shm-usage")
+if debug_mode == False:
+    # Headless mode Firefox
+    firefox_options.add_argument("--headless")
+    firefox_options.add_argument("--no-sandbox")
+    firefox_options.add_argument("--disable-dev-shm-usage")
 
 # questions = [
 #     inquirer.List(
@@ -140,7 +145,7 @@ def getToken():
         driver.quit()
         return None
     except Exception as e:
-        print("Mapear esta excepcion: ", e)
+        API.write_log("Mapear esta excepcion: ", e)
         spinner.fail(f"{e}. Fallo de inicio de sesión.")
         driver.quit()
         return None
