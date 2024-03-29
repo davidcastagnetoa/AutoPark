@@ -17,7 +17,7 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 # Otras variables
 segundo_intento = False
-debug_mode = True  # Cambia a True para activar modo debug
+debug_mode = False  # Cambia a True para activar modo debug
 
 # Función para calcular el tiempo de espera hasta las 07:59:30
 
