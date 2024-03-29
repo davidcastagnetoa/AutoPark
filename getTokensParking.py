@@ -9,6 +9,7 @@ from selenium.webdriver.firefox.options import Options
 import json
 from dotenv import load_dotenv
 import os
+import time
 import sys
 from utils.logger import log, API
 from halo import Halo
@@ -20,7 +21,7 @@ PASSWORD_HYBO = os.getenv("PASSWORD_HYBO")
 LINK = os.getenv("LINK")
 
 # Otras variables
-debug_mode = False  # Cambia a True para activar modo debug
+debug_mode = False  # Cambia a True para activar modo debug , no disponible en servidor de produccion
 
 
 # Configura las opciones para Firefox
@@ -124,13 +125,15 @@ driver.get(link)
 
 def getToken():
     # Da tiempo para que la página se cargue
+    API.write_log("Aplicando tiempo para carga de pagina")
+    time.sleep(10)
     # Espera hasta que el elemento con el ID "next" esté presente
     API.write_log(f"Cargando página {link}")
     spinner = Halo(text=f'Cargando página {link}', spinner='dots')
     spinner.start()
     spinner.text = "Cargando datos de página"
     try:
-        login_button = WebDriverWait(driver, 15).until(
+        login_button = WebDriverWait(driver, 25).until(
             EC.presence_of_element_located((By.ID, "next"))
         )
         spinner.succeed('Boton de inicio de sesion encontrado')
