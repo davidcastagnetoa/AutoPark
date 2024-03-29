@@ -50,7 +50,7 @@ date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
 # date = datetime.now().strftime("%Y-%m-%d")
 
 API.write_log(f"Fecha a solicitar plaza: {date}")
-API.write_log(f"Fecha a solicitar plaza: {date}")
+spinner.succeed(f"Fecha a solicitar plaza: {date}")
 
 
 # Reservar la plaza y Obtener su ID

@@ -53,9 +53,9 @@ if __name__ == "__main__":
         print("\n__SOLICITUD DE PLAZA__")
         spinner.text = f'Solicitando plaza a las {ahora}'
         API.write_log(f'Solicitando plaza a las {ahora}')
-        API.write_log(f'Tiempo de espera en segundos hasta las 08:00: {tiempo_espera}')
 
         if debug_mode == False:
+            API.write_log(f'Tiempo de espera en segundos hasta las 08:00: {tiempo_espera}')
             if (tiempo_espera) > 700:
                 log = f'Tiempo de espera excedido. Cancelando peticion, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en crontab.'
                 msg = f'Tiempo de espera excedido. <b>Cancelando peticion</b>, Hay que solicitar el token antes de las {ahora}. Cambia la hora de solicitud en <b>crontab</b>.En caso de duda consulta con el <b>Gran Administrador XD</b>'
@@ -140,7 +140,6 @@ if __name__ == "__main__":
                 API.write_log("Fin de linea\n")
                 sys.exit(1)
 
-        API.write_log(f"The reservationId is: {reservationId}")
         API.write_log(f"The reservationId is: {reservationId}")
         time.sleep(3)
 
